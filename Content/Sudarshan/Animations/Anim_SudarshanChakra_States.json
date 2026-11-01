@@ -1,0 +1,51 @@
+{
+  "AnimationAsset": "Anim_SudarshanChakra_States",
+  "TargetActor": "ASudarshanChakraActor",
+  "States": [
+    {
+      "StateName": "IdleFloating",
+      "RPM": 60.0,
+      "Bobbing": { "AmplitudeCm": 4.5, "FrequencyHz": 2.2 },
+      "PrecessionTilt": { "RollMaxDeg": 4.0, "PitchMaxDeg": 2.8 },
+      "AuraPulse": { "RateHz": 1.5, "Intensity": 2500.0 }
+    },
+    {
+      "StateName": "CeremonialSpin",
+      "RPM": 180.0,
+      "Bobbing": { "AmplitudeCm": 2.0, "FrequencyHz": 1.2 },
+      "PrecessionTilt": { "RollMaxDeg": 1.5, "PitchMaxDeg": 1.0 },
+      "AuraPulse": { "RateHz": 3.0, "Intensity": 3500.0 }
+    },
+    {
+      "StateName": "CombatSpin",
+      "RPM": 720.0,
+      "Bobbing": { "AmplitudeCm": 1.0, "FrequencyHz": 0.5 },
+      "PrecessionTilt": { "RollMaxDeg": 0.5, "PitchMaxDeg": 0.5 },
+      "AuraPulse": { "RateHz": 6.0, "Intensity": 5500.0 }
+    },
+    {
+      "StateName": "MahaStorm",
+      "RPM": 1800.0,
+      "Bobbing": { "AmplitudeCm": 0.0, "FrequencyHz": 0.0 },
+      "PrecessionTilt": { "RollMaxDeg": 0.0, "PitchMaxDeg": 0.0 },
+      "AuraPulse": { "RateHz": 12.0, "Intensity": 9000.0 }
+    },
+    {
+      "StateName": "ThrowPreparation",
+      "RPM": 960.0,
+      "ChargePulse": { "DurationSec": 0.8, "MaxIntensity": 7500.0 }
+    },
+    {
+      "StateName": "Flying",
+      "RPM": 1440.0,
+      "SpeedCmPerSec": 4800.0,
+      "TrailRibbonLengthSec": 0.35
+    },
+    {
+      "StateName": "Returning",
+      "RPM": 1440.0,
+      "SpeedCmPerSec": 6000.0,
+      "CurveType": "MagneticParabolic"
+    }
+  ]
+}
