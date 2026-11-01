@@ -1,0 +1,19 @@
+{
+  "SystemName": "NS_ChakraBladeTrails",
+  "Type": "NiagaraSystem",
+  "Emitters": [
+    {
+      "Name": "KatiliRibbonTrails",
+      "EmitterType": "Ribbon",
+      "RibbonWidth": 4.5,
+      "Lifetime": 0.25,
+      "Material": "M_SudarshanChakra_EnergyAura",
+      "AttachPoints": 24,
+      "ColorOverLife": [
+        { "Time": 0.0, "Color": [1.0, 1.0, 0.8, 1.0] },
+        { "Time": 0.4, "Color": [1.0, 0.6, 0.1, 0.6] },
+        { "Time": 1.0, "Color": [0.8, 0.1, 0.0, 0.0] }
+      ]
+    }
+  ]
+}
