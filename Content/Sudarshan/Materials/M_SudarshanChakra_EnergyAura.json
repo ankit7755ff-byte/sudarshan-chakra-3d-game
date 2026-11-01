@@ -1,0 +1,14 @@
+{
+  "MaterialName": "M_SudarshanChakra_EnergyAura",
+  "MaterialDomain": "Surface",
+  "BlendMode": "Additive",
+  "ShadingModel": "Unlit",
+  "TwoSided": true,
+  "Parameters": {
+    "AuraCoreColor": { "R": 1.0, "G": 0.85, "B": 0.1, "A": 1.0 },
+    "AuraRimColor": { "R": 1.0, "G": 0.4, "B": 0.05, "A": 1.0 },
+    "PulseRateHz": 3.5,
+    "EmissiveBoost": 12.0,
+    "FresnelPower": 2.2
+  }
+}
