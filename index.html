@@ -84,25 +84,39 @@
       pointer-events: none;
     }
 
-    /* WELCOME SCREEN */
+    /* WELCOME SCREEN (MODERN VEDIC HOMEPAGE) */
     #welcome-screen {
-      background: radial-gradient(circle at center, rgba(16, 20, 48, 0.75) 0%, rgba(5, 5, 12, 0.96) 100%);
-      padding: 20px;
+      background: radial-gradient(circle at center, rgba(16, 20, 48, 0.6) 0%, rgba(5, 5, 12, 0.94) 100%);
+      padding: 16px;
+      overflow-y: auto;
     }
 
     .welcome-card {
-      background: var(--bg-card);
+      background: rgba(12, 14, 28, 0.95);
       border: 2px solid var(--gold-dark);
-      box-shadow: 0 0 50px rgba(255, 215, 0, 0.3), inset 0 0 25px rgba(255, 153, 51, 0.15);
-      border-radius: 18px;
-      padding: 26px 32px;
-      max-width: 540px;
-      width: 95%;
+      box-shadow: 0 0 60px rgba(255, 215, 0, 0.35), inset 0 0 30px rgba(255, 153, 51, 0.2);
+      border-radius: 20px;
+      padding: 24px 28px;
+      max-width: 620px;
+      max-height: 94vh;
+      overflow-y: auto;
+      width: 96%;
       text-align: center;
-      backdrop-filter: blur(12px);
+      backdrop-filter: blur(14px);
       position: relative;
-      overflow: hidden;
       z-index: 20;
+    }
+
+    .welcome-card::-webkit-scrollbar {
+      width: 6px;
+    }
+    .welcome-card::-webkit-scrollbar-track {
+      background: rgba(0, 0, 0, 0.35);
+      border-radius: 3px;
+    }
+    .welcome-card::-webkit-scrollbar-thumb {
+      background: var(--gold-dark);
+      border-radius: 3px;
     }
 
     .welcome-card::before {
@@ -112,7 +126,7 @@
       left: -50%;
       width: 200%;
       height: 200%;
-      background: conic-gradient(from 0deg, transparent, rgba(255, 215, 0, 0.15), transparent 30%);
+      background: conic-gradient(from 0deg, transparent, rgba(255, 215, 0, 0.12), transparent 30%);
       animation: rotateLight 14s linear infinite;
       pointer-events: none;
     }
@@ -122,139 +136,414 @@
       100% { transform: rotate(360deg); }
     }
 
+    .vedic-ornament-top {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      margin-bottom: 6px;
+    }
+
+    .ornament-glyph {
+      font-size: 17px;
+      color: var(--gold);
+      filter: drop-shadow(0 0 8px var(--gold));
+      animation: spinSlow 12s linear infinite;
+    }
+
+    @keyframes spinSlow {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
     .vedic-badge {
       display: inline-block;
-      padding: 4px 16px;
+      padding: 4px 18px;
       border-radius: 20px;
-      background: linear-gradient(90deg, rgba(255,153,51,0.25), rgba(255,215,0,0.35));
+      background: linear-gradient(90deg, rgba(255,153,51,0.3), rgba(255,215,0,0.4));
       border: 1px solid var(--gold);
-      color: var(--gold);
+      color: #fff;
       font-size: 11px;
       font-weight: 700;
       letter-spacing: 2px;
       text-transform: uppercase;
-      margin-bottom: 8px;
     }
 
     .game-title {
       font-family: var(--font-vedic);
-      font-size: 28px;
+      font-size: 32px;
       font-weight: 900;
-      color: #fff;
-      text-shadow: 0 0 20px var(--gold-glow);
       line-height: 1.2;
-      margin-bottom: 6px;
-      background: linear-gradient(180deg, #ffffff 10%, #ffd700 70%, #ff9933 100%);
+      margin: 4px 0 2px 0;
+      background: linear-gradient(180deg, #ffffff 0%, #ffd700 60%, #ff9933 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
+      text-shadow: 0 0 25px rgba(255, 215, 0, 0.5);
     }
 
-    .shloka-text {
-      font-size: 13px;
-      color: #ffd899;
+    .game-subtitle {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      color: var(--krishna-blue);
+      margin-bottom: 12px;
+      text-transform: uppercase;
+      text-shadow: 0 0 10px rgba(0, 229, 255, 0.4);
+    }
+
+    .shloka-box {
+      background: rgba(255, 215, 0, 0.06);
+      border: 1px solid rgba(255, 215, 0, 0.35);
+      border-radius: 12px;
+      padding: 10px 14px;
+      margin-bottom: 14px;
+      text-align: center;
+    }
+
+    .shloka-sanskrit {
+      font-size: 12px;
+      color: #ffe6aa;
       font-style: italic;
-      margin-bottom: 16px;
-      line-height: 1.4;
+      line-height: 1.5;
+      font-family: var(--font-vedic);
+      font-weight: 600;
       text-shadow: 0 1px 4px rgba(0,0,0,0.8);
     }
 
-    /* Auth & Profile Tabs */
-    .auth-tabs {
+    .shloka-meaning {
+      font-size: 10px;
+      color: #bbb;
+      margin-top: 4px;
+      line-height: 1.3;
+    }
+
+    .section-label {
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--gold);
+      text-align: left;
+      margin: 10px 0 6px 2px;
+      letter-spacing: 1px;
       display: flex;
+      align-items: center;
       gap: 6px;
+    }
+
+    .realm-selector-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+      margin-bottom: 12px;
+    }
+
+    .realm-card {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px;
       background: rgba(0, 0, 0, 0.45);
-      padding: 4px;
+      border: 1.5px solid rgba(255, 215, 0, 0.25);
       border-radius: 10px;
-      margin-bottom: 14px;
-      border: 1px solid rgba(255, 215, 0, 0.2);
-    }
-
-    .auth-tab-btn {
-      flex: 1;
-      padding: 8px 6px;
-      background: transparent;
-      border: none;
-      color: #aaa;
-      font-size: 12px;
-      font-weight: 600;
-      border-radius: 6px;
       cursor: pointer;
+      text-align: left;
       transition: all 0.2s ease;
+      position: relative;
     }
 
-    .auth-tab-btn.active {
-      background: linear-gradient(135deg, var(--gold-dark), var(--gold));
-      color: #000;
-      box-shadow: 0 2px 8px rgba(255, 215, 0, 0.3);
+    .realm-card:hover {
+      border-color: var(--gold);
+      background: rgba(255, 215, 0, 0.1);
+      transform: translateY(-1px);
     }
 
-    .form-group {
-      margin-bottom: 10px;
+    .realm-card.active {
+      border-color: var(--gold);
+      background: linear-gradient(135deg, rgba(255, 215, 0, 0.2), rgba(255, 153, 51, 0.15));
+      box-shadow: 0 0 15px rgba(255, 215, 0, 0.35);
+    }
+
+    .realm-icon {
+      font-size: 24px;
+    }
+
+    .realm-info {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .realm-name {
+      font-family: var(--font-vedic);
+      font-size: 12px;
+      font-weight: 700;
+      color: #fff;
+    }
+
+    .realm-desc {
+      font-size: 9px;
+      color: #aaa;
+      line-height: 1.2;
+      margin-top: 2px;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    .realm-check {
+      font-size: 9px;
+      font-weight: 700;
+      color: var(--gold);
+      background: rgba(0, 0, 0, 0.4);
+      padding: 2px 6px;
+      border-radius: 6px;
+      border: 1px solid var(--gold);
+      white-space: nowrap;
+    }
+
+    .warrior-input-group {
+      margin-bottom: 14px;
       text-align: left;
     }
 
-    .form-group label {
+    .warrior-input-group label {
       display: block;
       font-size: 11px;
-      color: #ccc;
+      font-weight: 700;
+      color: #ddd;
       margin-bottom: 4px;
-      font-weight: 600;
     }
 
-    .form-control {
-      width: 100%;
-      padding: 10px 12px;
-      border-radius: 8px;
-      background: rgba(0, 0, 0, 0.55);
-      border: 1px solid rgba(255, 215, 0, 0.3);
+    .input-with-icon {
+      display: flex;
+      align-items: center;
+      background: rgba(0, 0, 0, 0.6);
+      border: 1.5px solid rgba(255, 215, 0, 0.35);
+      border-radius: 10px;
+      padding: 0 10px;
+    }
+
+    .input-with-icon:focus-within {
+      border-color: var(--gold);
+      box-shadow: 0 0 12px var(--gold-glow);
+    }
+
+    .input-icon {
+      font-size: 16px;
+      margin-right: 6px;
+    }
+
+    .form-control-vedic {
+      flex: 1;
+      background: transparent;
+      border: none;
+      outline: none;
       color: #fff;
       font-size: 13px;
-      outline: none;
-      transition: border-color 0.2s ease;
+      font-weight: 600;
+      padding: 10px 0;
+      font-family: var(--font-body);
     }
 
-    .form-control:focus {
-      border-color: var(--gold);
-      box-shadow: 0 0 10px var(--gold-glow);
-    }
-
-    .btn-gold {
+    .btn-gold-epic {
       width: 100%;
       padding: 14px 18px;
-      background: linear-gradient(135deg, #ffd700 0%, #ff9933 100%);
-      border: none;
-      border-radius: 10px;
-      color: #0a0a14;
-      font-family: var(--font-vedic);
-      font-size: 16px;
-      font-weight: 900;
-      letter-spacing: 1px;
+      background: linear-gradient(135deg, #ffd700 0%, #ff9933 50%, #ff5500 100%);
+      border: 2px solid #fff;
+      border-radius: 12px;
+      color: #070712;
       cursor: pointer;
-      box-shadow: 0 4px 20px rgba(255, 153, 51, 0.4), 0 0 15px rgba(255, 215, 0, 0.3);
-      transition: transform 0.15s ease, box-shadow 0.15s ease;
-    }
-
-    .btn-gold:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 6px 25px rgba(255, 153, 51, 0.6);
-    }
-
-    .features-list {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 6px;
-      margin-top: 14px;
-      padding-top: 12px;
-      border-top: 1px solid rgba(255, 255, 255, 0.1);
-      font-size: 10px;
-      color: #ffd899;
-    }
-
-    .feature-item {
+      box-shadow: 0 4px 25px rgba(255, 153, 51, 0.6), 0 0 20px rgba(255, 215, 0, 0.5);
+      transition: all 0.2s ease;
+      position: relative;
+      overflow: hidden;
       display: flex;
       flex-direction: column;
       align-items: center;
+      justify-content: center;
       gap: 2px;
+      margin-bottom: 14px;
+    }
+
+    .btn-gold-epic:hover, .btn-gold-epic:focus {
+      transform: translateY(-2px) scale(1.01);
+      box-shadow: 0 6px 35px rgba(255, 153, 51, 0.8), 0 0 30px var(--gold);
+    }
+
+    .btn-gold-epic:active {
+      transform: scale(0.98);
+    }
+
+    .btn-shine {
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+      animation: btnShineAnim 3.5s infinite;
+    }
+
+    @keyframes btnShineAnim {
+      0% { left: -100%; }
+      30%, 100% { left: 150%; }
+    }
+
+    .btn-text {
+      font-family: var(--font-vedic);
+      font-size: 17px;
+      font-weight: 900;
+      letter-spacing: 1.5px;
+      color: #0a0a14;
+      text-shadow: 0 1px 1px rgba(255,255,255,0.6);
+    }
+
+    .btn-subtext {
+      font-size: 10px;
+      font-weight: 700;
+      color: #221100;
+      letter-spacing: 0.5px;
+      opacity: 0.9;
+    }
+
+    .quick-guides-wrap {
+      background: rgba(0, 0, 0, 0.4);
+      border: 1px solid rgba(255, 215, 0, 0.25);
+      border-radius: 12px;
+      padding: 10px;
+      margin-bottom: 12px;
+    }
+
+    .guide-pill-tabs {
+      display: flex;
+      gap: 6px;
+      margin-bottom: 8px;
+    }
+
+    .guide-tab-btn {
+      flex: 1;
+      padding: 6px 4px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 215, 0, 0.2);
+      border-radius: 6px;
+      color: #ccc;
+      font-size: 11px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+
+    .guide-tab-btn.active {
+      background: linear-gradient(135deg, var(--gold-dark), var(--gold));
+      color: #000;
+      border-color: var(--gold);
+      font-weight: 700;
+      box-shadow: 0 2px 8px rgba(255, 215, 0, 0.3);
+    }
+
+    .control-grid-pc, .control-grid-mobile {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 6px;
+    }
+
+    .ctrl-pill {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background: rgba(0, 0, 0, 0.5);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 6px;
+      padding: 4px;
+      font-size: 9px;
+      color: #ffe6aa;
+      gap: 2px;
+    }
+
+    .ctrl-pill kbd {
+      background: rgba(255, 215, 0, 0.15);
+      border: 1px solid var(--gold);
+      color: var(--gold);
+      border-radius: 4px;
+      padding: 2px 5px;
+      font-size: 10px;
+      font-family: monospace;
+      font-weight: 700;
+    }
+
+    .ctrl-pill-wide {
+      grid-column: span 3;
+      font-size: 10px;
+      color: var(--krishna-blue);
+      background: rgba(0, 229, 255, 0.08);
+      border: 1px solid rgba(0, 229, 255, 0.3);
+      border-radius: 6px;
+      padding: 5px;
+      text-align: center;
+    }
+
+    .icon-btn {
+      background: rgba(255, 153, 51, 0.2);
+      border: 1px solid var(--peetambar);
+      color: var(--gold);
+      border-radius: 4px;
+      padding: 2px 6px;
+      font-weight: 700;
+      font-size: 10px;
+    }
+
+    .astra-info-row {
+      font-size: 10px;
+      color: #ddd;
+      text-align: left;
+      padding: 4px 2px;
+      line-height: 1.4;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    .astra-badge {
+      display: inline;
+      color: var(--gold);
+      font-weight: 700;
+    }
+
+    .welcome-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-top: 6px;
+      font-size: 10px;
+    }
+
+    .sound-status-pill {
+      background: rgba(0, 0, 0, 0.5);
+      border: 1px solid var(--gold);
+      border-radius: 12px;
+      padding: 4px 10px;
+      color: var(--gold);
+      cursor: pointer;
+      font-weight: 600;
+      transition: background 0.2s;
+    }
+
+    .sound-status-pill:hover {
+      background: rgba(255, 215, 0, 0.15);
+    }
+
+    .version-pill {
+      color: #888;
+      font-size: 10px;
+    }
+
+    @media (max-width: 600px) {
+      .welcome-card { padding: 18px 14px; }
+      .game-title { font-size: 24px; }
+      .realm-selector-grid { grid-template-columns: 1fr; gap: 6px; }
+      .control-grid-pc, .control-grid-mobile { grid-template-columns: repeat(2, 1fr); }
+      .ctrl-pill-wide { grid-column: span 2; }
+      .shloka-sanskrit { font-size: 11px; }
     }
 
     /* IN-GAME HUD */
@@ -576,63 +865,109 @@
           <canvas id='three-canvas'></canvas>
           <button id='audio-toggle'>🔊 BGM: ON</button>
 
-          <!-- SCREEN 1: WELCOME & AUTH -->
+          <!-- SCREEN 1: GLORIOUS VEDIC HOMEPAGE -->
           <div class='screen' id='welcome-screen'>
             <div class='welcome-card'>
-              <div class='vedic-badge'>॥ श्री कृष्णाय नमः • PHASE 01-07 MASTER ॥</div>
-              <h1 class='game-title'>SUDARSHAN: THE DIVINE UNIVERSE</h1>
-              <div class='shloka-text'>
-                "यदा यदा हि धर्मस्य ग्लानिर्भवति भारत ।<br/>
-                अभ्युत्थानमधर्मस्य तदात्मानं सृजाम्यहम् ॥"
+              <div class='vedic-ornament-top'>
+                <span class='ornament-glyph'>☸️</span>
+                <span class='vedic-badge'>॥ श्री कृष्णाय नमः • दिव्य सुदर्शन चक्रम् ॥</span>
+                <span class='ornament-glyph'>☸️</span>
               </div>
 
-              <!-- Auth Mode Selector -->
-              <div class='auth-tabs'>
-                <button class='auth-tab-btn active' id='tab-guest-btn'>Atithi (Guest)</button>
-                <button class='auth-tab-btn' id='tab-login-btn'>Sign In</button>
-                <button class='auth-tab-btn' id='tab-signup-btn'>Sign Up</button>
-              </div>
+              <h1 class='game-title'>॥ श्री सुदर्शन चक्रम् ॥</h1>
+              <div class='game-subtitle'>THE DIVINE UNIVERSE • 3D VEDIC ACTION ADVENTURE</div>
 
-              <div id='form-guest' class='form-view'>
-                <div class='form-group'>
-                  <label>Aapka Gamer / Yoddha Name:</label>
-                  <input type='text' id='guest-name' class='form-control' value='Yoddha Arjun' maxlength='18'/>
+              <div class='shloka-box'>
+                <div class='shloka-sanskrit'>
+                  "यदा यदा हि धर्मस्य ग्लानिर्भवति भारत । अभ्युत्थानमधर्मस्य तदात्मानं सृजाम्यहम् ॥<br/>
+                  परित्राणाय साधूनां विनाशाय च दुष्कृताम् । धर्मसंस्थापनार्थाय सम्भवामि युगे युगे ॥"
                 </div>
-              </div>
-
-              <div id='form-login' class='form-view' style='display:none;'>
-                <div class='form-group'>
-                  <label>Gamer ID ya Email:</label>
-                  <input type='text' id='login-id' class='form-control' placeholder='Enter username/email'/>
+                <div class='shloka-meaning'>
+                  Whenever there is a decline in Dharma and rise of evil, I manifest to protect the good and restore cosmic order.
                 </div>
               </div>
 
-              <div id='form-signup' class='form-view' style='display:none;'>
-                <div class='form-group'>
-                  <label>New Gamer Name:</label>
-                  <input type='text' id='signup-name' class='form-control' placeholder='e.g. Mahabali Bheem'/>
+              <!-- REALM / MODE SELECTOR -->
+              <div class='section-label'>⚔️ युद्ध क्षेत्र चयन करें (SELECT BATTLE REALM) :</div>
+              <div class='realm-selector-grid'>
+                <div class='realm-card active' id='realm-opt-earth' data-realm='Earth'>
+                  <div class='realm-icon'>🌍</div>
+                  <div class='realm-info'>
+                    <div class='realm-name'>कुरुक्षेत्र संग्राम (Kurukshetra)</div>
+                    <div class='realm-desc'>महाभारत युद्धभूमि, असुर सेना, कालिया नाग व अघासुर संहार</div>
+                  </div>
+                  <div class='realm-check'>✓ सक्रिय</div>
+                </div>
+
+                <div class='realm-card' id='realm-opt-celestial' data-realm='Celestial'>
+                  <div class='realm-icon'>🌌</div>
+                  <div class='realm-info'>
+                    <div class='realm-name'>वैकुण्ठ दिव्य लोक (Vaikuntha)</div>
+                    <div class='realm-desc'>स्वर्ण मन्दिर, तैरते द्वीप, दिव्य जलप्रपात व अमर लोक</div>
+                  </div>
+                  <div class='realm-check'>चुनें</div>
                 </div>
               </div>
 
-              <button class='btn-gold' id='start-btn'>⚔️ ENTER DIVINE UNIVERSE ⚔️</button>
+              <!-- WARRIOR PROFILE -->
+              <div class='warrior-input-group'>
+                <label for='guest-name'>🏹 आपका योद्धा नाम (WARRIOR NAME):</label>
+                <div class='input-with-icon'>
+                  <span class='input-icon'>👑</span>
+                  <input type='text' id='guest-name' class='form-control-vedic' value='योद्धा अर्जुन (Yoddha Arjun)' maxlength='24'/>
+                </div>
+              </div>
 
-              <div class='features-list'>
-                <div class='feature-item'>
-                  <span>🔱</span>
-                  <b>Chakra Slicing</b>
+              <!-- MAIN CALL TO ACTION -->
+              <button class='btn-gold-epic' id='start-btn'>
+                <span class='btn-shine'></span>
+                <span class='btn-text'>⚔️ युद्ध आरम्भ करें (START BATTLE) ⚔️</span>
+                <span class='btn-subtext'>Click or Tap to Enter the 3D Divine Universe</span>
+              </button>
+
+              <!-- CONTROLS & CAPABILITIES TABS -->
+              <div class='quick-guides-wrap'>
+                <div class='guide-pill-tabs'>
+                  <button class='guide-tab-btn active' id='tab-pc-ctrl'>🖥️ PC Controls</button>
+                  <button class='guide-tab-btn' id='tab-mobile-ctrl'>📱 Mobile Controls</button>
+                  <button class='guide-tab-btn' id='tab-divine-powers'>🔱 Divya Astra</button>
                 </div>
-                <div class='feature-item'>
-                  <span>💨</span>
-                  <b>Divine Dash</b>
+
+                <div class='guide-content' id='guide-pc-panel'>
+                  <div class='control-grid-pc'>
+                    <div class='ctrl-pill'><kbd>W A S D</kbd><span>दौड़ें (Move)</span></div>
+                    <div class='ctrl-pill'><kbd>Shift</kbd><span>तीव्र गति (Sprint)</span></div>
+                    <div class='ctrl-pill'><kbd>Space</kbd><span>दिव्य झपट्टा (Dash)</span></div>
+                    <div class='ctrl-pill'><kbd>Mouse Left / E</kbd><span>सुदर्शन प्रहार (Throw)</span></div>
+                    <div class='ctrl-pill'><kbd>Mouse Right / Q</kbd><span>चक्र वापसी (Recall)</span></div>
+                    <div class='ctrl-pill'><kbd>T</kbd><span>लोक पोर्टल (Warp)</span></div>
+                  </div>
                 </div>
-                <div class='feature-item'>
-                  <span>🐉</span>
-                  <b>Maha-Kaliya</b>
+
+                <div class='guide-content hidden' id='guide-mobile-panel'>
+                  <div class='control-grid-mobile'>
+                    <div class='ctrl-pill'><span class='icon-btn'>🔱 THROW</span><span>चक्र फेंकें</span></div>
+                    <div class='ctrl-pill'><span class='icon-btn'>🧲 RECALL</span><span>हाथ में बुलाएं</span></div>
+                    <div class='ctrl-pill'><span class='icon-btn'>💨 DASH</span><span>द्रुत गति छलांग</span></div>
+                    <div class='ctrl-pill'><span class='icon-btn'>🌌 WARP</span><span>लोक परिवर्तन</span></div>
+                    <div class='ctrl-pill-wide'>👆 स्क्रीन पर कहीं भी टैप करें - सुदर्शन चक्र उसी दिशा में प्रहार करेगा!</div>
+                  </div>
                 </div>
-                <div class='feature-item'>
-                  <span>🌌</span>
-                  <b>Dual Worlds</b>
+
+                <div class='guide-content hidden' id='guide-divine-panel'>
+                  <div class='astra-info-row'>
+                    <div class='astra-badge'>सुदर्शन चक्र:</div> 16 तीक्ष्ण स्वर्ण कटिली ब्लेड, नीलमणि जड़ित, सूर्य सहस्र तेज।
+                  </div>
+                  <div class='astra-info-row'>
+                    <div class='astra-badge'>कालिया व अघासुर:</div> 90 सेकंड बाद कालिया नाग एवं 4 मिनट बाद विशाल अघासुर का अवतरण।
+                  </div>
                 </div>
+              </div>
+
+              <!-- FOOTER BADGE & MUSIC TOGGLE -->
+              <div class='welcome-footer'>
+                <div class='sound-status-pill' id='home-sound-btn'>🔊 वैदिक ध्वनि: चालू (AUDIO ON)</div>
+                <div class='version-pill'>⚡ REAL-TIME 3D • 60 FPS • UE5 SPEC</div>
               </div>
             </div>
           </div>
@@ -732,6 +1067,7 @@
         </div>
 
         <script>
+        //<![CDATA[
         /* =====================================================================
            SUDARSHAN: THE DIVINE UNIVERSE - MASTER GAMEPLAY ENGINE (PHASES 01-07)
            ===================================================================== */
@@ -753,7 +1089,7 @@
 
             ensure() {
               if (!this.ctx) this.init();
-              if (this.ctx &amp;&amp; this.ctx.state === 'suspended') this.ctx.resume();
+              if (this.ctx && this.ctx.state === 'suspended') this.ctx.resume();
             },
 
             shankh() {
@@ -1384,12 +1720,30 @@
           }
 
           window.addEventListener('mousedown', e => {
-            if (Game.running &amp;&amp; e.target === canvas) {
+            if (Game.running && e.target === canvas) {
               if (e.button === 0) throwChakra();
               else if (e.button === 2) recallChakra();
             }
           });
           window.addEventListener('contextmenu', e => e.preventDefault());
+
+          // Mobile Touch Targeting & Throwing on Canvas
+          canvas.addEventListener('touchstart', e => {
+            if (!Game.running) return;
+            if (e.touches && e.touches.length > 0) {
+              const t = e.touches[0];
+              updateTargetFromScreen(t.clientX, t.clientY);
+              throwChakra();
+            }
+          }, { passive: true });
+
+          canvas.addEventListener('touchmove', e => {
+            if (!Game.running) return;
+            if (e.touches && e.touches.length > 0) {
+              const t = e.touches[0];
+              updateTargetFromScreen(t.clientX, t.clientY);
+            }
+          }, { passive: true });
 
           window.addEventListener('keydown', e => {
             if (!Game.running) return;
@@ -1399,11 +1753,28 @@
             if (e.key === 't' || e.key === 'T') RealmManager.toggleRealm();
           });
 
-          // Action Buttons
-          document.getElementById('throw-btn').addEventListener('click', e => { e.stopPropagation(); throwChakra(); });
-          document.getElementById('recall-btn').addEventListener('click', e => { e.stopPropagation(); recallChakra(); });
-          document.getElementById('dash-btn').addEventListener('click', e => { e.stopPropagation(); divineDash(); });
-          document.getElementById('portal-btn').addEventListener('click', e => { e.stopPropagation(); RealmManager.toggleRealm(); });
+          // Action Buttons with Zero-Delay Touch & Click
+          function bindAction(elemId, actionFn) {
+            const el = document.getElementById(elemId);
+            if (!el) return;
+            let lastTouch = 0;
+            el.addEventListener('touchstart', e => {
+              e.stopPropagation();
+              e.preventDefault();
+              lastTouch = Date.now();
+              actionFn();
+            }, { passive: false });
+            el.addEventListener('click', e => {
+              e.stopPropagation();
+              if (Date.now() - lastTouch < 350) return;
+              actionFn();
+            });
+          }
+
+          bindAction('throw-btn', throwChakra);
+          bindAction('recall-btn', recallChakra);
+          bindAction('dash-btn', divineDash);
+          bindAction('portal-btn', () => RealmManager.toggleRealm());
 
           let isSprinting = false;
           window.addEventListener('keydown', e => { if (e.key === 'Shift') isSprinting = true; });
@@ -1413,16 +1784,84 @@
           window.addEventListener('keydown', e => { keys[e.key.toLowerCase()] = true; });
           window.addEventListener('keyup', e => { keys[e.key.toLowerCase()] = false; });
 
-          // Start & Restart Buttons
-          document.getElementById('start-btn').addEventListener('click', () => {
+          // Homepage Mode / Realm Selection
+          let selectedStartingRealm = 'Earth';
+          const realmOptEarth = document.getElementById('realm-opt-earth');
+          const realmOptCelestial = document.getElementById('realm-opt-celestial');
+
+          if (realmOptEarth && realmOptCelestial) {
+            realmOptEarth.addEventListener('click', () => {
+              selectedStartingRealm = 'Earth';
+              realmOptEarth.classList.add('active');
+              realmOptCelestial.classList.remove('active');
+              realmOptEarth.querySelector('.realm-check').textContent = '✓ सक्रिय';
+              realmOptCelestial.querySelector('.realm-check').textContent = 'चुनें';
+              RealmManager.setRealm('Earth');
+            });
+
+            realmOptCelestial.addEventListener('click', () => {
+              selectedStartingRealm = 'Celestial';
+              realmOptCelestial.classList.add('active');
+              realmOptEarth.classList.remove('active');
+              realmOptCelestial.querySelector('.realm-check').textContent = '✓ सक्रिय';
+              realmOptEarth.querySelector('.realm-check').textContent = 'चुनें';
+              RealmManager.setRealm('Celestial');
+            });
+          }
+
+          // Homepage Quick Guides Tabs
+          const tabPc = document.getElementById('tab-pc-ctrl');
+          const tabMobile = document.getElementById('tab-mobile-ctrl');
+          const tabDivine = document.getElementById('tab-divine-powers');
+          const panelPc = document.getElementById('guide-pc-panel');
+          const panelMobile = document.getElementById('guide-mobile-panel');
+          const panelDivine = document.getElementById('guide-divine-panel');
+
+          function showGuideTab(activeTab, activePanel) {
+            [tabPc, tabMobile, tabDivine].forEach(t => t && t.classList.remove('active'));
+            [panelPc, panelMobile, panelDivine].forEach(p => p && p.classList.add('hidden'));
+            if (activeTab) activeTab.classList.add('active');
+            if (activePanel) activePanel.classList.remove('hidden');
+          }
+
+          if (tabPc) tabPc.addEventListener('click', () => showGuideTab(tabPc, panelPc));
+          if (tabMobile) tabMobile.addEventListener('click', () => showGuideTab(tabMobile, panelMobile));
+          if (tabDivine) tabDivine.addEventListener('click', () => showGuideTab(tabDivine, panelDivine));
+
+          // Start & Restart Game Handlers
+          function startGameAction() {
             Sound.ensure();
             Sound.shankh();
-            const gName = document.getElementById('guest-name').value.trim();
+            const gInput = document.getElementById('guest-name');
+            const gName = gInput ? gInput.value.trim() : 'योद्धा अर्जुन';
             if (gName) document.getElementById('hud-player-name').textContent = gName;
             document.getElementById('welcome-screen').classList.add('hidden');
             document.getElementById('reticle').style.display = 'block';
+            RealmManager.setRealm(selectedStartingRealm);
             Game.start();
-          });
+          }
+
+          const startBtn = document.getElementById('start-btn');
+          if (startBtn) {
+            let lastStartTouch = 0;
+            startBtn.addEventListener('touchstart', e => {
+              e.preventDefault();
+              lastStartTouch = Date.now();
+              startGameAction();
+            }, { passive: false });
+            startBtn.addEventListener('click', () => {
+              if (Date.now() - lastStartTouch < 350) return;
+              startGameAction();
+            });
+          }
+
+          // Also allow pressing Enter inside the warrior name input
+          const guestInput = document.getElementById('guest-name');
+          if (guestInput) {
+            guestInput.addEventListener('keydown', e => {
+              if (e.key === 'Enter') startGameAction();
+            });
+          }
 
           document.getElementById('restart-btn').addEventListener('click', () => {
             Sound.shankh();
@@ -1431,11 +1870,24 @@
             Game.restart();
           });
 
-          document.getElementById('audio-toggle').addEventListener('click', () => {
+          // Sound Toggle Buttons (HUD & Homepage)
+          function toggleSound() {
             Sound.enabled = !Sound.enabled;
-            document.getElementById('audio-toggle').textContent = Sound.enabled ? '🔊 BGM: ON' : '🔇 BGM: OFF';
-            if (Sound.enabled) Sound.shankh();
-          });
+            const textHud = Sound.enabled ? '🔊 BGM: ON' : '🔇 BGM: OFF';
+            const textHome = Sound.enabled ? '🔊 वैदिक ध्वनि: चालू (AUDIO ON)' : '🔇 वैदिक ध्वनि: बन्द (AUDIO OFF)';
+            const hudBtn = document.getElementById('audio-toggle');
+            const homeBtn = document.getElementById('home-sound-btn');
+            if (hudBtn) hudBtn.textContent = textHud;
+            if (homeBtn) homeBtn.textContent = textHome;
+            if (Sound.enabled) {
+              Sound.ensure();
+              Sound.shankh();
+            }
+          }
+
+          document.getElementById('audio-toggle').addEventListener('click', toggleSound);
+          const homeSoundBtn = document.getElementById('home-sound-btn');
+          if (homeSoundBtn) homeSoundBtn.addEventListener('click', toggleSound);
 
           // --- 10. MAIN ANIMATION & PHYSICS LOOP ---
           let lastTime = performance.now();
@@ -1462,11 +1914,11 @@
               }
 
               // Spawn Bosses (Kaliya at 1.5m, Aghasura at 4m)
-              if (Game.elapsedSeconds >= 90 &amp;&amp; !Game.kaliyaSpawned) {
+              if (Game.elapsedSeconds >= 90 && !Game.kaliyaSpawned) {
                 Game.kaliyaSpawned = true;
                 spawnAsura(true, false);
               }
-              if (Game.elapsedSeconds >= 240 &amp;&amp; !Game.aghasuraSpawned) {
+              if (Game.elapsedSeconds >= 240 && !Game.aghasuraSpawned) {
                 Game.aghasuraSpawned = true;
                 spawnAsura(true, true);
               }
@@ -1482,7 +1934,7 @@
               if (dashTimer > 0) {
                 dashTimer -= dt;
                 pSpeed = 0.55; // Dash burst
-              } else if (isSprinting &amp;&amp; Game.playerStamina > 0) {
+              } else if (isSprinting && Game.playerStamina > 0) {
                 pSpeed = 0.34;
                 Game.playerStamina = Math.max(0, Game.playerStamina - dt * 25);
               } else if (Game.playerStamina < 100) {
@@ -1520,7 +1972,7 @@
                 sudarshanChakra.position.add(chakraState.velocity);
                 chakraState.travelDist += chakraState.velocity.length();
 
-                if (chakraState.travelDist > chakraState.maxDist &amp;&amp; !chakraState.returning) {
+                if (chakraState.travelDist > chakraState.maxDist && !chakraState.returning) {
                   chakraState.returning = true;
                 }
 
@@ -1626,6 +2078,7 @@
             renderer.setSize(window.innerWidth, window.innerHeight);
           });
         })();
+        //]]>
         </script>
       </b:includable>
     </b:widget>
