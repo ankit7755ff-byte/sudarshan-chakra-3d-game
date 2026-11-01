@@ -1,33 +1,37 @@
-# ASSET REGISTER: SUDARSHAN
+# ASSET REGISTER: SUDARSHAN (PHASES 01 TO 07)
 
-## Phase 02 Weapon Assets: Divine Sudarshan Chakra
+## Registered Assets
 
-### 3D Meshes & Geometry
-- `SM_SudarshanChakra.obj` (`Content/Sudarshan/Meshes/SM_SudarshanChakra.obj`): High-poly 3D Sudarshan Chakra geometry (489 vertices, 611 polygonal face elements). Multi-tiered Vedic lotus hub, 8 radial connecting spokes, concentric bevelled golden ring, and 24 flame-curved 3D Katili razor blades.
-- `SM_SudarshanChakra.mtl` (`Content/Sudarshan/Meshes/SM_SudarshanChakra.mtl`): Material library defining `M_SudarshanChakra_Gold`, `M_SudarshanChakra_Blades`, and `M_SudarshanChakra_Core`.
+### Phase 01: Foundation
+- `Sudarshan.uproject`: UE 5.3 project descriptor with EnhancedInput & Niagara.
+- `Source/Sudarshan/Sudarshan.Build.cs`: Module build definitions.
+- `Source/Sudarshan/Public/SudarshanGameModeBase.h` & `Private/SudarshanGameModeBase.cpp`: 1-hour Maha-Yuddha rules.
+- `Config/`: `DefaultEngine.ini`, `DefaultGame.ini`, `DefaultInput.ini`.
 
-### PBR Materials & Shaders
-- `M_SudarshanChakra_Gold.json` (`Content/Sudarshan/Materials/`): Vedic Sacred Gold PBR shader (BaseColor `#ffd700`, Metallic 0.95, Roughness 0.15, Specular 0.90, Emissive Gold Glow).
-- `M_SudarshanChakra_Blades.json` (`Content/Sudarshan/Materials/`): High-specular tempered razor-sharp steel shader (Metallic 1.0, Roughness 0.08, Specular 0.99, Anisotropy 0.65).
-- `M_SudarshanChakra_EnergyAura.json` (`Content/Sudarshan/Materials/`): Additive unlit translucent sacred sun aura with fresnel edge glow.
+### Phase 02: Divine Sudarshan Chakra
+- `SM_SudarshanChakra.obj` & `.mtl` (`Content/Sudarshan/Meshes/`): 3D geometry with 24 curved Katili blades, Om core, blue sapphires.
+- `M_SudarshanChakra_Gold.json`, `M_SudarshanChakra_Blades.json`, `M_SudarshanChakra_EnergyAura.json` (`Content/Sudarshan/Materials/`).
+- `NS_ChakraDivineAura.json`, `NS_ChakraBladeTrails.json` (`Content/Sudarshan/Effects/`).
+- `SC_Chakra_SpinLoop.json`, `SC_Chakra_Throw.json`, `SC_Chakra_Charge.json`, `SC_Chakra_Return.json` (`Content/Sudarshan/Audio/`).
+- `ASudarshanChakraActor` (`Source/Sudarshan/Public/SudarshanChakraActor.h` & `.cpp`).
+- `BP_SudarshanChakra.json` & `Anim_SudarshanChakra_States.json`.
 
-### Niagara Visual FX Systems
-- `NS_ChakraDivineAura.json` (`Content/Sudarshan/Effects/`): Torus vortex particle emitter radiating golden solar flares and spinning light rays.
-- `NS_ChakraBladeTrails.json` (`Content/Sudarshan/Effects/`): High-speed ribbon emitter generating 24 distinct trailing flame arcs from blade apexes.
+### Phase 03: Character Controller & Divine Locomotion
+- `ASudarshanCharacter` (`Source/Sudarshan/Public/Character/SudarshanCharacter.h` & `.cpp`): Third-person rig, CameraBoom (450cm), FollowCamera, Walk (600), Sprint (1100), Divine Dash (2600), Stamina system, `ChakraFingerSocket_R`.
 
-### Audio Cues & Sound Systems
-- `SC_Chakra_SpinLoop.json` (`Content/Sudarshan/Audio/`): Looping hypersonic metallic whir modulated dynamically by Current RPM (60 to 1800 RPM).
-- `SC_Chakra_Throw.json` (`Content/Sudarshan/Audio/`): Supersonic blade slice and release whoosh (white noise burst + descending pitch sweep).
-- `SC_Chakra_Charge.json` (`Content/Sudarshan/Audio/`): Divine harmonic resonance frequency swell for pre-launch aim lock.
-- `SC_Chakra_Return.json` (`Content/Sudarshan/Audio/`): Resonant magnetic snap with harmonic conch chime.
+### Phase 04: Advanced Combat & Precision Slicing
+- `USudarshanCombatComponent` (`Source/Sudarshan/Public/Combat/SudarshanCombatComponent.h` & `.cpp`): Crosshair aim raycast, supersonic throw, magnetic parabolic recall, 108 Blades MahaStorm shield, chain ricochet slicing.
 
-### Unreal Engine 5 Actor & Blueprint Classes
-- `ASudarshanChakraActor` (`Source/Sudarshan/Public/SudarshanChakraActor.h` & `Private/SudarshanChakraActor.cpp`): Production C++ Actor with 7 operating states, harmonic bobbing, precession tilt, supersonic flight trajectory, and magnetic recall.
-- `BP_SudarshanChakra.json` (`Content/Sudarshan/Blueprints/`): Blueprint class hierarchy with pre-configured static mesh, Niagara components, point light, and audio attachments.
+### Phase 05: Enemy AI Minions
+- `AAsuraBaseCharacter` (`Source/Sudarshan/Public/AI/AsuraBaseCharacter.h` & `.cpp`): Kaliya Serpents, horned Asuras, pursuit AI, venom spit, dissolution FX.
+- `AAsuraAIController` (`Source/Sudarshan/Public/AI/AsuraAIController.h` & `.cpp`).
 
-### Animation State Machine
-- `Anim_SudarshanChakra_States.json` (`Content/Sudarshan/Animations/`): State configuration for IdleFloating (60 RPM), CeremonialSpin (180 RPM), CombatSpin (720 RPM), MahaStorm (1800 RPM), ThrowPreparation (960 RPM), Flying (1440 RPM), and Returning (1440 RPM).
+### Phase 06: Boss Encounters
+- `AMahaKaliyaBoss` (`Source/Sudarshan/Public/Bosses/MahaKaliyaBoss.h` & `.cpp`): 5-headed serpent titan (2500 HP), toxic nova, tail sweep, enrage trigger at 50% HP.
+- `AAghasuraBoss` (`Source/Sudarshan/Public/Bosses/AghasuraBoss.h` & `.cpp`): Cavernous python titan (4000 HP), earth tremor stomp.
 
-### Verified Visual Rendered Screenshots
-- `Chakra_Hero_3D.png` (`Content/Sudarshan/Screenshots/Chakra_Hero_3D.png`): 1280x720 cinematic hero render of the 3D Sudarshan Chakra weapon with PBR gold, 24 blades, and solar rim lighting.
-- `Chakra_Blades_Detail.png` (`Content/Sudarshan/Screenshots/Chakra_Blades_Detail.png`): Close-up capture demonstrating blade geometry and bevelled serrations.
+### Phase 07: Divine Universe & Dual Realms
+- `APortalActor` (`Source/Sudarshan/Public/World/PortalActor.h` & `.cpp`): Rotating torus gateway, vortex FX, overlap teleportation.
+- `ASudarshanWorldManager` (`Source/Sudarshan/Public/World/SudarshanWorldManager.h` & `.cpp`): Earth Universe (Kurukshetra) & Celestial Universe (Vaikuntha) streaming.
+- `Celestial_Realm_Vaikuntha.png` (`Content/Sudarshan/Screenshots/`): 1280x720 capture of floating islands, golden temple, portal, and boss.
+- `index.html`: Fully playable real-time WebGL engine integrating all 7 phases with touch & PC controls.
