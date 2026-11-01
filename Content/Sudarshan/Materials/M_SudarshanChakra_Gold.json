@@ -1,0 +1,20 @@
+{
+  "MaterialName": "M_SudarshanChakra_Gold",
+  "MaterialDomain": "Surface",
+  "BlendMode": "Opaque",
+  "ShadingModel": "DefaultLit",
+  "TwoSided": true,
+  "Parameters": {
+    "BaseColor": { "R": 1.0, "G": 0.84, "B": 0.0, "A": 1.0 },
+    "Metallic": 0.95,
+    "Specular": 0.90,
+    "Roughness": 0.15,
+    "EmissiveColor": { "R": 0.45, "G": 0.25, "B": 0.02, "A": 1.0 },
+    "NormalIntensity": 1.2,
+    "EngravingDetailScale": 4.0
+  },
+  "Textures": {
+    "EngravingNormal": "T_VedicEngravings_N",
+    "RoughnessMap": "T_ChakraMetal_R"
+  }
+}
