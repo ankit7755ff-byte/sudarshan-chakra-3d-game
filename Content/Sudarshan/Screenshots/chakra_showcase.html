@@ -2,30 +2,44 @@
 <html>
 <head>
   <meta charset="utf-8"/>
-  <title>SUDARSHAN CHAKRA 3D WEAPON SHOWCASE</title>
+  <title>BHAGWAN SHRI KRISHNA DIVINE SUDARSHAN CHAKRA</title>
   <style>
-    body { margin: 0; background: #05060f; overflow: hidden; font-family: 'Segoe UI', sans-serif; }
+    body {
+      margin: 0;
+      background: #020308;
+      overflow: hidden;
+      font-family: 'Cinzel', 'Georgia', serif;
+    }
     #canvas { width: 100vw; height: 100vh; display: block; }
     .badge {
       position: absolute;
       top: 25px;
       left: 25px;
-      background: rgba(10, 12, 25, 0.85);
+      background: rgba(12, 10, 24, 0.9);
       border: 2px solid #ffd700;
-      padding: 12px 24px;
-      border-radius: 10px;
+      padding: 14px 26px;
+      border-radius: 12px;
       color: #ffd700;
-      box-shadow: 0 0 25px rgba(255, 215, 0, 0.3);
+      box-shadow: 0 0 35px rgba(255, 215, 0, 0.4), inset 0 0 15px rgba(255, 153, 51, 0.2);
+      backdrop-filter: blur(8px);
+      z-index: 10;
     }
-    .badge h1 { margin: 0; font-size: 20px; letter-spacing: 2px; }
-    .badge p { margin: 4px 0 0; font-size: 12px; color: #fff; }
+    .badge h1 {
+      margin: 0;
+      font-size: 22px;
+      letter-spacing: 2px;
+      background: linear-gradient(180deg, #ffffff 0%, #ffd700 70%, #ff9933 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .badge p { margin: 5px 0 0; font-size: 12px; color: #ffe6aa; }
   </style>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 </head>
 <body>
   <div class="badge">
-    <h1>SUDARSHAN CHAKRA 3D</h1>
-    <p>Phase 02: 24 Katili Blades | PBR Vedic Gold | 108 Blades Storm</p>
+    <h1>॥ श्री सुदर्शन चक्रम् ॥</h1>
+    <p>Authentic Vedic Model: Sacred ॐ Core • Blue Sapphires • 16 Katili Flame Blades • Solar Halo</p>
   </div>
   <canvas id="canvas"></canvas>
 
@@ -33,96 +47,263 @@
     const canvas = document.getElementById('canvas');
     const renderer = new THREE.WebGLRenderer({ canvas, antialias: true });
     renderer.setSize(1280, 720);
+    renderer.setPixelRatio(1);
     renderer.toneMapping = THREE.ACESFilmicToneMapping;
-    renderer.toneMappingExposure = 1.2;
+    renderer.toneMappingExposure = 1.35;
 
     const scene = new THREE.Scene();
-    scene.background = new THREE.Color(0x060714);
+    scene.background = new THREE.Color(0x0a0712);
 
-    const camera = new THREE.PerspectiveCamera(45, 1280 / 720, 0.1, 100);
-    camera.position.set(0, 8, 14);
+    const camera = new THREE.PerspectiveCamera(42, 1280 / 720, 0.1, 100);
+    camera.position.set(0, 10, 15.5);
     camera.lookAt(0, 0, 0);
 
-    // Lights
-    const amb = new THREE.AmbientLight(0xffffff, 0.8);
-    scene.add(amb);
+    // --- LIGHTING ---
+    const ambientLight = new THREE.AmbientLight(0xffeedd, 0.9);
+    scene.add(ambientLight);
 
-    const sun = new THREE.DirectionalLight(0xffea88, 2.0);
-    sun.position.set(10, 20, 15);
-    scene.add(sun);
+    const sunLight = new THREE.DirectionalLight(0xffe082, 3.0);
+    sunLight.position.set(15, 30, 20);
+    scene.add(sunLight);
 
-    const rimLight = new THREE.DirectionalLight(0x00e5ff, 1.2);
-    rimLight.position.set(-10, -5, -10);
-    scene.add(rimLight);
+    const blueRim = new THREE.DirectionalLight(0x00b0ff, 1.8);
+    blueRim.position.set(-15, -10, -15);
+    scene.add(blueRim);
 
-    const chakraLight = new THREE.PointLight(0xff9900, 3.0, 20);
-    scene.add(chakraLight);
+    const coreLight = new THREE.PointLight(0xff9900, 4.0, 25);
+    coreLight.position.set(0, 1.5, 0);
+    scene.add(coreLight);
 
-    // Build Chakra
+    // --- PROCEDURAL TEXTURE: SACRED ॐ MEDALLION & VEDIC FILIGREE ---
+    function createOmMedallionTexture() {
+      const c = document.createElement('canvas');
+      c.width = 1024;
+      c.height = 1024;
+      const ctx = c.getContext('2d');
+
+      // Radial Gold Gradient
+      const grad = ctx.createRadialGradient(512, 512, 40, 512, 512, 510);
+      grad.addColorStop(0.0, '#fff4cc');
+      grad.addColorStop(0.2, '#ffd700');
+      grad.addColorStop(0.5, '#d4af37');
+      grad.addColorStop(0.8, '#aa7c11');
+      grad.addColorStop(1.0, '#553c00');
+      ctx.fillStyle = grad;
+      ctx.fillRect(0, 0, 1024, 1024);
+
+      // Concentric Rings & Vedic Filigree
+      ctx.strokeStyle = 'rgba(255, 240, 180, 0.85)';
+      ctx.lineWidth = 4;
+      const ringRadii = [80, 140, 220, 290, 360, 430, 485];
+      ringRadii.forEach(r => {
+        ctx.beginPath();
+        ctx.arc(512, 512, r, 0, Math.PI * 2);
+        ctx.stroke();
+      });
+
+      // Beaded Ring
+      const numBeads = 48;
+      for (let i = 0; i < numBeads; i++) {
+        const ang = (i / numBeads) * Math.PI * 2;
+        const bx = 512 + Math.cos(ang) * 325;
+        const by = 512 + Math.sin(ang) * 325;
+        ctx.beginPath();
+        ctx.arc(bx, by, 6, 0, Math.PI * 2);
+        ctx.fillStyle = '#fff4cc';
+        ctx.fill();
+        ctx.strokeStyle = '#805000';
+        ctx.stroke();
+      }
+
+      // Radiating Lotus Petal Rays
+      ctx.strokeStyle = 'rgba(255, 220, 120, 0.6)';
+      ctx.lineWidth = 3;
+      for (let i = 0; i < 24; i++) {
+        const ang = (i / 24) * Math.PI * 2;
+        ctx.beginPath();
+        ctx.moveTo(512 + Math.cos(ang) * 140, 512 + Math.sin(ang) * 140);
+        ctx.lineTo(512 + Math.cos(ang) * 220, 512 + Math.sin(ang) * 220);
+        ctx.stroke();
+      }
+
+      // Sacred ॐ Glyph at the Center
+      ctx.font = 'bold 220px "Segoe UI", serif';
+      ctx.textAlign = 'center';
+      ctx.textBaseline = 'middle';
+      ctx.fillStyle = '#ff7700';
+      ctx.shadowColor = '#ffe57f';
+      ctx.shadowBlur = 25;
+      ctx.fillText('ॐ', 512, 518);
+
+      ctx.fillStyle = '#ffffff';
+      ctx.shadowBlur = 10;
+      ctx.fillText('ॐ', 512, 515);
+
+      return new THREE.CanvasTexture(c);
+    }
+
+    const omTexture = createOmMedallionTexture();
+
+    // --- MATERIALS ---
+    const goldPBR = new THREE.MeshStandardMaterial({
+      color: 0xffd700,
+      metalness: 0.95,
+      roughness: 0.16
+    });
+
+    const omMat = new THREE.MeshStandardMaterial({
+      map: omTexture,
+      metalness: 0.85,
+      roughness: 0.2,
+      emissive: 0x331a00,
+      emissiveIntensity: 0.4
+    });
+
+    const bladePBR = new THREE.MeshStandardMaterial({
+      color: 0xffea9f,
+      metalness: 0.98,
+      roughness: 0.1,
+      emissive: 0x221100
+    });
+
+    const sapphirePBR = new THREE.MeshStandardMaterial({
+      color: 0x0055ff,
+      metalness: 0.2,
+      roughness: 0.05,
+      emissive: 0x0022aa,
+      emissiveIntensity: 0.8
+    });
+
+    // --- BUILD THE SUDARSHAN CHAKRA ---
     const chakra = new THREE.Group();
     scene.add(chakra);
 
-    const goldMat = new THREE.MeshStandardMaterial({
-      color: 0xffd700,
-      metalness: 0.95,
-      roughness: 0.15
-    });
+    // 1. Central Stepped Hub with ॐ Medallion
+    const hubBase = new THREE.Mesh(new THREE.CylinderGeometry(2.3, 2.5, 0.45, 48), goldPBR);
+    chakra.add(hubBase);
 
-    const bladeMat = new THREE.MeshStandardMaterial({
-      color: 0xf5f5f5,
-      metalness: 0.98,
-      roughness: 0.08
-    });
+    const hubMid = new THREE.Mesh(new THREE.CylinderGeometry(1.9, 2.1, 0.4, 48), goldPBR);
+    hubMid.position.y = 0.35;
+    chakra.add(hubMid);
 
-    const coreMat = new THREE.MeshStandardMaterial({
-      color: 0xff8800,
-      metalness: 0.85,
-      roughness: 0.25,
-      emissive: 0x442200
-    });
+    // Medallion Top Cap
+    const medallionCap = new THREE.Mesh(new THREE.CylinderGeometry(1.65, 1.7, 0.15, 48), omMat);
+    medallionCap.position.y = 0.55;
+    chakra.add(medallionCap);
 
-    // Central Multi-tier Dome
-    const hub = new THREE.Mesh(new THREE.CylinderGeometry(1.8, 2.0, 0.6, 32), goldMat);
-    chakra.add(hub);
+    // Convex Golden Central Dome with Om
+    const centerDome = new THREE.Mesh(new THREE.SphereGeometry(1.15, 32, 16, 0, Math.PI * 2, 0, Math.PI * 0.45), omMat);
+    centerDome.position.y = 0.58;
+    chakra.add(centerDome);
 
-    const dome = new THREE.Mesh(new THREE.SphereGeometry(1.2, 32, 16), coreMat);
-    dome.position.y = 0.3;
-    chakra.add(dome);
+    // 2. 16 Embedded Blue Sapphires (Neelam Gems)
+    const numGems = 16;
+    for (let i = 0; i < numGems; i++) {
+      const ang = (i / numGems) * Math.PI * 2;
+      const gx = Math.cos(ang) * 2.15;
+      const gz = Math.sin(ang) * 2.15;
 
-    // Concentric Ring
-    const ring = new THREE.Mesh(new THREE.TorusGeometry(3.8, 0.25, 16, 48), goldMat);
-    ring.rotation.x = Math.PI / 2;
-    chakra.add(ring);
+      // Golden Bezel
+      const bezel = new THREE.Mesh(new THREE.CylinderGeometry(0.18, 0.22, 0.25, 16), goldPBR);
+      bezel.position.set(gx, 0.4, gz);
+      chakra.add(bezel);
 
-    // 8 Radial Spoke Ribs
-    for (let i = 0; i < 8; i++) {
-      const ang = (i / 8) * Math.PI * 2;
-      const spoke = new THREE.Mesh(new THREE.BoxGeometry(0.2, 0.2, 2.0), goldMat);
-      spoke.position.set(Math.cos(ang) * 2.8, 0, Math.sin(ang) * 2.8);
-      spoke.rotation.y = -ang + Math.PI / 2;
-      chakra.add(spoke);
+      // Blue Sapphire Cabochon
+      const gem = new THREE.Mesh(new THREE.SphereGeometry(0.14, 16, 12), sapphirePBR);
+      gem.position.set(gx, 0.5, gz);
+      chakra.add(gem);
     }
 
-    // 24 Curved Razor Katili Blades
-    for (let i = 0; i < 24; i++) {
-      const ang = (i / 24) * Math.PI * 2;
-      const blade = new THREE.Mesh(new THREE.ConeGeometry(0.35, 1.6, 4), bladeMat);
-      blade.position.set(Math.cos(ang) * 4.4, 0, Math.sin(ang) * 4.4);
-      blade.rotation.y = -ang + 0.45;
-      blade.rotation.z = Math.PI / 2;
+    // 3. Middle Concentric Decorative Ring
+    const midRing = new THREE.Mesh(new THREE.TorusGeometry(3.6, 0.22, 16, 64), goldPBR);
+    midRing.rotation.x = Math.PI / 2;
+    chakra.add(midRing);
+
+    // 16 Golden Lotus Petals Connecting Hub to Mid Ring
+    for (let i = 0; i < 16; i++) {
+      const ang = (i / 16) * Math.PI * 2;
+      const petalGeo = new THREE.ConeGeometry(0.42, 1.6, 4);
+      const petal = new THREE.Mesh(petalGeo, goldPBR);
+      petal.position.set(Math.cos(ang) * 2.9, 0.1, Math.sin(ang) * 2.9);
+      petal.rotation.y = -ang + Math.PI / 2;
+      petal.rotation.z = Math.PI / 2;
+      petal.scale.set(1.0, 1.0, 0.35);
+      chakra.add(petal);
+    }
+
+    // 4. Outer Heavy Structural Rim
+    const outerRim = new THREE.Mesh(new THREE.TorusGeometry(4.7, 0.28, 16, 64), goldPBR);
+    outerRim.rotation.x = Math.PI / 2;
+    chakra.add(outerRim);
+
+    // 5. 16 CURVED FLAME-SCYTHE KATILI BLADES (Matching Reference Image)
+    const bladeShape = new THREE.Shape();
+    bladeShape.moveTo(0, 0);
+    bladeShape.quadraticCurveTo(1.2, 0.4, 2.2, 1.4); // Outer sweeping curve
+    bladeShape.quadraticCurveTo(2.9, 2.5, 3.2, 3.6); // Sharp apex hook
+    bladeShape.quadraticCurveTo(2.3, 2.7, 1.4, 1.9); // Inner cutting serration
+    bladeShape.quadraticCurveTo(0.6, 1.0, 0, 0.8);
+    bladeShape.closePath();
+
+    const extrudeSettings = {
+      depth: 0.16,
+      bevelEnabled: true,
+      bevelSegments: 4,
+      steps: 2,
+      bevelSize: 0.08,
+      bevelThickness: 0.08
+    };
+
+    const bladeGeo = new THREE.ExtrudeGeometry(bladeShape, extrudeSettings);
+    bladeGeo.center();
+
+    const numBlades = 16;
+    for (let i = 0; i < numBlades; i++) {
+      const ang = (i / numBlades) * Math.PI * 2;
+      const blade = new THREE.Mesh(bladeGeo, bladePBR);
+      const radius = 5.2;
+      blade.position.set(Math.cos(ang) * radius, 0.0, Math.sin(ang) * radius);
+      blade.rotation.x = Math.PI / 2;
+      blade.rotation.z = ang - 0.75; // Forward scythe sweep
+      blade.scale.set(0.9, 0.9, 0.9);
       chakra.add(blade);
     }
 
-    // Glowing Halo
-    const halo = new THREE.Mesh(
-      new THREE.RingGeometry(4.8, 5.2, 48),
+    // 6. Blazing Golden Solar Halo Rings
+    const haloInner = new THREE.Mesh(
+      new THREE.RingGeometry(6.4, 6.7, 64),
       new THREE.MeshBasicMaterial({ color: 0xffaa00, side: THREE.DoubleSide, transparent: true, opacity: 0.85 })
     );
-    halo.rotation.x = Math.PI / 2;
-    chakra.add(halo);
+    haloInner.rotation.x = Math.PI / 2;
+    chakra.add(haloInner);
 
-    chakra.rotation.x = 0.5;
-    chakra.rotation.y = 0.3;
+    const haloOuter = new THREE.Mesh(
+      new THREE.RingGeometry(7.1, 7.35, 64),
+      new THREE.MeshBasicMaterial({ color: 0xff6600, side: THREE.DoubleSide, transparent: true, opacity: 0.65 })
+    );
+    haloOuter.rotation.x = Math.PI / 2;
+    chakra.add(haloOuter);
+
+    // Particle Swarm
+    const pCount = 300;
+    const pGeo = new THREE.BufferGeometry();
+    const pPos = new Float32Array(pCount * 3);
+    for (let i = 0; i < pCount; i++) {
+      const a = Math.random() * Math.PI * 2;
+      const r = 5.0 + Math.random() * 2.8;
+      pPos[i * 3] = Math.cos(a) * r;
+      pPos[i * 3 + 1] = (Math.random() - 0.5) * 0.8;
+      pPos[i * 3 + 2] = Math.sin(a) * r;
+    }
+    pGeo.setAttribute('position', new THREE.BufferAttribute(pPos, 3));
+    const pMat = new THREE.PointsMaterial({ color: 0xffd700, size: 0.18, transparent: true, opacity: 0.85 });
+    const particles = new THREE.Points(pGeo, pMat);
+    chakra.add(particles);
+
+    // Set cinematic perspective angle matching the user's reference image
+    chakra.rotation.x = 0.58;
+    chakra.rotation.y = -0.15;
+    chakra.rotation.z = -0.25;
 
     renderer.render(scene, camera);
   </script>
