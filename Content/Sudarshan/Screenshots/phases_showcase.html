@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8"/>
+  <title>SUDARSHAN: DIVINE UNIVERSE & BOSS BATTLE SHOWCASE</title>
+  <style>
+    body { margin: 0; background: #07091a; overflow: hidden; font-family: 'Cinzel', serif; }
+    #canvas { width: 100vw; height: 100vh; display: block; }
+    .badge {
+      position: absolute;
+      top: 25px;
+      left: 25px;
+      background: rgba(10, 14, 30, 0.9);
+      border: 2px solid #ffd700;
+      padding: 12px 24px;
+      border-radius: 10px;
+      color: #ffd700;
+      box-shadow: 0 0 30px rgba(255, 215, 0, 0.35);
+    }
+    .badge h1 { margin: 0; font-size: 20px; letter-spacing: 2px; }
+    .badge p { margin: 4px 0 0; font-size: 11px; color: #00e5ff; }
+  </style>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+</head>
+<body>
+  <div class="badge">
+    <h1>॥ वैकुण्ठ धाम • CELESTIAL UNIVERSE ॥</h1>
+    <p>Phase 03-07: Floating Islands • Golden Temple • Maha-Kaliya Boss • Sacred Portal</p>
+  </div>
+  <canvas id="canvas"></canvas>
+
+  <script>
+    const canvas = document.getElementById('canvas');
+    const renderer = new THREE.WebGLRenderer({ canvas, antialias: true });
+    renderer.setSize(1280, 720);
+    renderer.toneMapping = THREE.ACESFilmicToneMapping;
+    renderer.toneMappingExposure = 1.35;
+
+    const scene = new THREE.Scene();
+    scene.background = new THREE.Color(0x0c1530);
+    scene.fog = new THREE.FogExp2(0x0c1530, 0.01);
+
+    const camera = new THREE.PerspectiveCamera(45, 1280 / 720, 0.1, 500);
+    camera.position.set(0, 18, 38);
+    camera.lookAt(0, 4, 0);
+
+    const amb = new THREE.AmbientLight(0xddeeff, 1.0);
+    scene.add(amb);
+
+    const sun = new THREE.DirectionalLight(0xffea88, 2.8);
+    sun.position.set(30, 60, 40);
+    scene.add(sun);
+
+    // Floating Islands & Golden Temples
+    const islandMat = new THREE.MeshStandardMaterial({ color: 0xf5eedc, roughness: 0.5 });
+    const goldMat = new THREE.MeshStandardMaterial({ color: 0xffd700, metalness: 0.9, roughness: 0.2 });
+
+    const mainIsland = new THREE.Mesh(new THREE.CylinderGeometry(40, 25, 14, 32), islandMat);
+    mainIsland.position.set(0, -7, 0);
+    scene.add(mainIsland);
+
+    // Shikhara Temple
+    const templeBase = new THREE.Mesh(new THREE.BoxGeometry(18, 8, 18), islandMat);
+    templeBase.position.set(0, 4, -18);
+    scene.add(templeBase);
+
+    const shikhara = new THREE.Mesh(new THREE.ConeGeometry(9, 26, 8), goldMat);
+    shikhara.position.set(0, 21, -18);
+    scene.add(shikhara);
+
+    // Portal
+    const portalTorus = new THREE.Mesh(new THREE.TorusGeometry(4.5, 0.35, 16, 48), goldMat);
+    portalTorus.position.set(0, 5, -5);
+    scene.add(portalTorus);
+
+    const portalDisc = new THREE.Mesh(new THREE.CircleGeometry(4.2, 32), new THREE.MeshBasicMaterial({ color: 0x9c27b0, side: THREE.DoubleSide }));
+    portalDisc.position.set(0, 5, -5);
+    scene.add(portalDisc);
+
+    // Maha-Kaliya Boss (Multi-headed Serpent)
+    const bossMat = new THREE.MeshStandardMaterial({ color: 0x111111, roughness: 0.4 });
+    const eyeMat = new THREE.MeshBasicMaterial({ color: 0xff0000 });
+    const bossGroup = new THREE.Group();
+    bossGroup.position.set(-15, 6, -8);
+    scene.add(bossGroup);
+
+    for (let h = -2; h <= 2; h++) {
+      const head = new THREE.Mesh(new THREE.SphereGeometry(1.6, 16, 16), bossMat);
+      head.position.set(h * 2.5, Math.abs(h) * 0.8, -h * 0.5);
+      bossGroup.add(head);
+
+      const eye = new THREE.Mesh(new THREE.SphereGeometry(0.35, 8, 8), eyeMat);
+      eye.position.set(h * 2.5 + 0.6, Math.abs(h) * 0.8 + 0.4, -h * 0.5 + 1.4);
+      bossGroup.add(eye);
+    }
+
+    // Player with Sudarshan Chakra
+    const playerMat = new THREE.MeshStandardMaterial({ color: 0x4fc3f7, roughness: 0.5 });
+    const player = new THREE.Mesh(new THREE.CylinderGeometry(0.8, 0.7, 3.0, 16), playerMat);
+    player.position.set(10, 1.5, 8);
+    scene.add(player);
+
+    const chakra = new THREE.Mesh(new THREE.TorusGeometry(2.0, 0.25, 16, 32), goldMat);
+    chakra.position.set(10, 4.8, 8);
+    chakra.rotation.x = Math.PI / 2;
+    scene.add(chakra);
+
+    renderer.render(scene, camera);
+  </script>
+</body>
+</html>
