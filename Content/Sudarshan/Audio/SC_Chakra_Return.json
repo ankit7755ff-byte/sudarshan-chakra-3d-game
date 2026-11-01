@@ -1,0 +1,9 @@
+{
+  "SoundCueName": "SC_Chakra_Return",
+  "Type": "SoundCue",
+  "DurationSeconds": 0.65,
+  "Waveforms": [
+    { "Type": "MagneticLockImpact", "StartHz": 90, "EndHz": 40, "DurationMs": 150 },
+    { "Type": "ConchHarmonicChime", "Frequencies": [440, 880, 1320], "DecayMs": 600 }
+  ]
+}
