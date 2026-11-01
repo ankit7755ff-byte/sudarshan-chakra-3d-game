@@ -566,7 +566,16 @@
       font-weight: 700;
       color: var(--gold);
     }
-  </style>
+  
+/* Open-world action expansion */
+#ow-panel{position:absolute;right:18px;bottom:18px;z-index:30;width:230px;padding:12px;background:rgba(5,10,24,.88);border:1px solid #d5a83e;border-radius:12px;color:#fff;font:12px Poppins,sans-serif;pointer-events:auto;backdrop-filter:blur(8px)}
+#ow-panel b{color:#ffd700}#ow-panel .ow-row{display:flex;justify-content:space-between;margin:4px 0}
+#ow-actions{display:flex;gap:6px;flex-wrap:wrap;margin-top:8px}#ow-actions button{border:1px solid #ffd700;background:#20182b;color:#fff;border-radius:8px;padding:8px 10px;font-weight:700}
+#ow-joystick{position:absolute;left:18px;bottom:24px;width:116px;height:116px;border:2px solid #ffd70088;border-radius:50%;background:#0b173b88;z-index:31;touch-action:none;display:none}
+#ow-knob{position:absolute;width:44px;height:44px;left:34px;top:34px;border-radius:50%;background:#ffe08a99}
+#ow-toast{position:absolute;top:18%;left:50%;transform:translateX(-50%);z-index:40;color:#ffe08a;text-shadow:0 2px 8px #000;font:700 18px Cinzel,serif;pointer-events:none;text-align:center}
+@media(max-width:760px){#ow-panel{right:8px;bottom:10px;width:175px;font-size:10px}#ow-joystick{display:block}#ow-actions button{padding:8px 7px;font-size:10px}}
+</style>
 </head>
 <body>
   <b:section id='main'>
@@ -1584,7 +1593,75 @@
 
                 if (dist < (a.isBoss ? 3.2 : 1.8)) {
                   Game.playerHp -= dt * (a.isBoss ? 28 : 12);
-                  if (Game.playerHp <= 0) {
+                  if (G
+          // --- PHASE 08: OPEN-WORLD EXPLORATION + GOD-OF-WAR STYLE COMBAT ---
+          const owStyle = document.createElement('style');
+          owStyle.textContent = '';
+          document.head.appendChild(owStyle);
+          const owPanel = document.createElement('div');
+          owPanel.id = 'ow-panel';
+          owPanel.innerHTML = '<b>धर्मयुद्ध अभियान</b><div class="ow-row"><span>क्षेत्र</span><strong id="ow-zone">कुरुक्षेत्र</strong></div><div class="ow-row"><span>अभियान</span><strong id="ow-quest">असुरों का संहार</strong></div><div class="ow-row"><span>विजय</span><strong id="ow-kills">0</strong></div><div class="ow-row"><span>सर्वश्रेष्ठ स्कोर</span><strong id="ow-best">0</strong></div><div id="ow-actions"><button id="ow-melee">⚔️ गदा वार [F]</button><button id="ow-dodge">💨 दिव्य डैश [Space]</button><button id="ow-save">💾 सेव</button></div>';
+          document.getElementById('app-container').appendChild(owPanel);
+          const owToast = document.createElement('div'); owToast.id='ow-toast'; document.getElementById('app-container').appendChild(owToast);
+          const owJoy = document.createElement('div'); owJoy.id='ow-joystick'; owJoy.innerHTML='<div id="ow-knob"></div>'; document.getElementById('app-container').appendChild(owJoy);
+          let owJoyX=0, owJoyY=0, owJoyOn=false, owQuestStep=0, owBest=Number(localStorage.getItem('sudarshan_best_score')||0);
+          document.getElementById('ow-best').textContent=owBest;
+          function owSay(t){owToast.textContent=t;clearTimeout(owSay.timer);owSay.timer=setTimeout(()=>owToast.textContent='',2400);}
+          function owSave(){localStorage.setItem('sudarshan_best_score',String(Math.max(owBest,Game.score)));localStorage.setItem('sudarshan_last_realm',RealmManager.currentRealm);owBest=Math.max(owBest,Game.score);document.getElementById('ow-best').textContent=owBest;owSay('तुम्हारी विजय सुरक्षित कर दी गई।');}
+          document.getElementById('ow-save').addEventListener('click',owSave);
+          function owMelee(){
+            if(!Game.running)return;
+            let victim=null,nearest=5.8;
+            for(const a of asuras){const d=krishnaGroup.position.distanceTo(a.mesh.position);if(d<nearest){nearest=d;victim=a;}}
+            if(!victim){owSay('असुर वार की सीमा में नहीं है');return;}
+            Sound.slice();victim.hp-=victim.isBoss?95:180;triggerSparks(victim.mesh.position.x,victim.mesh.position.y+1,victim.mesh.position.z);
+            if(victim.isBoss)document.getElementById('boss-hp-fill').style.width=Math.max(0,victim.hp/victim.maxHp*100)+'%';
+            if(victim.hp<=0){const ix=asuras.indexOf(victim);if(ix>=0)asuras.splice(ix,1);scene.remove(victim.mesh);Game.kills++;Game.score+=victim.isBoss?1800:150;owSay(victim.isBoss?'महादानव पर विजय!':'असुर का वध!');if(victim.isBoss)document.getElementById('boss-bar-wrap').style.display='none';}
+            else owSay('दिव्य प्रहार सफल!');
+            Game.updateHud();
+          }
+          document.getElementById('ow-melee').addEventListener('click',owMelee);
+          document.getElementById('ow-dodge').addEventListener('click',divineDash);
+          window.addEventListener('keydown',e=>{if(Game.running&&(e.key==='f'||e.key==='F'))owMelee();});
+          const owKnob=document.getElementById('ow-knob');
+          function owJoyMove(e){const r=owJoy.getBoundingClientRect();let dx=e.clientX-r.left-r.width/2,dy=e.clientY-r.top-r.height/2;const l=Math.hypot(dx,dy),k=Math.min(1,43/(l||1));dx*=k;dy*=k;owJoyX=dx/43;owJoyY=dy/43;owKnob.style.transform='translate('+dx+'px,'+dy+'px)';}
+          owJoy.addEventListener('pointerdown',e=>{owJoyOn=true;owJoy.setPointerCapture(e.pointerId);owJoyMove(e);});
+          owJoy.addEventListener('pointermove',e=>{if(owJoyOn)owJoyMove(e);});
+          function owJoyEnd(){owJoyOn=false;owJoyX=0;owJoyY=0;owKnob.style.transform='translate(0,0)';}
+          owJoy.addEventListener('pointerup',owJoyEnd);owJoy.addEventListener('pointercancel',owJoyEnd);
+          // Procedural exploration landmarks: sacred road, river, village and temple.
+          const owWorld=new THREE.Group();scene.add(owWorld);
+          const roadMat=new THREE.MeshStandardMaterial({color:0x8a7350,roughness:1});
+          const road=new THREE.Mesh(new THREE.PlaneGeometry(12,210),roadMat);road.rotation.x=-Math.PI/2;road.position.set(0,.035,-42);owWorld.add(road);
+          const riverMat=new THREE.MeshStandardMaterial({color:0x168eb4,metalness:.25,roughness:.18,transparent:true,opacity:.82});
+          const river=new THREE.Mesh(new THREE.PlaneGeometry(26,190),riverMat);river.rotation.x=-Math.PI/2;river.position.set(62,.06,-35);owWorld.add(river);
+          const templeMat=new THREE.MeshStandardMaterial({color:0xc99a45,metalness:.35,roughness:.55});
+          const temple=new THREE.Group();temple.position.set(-42,0,-72);owWorld.add(temple);
+          const base=new THREE.Mesh(new THREE.BoxGeometry(18,2,14),templeMat);base.position.y=1;temple.add(base);
+          const sanctum=new THREE.Mesh(new THREE.CylinderGeometry(4.5,6,11,8),templeMat);sanctum.position.y=7;temple.add(sanctum);
+          const spire=new THREE.Mesh(new THREE.ConeGeometry(4.8,8,8),goldTempleMat);spire.position.y=16.5;temple.add(spire);
+          for(let i=0;i<4;i++){const col=new THREE.Mesh(new THREE.CylinderGeometry(.55,.7,7,10),templeMat);col.position.set(-7+i*4.6,4,7);temple.add(col);}
+          // Decorative village huts and campfires
+          for(let i=0;i<7;i++){const hut=new THREE.Group();const x=34+(i%3)*9,z=-18-Math.floor(i/3)*13;const wall=new THREE.Mesh(new THREE.BoxGeometry(6,3.5,5),new THREE.MeshStandardMaterial({color:0x9b7049}));wall.position.y=1.75;hut.add(wall);const roof=new THREE.Mesh(new THREE.ConeGeometry(5,3,4),new THREE.MeshStandardMaterial({color:0x743c2b}));roof.position.y=5;roof.rotation.y=Math.PI/4;hut.add(roof);hut.position.set(x,0,z);owWorld.add(hut);}
+          // Quest marker at the temple; walk there after defeating the first wave.
+          const questMarker=new THREE.Mesh(new THREE.TorusGeometry(2.2,.18,10,32),new THREE.MeshBasicMaterial({color:0xffd700}));questMarker.rotation.x=Math.PI/2;questMarker.position.set(-42,.35,-72);owWorld.add(questMarker);
+          const oldAnimate=animate;
+          // Extend the existing simulation loop without replacing the original game systems.
+          const owOriginalUpdateHud=Game.updateHud.bind(Game);
+          Game.updateHud=function(){owOriginalUpdateHud();document.getElementById('ow-kills').textContent=this.kills;document.getElementById('ow-zone').textContent=RealmManager.currentRealm==='Earth'?'कुरुक्षेत्र':'वैकुण्ठ';document.getElementById('ow-quest').textContent=this.kills<5?'असुर सेना को रोको':this.kills<12?'मंदिर तक पहुँचो':'महादानव को चुनौती';};
+          const owOriginalStart=Game.start.bind(Game);
+          Game.start=function(){owOriginalStart();owQuestStep=0;owWorld.visible=true;owSay('कुरुक्षेत्र में तुम्हारा अभियान आरम्भ हुआ!');};
+          const owOriginalGameOver=Game.gameOver.bind(Game);
+          Game.gameOver=function(){owSave();owOriginalGameOver();};
+          // Mobile stick is translated into the existing WASD input state.
+          const owOriginalAnimate=animate;
+          const owTick=setInterval(()=>{if(Game.running){keys['a']=owJoyX<-.18;keys['d']=owJoyX>.18;keys['w']=owJoyY<-.18;keys['s']=owJoyY>.18;const best=Math.max(owBest,Game.score);if(best>owBest){owBest=best;document.getElementById('ow-best').textContent=owBest;}}},35);
+          // Landmark interaction and discovery rewards.
+          let owTempleFound=false;
+          const owDiscovery=setInterval(()=>{if(!Game.running||owTempleFound)return;if(krishnaGroup.position.distanceTo(temple.position)<13){owTempleFound=true;Game.score+=500;Game.playerStamina=100;Game.updateHud();owSay('प्राचीन धर्म-मंदिर मिला! +500 अंक');}},250);
+          window.addEventListener('beforeunload',()=>{try{localStorage.setItem('sudarshan_best_score',String(Math.max(owBest,Game.score)));}catch(err){}});
+          Game.updateHud();
+ame.playerHp <= 0) {
                     Game.playerHp = 0;
                     Game.gameOver();
                   }
