@@ -1,0 +1,9 @@
+{
+  "SoundCueName": "SC_Chakra_Charge",
+  "Type": "SoundCue",
+  "DurationSeconds": 1.2,
+  "Waveforms": [
+    { "Type": "AscendingChimeSwell", "StartHz": 220, "EndHz": 1320, "DurationMs": 1100 },
+    { "Type": "VedicResonanceFlute", "Harmonics": [528, 660, 792], "DurationMs": 1200 }
+  ]
+}
