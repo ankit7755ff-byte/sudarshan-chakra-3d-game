@@ -1,0 +1,9 @@
+{
+  "SoundCueName": "SC_Chakra_Throw",
+  "Type": "SoundCue",
+  "DurationSeconds": 0.45,
+  "Waveforms": [
+    { "Type": "WhiteNoiseBurst", "FrequencyLowHz": 1200, "FrequencyHighHz": 4800, "DecayMs": 180 },
+    { "Type": "PitchedMetallicSweep", "StartHz": 2400, "EndHz": 380, "DurationMs": 220 }
+  ]
+}
