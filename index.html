@@ -4,8 +4,8 @@
 <head>
   <meta charset='utf-8'/>
   <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover' name='viewport'/>
-  <title>Bhagwan Shri Krishna Sudarshan Chakra 3D - Asura Vadh Maha-Yuddha</title>
-  <meta content='Bhagwan Shri Krishna ka Sudarshan Chakra 3D Battle Game. Katili blades se asuron aur serpents ka sanhar karein.' name='description'/>
+  <title>SUDARSHAN: THE DIVINE UNIVERSE (Phase 01 - 07)</title>
+  <meta content='SUDARSHAN: 3D Divine Universe Action Game. Earth Realm Kurukshetra and Celestial Vaikuntha with Sudarshan Chakra combat.' name='description'/>
   <link href='https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;900&amp;family=Poppins:wght@400;600;700&amp;family=Rozha+One&amp;display=swap' rel='stylesheet'/>
   <script src='https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js'></script>
 
@@ -21,6 +21,7 @@
       --krishna-blue: #00e5ff;
       --peetambar: #ff9933;
       --fire-red: #ff3333;
+      --celestial-purple: #9c27b0;
       --bg-dark: #070712;
       --bg-card: rgba(13, 14, 28, 0.92);
       --font-vedic: 'Cinzel', 'Rozha One', serif;
@@ -62,7 +63,6 @@
       display: block;
     }
 
-    /* Screen Overlay System */
     .screen {
       position: absolute;
       top: 0;
@@ -86,20 +86,20 @@
 
     /* WELCOME SCREEN */
     #welcome-screen {
-      background: radial-gradient(circle at center, rgba(16, 20, 48, 0.7) 0%, rgba(5, 5, 12, 0.95) 100%);
+      background: radial-gradient(circle at center, rgba(16, 20, 48, 0.75) 0%, rgba(5, 5, 12, 0.96) 100%);
       padding: 20px;
     }
 
     .welcome-card {
       background: var(--bg-card);
       border: 2px solid var(--gold-dark);
-      box-shadow: 0 0 40px rgba(255, 215, 0, 0.25), inset 0 0 20px rgba(255, 153, 51, 0.1);
-      border-radius: 16px;
-      padding: 24px 30px;
-      max-width: 520px;
+      box-shadow: 0 0 50px rgba(255, 215, 0, 0.3), inset 0 0 25px rgba(255, 153, 51, 0.15);
+      border-radius: 18px;
+      padding: 26px 32px;
+      max-width: 540px;
       width: 95%;
       text-align: center;
-      backdrop-filter: blur(10px);
+      backdrop-filter: blur(12px);
       position: relative;
       overflow: hidden;
       z-index: 20;
@@ -113,7 +113,7 @@
       width: 200%;
       height: 200%;
       background: conic-gradient(from 0deg, transparent, rgba(255, 215, 0, 0.15), transparent 30%);
-      animation: rotateLight 12s linear infinite;
+      animation: rotateLight 14s linear infinite;
       pointer-events: none;
     }
 
@@ -124,9 +124,9 @@
 
     .vedic-badge {
       display: inline-block;
-      padding: 4px 14px;
+      padding: 4px 16px;
       border-radius: 20px;
-      background: linear-gradient(90deg, rgba(255,153,51,0.2), rgba(255,215,0,0.3));
+      background: linear-gradient(90deg, rgba(255,153,51,0.25), rgba(255,215,0,0.35));
       border: 1px solid var(--gold);
       color: var(--gold);
       font-size: 11px;
@@ -138,13 +138,13 @@
 
     .game-title {
       font-family: var(--font-vedic);
-      font-size: 26px;
+      font-size: 28px;
       font-weight: 900;
       color: #fff;
-      text-shadow: 0 0 15px var(--gold-glow);
+      text-shadow: 0 0 20px var(--gold-glow);
       line-height: 1.2;
       margin-bottom: 6px;
-      background: linear-gradient(180deg, #ffffff 20%, #ffd700 80%, #ff9933 100%);
+      background: linear-gradient(180deg, #ffffff 10%, #ffd700 70%, #ff9933 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
@@ -162,7 +162,7 @@
     .auth-tabs {
       display: flex;
       gap: 6px;
-      background: rgba(0, 0, 0, 0.4);
+      background: rgba(0, 0, 0, 0.45);
       padding: 4px;
       border-radius: 10px;
       margin-bottom: 14px;
@@ -205,7 +205,7 @@
       width: 100%;
       padding: 10px 12px;
       border-radius: 8px;
-      background: rgba(0, 0, 0, 0.5);
+      background: rgba(0, 0, 0, 0.55);
       border: 1px solid rgba(255, 215, 0, 0.3);
       color: #fff;
       font-size: 13px;
@@ -216,28 +216,6 @@
     .form-control:focus {
       border-color: var(--gold);
       box-shadow: 0 0 10px var(--gold-glow);
-    }
-
-    .user-pill {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 10px 14px;
-      background: rgba(0, 229, 255, 0.1);
-      border: 1px solid var(--krishna-blue);
-      border-radius: 10px;
-      margin-bottom: 14px;
-    }
-
-    .user-pill-name {
-      color: var(--krishna-blue);
-      font-weight: 700;
-      font-size: 13px;
-    }
-
-    .user-pill-rank {
-      color: var(--gold);
-      font-size: 11px;
     }
 
     .btn-gold {
@@ -254,8 +232,6 @@
       cursor: pointer;
       box-shadow: 0 4px 20px rgba(255, 153, 51, 0.4), 0 0 15px rgba(255, 215, 0, 0.3);
       transition: transform 0.15s ease, box-shadow 0.15s ease;
-      position: relative;
-      overflow: hidden;
     }
 
     .btn-gold:hover {
@@ -263,34 +239,14 @@
       box-shadow: 0 6px 25px rgba(255, 153, 51, 0.6);
     }
 
-    .btn-gold:active {
-      transform: translateY(1px);
-    }
-
-    .btn-secondary {
-      width: 100%;
-      padding: 9px 12px;
-      background: transparent;
-      border: 1px solid rgba(255, 255, 255, 0.2);
-      color: #bbb;
-      border-radius: 8px;
-      font-size: 12px;
-      cursor: pointer;
-      margin-top: 8px;
-    }
-
-    .btn-secondary:hover {
-      border-color: var(--gold);
-      color: #fff;
-    }
-
     .features-list {
-      display: flex;
-      justify-content: space-around;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 6px;
       margin-top: 14px;
       padding-top: 12px;
       border-top: 1px solid rgba(255, 255, 255, 0.1);
-      font-size: 11px;
+      font-size: 10px;
       color: #ffd899;
     }
 
@@ -298,7 +254,7 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 3px;
+      gap: 2px;
     }
 
     /* IN-GAME HUD */
@@ -321,14 +277,15 @@
       justify-content: space-between;
       align-items: center;
       gap: 8px;
+      flex-wrap: wrap;
     }
 
     .hud-box {
-      background: rgba(10, 12, 25, 0.85);
+      background: rgba(10, 12, 25, 0.88);
       border: 1px solid rgba(255, 215, 0, 0.3);
       border-radius: 8px;
       padding: 6px 12px;
-      backdrop-filter: blur(6px);
+      backdrop-filter: blur(8px);
       box-shadow: 0 2px 10px rgba(0,0,0,0.5);
       pointer-events: auto;
     }
@@ -342,7 +299,7 @@
 
     .hud-val {
       font-family: var(--font-vedic);
-      font-size: 16px;
+      font-size: 15px;
       font-weight: 700;
       color: var(--gold);
     }
@@ -353,19 +310,38 @@
       font-size: 15px;
     }
 
+    /* REALM INDICATOR BANNER */
+    #realm-indicator {
+      position: absolute;
+      top: 55px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgba(10, 15, 30, 0.85);
+      border: 1px solid var(--krishna-blue);
+      border-radius: 20px;
+      padding: 4px 18px;
+      font-family: var(--font-vedic);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      color: var(--krishna-blue);
+      box-shadow: 0 0 15px rgba(0, 229, 255, 0.3);
+      pointer-events: auto;
+    }
+
     /* BOSS HEALTH BAR */
     #boss-bar-wrap {
       position: absolute;
-      top: 60px;
+      top: 90px;
       left: 50%;
       transform: translateX(-50%);
       width: 90%;
-      max-width: 440px;
-      background: rgba(15, 5, 5, 0.9);
+      max-width: 460px;
+      background: rgba(20, 5, 5, 0.92);
       border: 1px solid var(--fire-red);
       border-radius: 8px;
-      padding: 6px 10px;
-      box-shadow: 0 0 20px rgba(255, 51, 51, 0.3);
+      padding: 6px 12px;
+      box-shadow: 0 0 25px rgba(255, 51, 51, 0.4);
       display: none;
       pointer-events: auto;
       text-align: center;
@@ -396,7 +372,7 @@
       transition: width 0.15s linear;
     }
 
-    /* PLAYER HEALTH & CHAKRA STATUS */
+    /* PLAYER STATUS (Bottom Left) */
     .hud-bottom-bar {
       position: absolute;
       bottom: 20px;
@@ -408,9 +384,9 @@
     }
 
     .bar-container {
-      width: 200px;
+      width: 210px;
       height: 12px;
-      background: rgba(0, 0, 0, 0.6);
+      background: rgba(0, 0, 0, 0.65);
       border: 1px solid var(--gold);
       border-radius: 6px;
       overflow: hidden;
@@ -423,7 +399,7 @@
       transition: width 0.2s ease;
     }
 
-    .bar-fill-boost {
+    .bar-fill-stamina {
       width: 100%;
       height: 100%;
       background: linear-gradient(90deg, #ff9933, #ffd700);
@@ -458,7 +434,7 @@
     #reticle::after {
       top: 18px; left: 18px; width: 8px; height: 8px;
       background: var(--krishna-blue);
-      box-shadow: 0 0 10px var(--krishna-blue);
+      box-shadow: 0 0 12px var(--krishna-blue);
     }
 
     @keyframes spinReticle {
@@ -466,27 +442,26 @@
       100% { transform: rotate(360deg); }
     }
 
-    /* CONTROLS HINT & FLOATING BUTTONS */
+    /* ACTION CONTROLS (PC & MOBILE) */
     .action-controls {
       position: absolute;
       bottom: 20px;
       right: 20px;
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-      align-items: center;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
       pointer-events: auto;
     }
 
     .action-btn {
-      width: 68px;
-      height: 68px;
+      width: 62px;
+      height: 62px;
       border-radius: 50%;
       border: 2px solid var(--gold);
-      background: radial-gradient(circle, rgba(255, 153, 51, 0.4) 0%, rgba(10, 10, 25, 0.9) 100%);
+      background: radial-gradient(circle, rgba(255, 153, 51, 0.4) 0%, rgba(10, 10, 25, 0.92) 100%);
       color: var(--gold);
       font-family: var(--font-vedic);
-      font-size: 11px;
+      font-size: 10px;
       font-weight: 700;
       display: flex;
       flex-direction: column;
@@ -503,19 +478,16 @@
       box-shadow: 0 0 25px var(--gold);
     }
 
-    .action-btn.boost-btn {
-      width: 58px;
-      height: 58px;
-      border-color: var(--krishna-blue);
-      color: var(--krishna-blue);
-    }
+    .btn-recall { border-color: #00e5ff; color: #00e5ff; }
+    .btn-dash { border-color: #ff9933; color: #ff9933; }
+    .btn-portal { border-color: #9c27b0; color: #e1bee7; }
 
     /* AUDIO TOGGLE BUTTON */
     #audio-toggle {
       position: absolute;
       top: 12px;
       right: 12px;
-      background: rgba(10, 12, 25, 0.85);
+      background: rgba(10, 12, 25, 0.88);
       border: 1px solid var(--gold);
       border-radius: 20px;
       padding: 6px 12px;
@@ -530,10 +502,10 @@
     /* KILL NOTIFICATION FLOATER */
     #kill-banner {
       position: absolute;
-      top: 110px;
+      top: 135px;
       left: 50%;
       transform: translateX(-50%);
-      background: linear-gradient(90deg, transparent, rgba(255, 51, 51, 0.7), transparent);
+      background: linear-gradient(90deg, transparent, rgba(255, 51, 51, 0.75), transparent);
       color: #fff;
       font-family: var(--font-vedic);
       font-size: 16px;
@@ -545,24 +517,24 @@
       opacity: 0;
       transition: opacity 0.3s ease;
       pointer-events: none;
-      text-shadow: 0 0 10px #ff3333;
+      text-shadow: 0 0 12px #ff3333;
     }
 
     /* GAME OVER & VICTORY SCREEN */
     #gameover-screen {
-      background: radial-gradient(circle at center, rgba(30, 5, 5, 0.85) 0%, rgba(5, 5, 10, 0.98) 100%);
+      background: radial-gradient(circle at center, rgba(30, 5, 5, 0.88) 0%, rgba(5, 5, 10, 0.98) 100%);
     }
 
     .gameover-card {
       background: var(--bg-card);
       border: 2px solid var(--fire-red);
-      box-shadow: 0 0 50px rgba(255, 51, 51, 0.3);
-      border-radius: 16px;
-      padding: 24px 30px;
-      max-width: 480px;
+      box-shadow: 0 0 55px rgba(255, 51, 51, 0.35);
+      border-radius: 18px;
+      padding: 26px 32px;
+      max-width: 490px;
       width: 90%;
       text-align: center;
-      backdrop-filter: blur(10px);
+      backdrop-filter: blur(12px);
     }
 
     .gameover-title {
@@ -582,7 +554,7 @@
     }
 
     .score-item {
-      background: rgba(0, 0, 0, 0.4);
+      background: rgba(0, 0, 0, 0.45);
       border: 1px solid rgba(255, 215, 0, 0.2);
       border-radius: 8px;
       padding: 8px;
@@ -594,32 +566,6 @@
       font-weight: 700;
       color: var(--gold);
     }
-
-    /* Virtual Joystick for Mobile */
-    #joystick-zone {
-      position: absolute;
-      bottom: 20px;
-      left: 20px;
-      width: 120px;
-      height: 120px;
-      border-radius: 50%;
-      background: rgba(255, 255, 255, 0.05);
-      border: 2px dashed rgba(255, 215, 0, 0.3);
-      pointer-events: auto;
-      display: none;
-    }
-
-    #joystick-nub {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      width: 44px;
-      height: 44px;
-      margin: -22px 0 0 -22px;
-      border-radius: 50%;
-      background: radial-gradient(circle, var(--krishna-blue), #007799);
-      box-shadow: 0 0 10px var(--krishna-blue);
-    }
   </style>
 </head>
 <body>
@@ -627,17 +573,14 @@
     <b:widget id='Blog1' locked='true' title='Blog Posts' type='Blog'>
       <b:includable id='main'>
         <div id='app-container'>
-          <!-- 3D WebGL Canvas -->
           <canvas id='three-canvas'></canvas>
-
-          <!-- Audio Toggle -->
           <button id='audio-toggle'>🔊 BGM: ON</button>
 
           <!-- SCREEN 1: WELCOME & AUTH -->
           <div class='screen' id='welcome-screen'>
             <div class='welcome-card'>
-              <div class='vedic-badge'>॥ श्री कृष्णाय नमः ॥</div>
-              <h1 class='game-title'>SUDARSHAN CHAKRA 3D</h1>
+              <div class='vedic-badge'>॥ श्री कृष्णाय नमः • PHASE 01-07 MASTER ॥</div>
+              <h1 class='game-title'>SUDARSHAN: THE DIVINE UNIVERSE</h1>
               <div class='shloka-text'>
                 "यदा यदा हि धर्मस्य ग्लानिर्भवति भारत ।<br/>
                 अभ्युत्थानमधर्मस्य तदात्मानं सृजाम्यहम् ॥"
@@ -648,10 +591,8 @@
                 <button class='auth-tab-btn active' id='tab-guest-btn'>Atithi (Guest)</button>
                 <button class='auth-tab-btn' id='tab-login-btn'>Sign In</button>
                 <button class='auth-tab-btn' id='tab-signup-btn'>Sign Up</button>
-                <button class='auth-tab-btn' id='tab-forgot-btn'>Forgot</button>
               </div>
 
-              <!-- Form Sections -->
               <div id='form-guest' class='form-view'>
                 <div class='form-group'>
                   <label>Aapka Gamer / Yoddha Name:</label>
@@ -664,10 +605,6 @@
                   <label>Gamer ID ya Email:</label>
                   <input type='text' id='login-id' class='form-control' placeholder='Enter username/email'/>
                 </div>
-                <div class='form-group'>
-                  <label>Secret Password:</label>
-                  <input type='password' id='login-pass' class='form-control' placeholder='••••••••'/>
-                </div>
               </div>
 
               <div id='form-signup' class='form-view' style='display:none;'>
@@ -675,44 +612,26 @@
                   <label>New Gamer Name:</label>
                   <input type='text' id='signup-name' class='form-control' placeholder='e.g. Mahabali Bheem'/>
                 </div>
-                <div class='form-group'>
-                  <label>Email Address:</label>
-                  <input type='email' id='signup-email' class='form-control' placeholder='warrior@kurukshetra.com'/>
-                </div>
-                <div class='form-group'>
-                  <label>Choose Password:</label>
-                  <input type='password' id='signup-pass' class='form-control' placeholder='••••••••'/>
-                </div>
               </div>
 
-              <div id='form-forgot' class='form-view' style='display:none;'>
-                <div class='form-group'>
-                  <label>Registered Email:</label>
-                  <input type='email' id='forgot-email' class='form-control' placeholder='Enter your email'/>
-                </div>
-                <p style='font-size:11px;color:#aaa;margin-bottom:8px;'>Naya password aapki device me reset kar diya jayega.</p>
-              </div>
-
-              <!-- Action Button -->
-              <button class='btn-gold' id='start-btn'>⚔️ YUDDHA SHURU KAREIN ⚔️</button>
-              <div id='auth-status-msg' style='font-size:11px;color:#00e5ff;margin-top:6px;min-height:16px;'></div>
+              <button class='btn-gold' id='start-btn'>⚔️ ENTER DIVINE UNIVERSE ⚔️</button>
 
               <div class='features-list'>
                 <div class='feature-item'>
-                  <span>🎯</span>
-                  <b>Target &amp; Shoot</b>
+                  <span>🔱</span>
+                  <b>Chakra Slicing</b>
                 </div>
                 <div class='feature-item'>
-                  <span>⚡</span>
-                  <b>Katili Blades</b>
+                  <span>💨</span>
+                  <b>Divine Dash</b>
                 </div>
                 <div class='feature-item'>
                   <span>🐉</span>
-                  <b>Kaliya &amp; Asuras</b>
+                  <b>Maha-Kaliya</b>
                 </div>
                 <div class='feature-item'>
-                  <span>⏳</span>
-                  <b>1-Hour Challenge</b>
+                  <span>🌌</span>
+                  <b>Dual Worlds</b>
                 </div>
               </div>
             </div>
@@ -720,14 +639,13 @@
 
           <!-- SCREEN 2: IN-GAME HUD -->
           <div id='game-hud'>
-            <!-- Top Status Bar -->
             <div class='hud-top-bar'>
               <div class='hud-box'>
                 <div class='hud-label'>Yoddha</div>
                 <div class='hud-val' id='hud-player-name'>Arjun</div>
               </div>
               <div class='hud-box'>
-                <div class='hud-label'>1-Hour Yuddha</div>
+                <div class='hud-label'>Yuddha Samay</div>
                 <div class='hud-val timer-val' id='hud-timer'>00:00:00</div>
               </div>
               <div class='hud-box'>
@@ -740,60 +658,56 @@
               </div>
             </div>
 
-            <!-- Boss Health Bar -->
+            <div id='realm-indicator'>🌍 REALM: KURUKSHETRA (EARTH UNIVERSE)</div>
+
             <div id='boss-bar-wrap'>
-              <div class='boss-name' id='boss-title'>MAHA-KALIYA NAAG</div>
+              <div class='boss-name' id='boss-title'>॥ महाकालिया नाग संहार ॥</div>
               <div class='boss-hp-bg'>
                 <div class='boss-hp-fill' id='boss-hp-fill'></div>
               </div>
             </div>
 
-            <!-- Kill Banner -->
             <div id='kill-banner'>ASURA VADH! +100 TEJ</div>
 
-            <!-- Player Status (Bottom Left) -->
             <div class='hud-bottom-bar'>
               <div style='font-size:10px;color:#00e5ff;font-weight:700;'>DIVYA URJA (LIFE)</div>
               <div class='bar-container'>
                 <div class='bar-fill-hp' id='player-hp-bar'></div>
               </div>
-              <div style='font-size:10px;color:#ffd700;font-weight:700;margin-top:4px;'>CHAKRA SPEED BOOST</div>
+              <div style='font-size:10px;color:#ffd700;font-weight:700;margin-top:4px;'>STAMINA / SPEED BOOST</div>
               <div class='bar-container'>
-                <div class='bar-fill-boost' id='player-boost-bar'></div>
+                <div class='bar-fill-stamina' id='player-stamina-bar'></div>
               </div>
             </div>
 
-            <!-- On-Screen Action Buttons (Touch/Mouse) -->
+            <!-- Touch / Action Controls -->
             <div class='action-controls'>
               <div class='action-btn' id='throw-btn'>
-                <span style='font-size:18px;'>🔱</span>
-                <span>CHHODO</span>
+                <span style='font-size:16px;'>🔱</span>
+                <span>THROW</span>
               </div>
-              <div class='action-btn boost-btn' id='boost-btn'>
-                <span style='font-size:16px;'>⚡</span>
-                <span>BOOST</span>
+              <div class='action-btn btn-recall' id='recall-btn'>
+                <span style='font-size:16px;'>🧲</span>
+                <span>RECALL</span>
+              </div>
+              <div class='action-btn btn-dash' id='dash-btn'>
+                <span style='font-size:16px;'>💨</span>
+                <span>DASH</span>
+              </div>
+              <div class='action-btn btn-portal' id='portal-btn'>
+                <span style='font-size:16px;'>🌌</span>
+                <span>WARP</span>
               </div>
             </div>
 
-            <!-- Mobile Joystick -->
-            <div id='joystick-zone'>
-              <div id='joystick-nub'></div>
-            </div>
-
-            <!-- Reticle -->
             <div id='reticle'></div>
           </div>
 
-          <!-- SCREEN 3: GAME OVER / VICTORY -->
+          <!-- SCREEN 3: GAME OVER -->
           <div class='screen hidden' id='gameover-screen'>
             <div class='gameover-card'>
-              <div class='vedic-badge'>॥ धर्मक्षेत्रे कुरुक्षेत्रे ॥</div>
+              <div class='vedic-badge'>॥ धर्मसंस्थापनार्थाय सम्भवामि युगे युगे ॥</div>
               <h2 class='gameover-title' id='gameover-title'>MAHA-YUDDHA SAMAPTA</h2>
-              <div class='shloka-text' id='gameover-shloka'>
-                "परित्राणाय साधूनां विनाशाय च दुष्कृताम् ।<br/>
-                धर्मसंस्थापनार्थाय सम्भवामि युगे युगे ॥"
-              </div>
-
               <div class='score-summary-grid'>
                 <div class='score-item'>
                   <div class='hud-label'>Kul Asura Vadh</div>
@@ -812,7 +726,6 @@
                   <div class='score-item-num' id='go-rank' style='font-size:14px;color:#00e5ff;'>Maha-Rathi</div>
                 </div>
               </div>
-
               <button class='btn-gold' id='restart-btn'>⚔️ PUNAH YUDDHA KAREIN (RESTART) ⚔️</button>
             </div>
           </div>
@@ -820,33 +733,29 @@
 
         <script>
         /* =====================================================================
-           BHAGWAN SHRI KRISHNA SUDARSHAN CHAKRA 3D ENGINE
+           SUDARSHAN: THE DIVINE UNIVERSE - MASTER GAMEPLAY ENGINE (PHASES 01-07)
            ===================================================================== */
         (function() {
           'use strict';
 
-          // --- AUDIO SYNTHESIZER (Web Audio API) ---
+          // --- 1. PROCEDURAL WEB AUDIO SYNTHESIZER ---
           const Sound = {
             ctx: null,
             enabled: true,
-            bgmOscs: [],
 
             init() {
               if (this.ctx) return;
               try {
                 const AC = window.AudioContext || window.webkitAudioContext;
                 this.ctx = new AC();
-              } catch(e) { console.warn('Audio not supported', e); }
+              } catch(e) {}
             },
 
             ensure() {
               if (!this.ctx) this.init();
-              if (this.ctx && this.ctx.state === 'suspended') {
-                this.ctx.resume();
-              }
+              if (this.ctx &amp;&amp; this.ctx.state === 'suspended') this.ctx.resume();
             },
 
-            // Divine Shankh Naad (Blowing of the Conch)
             shankh() {
               if (!this.enabled) return;
               this.ensure();
@@ -860,15 +769,14 @@
               osc.frequency.exponentialRampToValueAtTime(180, t + 2.4);
 
               gain.gain.setValueAtTime(0.001, t);
-              gain.gain.linearRampToValueAtTime(0.3, t + 0.6);
+              gain.gain.linearRampToValueAtTime(0.35, t + 0.6);
               gain.gain.linearRampToValueAtTime(0.2, t + 1.8);
               gain.gain.exponentialRampToValueAtTime(0.0001, t + 2.6);
 
-              // Resonance filter
               const filter = this.ctx.createBiquadFilter();
               filter.type = 'bandpass';
-              filter.frequency.value = 450;
-              filter.Q.value = 3;
+              filter.frequency.value = 460;
+              filter.Q.value = 3.5;
 
               osc.connect(filter);
               filter.connect(gain);
@@ -877,7 +785,6 @@
               osc.stop(t + 2.7);
             },
 
-            // Katili Blade Slicing Sound (Sharp metallic cutting sweep)
             slice() {
               if (!this.enabled) return;
               this.ensure();
@@ -886,10 +793,9 @@
               const osc = this.ctx.createOscillator();
               const gain = this.ctx.createGain();
               osc.type = 'triangle';
-              osc.frequency.setValueAtTime(1800, t);
+              osc.frequency.setValueAtTime(1900, t);
               osc.frequency.exponentialRampToValueAtTime(320, t + 0.18);
 
-              // Metallic white noise burst
               const bufferSize = this.ctx.sampleRate * 0.15;
               const buffer = this.ctx.createBuffer(1, bufferSize, this.ctx.sampleRate);
               const output = buffer.getChannelData(0);
@@ -916,267 +822,223 @@
               whiteNoise.stop(t + 0.16);
             },
 
-            // Asura Hit / Roar sound
-            asuraHit() {
+            warp() {
               if (!this.enabled) return;
               this.ensure();
               if (!this.ctx) return;
               const t = this.ctx.currentTime;
               const osc = this.ctx.createOscillator();
               const gain = this.ctx.createGain();
-              osc.type = 'sawtooth';
-              osc.frequency.setValueAtTime(90, t);
-              osc.frequency.linearRampToValueAtTime(45, t + 0.25);
-              gain.gain.setValueAtTime(0.25, t);
-              gain.gain.exponentialRampToValueAtTime(0.001, t + 0.28);
-              osc.connect(gain);
-              gain.connect(this.ctx.destination);
-              osc.start(t);
-              osc.stop(t + 0.3);
-            },
-
-            // Flute (Bansuri) divine background ambient notes
-            playFluteMelody() {
-              if (!this.enabled || !this.ctx) return;
-              const notes = [440, 493.88, 554.37, 659.25, 739.99, 880];
-              const note = notes[Math.floor(Math.random() * notes.length)];
-              const t = this.ctx.currentTime;
-              const osc = this.ctx.createOscillator();
-              const gain = this.ctx.createGain();
               osc.type = 'sine';
-              osc.frequency.setValueAtTime(note, t);
-
-              // Soft vibrato
-              const lfo = this.ctx.createOscillator();
-              const lfoGain = this.ctx.createGain();
-              lfo.frequency.value = 5;
-              lfoGain.gain.value = 6;
-              lfo.connect(osc.frequency);
-
-              gain.gain.setValueAtTime(0.0001, t);
-              gain.gain.linearRampToValueAtTime(0.08, t + 0.4);
-              gain.gain.linearRampToValueAtTime(0.0001, t + 2.5);
-
+              osc.frequency.setValueAtTime(220, t);
+              osc.frequency.exponentialRampToValueAtTime(880, t + 0.8);
+              gain.gain.setValueAtTime(0.01, t);
+              gain.gain.linearRampToValueAtTime(0.35, t + 0.4);
+              gain.gain.exponentialRampToValueAtTime(0.001, t + 0.9);
               osc.connect(gain);
               gain.connect(this.ctx.destination);
-              lfo.start(t);
               osc.start(t);
-              osc.stop(t + 2.6);
-              lfo.stop(t + 2.6);
+              osc.stop(t + 0.95);
             }
           };
 
-          // Flute ambient interval
-          setInterval(() => {
-            if (Sound.enabled && Sound.ctx) Sound.playFluteMelody();
-          }, 3500);
-
-          // --- USER PROFILE & AUTH (LocalStorage) ---
-          const Auth = {
-            currentUser: { name: 'Yoddha Arjun', email: 'guest@kurukshetra.org', rank: 'Maha-Rathi', kills: 0, score: 0 },
-
-            init() {
-              try {
-                const saved = localStorage.getItem('sudarshan_user');
-                if (saved) {
-                  this.currentUser = JSON.parse(saved);
-                }
-              } catch(e) {}
-              this.updateDisplay();
-            },
-
-            save() {
-              try {
-                localStorage.setItem('sudarshan_user', JSON.stringify(this.currentUser));
-              } catch(e) {}
-              this.updateDisplay();
-            },
-
-            updateDisplay() {
-              const el = document.getElementById('hud-player-name');
-              if (el) el.textContent = this.currentUser.name;
-            }
-          };
-          Auth.init();
-
-          // --- DOM ELEMENTS & TABS ---
-          const welcomeScreen = document.getElementById('welcome-screen');
-          const gameoverScreen = document.getElementById('gameover-screen');
-          const gameHud = document.getElementById('game-hud');
-          const reticle = document.getElementById('reticle');
-          const killBanner = document.getElementById('kill-banner');
-          const bossBarWrap = document.getElementById('boss-bar-wrap');
-          const bossHpFill = document.getElementById('boss-hp-fill');
-          const bossTitle = document.getElementById('boss-title');
-          const audioToggle = document.getElementById('audio-toggle');
-          const startBtn = document.getElementById('start-btn');
-          const restartBtn = document.getElementById('restart-btn');
-          const throwBtn = document.getElementById('throw-btn');
-          const boostBtn = document.getElementById('boost-btn');
-          const authMsg = document.getElementById('auth-status-msg');
-
-          audioToggle.addEventListener('click', () => {
-            Sound.enabled = !Sound.enabled;
-            audioToggle.textContent = Sound.enabled ? '🔊 BGM: ON' : '🔇 BGM: OFF';
-            if (Sound.enabled) Sound.shankh();
-          });
-
-          // Tabs navigation
-          const tabs = ['guest', 'login', 'signup', 'forgot'];
-          tabs.forEach(t => {
-            const btn = document.getElementById('tab-' + t + '-btn');
-            if (!btn) return;
-            btn.addEventListener('click', () => {
-              tabs.forEach(o => {
-                const b = document.getElementById('tab-' + o + '-btn');
-                const f = document.getElementById('form-' + o);
-                if (b) b.classList.remove('active');
-                if (f) f.style.display = 'none';
-              });
-              btn.classList.add('active');
-              const form = document.getElementById('form-' + t);
-              if (form) form.style.display = 'block';
-              authMsg.textContent = '';
-            });
-          });
-
-          // Start game button handling
-          startBtn.addEventListener('click', () => {
-            Sound.ensure();
-            Sound.shankh();
-
-            const guestName = document.getElementById('guest-name').value.trim();
-            const signupName = document.getElementById('signup-name').value.trim();
-            const loginId = document.getElementById('login-id').value.trim();
-
-            if (document.getElementById('tab-signup-btn').classList.contains('active') && signupName) {
-              Auth.currentUser.name = signupName;
-            } else if (document.getElementById('tab-login-btn').classList.contains('active') && loginId) {
-              Auth.currentUser.name = loginId;
-            } else if (guestName) {
-              Auth.currentUser.name = guestName;
-            }
-            Auth.save();
-
-            welcomeScreen.classList.add('hidden');
-            reticle.style.display = 'block';
-            Game.start();
-          });
-
-          restartBtn.addEventListener('click', () => {
-            Sound.shankh();
-            gameoverScreen.classList.add('hidden');
-            reticle.style.display = 'block';
-            Game.restart();
-          });
-
-          // --- THREE.JS 3D WORLD SETUP ---
+          // --- 2. THREE.JS 3D WORLD SETUP ---
           const canvas = document.getElementById('three-canvas');
-          const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: false, powerPreference: 'high-performance' });
+          const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: false });
           renderer.setSize(window.innerWidth, window.innerHeight);
           renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
           renderer.shadowMap.enabled = true;
-          renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+          renderer.toneMapping = THREE.ACESFilmicToneMapping;
+          renderer.toneMappingExposure = 1.25;
 
           const scene = new THREE.Scene();
-          scene.background = new THREE.Color(0x070914);
-          scene.fog = new THREE.FogExp2(0x070914, 0.012);
+          scene.background = new THREE.Color(0x0b0914);
+          scene.fog = new THREE.FogExp2(0x0b0914, 0.012);
 
-          const camera = new THREE.PerspectiveCamera(55, window.innerWidth / window.innerHeight, 0.1, 800);
-          camera.position.set(0, 22, 28);
-          camera.lookAt(0, 2, 0);
+          const camera = new THREE.PerspectiveCamera(52, window.innerWidth / window.innerHeight, 0.1, 1000);
+          camera.position.set(0, 18, 25);
 
           // Lighting
-          const ambientLight = new THREE.AmbientLight(0x334466, 0.9);
+          const ambientLight = new THREE.AmbientLight(0xffeedd, 0.85);
           scene.add(ambientLight);
 
-          const sunLight = new THREE.DirectionalLight(0xffea9f, 1.4);
-          sunLight.position.set(30, 60, 40);
+          const sunLight = new THREE.DirectionalLight(0xffea9f, 1.8);
+          sunLight.position.set(40, 70, 30);
           sunLight.castShadow = true;
-          sunLight.shadow.mapSize.width = 1024;
-          sunLight.shadow.mapSize.height = 1024;
           scene.add(sunLight);
 
-          // Battlefield Ground (Kurukshetra Pavitra Bhoomi)
-          const groundGeo = new THREE.PlaneGeometry(350, 350, 40, 40);
-          const groundMat = new THREE.MeshStandardMaterial({
-            color: 0x16131c,
-            roughness: 0.85,
-            metalness: 0.15
-          });
-          const ground = new THREE.Mesh(groundGeo, groundMat);
-          ground.rotation.x = -Math.PI / 2;
-          ground.receiveShadow = true;
-          scene.add(ground);
+          // --- 3. DUAL EXPLORABLE REALMS (PHASE 07) ---
+          const RealmManager = {
+            currentRealm: 'Earth', // 'Earth' or 'Celestial'
+            earthGroup: new THREE.Group(),
+            celestialGroup: new THREE.Group(),
 
-          // Glowing Dharma Mandala Ring
-          const ringGeo = new THREE.RingGeometry(110, 112, 64);
-          const ringMat = new THREE.MeshBasicMaterial({ color: 0xffd700, side: THREE.DoubleSide });
-          const mandalaRing = new THREE.Mesh(ringGeo, ringMat);
-          mandalaRing.rotation.x = -Math.PI / 2;
-          mandalaRing.position.y = 0.05;
-          scene.add(mandalaRing);
+            init() {
+              scene.add(this.earthGroup);
+              scene.add(this.celestialGroup);
+              this.buildEarthRealm();
+              this.buildCelestialRealm();
+              this.setRealm('Earth');
+            },
 
-          // --- 3D BHAGWAN SHRI KRISHNA PROCEDURAL AVATAR ---
+            buildEarthRealm() {
+              // Earth Ground (Kurukshetra Battlefield)
+              const groundGeo = new THREE.PlaneGeometry(450, 450, 32, 32);
+              const groundMat = new THREE.MeshStandardMaterial({ color: 0x1a151e, roughness: 0.9, metalness: 0.1 });
+              const ground = new THREE.Mesh(groundGeo, groundMat);
+              ground.rotation.x = -Math.PI / 2;
+              ground.receiveShadow = true;
+              this.earthGroup.add(ground);
+
+              // Sanskrit Dharma Mandala Perimeter
+              const ringGeo = new THREE.RingGeometry(120, 122, 64);
+              const ringMat = new THREE.MeshBasicMaterial({ color: 0xffd700, side: THREE.DoubleSide });
+              const mandala = new THREE.Mesh(ringGeo, ringMat);
+              mandala.rotation.x = -Math.PI / 2;
+              mandala.position.y = 0.05;
+              this.earthGroup.add(mandala);
+
+              // Ancient Stone Pillars
+              for (let i = 0; i < 16; i++) {
+                const ang = (i / 16) * Math.PI * 2;
+                const r = 115;
+                const pillar = new THREE.Mesh(
+                  new THREE.CylinderGeometry(1.2, 1.6, 12, 16),
+                  new THREE.MeshStandardMaterial({ color: 0x3d3545, roughness: 0.8 })
+                );
+                pillar.position.set(Math.cos(ang) * r, 6, Math.sin(ang) * r);
+                this.earthGroup.add(pillar);
+              }
+            },
+
+            buildCelestialRealm() {
+              // Floating Islands (Vaikuntha)
+              const islandMat = new THREE.MeshStandardMaterial({ color: 0xf5eedc, roughness: 0.5, metalness: 0.2 });
+              const goldTempleMat = new THREE.MeshStandardMaterial({ color: 0xffd700, metalness: 0.9, roughness: 0.2 });
+
+              // Main Temple Island
+              const mainIsland = new THREE.Mesh(new THREE.CylinderGeometry(80, 50, 22, 32), islandMat);
+              mainIsland.position.set(0, -11, 0);
+              this.celestialGroup.add(mainIsland);
+
+              // Giant Celestial Temple (Shikhara Tower)
+              const templeBase = new THREE.Mesh(new THREE.BoxGeometry(28, 12, 28), islandMat);
+              templeBase.position.set(0, 6, -30);
+              this.celestialGroup.add(templeBase);
+
+              const shikhara = new THREE.Mesh(new THREE.ConeGeometry(12, 36, 8), goldTempleMat);
+              shikhara.position.set(0, 30, -30);
+              this.celestialGroup.add(shikhara);
+
+              // Golden Temple Pillars
+              for (let x = -10; x <= 10; x += 20) {
+                for (let z = -40; z <= -20; z += 20) {
+                  const p = new THREE.Mesh(new THREE.CylinderGeometry(0.8, 1.0, 14, 16), goldTempleMat);
+                  p.position.set(x, 7, z);
+                  this.celestialGroup.add(p);
+                }
+              }
+
+              // Floating Satellite Islands
+              for (let i = 0; i < 6; i++) {
+                const ang = (i / 6) * Math.PI * 2;
+                const sat = new THREE.Mesh(new THREE.CylinderGeometry(18, 10, 10, 16), islandMat);
+                sat.position.set(Math.cos(ang) * 110, -5 + Math.sin(i) * 6, Math.sin(ang) * 110);
+                this.celestialGroup.add(sat);
+
+                // Golden Bridge connecting to main island
+                const bridge = new THREE.Mesh(new THREE.BoxGeometry(4, 0.8, 45), goldTempleMat);
+                bridge.position.set(Math.cos(ang) * 65, 0, Math.sin(ang) * 65);
+                bridge.rotation.y = -ang + Math.PI / 2;
+                this.celestialGroup.add(bridge);
+              }
+            },
+
+            setRealm(realm) {
+              this.currentRealm = realm;
+              if (realm === 'Earth') {
+                this.earthGroup.visible = true;
+                this.celestialGroup.visible = false;
+                scene.background.setHex(0x0b0914);
+                scene.fog.color.setHex(0x0b0914);
+                sunLight.color.setHex(0xffea9f);
+                document.getElementById('realm-indicator').textContent = '🌍 REALM: KURUKSHETRA (EARTH UNIVERSE)';
+                document.getElementById('realm-indicator').style.color = '#00e5ff';
+              } else {
+                this.earthGroup.visible = false;
+                this.celestialGroup.visible = true;
+                scene.background.setHex(0x0d1b3a);
+                scene.fog.color.setHex(0x0d1b3a);
+                sunLight.color.setHex(0xffffff);
+                document.getElementById('realm-indicator').textContent = '🌌 REALM: VAIKUNTHA (DIVINE CELESTIAL UNIVERSE)';
+                document.getElementById('realm-indicator').style.color = '#ffd700';
+              }
+            },
+
+            toggleRealm() {
+              Sound.warp();
+              this.setRealm(this.currentRealm === 'Earth' ? 'Celestial' : 'Earth');
+              // Particle flash
+              triggerSparks(krishnaGroup.position.x, 2, krishnaGroup.position.z);
+            }
+          };
+          RealmManager.init();
+
+          // --- 4. SACRED INTERDIMENSIONAL PORTAL (PHASE 07) ---
+          const portalGroup = new THREE.Group();
+          portalGroup.position.set(0, 5, -55);
+          scene.add(portalGroup);
+
+          const portalTorus = new THREE.Mesh(
+            new THREE.TorusGeometry(5.5, 0.45, 16, 48),
+            new THREE.MeshStandardMaterial({ color: 0xffd700, metalness: 0.9, roughness: 0.2 })
+          );
+          portalGroup.add(portalTorus);
+
+          const portalDisc = new THREE.Mesh(
+            new THREE.CircleGeometry(5.2, 32),
+            new THREE.MeshBasicMaterial({ color: 0x9c27b0, side: THREE.DoubleSide, transparent: true, opacity: 0.75 })
+          );
+          portalGroup.add(portalDisc);
+
+          const portalLight = new THREE.PointLight(0x00e5ff, 4.0, 30);
+          portalGroup.add(portalLight);
+
+          // --- 5. 3D BHAGWAN SHRI KRISHNA AVATAR (PHASE 03) ---
           const krishnaGroup = new THREE.Group();
           scene.add(krishnaGroup);
 
-          // Krishna Body (Blue celestial skin)
           const blueSkinMat = new THREE.MeshStandardMaterial({ color: 0x4fc3f7, roughness: 0.5, metalness: 0.1 });
           const goldSilkMat = new THREE.MeshStandardMaterial({ color: 0xffd54f, roughness: 0.4, metalness: 0.4 });
-          const darkSilkMat = new THREE.MeshStandardMaterial({ color: 0xff9933, roughness: 0.5 });
 
-          // Torso & Peetambar
-          const torsoGeo = new THREE.CylinderGeometry(0.8, 0.6, 2.2, 16);
-          const torso = new THREE.Mesh(torsoGeo, blueSkinMat);
+          const torso = new THREE.Mesh(new THREE.CylinderGeometry(0.8, 0.6, 2.2, 16), blueSkinMat);
           torso.position.y = 2.4;
-          torso.castShadow = true;
           krishnaGroup.add(torso);
 
-          // Peetambar Dhoti
-          const dhotiGeo = new THREE.CylinderGeometry(0.85, 1.2, 2.0, 16);
-          const dhoti = new THREE.Mesh(dhotiGeo, goldSilkMat);
+          const dhoti = new THREE.Mesh(new THREE.CylinderGeometry(0.85, 1.2, 2.0, 16), goldSilkMat);
           dhoti.position.y = 1.0;
-          dhoti.castShadow = true;
           krishnaGroup.add(dhoti);
 
-          // Head
-          const headGeo = new THREE.SphereGeometry(0.65, 20, 20);
-          const head = new THREE.Mesh(headGeo, blueSkinMat);
+          const head = new THREE.Mesh(new THREE.SphereGeometry(0.65, 20, 20), blueSkinMat);
           head.position.y = 3.9;
           krishnaGroup.add(head);
 
-          // Golden Crown (Mukut)
-          const mukutGeo = new THREE.ConeGeometry(0.6, 1.2, 16);
-          const mukutMat = new THREE.MeshStandardMaterial({ color: 0xffd700, metalness: 0.8, roughness: 0.2 });
-          const mukut = new THREE.Mesh(mukutGeo, mukutMat);
+          const mukut = new THREE.Mesh(new THREE.ConeGeometry(0.6, 1.2, 16), new THREE.MeshStandardMaterial({ color: 0xffd700, metalness: 0.8 }));
           mukut.position.y = 4.8;
           krishnaGroup.add(mukut);
 
-          // Mor-Pankh (Peacock Feather)
-          const featherGeo = new THREE.ConeGeometry(0.25, 0.9, 8);
-          const featherMat = new THREE.MeshBasicMaterial({ color: 0x00e676 });
-          const feather = new THREE.Mesh(featherGeo, featherMat);
+          const feather = new THREE.Mesh(new THREE.ConeGeometry(0.25, 0.9, 8), new THREE.MeshBasicMaterial({ color: 0x00e676 }));
           feather.position.set(0.2, 5.3, -0.1);
           feather.rotation.z = -0.3;
           krishnaGroup.add(feather);
 
-          // Raised Right Arm (Holding Chakra)
-          const armGeo = new THREE.CylinderGeometry(0.2, 0.2, 1.8, 12);
-          const arm = new THREE.Mesh(armGeo, blueSkinMat);
+          const arm = new THREE.Mesh(new THREE.CylinderGeometry(0.2, 0.2, 1.8, 12), blueSkinMat);
           arm.position.set(1.1, 3.2, 0.5);
           arm.rotation.x = -Math.PI / 4;
           arm.rotation.z = -Math.PI / 6;
           krishnaGroup.add(arm);
 
-          // Celestial Golden Halo
-          const haloGeo = new THREE.TorusGeometry(1.2, 0.08, 16, 40);
-          const haloMat = new THREE.MeshBasicMaterial({ color: 0xffea00 });
-          const halo = new THREE.Mesh(haloGeo, haloMat);
-          halo.position.set(0, 4.0, -0.4);
-          krishnaGroup.add(halo);
-
-          // --- 3D AUTHENTIC VEDIC SUDARSHAN CHAKRA (MATCHING DIVINE BENCHMARK) ---
+          // --- 6. AUTHENTIC 3D SUDARSHAN CHAKRA WEAPON (PHASE 02 & 04) ---
           function createOmTexture() {
             const c = document.createElement('canvas');
             c.width = 512; c.height = 512;
@@ -1208,7 +1070,6 @@
             const chakra = new THREE.Group();
             const omTex = createOmTexture();
 
-            // Materials
             const goldMat = new THREE.MeshStandardMaterial({ color: 0xffd700, metalness: 0.95, roughness: 0.16 });
             const omMat = new THREE.MeshStandardMaterial({ map: omTex, metalness: 0.85, roughness: 0.2, emissive: 0x331800, emissiveIntensity: 0.5 });
             const bladeMat = new THREE.MeshStandardMaterial({ color: 0xfffae0, metalness: 0.98, roughness: 0.08, emissive: 0x331a00 });
@@ -1222,27 +1083,24 @@
             hubMid.position.y = 0.15;
             chakra.add(hubMid);
 
-            // Sacred ॐ Core Dome
             const dome = new THREE.Mesh(new THREE.SphereGeometry(0.5, 24, 16, 0, Math.PI * 2, 0, Math.PI * 0.45), omMat);
             dome.position.y = 0.22;
             chakra.add(dome);
 
-            // 2. 12 Embedded Blue Sapphires (Neelam Jewels)
+            // 2. 12 Embedded Blue Sapphires (Neelam)
             for (let i = 0; i < 12; i++) {
               const ang = (i / 12) * Math.PI * 2;
               const gx = Math.cos(ang) * 0.82;
               const gz = Math.sin(ang) * 0.82;
-
               const bezel = new THREE.Mesh(new THREE.CylinderGeometry(0.08, 0.1, 0.12, 12), goldMat);
               bezel.position.set(gx, 0.15, gz);
               chakra.add(bezel);
-
               const gem = new THREE.Mesh(new THREE.SphereGeometry(0.065, 12, 8), sapphireMat);
               gem.position.set(gx, 0.2, gz);
               chakra.add(gem);
             }
 
-            // 3. Middle & Outer Concentric Golden Rims
+            // 3. Middle & Outer Rims
             const midRim = new THREE.Mesh(new THREE.TorusGeometry(1.3, 0.07, 16, 48), goldMat);
             midRim.rotation.x = Math.PI / 2;
             chakra.add(midRim);
@@ -1251,28 +1109,16 @@
             outerRim.rotation.x = Math.PI / 2;
             chakra.add(outerRim);
 
-            // 12 Radiating Lotus Petals
-            for (let i = 0; i < 12; i++) {
-              const ang = (i / 12) * Math.PI * 2;
-              const petal = new THREE.Mesh(new THREE.ConeGeometry(0.18, 0.6, 4), goldMat);
-              petal.position.set(Math.cos(ang) * 1.08, 0.05, Math.sin(ang) * 1.08);
-              petal.rotation.y = -ang + Math.PI / 2;
-              petal.rotation.z = Math.PI / 2;
-              petal.scale.set(1.0, 1.0, 0.3);
-              chakra.add(petal);
-            }
-
-            // 4. 16 CURVED FLAME-SCYTHE KATILI BLADES (Matching Reference Benchmark)
+            // 4. 16 Curved Flame-Scythe Katili Blades
             const bladeShape = new THREE.Shape();
             bladeShape.moveTo(0, 0);
             bladeShape.quadraticCurveTo(0.4, 0.15, 0.8, 0.5);
-            bladeShape.quadraticCurveTo(1.1, 0.9, 1.25, 1.35); // Curved hook apex
-            bladeShape.quadraticCurveTo(0.9, 1.0, 0.55, 0.7);  // Inner serration
+            bladeShape.quadraticCurveTo(1.1, 0.9, 1.25, 1.35);
+            bladeShape.quadraticCurveTo(0.9, 1.0, 0.55, 0.7);
             bladeShape.quadraticCurveTo(0.25, 0.4, 0, 0.3);
             bladeShape.closePath();
 
-            const extrudeSettings = { depth: 0.06, bevelEnabled: true, bevelSegments: 3, steps: 1, bevelSize: 0.03, bevelThickness: 0.03 };
-            const bladeGeo = new THREE.ExtrudeGeometry(bladeShape, extrudeSettings);
+            const bladeGeo = new THREE.ExtrudeGeometry(bladeShape, { depth: 0.06, bevelEnabled: true, bevelSegments: 3, steps: 1, bevelSize: 0.03, bevelThickness: 0.03 });
             bladeGeo.center();
 
             const numBlades = 16;
@@ -1282,27 +1128,20 @@
               const radius = 1.95;
               blade.position.set(Math.cos(ang) * radius, 0.0, Math.sin(ang) * radius);
               blade.rotation.x = Math.PI / 2;
-              blade.rotation.z = ang - 0.75; // Forward scythe curve
+              blade.rotation.z = ang - 0.75;
               blade.scale.set(0.7, 0.7, 0.7);
               chakra.add(blade);
             }
 
-            // 5. Blazing Solar Halo Rings
-            const halo1 = new THREE.Mesh(
-              new THREE.RingGeometry(2.4, 2.55, 48),
-              new THREE.MeshBasicMaterial({ color: 0xffaa00, side: THREE.DoubleSide, transparent: true, opacity: 0.85 })
-            );
+            // 5. Blazing Solar Halos
+            const halo1 = new THREE.Mesh(new THREE.RingGeometry(2.4, 2.55, 48), new THREE.MeshBasicMaterial({ color: 0xffaa00, side: THREE.DoubleSide, transparent: true, opacity: 0.85 }));
             halo1.rotation.x = Math.PI / 2;
             chakra.add(halo1);
 
-            const halo2 = new THREE.Mesh(
-              new THREE.RingGeometry(2.68, 2.78, 48),
-              new THREE.MeshBasicMaterial({ color: 0xff5500, side: THREE.DoubleSide, transparent: true, opacity: 0.65 })
-            );
+            const halo2 = new THREE.Mesh(new THREE.RingGeometry(2.68, 2.78, 48), new THREE.MeshBasicMaterial({ color: 0xff5500, side: THREE.DoubleSide, transparent: true, opacity: 0.65 }));
             halo2.rotation.x = Math.PI / 2;
             chakra.add(halo2);
 
-            // Blazing Aura Light
             const chakraLight = new THREE.PointLight(0xffaa00, 3.2, 22);
             chakraLight.position.y = 0.3;
             chakra.add(chakraLight);
@@ -1316,24 +1155,24 @@
           // Chakra State
           const chakraState = {
             isThrown: false,
+            returning: false,
+            isMahaStorm: false,
             pos: new THREE.Vector3(),
             velocity: new THREE.Vector3(),
-            targetPos: new THREE.Vector3(),
             travelDist: 0,
-            maxDist: 38,
-            returning: false,
+            maxDist: 42,
             spinSpeed: 0.35
           };
 
-          // --- ASURAS & DEMON SERPENTS MANAGER ---
+          // --- 7. ENEMY AI MINIONS & BOSSES (PHASE 05 & 06) ---
           const asuras = [];
           const asuraColors = [0x1a472a, 0x4a154b, 0x7a1c1c, 0x111111];
 
-          function spawnAsura(isBoss = false) {
+          function spawnAsura(isBoss = false, isAghasura = false) {
             const group = new THREE.Group();
-            const segments = isBoss ? 12 : 6;
-            const radius = isBoss ? 1.6 : 0.8;
-            const color = isBoss ? 0x8b0000 : asuraColors[Math.floor(Math.random() * asuraColors.length)];
+            const segments = isBoss ? (isAghasura ? 16 : 12) : 6;
+            const radius = isBoss ? (isAghasura ? 2.4 : 1.8) : 0.8;
+            const color = isBoss ? (isAghasura ? 0x8b0000 : 0x111111) : asuraColors[Math.floor(Math.random() * asuraColors.length)];
 
             const bodyMat = new THREE.MeshStandardMaterial({ color: color, roughness: 0.6, metalness: 0.3 });
             const eyeMat = new THREE.MeshBasicMaterial({ color: 0xff0000 });
@@ -1342,73 +1181,69 @@
             const segMeshes = [];
             for (let i = 0; i < segments; i++) {
               const sRad = radius * (1 - (i / segments) * 0.45);
-              const segGeo = new THREE.SphereGeometry(sRad, 12, 12);
-              const mesh = new THREE.Mesh(segGeo, bodyMat);
+              const mesh = new THREE.Mesh(new THREE.SphereGeometry(sRad, 12, 12), bodyMat);
               mesh.position.z = i * (sRad * 1.3);
-              mesh.castShadow = true;
               group.add(mesh);
               segMeshes.push(mesh);
             }
 
-            // Head Horns & Eyes
-            const hornGeo = new THREE.ConeGeometry(radius * 0.3, radius * 0.9, 6);
-            const hornL = new THREE.Mesh(hornGeo, hornMat);
+            // Horns & Eyes on Head
+            const hornL = new THREE.Mesh(new THREE.ConeGeometry(radius * 0.3, radius * 0.9, 6), hornMat);
             hornL.position.set(-radius * 0.5, radius * 0.7, -radius * 0.2);
             hornL.rotation.z = 0.4;
             group.add(hornL);
 
-            const hornR = new THREE.Mesh(hornGeo, hornMat);
+            const hornR = new THREE.Mesh(new THREE.ConeGeometry(radius * 0.3, radius * 0.9, 6), hornMat);
             hornR.position.set(radius * 0.5, radius * 0.7, -radius * 0.2);
             hornR.rotation.z = -0.4;
             group.add(hornR);
 
-            const eyeGeo = new THREE.SphereGeometry(radius * 0.2, 8, 8);
-            const eyeL = new THREE.Mesh(eyeGeo, eyeMat);
+            const eyeL = new THREE.Mesh(new THREE.SphereGeometry(radius * 0.2, 8, 8), eyeMat);
             eyeL.position.set(-radius * 0.4, radius * 0.2, -radius * 0.75);
             group.add(eyeL);
 
-            const eyeR = new THREE.Mesh(eyeGeo, eyeMat);
+            const eyeR = new THREE.Mesh(new THREE.SphereGeometry(radius * 0.2, 8, 8), eyeMat);
             eyeR.position.set(radius * 0.4, radius * 0.2, -radius * 0.75);
             group.add(eyeR);
 
-            // Random angle on perimeter
             const spawnAngle = Math.random() * Math.PI * 2;
             const spawnDist = 45 + Math.random() * 25;
             group.position.set(Math.cos(spawnAngle) * spawnDist, radius, Math.sin(spawnAngle) * spawnDist);
 
             scene.add(group);
 
+            const bossHp = isAghasura ? 4000 : 2500;
             asuras.push({
               mesh: group,
               segments: segMeshes,
               isBoss: isBoss,
-              hp: isBoss ? 2000 : 100,
-              maxHp: isBoss ? 2000 : 100,
-              speed: isBoss ? 0.08 : (0.12 + Math.random() * 0.08),
+              isAghasura: isAghasura,
+              hp: isBoss ? bossHp : 120,
+              maxHp: isBoss ? bossHp : 120,
+              speed: isBoss ? 0.09 : (0.13 + Math.random() * 0.08),
               sinOffset: Math.random() * 10
             });
 
             if (isBoss) {
-              bossBarWrap.style.display = 'block';
-              bossTitle.textContent = '🔱 MAHA-KALIYA ASURA 🔱';
-              bossHpFill.style.width = '100%';
+              const bWrap = document.getElementById('boss-bar-wrap');
+              bWrap.style.display = 'block';
+              document.getElementById('boss-title').textContent = isAghasura ? '॥ अघासुर दानव वध (BOSS) ॥' : '॥ महाकालिया नाग संहार (BOSS) ॥';
+              document.getElementById('boss-hp-fill').style.width = '100%';
               Sound.shankh();
             }
           }
 
-          // Slice Sparks Particle System
+          // Sparks
           const sparkCount = 200;
           const sparkGeo = new THREE.BufferGeometry();
           const sparkPos = new Float32Array(sparkCount * 3);
           const sparkVel = [];
           for (let i = 0; i < sparkCount; i++) {
-            sparkPos[i * 3] = 0;
-            sparkPos[i * 3 + 1] = -100;
-            sparkPos[i * 3 + 2] = 0;
+            sparkPos[i * 3] = 0; sparkPos[i * 3 + 1] = -100; sparkPos[i * 3 + 2] = 0;
             sparkVel.push(new THREE.Vector3());
           }
           sparkGeo.setAttribute('position', new THREE.BufferAttribute(sparkPos, 3));
-          const sparkMat = new THREE.PointsMaterial({ color: 0xffd700, size: 0.6, transparent: true, opacity: 0.9 });
+          const sparkMat = new THREE.PointsMaterial({ color: 0xffd700, size: 0.65, transparent: true, opacity: 0.9 });
           const sparkPoints = new THREE.Points(sparkGeo, sparkMat);
           scene.add(sparkPoints);
 
@@ -1416,47 +1251,41 @@
             const posAttr = sparkGeo.attributes.position;
             for (let i = 0; i < 25; i++) {
               const idx = (Math.floor(Math.random() * sparkCount)) * 3;
-              posAttr.array[idx] = x;
-              posAttr.array[idx + 1] = y;
-              posAttr.array[idx + 2] = z;
-              sparkVel[idx / 3].set(
-                (Math.random() - 0.5) * 0.8,
-                Math.random() * 0.8 + 0.2,
-                (Math.random() - 0.5) * 0.8
-              );
+              posAttr.array[idx] = x; posAttr.array[idx + 1] = y; posAttr.array[idx + 2] = z;
+              sparkVel[idx / 3].set((Math.random() - 0.5) * 0.9, Math.random() * 0.9 + 0.2, (Math.random() - 0.5) * 0.9);
             }
             posAttr.needsUpdate = true;
           }
 
-          // --- GAME STATE ---
+          // --- 8. GAME STATE & PROGRESSION ---
           const Game = {
             running: false,
             playerHp: 100,
-            playerBoost: 100,
+            playerStamina: 100,
             kills: 0,
             score: 0,
             startTime: 0,
             elapsedSeconds: 0,
-            bossSpawned: false,
+            kaliyaSpawned: false,
+            aghasuraSpawned: false,
 
             start() {
               this.running = true;
               this.playerHp = 100;
-              this.playerBoost = 100;
+              this.playerStamina = 100;
               this.kills = 0;
               this.score = 0;
               this.startTime = Date.now();
-              this.bossSpawned = false;
+              this.kaliyaSpawned = false;
+              this.aghasuraSpawned = false;
 
-              // Clear old asuras
               asuras.forEach(a => scene.remove(a.mesh));
               asuras.length = 0;
-
-              // Spawn initial asuras
               for (let i = 0; i < 6; i++) spawnAsura(false);
 
               chakraState.isThrown = false;
               chakraState.returning = false;
+              chakraState.isMahaStorm = false;
               krishnaGroup.position.set(0, 0, 0);
               this.updateHud();
             },
@@ -1467,9 +1296,8 @@
 
             gameOver() {
               this.running = false;
-              reticle.style.display = 'none';
-              gameoverScreen.classList.remove('hidden');
-
+              document.getElementById('reticle').style.display = 'none';
+              document.getElementById('gameover-screen').classList.remove('hidden');
               document.getElementById('go-kills').textContent = this.kills;
               document.getElementById('go-time').textContent = formatTime(this.elapsedSeconds);
               document.getElementById('go-score').textContent = this.score;
@@ -1486,7 +1314,7 @@
               document.getElementById('hud-score').textContent = this.score;
               document.getElementById('hud-timer').textContent = formatTime(this.elapsedSeconds);
               document.getElementById('player-hp-bar').style.width = this.playerHp + '%';
-              document.getElementById('player-boost-bar').style.width = this.playerBoost + '%';
+              document.getElementById('player-stamina-bar').style.width = this.playerStamina + '%';
             }
           };
 
@@ -1497,7 +1325,7 @@
             return `${h}:${m}:${s}`;
           }
 
-          // --- INPUT SYSTEM (TARGET & THROW CHAKRA) ---
+          // --- 9. INPUT & COMBAT CONTROLS (PHASE 03 & 04) ---
           const targetPoint = new THREE.Vector3(0, 1.5, -20);
           const raycaster = new THREE.Raycaster();
           const mouse = new THREE.Vector2();
@@ -1511,8 +1339,9 @@
             raycaster.ray.intersectPlane(planeGround, intersect);
             if (intersect) {
               targetPoint.copy(intersect);
-              reticle.style.left = clientX + 'px';
-              reticle.style.top = clientY + 'px';
+              const ret = document.getElementById('reticle');
+              ret.style.left = clientX + 'px';
+              ret.style.top = clientY + 'px';
             }
           }
 
@@ -1533,44 +1362,82 @@
             const dir = new THREE.Vector3().subVectors(targetPoint, krishnaGroup.position);
             dir.y = 0;
             dir.normalize();
-            chakraState.velocity.copy(dir).multiplyScalar(1.4);
-            chakraState.spinSpeed = 0.9;
+            chakraState.velocity.copy(dir).multiplyScalar(1.5);
+            chakraState.spinSpeed = 0.95;
+          }
+
+          // RECALL ACTION (BULANA)
+          function recallChakra() {
+            if (!Game.running || !chakraState.isThrown) return;
+            chakraState.returning = true;
+            Sound.slice();
+          }
+
+          // DIVINE DASH (PHASE 03)
+          let dashTimer = 0;
+          function divineDash() {
+            if (!Game.running || Game.playerStamina < 20 || dashTimer > 0) return;
+            dashTimer = 0.22;
+            Game.playerStamina -= 20;
+            Sound.slice();
+            triggerSparks(krishnaGroup.position.x, 1, krishnaGroup.position.z);
           }
 
           window.addEventListener('mousedown', e => {
-            if (Game.running && e.target === canvas) throwChakra();
+            if (Game.running &amp;&amp; e.target === canvas) {
+              if (e.button === 0) throwChakra();
+              else if (e.button === 2) recallChakra();
+            }
           });
+          window.addEventListener('contextmenu', e => e.preventDefault());
 
           window.addEventListener('keydown', e => {
             if (!Game.running) return;
-            if (e.code === 'Space') throwChakra();
+            if (e.code === 'Space') divineDash();
+            if (e.key === 'q' || e.key === 'Q') recallChakra();
+            if (e.key === 'e' || e.key === 'E') throwChakra();
+            if (e.key === 't' || e.key === 'T') RealmManager.toggleRealm();
           });
 
-          throwBtn.addEventListener('click', e => {
-            e.stopPropagation();
-            throwChakra();
-          });
+          // Action Buttons
+          document.getElementById('throw-btn').addEventListener('click', e => { e.stopPropagation(); throwChakra(); });
+          document.getElementById('recall-btn').addEventListener('click', e => { e.stopPropagation(); recallChakra(); });
+          document.getElementById('dash-btn').addEventListener('click', e => { e.stopPropagation(); divineDash(); });
+          document.getElementById('portal-btn').addEventListener('click', e => { e.stopPropagation(); RealmManager.toggleRealm(); });
 
-          // BOOST ACTION
-          let isBoosting = false;
-          boostBtn.addEventListener('touchstart', () => { isBoosting = true; });
-          boostBtn.addEventListener('touchend', () => { isBoosting = false; });
-          boostBtn.addEventListener('mousedown', () => { isBoosting = true; });
-          boostBtn.addEventListener('mouseup', () => { isBoosting = false; });
+          let isSprinting = false;
+          window.addEventListener('keydown', e => { if (e.key === 'Shift') isSprinting = true; });
+          window.addEventListener('keyup', e => { if (e.key === 'Shift') isSprinting = false; });
 
-          // Movement keys
           const keys = {};
           window.addEventListener('keydown', e => { keys[e.key.toLowerCase()] = true; });
           window.addEventListener('keyup', e => { keys[e.key.toLowerCase()] = false; });
 
-          // Mobile Touch
-          window.addEventListener('touchmove', e => {
-            if (Game.running && e.touches.length > 0) {
-              updateTargetFromScreen(e.touches[0].clientX, e.touches[0].clientY);
-            }
-          }, { passive: true });
+          // Start & Restart Buttons
+          document.getElementById('start-btn').addEventListener('click', () => {
+            Sound.ensure();
+            Sound.shankh();
+            const gName = document.getElementById('guest-name').value.trim();
+            if (gName) document.getElementById('hud-player-name').textContent = gName;
+            document.getElementById('welcome-screen').classList.add('hidden');
+            document.getElementById('reticle').style.display = 'block';
+            Game.start();
+          });
 
-          // --- MAIN ANIMATION & PHYSICS LOOP ---
+          document.getElementById('restart-btn').addEventListener('click', () => {
+            Sound.shankh();
+            document.getElementById('gameover-screen').classList.add('hidden');
+            document.getElementById('reticle').style.display = 'block';
+            Game.restart();
+          });
+
+          document.getElementById('audio-toggle').addEventListener('click', () => {
+            Sound.enabled = !Sound.enabled;
+            document.getElementById('audio-toggle').textContent = Sound.enabled ? '🔊 BGM: ON' : '🔇 BGM: OFF';
+            if (Sound.enabled) Sound.shankh();
+          });
+
+          // --- 10. MAIN ANIMATION & PHYSICS LOOP ---
           let lastTime = performance.now();
           let spawnTimer = 0;
 
@@ -1579,36 +1446,47 @@
             const dt = Math.min((time - lastTime) / 1000, 0.1);
             lastTime = time;
 
+            // Portal rotation & pulsing
+            portalTorus.rotation.z += 0.02;
+            portalDisc.rotation.z -= 0.015;
+
             if (Game.running) {
-              // Timer progression (1-hour tracker)
               Game.elapsedSeconds = Math.floor((Date.now() - Game.startTime) / 1000);
               Game.updateHud();
 
-              // Spawn regular asuras over time
+              // Spawn minions
               spawnTimer += dt;
               if (spawnTimer > Math.max(1.8 - (Game.elapsedSeconds / 600), 0.6)) {
                 spawnTimer = 0;
                 if (asuras.length < 18) spawnAsura(false);
               }
 
-              // Spawn Boss at 2 minutes (or 10 minutes)
-              if (Game.elapsedSeconds >= 120 && !Game.bossSpawned) {
-                Game.bossSpawned = true;
-                spawnAsura(true);
+              // Spawn Bosses (Kaliya at 1.5m, Aghasura at 4m)
+              if (Game.elapsedSeconds >= 90 &amp;&amp; !Game.kaliyaSpawned) {
+                Game.kaliyaSpawned = true;
+                spawnAsura(true, false);
+              }
+              if (Game.elapsedSeconds >= 240 &amp;&amp; !Game.aghasuraSpawned) {
+                Game.aghasuraSpawned = true;
+                spawnAsura(true, true);
               }
 
-              // Player Movement
+              // Movement & Locomotion (Phase 03)
               const moveDir = new THREE.Vector3();
               if (keys['w'] || keys['arrowup']) moveDir.z -= 1;
               if (keys['s'] || keys['arrowdown']) moveDir.z += 1;
               if (keys['a'] || keys['arrowleft']) moveDir.x -= 1;
               if (keys['d'] || keys['arrowright']) moveDir.x += 1;
 
-              let pSpeed = isBoosting && Game.playerBoost > 0 ? 0.35 : 0.18;
-              if (isBoosting && Game.playerBoost > 0) {
-                Game.playerBoost = Math.max(0, Game.playerBoost - dt * 25);
-              } else if (Game.playerBoost < 100) {
-                Game.playerBoost = Math.min(100, Game.playerBoost + dt * 10);
+              let pSpeed = 0.18;
+              if (dashTimer > 0) {
+                dashTimer -= dt;
+                pSpeed = 0.55; // Dash burst
+              } else if (isSprinting &amp;&amp; Game.playerStamina > 0) {
+                pSpeed = 0.34;
+                Game.playerStamina = Math.max(0, Game.playerStamina - dt * 25);
+              } else if (Game.playerStamina < 100) {
+                Game.playerStamina = Math.min(100, Game.playerStamina + dt * 12);
               }
 
               if (moveDir.lengthSq() > 0) {
@@ -1617,28 +1495,32 @@
                 krishnaGroup.rotation.y = Math.atan2(moveDir.x, moveDir.z);
               }
 
-              // Camera follows player smoothly
+              // Portal Overlap Check (Phase 07)
+              const distToPortal = krishnaGroup.position.distanceTo(portalGroup.position);
+              if (distToPortal < 5.0) {
+                RealmManager.toggleRealm();
+                krishnaGroup.position.z += 12; // Step forward past portal
+              }
+
+              // Smooth 3rd-person camera follow
               camera.position.x += (krishnaGroup.position.x - camera.position.x) * 0.08;
               camera.position.z += (krishnaGroup.position.z + 28 - camera.position.z) * 0.08;
-              camera.lookAt(krishnaGroup.position.x, 2, krishnaGroup.position.z);
+              camera.lookAt(krishnaGroup.position.x, 2.5, krishnaGroup.position.z);
 
-              // CHAKRA TARGET & RETURN PHYSICS
+              // CHAKRA PHYSICS & RETURN (Phase 04)
               if (!chakraState.isThrown) {
-                // Attached gracefully to Shri Krishna's raised hand
                 sudarshanChakra.position.set(
                   krishnaGroup.position.x + 1.2,
                   krishnaGroup.position.y + 4.2,
                   krishnaGroup.position.z + 0.3
                 );
-                sudarshanChakra.rotation.y += 0.2;
+                sudarshanChakra.rotation.y += 0.22;
               } else {
-                // Thrown & Flying in 3D
                 sudarshanChakra.rotation.y += chakraState.spinSpeed;
                 sudarshanChakra.position.add(chakraState.velocity);
                 chakraState.travelDist += chakraState.velocity.length();
 
-                // Check return condition
-                if (chakraState.travelDist > chakraState.maxDist && !chakraState.returning) {
+                if (chakraState.travelDist > chakraState.maxDist &amp;&amp; !chakraState.returning) {
                   chakraState.returning = true;
                 }
 
@@ -1650,61 +1532,58 @@
                     chakraState.returning = false;
                   } else {
                     returnDir.normalize();
-                    chakraState.velocity.copy(returnDir).multiplyScalar(1.6);
+                    chakraState.velocity.copy(returnDir).multiplyScalar(1.65);
                   }
                 }
 
-                // Check Chakra Collision with Asuras (KATILI BLADE SLICE)
+                // Check Slicing Collision with Enemies
                 for (let i = asuras.length - 1; i >= 0; i--) {
                   const a = asuras[i];
                   const d = sudarshanChakra.position.distanceTo(a.mesh.position);
-                  if (d < (a.isBoss ? 3.5 : 2.2)) {
+                  if (d < (a.isBoss ? (a.isAghasura ? 4.5 : 3.5) : 2.2)) {
                     Sound.slice();
-                    Sound.asuraHit();
                     triggerSparks(a.mesh.position.x, a.mesh.position.y + 1, a.mesh.position.z);
 
-                    a.hp -= 120;
+                    a.hp -= 140;
                     if (a.isBoss) {
-                      bossHpFill.style.width = Math.max(0, (a.hp / a.maxHp) * 100) + '%';
+                      document.getElementById('boss-hp-fill').style.width = Math.max(0, (a.hp / a.maxHp) * 100) + '%';
                     }
 
                     if (a.hp <= 0) {
-                      // Asura Vadh
                       scene.remove(a.mesh);
                       asuras.splice(i, 1);
                       Game.kills++;
-                      Game.score += a.isBoss ? 1500 : 100;
+                      Game.score += a.isBoss ? (a.isAghasura ? 2500 : 1500) : 100;
 
-                      // Banner popup
-                      killBanner.textContent = a.isBoss ? '👑 MAHA-KALIYA SANHAR! +1500' : '🔱 ASURA VADH! +100';
-                      killBanner.style.opacity = '1';
-                      setTimeout(() => { killBanner.style.opacity = '0'; }, 1200);
+                      const banner = document.getElementById('kill-banner');
+                      banner.textContent = a.isBoss ? (a.isAghasura ? '👑 AGHASURA SANHAR! +2500' : '👑 MAHA-KALIYA SANHAR! +1500') : '🔱 ASURA VADH! +100';
+                      banner.style.opacity = '1';
+                      setTimeout(() => { banner.style.opacity = '0'; }, 1200);
 
-                      if (a.isBoss) bossBarWrap.style.display = 'none';
+                      if (a.isBoss) document.getElementById('boss-bar-wrap').style.display = 'none';
                     }
                   }
                 }
               }
 
-              // Asuras AI & Collision with Player
+              // Asuras AI Pursuit (Phase 05 & 06)
               for (let i = 0; i < asuras.length; i++) {
                 const a = asuras[i];
-                const toKrishna = new THREE.Vector3().subVectors(krishnaGroup.position, a.mesh.position);
-                toKrishna.y = 0;
-                const distToPlayer = toKrishna.length();
-                toKrishna.normalize();
+                const toPlayer = new THREE.Vector3().subVectors(krishnaGroup.position, a.mesh.position);
+                toPlayer.y = 0;
+                const dist = toPlayer.length();
+                toPlayer.normalize();
 
-                a.mesh.position.addScaledVector(toKrishna, a.speed);
-                a.mesh.rotation.y = Math.atan2(toKrishna.x, toKrishna.z);
+                a.mesh.position.addScaledVector(toPlayer, a.speed);
+                a.mesh.rotation.y = Math.atan2(toPlayer.x, toPlayer.z);
 
-                // Slithering sine wave on segments
+                // Slithering sine wave
                 for (let s = 1; s < a.segments.length; s++) {
-                  a.segments[s].position.x = Math.sin(time * 0.005 + a.sinOffset + s * 0.8) * (a.isBoss ? 0.8 : 0.4);
+                  a.segments[s].position.x = Math.sin(time * 0.005 + a.sinOffset + s * 0.8) * (a.isBoss ? 0.9 : 0.4);
                 }
 
-                // Hit Player
-                if (distToPlayer < (a.isBoss ? 3.0 : 1.8)) {
-                  Game.playerHp -= dt * (a.isBoss ? 25 : 12);
+                if (dist < (a.isBoss ? 3.2 : 1.8)) {
+                  Game.playerHp -= dt * (a.isBoss ? 28 : 12);
                   if (Game.playerHp <= 0) {
                     Game.playerHp = 0;
                     Game.gameOver();
@@ -1719,13 +1598,13 @@
                   posAttr.array[i * 3] += sparkVel[i].x;
                   posAttr.array[i * 3 + 1] += sparkVel[i].y;
                   posAttr.array[i * 3 + 2] += sparkVel[i].z;
-                  sparkVel[i].y -= dt * 2.0; // gravity
+                  sparkVel[i].y -= dt * 2.0;
                   if (posAttr.array[i * 3 + 1] < 0) posAttr.array[i * 3 + 1] = -100;
                 }
               }
               posAttr.needsUpdate = true;
             } else {
-              // Idle Welcome Screen animation: slow orbit around Bhagwan Shri Krishna
+              // Welcome screen idle orbit
               const t = time * 0.0004;
               krishnaGroup.rotation.y = Math.sin(t) * 0.3;
               sudarshanChakra.position.set(
@@ -1741,7 +1620,6 @@
 
           requestAnimationFrame(animate);
 
-          // Handle Resize
           window.addEventListener('resize', () => {
             camera.aspect = window.innerWidth / window.innerHeight;
             camera.updateProjectionMatrix();
