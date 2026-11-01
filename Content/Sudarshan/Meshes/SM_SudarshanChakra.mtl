@@ -1,0 +1,24 @@
+﻿# Sudarshan Chakra PBR Materials Definition
+newmtl M_SudarshanChakra_Gold
+Ka 0.2 0.16 0.02
+Kd 1.0 0.84 0.0
+Ks 0.95 0.95 0.95
+Ns 250.0
+d 1.0
+illum 2
+
+newmtl M_SudarshanChakra_Blades
+Ka 0.3 0.28 0.25
+Kd 0.92 0.88 0.80
+Ks 0.99 0.99 0.99
+Ns 450.0
+d 1.0
+illum 2
+
+newmtl M_SudarshanChakra_Core
+Ka 0.4 0.2 0.05
+Kd 1.0 0.5 0.0
+Ks 0.9 0.9 0.9
+Ns 180.0
+d 1.0
+illum 2
