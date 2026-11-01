@@ -1,2176 +1,1571 @@
+<?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE html>
-<html lang="hi">
+<html b:css='false' b:defaultwidgetversion='2' b:layoutsVersion='3' b:responsive='true' b:templateVersion='1.0.0' expr:dir='data:blog.languageDirection' lang='hi' xmlns='http://www.w3.org/1999/xhtml' xmlns:b='http://www.google.com/2005/gml/b' xmlns:data='http://www.google.com/2005/gml/data' xmlns:expr='http://www.google.com/2005/gml/expr'>
 <head>
-  <meta charset="utf-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"/>
-  <title>॥ श्री कृष्ण सुदर्शन चक्र - महाभारत महायुद्ध 3D ॥</title>
-  <meta name="description" content="भगवान श्री कृष्ण के 3D सुदर्शन चक्र से कालिया नाग और दानवों का संहार करें! आधिकारिक वेबसाइट, लॉगिन, साइन अप और 1 घंटे का 3D गेम!"/>
-  
-  <!-- Sacred Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com"/>
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;900&family=Rozha+One&family=Tiro+Devanagari+Sanskrit:ital@0;1&family=Rajdhani:wght@600;700;800&display=swap" rel="stylesheet"/>
-
-  <style>
-    :root {
-      --gold: #ffc233;
-      --gold-bright: #fff275;
-      --gold-dark: #b8860b;
-      --saffron: #ff6b1a;
-      --saffron-bright: #ff8c42;
-      --krishna-blue: #1c64d2;
-      --deep-navy: #050d1e;
-      --demon-red: #e63946;
-      --demon-purple: #7209b7;
-      --font-dev: 'Rozha One', 'Tiro Devanagari Sanskrit', serif;
-      --font-epic: 'Cinzel', serif;
-      --font-hud: 'Rajdhani', sans-serif;
-    }
-
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-      user-select: none;
-      -webkit-user-select: none;
-    }
-
-    html, body {
-      width: 100%;
-      min-height: 100%;
-      background: #020614;
-      color: #fff;
-      font-family: var(--font-hud);
-      overflow-x: hidden;
-    }
-
-    /* Smooth Scrolling */
-    html {
-      scroll-behavior: smooth;
-    }
-
-    /* ========================================================
-       TOP NAVIGATION BAR
-       ======================================================== */
-    .site-navbar {
-      position: sticky;
-      top: 0;
-      width: 100%;
-      background: rgba(5, 14, 32, 0.92);
-      backdrop-filter: blur(15px);
-      border-bottom: 2px solid rgba(255, 194, 51, 0.35);
-      z-index: 100;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 12px 30px;
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
-    }
-
-    .nav-brand {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      text-decoration: none;
-      cursor: pointer;
-    }
-
-    .brand-icon {
-      width: 44px;
-      height: 44px;
-      border-radius: 50%;
-      border: 2px solid var(--gold);
-      background: radial-gradient(circle, #ff6b1a 0%, #0c234a 100%);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 22px;
-      box-shadow: 0 0 15px rgba(255, 194, 51, 0.5);
-    }
-
-    .brand-title {
-      font-family: var(--font-dev);
-      font-size: clamp(18px, 3.2vw, 24px);
-      color: var(--gold-bright);
-      text-shadow: 0 0 10px rgba(255, 215, 0, 0.6);
-      letter-spacing: 1px;
-    }
-
-    .nav-menu {
-      display: flex;
-      align-items: center;
-      gap: 24px;
-      list-style: none;
-    }
-
-    .nav-link {
-      color: #d1e2fc;
-      font-size: 16px;
-      font-weight: 700;
-      text-decoration: none;
-      cursor: pointer;
-      transition: color 0.2s, text-shadow 0.2s;
-    }
-
-    .nav-link:hover {
-      color: var(--gold-bright);
-      text-shadow: 0 0 10px rgba(255, 215, 0, 0.8);
-    }
-
-    .nav-cta-btn {
-      font-family: var(--font-dev);
-      font-size: 16px;
-      padding: 8px 24px;
-      border-radius: 25px;
-      border: none;
-      cursor: pointer;
-      background: linear-gradient(135deg, var(--gold) 0%, var(--saffron) 100%);
-      color: #1a0800;
-      font-weight: 800;
-      box-shadow: 0 4px 15px rgba(255, 107, 26, 0.5);
-      transition: transform 0.2s, box-shadow 0.2s;
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-    }
-
-    .nav-cta-btn:hover {
-      transform: translateY(-2px) scale(1.04);
-      box-shadow: 0 6px 25px rgba(255, 180, 0, 0.8);
-    }
-
-    /* ========================================================
-       HERO BANNER & SHRI KRISHNA SHOWCASE
-       ======================================================== */
-    .hero-section {
-      position: relative;
-      min-height: 85vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 50px 30px;
-      background: radial-gradient(circle at 50% 30%, rgba(22, 55, 115, 0.7) 0%, rgba(4, 12, 28, 0.95) 60%, #020614 100%);
-      overflow: hidden;
-    }
-
-    .hero-bg-aura {
-      position: absolute;
-      width: 700px;
-      height: 700px;
-      background: radial-gradient(circle, rgba(255, 194, 51, 0.2) 0%, rgba(255, 107, 26, 0.1) 40%, transparent 70%);
-      filter: blur(50px);
-      border-radius: 50%;
-      pointer-events: none;
-      animation: heroAuraPulse 6s ease-in-out infinite alternate;
-    }
-
-    @keyframes heroAuraPulse {
-      0% { transform: scale(0.9) rotate(0deg); opacity: 0.6; }
-      100% { transform: scale(1.15) rotate(180deg); opacity: 1; }
-    }
-
-    .hero-grid {
-      position: relative;
-      max-width: 1250px;
-      width: 100%;
-      display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
-      align-items: center;
-      gap: 40px;
-      z-index: 2;
-    }
-
-    .hero-content {
-      text-align: left;
-    }
-
-    .sacred-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      background: rgba(255, 194, 51, 0.15);
-      border: 1px solid var(--gold);
-      border-radius: 20px;
-      padding: 5px 16px;
-      font-size: 14px;
-      font-weight: 700;
-      color: var(--gold-bright);
-      margin-bottom: 14px;
-      text-shadow: 0 0 8px rgba(255, 215, 0, 0.6);
-    }
-
-    .hero-main-title {
-      font-family: var(--font-dev);
-      font-size: clamp(34px, 5.5vw, 62px);
-      line-height: 1.15;
-      background: linear-gradient(180deg, #ffffff 0%, #ffe484 45%, #ff9e1b 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      margin-bottom: 16px;
-      filter: drop-shadow(0 3px 6px rgba(0,0,0,0.8));
-    }
-
-    .hero-shloka-box {
-      background: rgba(4, 15, 36, 0.85);
-      border-left: 4px solid var(--gold);
-      border-radius: 12px;
-      padding: 14px 20px;
-      margin-bottom: 22px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.5);
-    }
-
-    .shloka-verse {
-      font-family: 'Tiro Devanagari Sanskrit', serif;
-      font-size: clamp(15px, 2.2vw, 19px);
-      line-height: 1.6;
-      color: #ffeeb2;
-      font-style: italic;
-    }
-
-    .shloka-meaning {
-      font-size: 13px;
-      color: #9ac2ef;
-      margin-top: 6px;
-      font-weight: 500;
-    }
-
-    .hero-desc {
-      font-size: clamp(15px, 2vw, 18px);
-      color: #e2edfc;
-      line-height: 1.6;
-      margin-bottom: 28px;
-    }
-
-    .hero-desc b {
-      color: var(--gold-bright);
-    }
-
-    .hero-actions-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 16px;
-      align-items: center;
-    }
-
-    .play-game-big-btn {
-      font-family: var(--font-dev);
-      font-size: 22px;
-      padding: 14px 38px;
-      border-radius: 35px;
-      border: none;
-      cursor: pointer;
-      background: linear-gradient(135deg, #ffc233 0%, #ff6b1a 60%, #c41800 100%);
-      color: #1a0800;
-      font-weight: 800;
-      box-shadow: 0 6px 25px rgba(255, 107, 26, 0.6), inset 0 2px 6px rgba(255, 255, 255, 0.6);
-      transition: all 0.25s ease;
-      display: inline-flex;
-      align-items: center;
-      gap: 12px;
-      letter-spacing: 1px;
-    }
-
-    .play-game-big-btn:hover {
-      transform: translateY(-3px) scale(1.04);
-      box-shadow: 0 10px 35px rgba(255, 180, 0, 0.85);
-    }
-
-    .hero-login-jump-btn {
-      font-family: var(--font-dev);
-      font-size: 18px;
-      padding: 13px 28px;
-      border-radius: 35px;
-      background: rgba(14, 38, 77, 0.8);
-      color: #ffe599;
-      border: 2px solid var(--gold);
-      cursor: pointer;
-      transition: all 0.25s;
-    }
-
-    .hero-login-jump-btn:hover {
-      background: rgba(25, 60, 115, 0.95);
-      transform: translateY(-2px);
-    }
-
-    /* Hero Right: Shri Krishna & Sudarshan Chakra Visual Card */
-    .hero-visual-card {
-      position: relative;
-      background: radial-gradient(circle at center, #102d60 0%, #061530 70%, #030b1c 100%);
-      border: 2.5px solid var(--gold);
-      border-radius: 28px;
-      padding: 30px;
-      text-align: center;
-      box-shadow: 0 0 50px rgba(255, 194, 51, 0.35);
-    }
-
-    .krishna-avatar-frame {
-      position: relative;
-      width: 200px;
-      height: 200px;
-      margin: 0 auto 20px;
-    }
-
-    .halo-ring {
-      position: absolute;
-      inset: -12px;
-      border-radius: 50%;
-      background: conic-gradient(from 0deg, #ffc233, #ff4500, #ffc233, #00d2ff, #ffc233);
-      filter: blur(8px);
-      animation: spin360 8s linear infinite;
-    }
-
-    @keyframes spin360 {
-      to { transform: rotate(360deg); }
-    }
-
-    .krishna-art-circle {
-      position: relative;
-      width: 200px;
-      height: 200px;
-      border-radius: 50%;
-      border: 3px solid var(--gold);
-      background: #0d2854;
-      overflow: hidden;
-      box-shadow: 0 0 25px rgba(255, 215, 0, 0.7);
-    }
-
-    .spinning-chakra-preview {
-      position: absolute;
-      top: -15px;
-      right: -10px;
-      width: 76px;
-      height: 76px;
-      border-radius: 50%;
-      animation: spin360 0.3s linear infinite;
-      filter: drop-shadow(0 0 14px #ffea00);
-    }
-
-    .krishna-card-title {
-      font-family: var(--font-dev);
-      font-size: 26px;
-      color: var(--gold-bright);
-      margin-bottom: 4px;
-    }
-
-    .krishna-card-sub {
-      font-size: 14px;
-      color: #a4c4e8;
-      margin-bottom: 15px;
-    }
-
-    .features-pill-row {
-      display: flex;
-      justify-content: center;
-      gap: 10px;
-      flex-wrap: wrap;
-    }
-
-    .feature-tag {
-      background: rgba(255, 194, 51, 0.15);
-      border: 1px solid rgba(255, 194, 51, 0.4);
-      border-radius: 15px;
-      padding: 4px 12px;
-      font-size: 13px;
-      font-weight: 700;
-      color: #ffeeb2;
-    }
-
-    /* ========================================================
-       HOMEPAGE AUTHENTICATION SECTION (LOGIN & SIGN UP)
-       ======================================================== */
-    .auth-section {
-      padding: 80px 30px;
-      background: linear-gradient(180deg, #020614 0%, #061633 50%, #020614 100%);
-      border-top: 1px solid rgba(255, 194, 51, 0.2);
-      border-bottom: 1px solid rgba(255, 194, 51, 0.2);
-      text-align: center;
-    }
-
-    .section-title {
-      font-family: var(--font-dev);
-      font-size: clamp(28px, 4.5vw, 42px);
-      color: var(--gold-bright);
-      text-shadow: 0 0 15px rgba(255, 215, 0, 0.6);
-      margin-bottom: 10px;
-    }
-
-    .section-desc {
-      font-size: 16px;
-      color: #a4c4e8;
-      max-width: 650px;
-      margin: 0 auto 35px;
-    }
-
-    .auth-center-container {
-      max-width: 520px;
-      width: 100%;
-      margin: 0 auto;
-      background: radial-gradient(circle at top, #112852 0%, #061530 70%, #030b1c 100%);
-      border: 2px solid var(--gold);
-      border-radius: 24px;
-      padding: 30px 35px;
-      box-shadow: 0 0 45px rgba(255, 194, 51, 0.35);
-    }
-
-    .home-auth-tabs {
-      display: flex;
-      background: rgba(4, 12, 28, 0.85);
-      border-radius: 30px;
-      border: 1px solid rgba(255, 194, 51, 0.35);
-      padding: 4px;
-      margin-bottom: 24px;
-    }
-
-    .home-auth-tab {
-      flex: 1;
-      padding: 10px 14px;
-      font-size: 15px;
-      font-weight: 700;
-      color: #9ab9e6;
-      border-radius: 25px;
-      cursor: pointer;
-      border: none;
-      background: transparent;
-      transition: all 0.25s ease;
-    }
-
-    .home-auth-tab.active {
-      background: linear-gradient(135deg, var(--gold) 0%, var(--saffron) 100%);
-      color: #1a0800;
-      box-shadow: 0 2px 10px rgba(255, 107, 26, 0.5);
-    }
-
-    .auth-panel {
-      display: none;
-      flex-direction: column;
-      gap: 15px;
-      text-align: left;
-    }
-
-    .auth-panel.active {
-      display: flex;
-    }
-
-    .auth-group {
-      display: flex;
-      flex-direction: column;
-      gap: 5px;
-    }
-
-    .auth-group label {
-      font-size: 13px;
-      color: var(--gold-bright);
-      font-weight: 700;
-    }
-
-    .auth-input {
-      background: rgba(3, 10, 24, 0.8);
-      border: 1.5px solid rgba(255, 194, 51, 0.35);
-      border-radius: 12px;
-      padding: 12px 16px;
-      color: #fff;
-      font-size: 15px;
-      outline: none;
-      font-family: inherit;
-    }
-
-    .auth-input:focus {
-      border-color: var(--gold);
-      box-shadow: 0 0 12px rgba(255, 194, 51, 0.4);
-    }
-
-    .auth-submit-btn {
-      font-family: var(--font-dev);
-      font-size: 18px;
-      padding: 12px;
-      border-radius: 30px;
-      border: none;
-      cursor: pointer;
-      margin-top: 8px;
-      background: linear-gradient(135deg, #ffc233 0%, #ff6b1a 60%, #c41800 100%);
-      color: #1a0800;
-      font-weight: 800;
-      box-shadow: 0 4px 15px rgba(255, 107, 26, 0.45);
-      transition: all 0.2s;
-    }
-
-    .auth-submit-btn:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 8px 25px rgba(255, 180, 0, 0.7);
-    }
-
-    .auth-status-msg {
-      font-size: 14px;
-      min-height: 20px;
-      text-align: center;
-      font-weight: bold;
-    }
-    .auth-status-msg.error { color: #ff4d6d; }
-    .auth-status-msg.success { color: #55f094; }
-
-    /* Logged In Warrior Profile Card */
-    #logged-in-profile-box {
-      display: none;
-      text-align: center;
-      padding: 10px;
-    }
-
-    .user-avatar-badge {
-      font-size: 48px;
-      margin-bottom: 8px;
-    }
-
-    .welcome-user-title {
-      font-family: var(--font-dev);
-      font-size: 24px;
-      color: var(--gold-bright);
-      margin-bottom: 6px;
-    }
-
-    /* ========================================================
-       WEAPON & 108 BLADES SHOWCASE SECTION
-       ======================================================== */
-    .weapon-section {
-      padding: 70px 30px;
-      max-width: 1200px;
-      margin: 0 auto;
-      text-align: center;
-    }
-
-    .features-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 25px;
-      margin-top: 40px;
-    }
-
-    .feature-card {
-      background: rgba(8, 22, 48, 0.75);
-      border: 1.5px solid rgba(255, 194, 51, 0.35);
-      border-radius: 20px;
-      padding: 25px;
-      text-align: left;
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
-      transition: transform 0.25s, border-color 0.25s;
-    }
-
-    .feature-card:hover {
-      transform: translateY(-5px);
-      border-color: var(--gold);
-      box-shadow: 0 8px 30px rgba(255, 194, 51, 0.35);
-    }
-
-    .card-icon {
-      font-size: 38px;
-      margin-bottom: 14px;
-    }
-
-    .card-title {
-      font-family: var(--font-dev);
-      font-size: 20px;
-      color: var(--gold-bright);
-      margin-bottom: 8px;
-    }
-
-    .card-desc {
-      font-size: 14px;
-      color: #b5cfee;
-      line-height: 1.5;
-    }
-
-    /* ========================================================
-       ASURA & DEMON SERPENTS ROSTER (असुर गाथा)
-       ======================================================== */
-    .asura-section {
-      padding: 70px 30px;
-      background: radial-gradient(circle at center, #0e1e3b 0%, #030817 100%);
-      border-top: 1px solid rgba(255, 194, 51, 0.2);
-      text-align: center;
-    }
-
-    .asura-grid {
-      max-width: 1200px;
-      margin: 40px auto 0;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 22px;
-    }
-
-    .asura-card {
-      background: rgba(10, 20, 42, 0.85);
-      border: 1.5px solid rgba(230, 57, 70, 0.4);
-      border-radius: 18px;
-      padding: 20px;
-      text-align: left;
-      transition: all 0.25s;
-    }
-
-    .asura-card:hover {
-      border-color: #ff4d6d;
-      transform: translateY(-4px);
-      box-shadow: 0 0 25px rgba(255, 77, 109, 0.4);
-    }
-
-    .asura-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 8px;
-    }
-
-    .asura-name {
-      font-family: var(--font-dev);
-      font-size: 18px;
-      color: #ff4d6d;
-      font-weight: 800;
-    }
-
-    .asura-danger {
-      font-size: 12px;
-      background: rgba(230, 57, 70, 0.2);
-      border: 1px solid #ff4d6d;
-      border-radius: 10px;
-      padding: 2px 8px;
-      color: #ff99aa;
-      font-weight: bold;
-    }
-
-    .asura-desc {
-      font-size: 13px;
-      color: #c0d3ec;
-      line-height: 1.4;
-    }
-
-    /* ========================================================
-       FOOTER
-       ======================================================== */
-    .site-footer {
-      background: #02050f;
-      border-top: 2px solid rgba(255, 194, 51, 0.3);
-      padding: 30px;
-      text-align: center;
-    }
-
-    .footer-mantra {
-      font-family: var(--font-dev);
-      font-size: 18px;
-      color: var(--gold-bright);
-      margin-bottom: 8px;
-    }
-
-    .footer-copy {
-      font-size: 13px;
-      color: #8da4c4;
-    }
-
-    /* ========================================================
-       FULL-SCREEN 3D GAME VIEW (TRANSITION CONTAINER)
-       ======================================================== */
-    #game-container-view {
-      position: fixed;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      display: none;
-      z-index: 500;
-      background: #000;
-    }
-
-    #game-canvas {
-      width: 100%;
-      height: 100%;
-      display: block;
-      cursor: crosshair;
-    }
-
-    /* In-Game Return to Homepage Button */
-    .exit-to-home-btn {
-      position: fixed;
-      top: 15px;
-      left: 15px;
-      z-index: 600;
-      background: rgba(6, 16, 36, 0.85);
-      border: 2px solid var(--gold);
-      border-radius: 20px;
-      padding: 7px 16px;
-      color: var(--gold-bright);
-      font-size: 14px;
-      font-weight: 700;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.6);
-      transition: all 0.2s;
-    }
-
-    .exit-to-home-btn:hover {
-      background: rgba(20, 50, 100, 0.95);
-      transform: scale(1.05);
-    }
-
-    /* Game HUD & Elements */
-    #hud {
-      position: fixed;
-      inset: 0;
-      pointer-events: none;
-      z-index: 510;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      padding: 15px 20px;
-    }
-
-    .hud-top-bar {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      gap: 15px;
-      pointer-events: auto;
-      margin-left: 170px; /* Leave space for exit button */
-    }
-
-    .krishna-status-card {
-      background: rgba(6, 16, 36, 0.88);
-      border: 2px solid var(--gold);
-      border-radius: 16px;
-      padding: 8px 16px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.6);
-      min-width: 220px;
-    }
-
-    .hp-header {
-      display: flex;
-      justify-content: space-between;
-      font-size: 12px;
-      font-weight: 800;
-      color: var(--gold-bright);
-      margin-bottom: 4px;
-    }
-
-    .hp-bar-outer {
-      width: 100%;
-      height: 12px;
-      background: #030a17;
-      border-radius: 10px;
-      border: 1px solid rgba(255, 194, 51, 0.4);
-      overflow: hidden;
-    }
-
-    .hp-bar-inner {
-      height: 100%;
-      width: 100%;
-      background: linear-gradient(90deg, #1aa95a, #55f094);
-      border-radius: 10px;
-      transition: width 0.25s ease;
-    }
-
-    .hp-bar-inner.low {
-      background: linear-gradient(90deg, #c41800, #ff4d6d);
-    }
-
-    .center-announcement-cluster {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 6px;
-      text-align: center;
-    }
-
-    .timer-pill {
-      background: rgba(10, 26, 56, 0.9);
-      border: 1.5px solid var(--gold);
-      border-radius: 20px;
-      padding: 4px 16px;
-      font-size: 14px;
-      font-weight: 800;
-      color: var(--gold-bright);
-      box-shadow: 0 0 15px rgba(255, 194, 51, 0.3);
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-
-    .krishna-speech-bubble {
-      background: linear-gradient(135deg, rgba(8, 28, 64, 0.95), rgba(4, 14, 34, 0.95));
-      border: 2px solid var(--gold);
-      border-radius: 18px;
-      padding: 8px 20px;
-      box-shadow: 0 0 25px rgba(255, 215, 0, 0.4);
-      max-width: 480px;
-    }
-
-    .krishna-voice-title {
-      font-family: var(--font-dev);
-      font-size: 13px;
-      color: var(--gold-bright);
-      margin-bottom: 2px;
-    }
-
-    .krishna-voice-command {
-      font-size: clamp(13px, 2vw, 16px);
-      font-weight: 700;
-      color: #ffffff;
-    }
-
-    .right-stats-card {
-      background: rgba(6, 16, 36, 0.88);
-      border: 2px solid var(--gold);
-      border-radius: 16px;
-      padding: 8px 16px;
-      text-align: right;
-      min-width: 150px;
-    }
-
-    .wave-badge {
-      font-family: var(--font-dev);
-      font-size: 16px;
-      color: #ff9e1b;
-      font-weight: 800;
-    }
-
-    .score-txt {
-      font-size: 24px;
-      font-weight: 900;
-      color: #fff;
-      text-shadow: 0 0 10px rgba(255, 215, 0, 0.6);
-    }
-
-    /* Reticle */
-    #aim-reticle {
-      position: fixed;
-      width: 54px;
-      height: 54px;
-      border: 2px dashed var(--gold);
-      border-radius: 50%;
-      pointer-events: none;
-      transform: translate(-50%, -50%);
-      display: none;
-      z-index: 520;
-      animation: spinReticle 4s linear infinite;
-      box-shadow: 0 0 15px rgba(255, 194, 51, 0.8);
-    }
-
-    #aim-reticle::after {
-      content: '';
-      position: absolute;
-      inset: 22px;
-      background: #ff4500;
-      border-radius: 50%;
-    }
-
-    @keyframes spinReticle {
-      to { transform: translate(-50%, -50%) rotate(360deg); }
-    }
-
-    .hud-bottom-bar {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-end;
-      gap: 15px;
-      pointer-events: auto;
-    }
-
-    .target-guide-pill {
-      background: rgba(7, 18, 40, 0.9);
-      border: 1.5px solid var(--gold);
-      border-radius: 25px;
-      padding: 8px 20px;
-      font-size: clamp(12px, 1.8vw, 15px);
-      font-weight: 700;
-      color: #ffeb99;
-    }
-
-    #combo-callout {
-      position: fixed;
-      top: 35%;
-      left: 50%;
-      transform: translateX(-50%) scale(0.6);
-      font-family: var(--font-dev);
-      font-size: clamp(28px, 6vw, 56px);
-      color: #fff;
-      text-align: center;
-      text-shadow: 0 0 25px rgba(255, 215, 0, 0.9), 0 0 45px rgba(255, 69, 0, 0.9);
-      pointer-events: none;
-      opacity: 0;
-      transition: all 0.25s;
-      z-index: 530;
-      white-space: nowrap;
-    }
-
-    #combo-callout.show {
-      transform: translateX(-50%) scale(1.1);
-      opacity: 1;
-    }
-
-    #slice-toasts {
-      position: fixed;
-      top: 60%;
-      left: 50%;
-      transform: translateX(-50%);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 8px;
-      pointer-events: none;
-      z-index: 530;
-    }
-
-    .slice-toast {
-      background: linear-gradient(90deg, #ff4500, #ffc233);
-      color: #1a0800;
-      font-family: var(--font-dev);
-      font-weight: 900;
-      font-size: 18px;
-      padding: 6px 20px;
-      border-radius: 25px;
-      box-shadow: 0 0 20px rgba(255, 107, 26, 0.8);
-      animation: toastPop 1.2s ease-out forwards;
-    }
-
-    @keyframes toastPop {
-      0% { transform: translateY(20px) scale(0.7); opacity: 0; }
-      20% { transform: translateY(0) scale(1.1); opacity: 1; }
-      75% { transform: translateY(-10px) scale(1); opacity: 1; }
-      100% { transform: translateY(-30px) scale(0.9); opacity: 0; }
-    }
-
-    /* Game Over Modal */
-    #game-over-modal {
-      position: fixed;
-      inset: 0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: rgba(2, 6, 18, 0.92);
-      backdrop-filter: blur(14px);
-      z-index: 1000;
-      padding: 15px;
-    }
-
-    #game-over-modal.hidden {
-      display: none;
-    }
-
-    .modal-box {
-      background: radial-gradient(circle at top, #112852 0%, #061530 65%, #030b1c 100%);
-      border: 2px solid var(--gold);
-      border-radius: 24px;
-      max-width: 540px;
-      width: 100%;
-      padding: 30px;
-      text-align: center;
-      box-shadow: 0 0 50px rgba(255, 194, 51, 0.35);
-    }
-
-    @media (max-width: 768px) {
-      .hero-grid { grid-template-columns: 1fr; }
-      .nav-menu { display: none; }
-      .hud-top-bar { margin-left: 0; flex-direction: column; align-items: stretch; gap: 8px; }
-      .exit-to-home-btn { top: 8px; left: 8px; padding: 5px 12px; font-size: 12px; }
-    }
-  </style>
+<meta charset='utf-8'/>
+<meta content='width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover' name='viewport'/>
+<meta content='#0b1d3a' name='theme-color'/>
+<meta content='yes' name='mobile-web-app-capable'/>
+<meta content='yes' name='apple-mobile-web-app-capable'/>
+<b:include data='blog' name='all-head-content'/>
+<title>॥ श्री कृष्ण सुदर्शन चक्र - महाभारत महायुद्ध 3D ॥</title>
+<b:skin><![CDATA[/* Sudarshan Chakra 3D: Mahabharat Kurukshetra War */
+]]></b:skin>
+<b:if cond='data:view.isLayoutMode'>
+<b:template-skin><![CDATA[
+body#layout{background:#0a192f;margin:0;padding:24px;font:14px/1.5 Arial,sans-serif;color:#ffd700}
+body#layout #sr-blogger{display:block;max-width:760px;margin:0 auto}
+body#layout #sr-blogger h2{font-size:20px;margin:0 0 4px}
+body#layout #sr-blogger p{margin:0 0 16px}
+body#layout .section{margin:0 0 16px}
+]]></b:template-skin>
+<b:else/>
+<style>#sr-blogger{display:none}</style>
+<link href='https://fonts.googleapis.com' rel='preconnect'/>
+<link crossorigin='anonymous' href='https://fonts.gstatic.com' rel='preconnect'/>
+<link href='https://fonts.googleapis.com/css2?family=Cinzel:wght@700;900&amp;family=Rozha+One&amp;family=Tiro+Devanagari+Sanskrit:ital@0;1&amp;family=Baloo+2:wght@500;700;800&amp;family=Lilita+One&amp;display=swap' rel='stylesheet'/>
+<style>/*<![CDATA[*/
+
+/* Layout: Mahabharat Kurukshetra 3D Arena; HUD pinned to corners; Divine Gold & Saffron Theme */
+#sr{
+  --ink:#081426;
+  --ink-soft:#244972;
+  --glass:rgba(9, 24, 52, 0.88);
+  --glass-dim:rgba(7, 18, 40, 0.75);
+  --gold:#ffc233;
+  --gold-bright:#fff275;
+  --saffron:#ff7a00;
+  --saffron-deep:#b84500;
+  --coral:#e63946;
+  --leaf:#10b981;
+  --ground:#2b190f;
+  --shade:rgba(0, 0, 0, 0.7);
+  --white:#ffffff;
+  --f-display:'Rozha One','Lilita One',system-ui,sans-serif;
+  --f-body:'Baloo 2','Tiro Devanagari Sanskrit',ui-rounded,'Segoe UI',system-ui,sans-serif;
+  color-scheme:dark;
+}
+html,body{height:100%;margin:0;overflow:hidden;overscroll-behavior:none;background:#030814}
+#sr{position:fixed;inset:0;z-index:2147483000;background:var(--ground);color:#fff;font-family:var(--f-body);font-size:14px;line-height:1.4;text-align:left;-webkit-user-select:none;user-select:none;-webkit-tap-highlight-color:transparent;-webkit-touch-callout:none;touch-action:manipulation}
+#sr :is(div,section,aside,button,input,h1,h2,h3,p,ul,ol,li,details,summary,small,b,i,span,canvas,iframe,textarea){all:revert;box-sizing:border-box}
+#sr [hidden]{display:none!important}
+#sr button{border:0 none!important}
+#sr input{-webkit-user-select:text;user-select:text}
+#sr #gl{position:fixed;inset:0;width:100%;height:100%;display:block;touch-action:none;outline:none}
+#sr #tags{position:fixed;inset:0;pointer-events:none;overflow:hidden}
+#sr .tag{position:absolute;left:0;top:0;font:700 13px/1 var(--f-display);color:var(--white);letter-spacing:.02em;white-space:nowrap;
+  text-shadow:0 2px 0 var(--ink),1px 0 0 var(--ink),-1px 0 0 var(--ink),0 -1px 0 var(--ink);will-change:transform}
+#sr .tag.me{color:var(--gold-bright);font-size:16px;text-shadow:0 0 8px rgba(255,215,0,0.8),0 2px 0 #000}
+#sr .tag.prey{color:#55f094}
+#sr .tag.danger{color:#ff4d6d}
+#sr #vignette{position:fixed;inset:0;pointer-events:none;background:radial-gradient(ellipse at center,transparent 50%,rgba(4,10,24,.45) 100%)}
+#sr #hurt{position:fixed;inset:0;pointer-events:none;opacity:0;background:radial-gradient(ellipse at center,transparent 35%,rgba(230,57,70,.6) 100%);transition:opacity .35s}
+#sr #hurt.on{opacity:1;transition:none}
+
+/* ---------- HUD ---------- */
+#hud{position:fixed;inset:0;pointer-events:none}
+#sr .hud-tl{position:absolute;left:calc(14px + env(safe-area-inset-left,0px));top:calc(12px + env(safe-area-inset-top,0px));display:grid;gap:6px;justify-items:start}
+#sr .lenbox{background:var(--glass);border:1.5px solid var(--gold);border-radius:16px;padding:6px 16px 4px;box-shadow:0 4px 15px var(--shade)}
+#sr .lenbox small{display:block;font:800 11px/1 var(--f-body);letter-spacing:.12em;color:var(--gold-bright)}
+#sr .lenbox b{font:700 32px/1.05 var(--f-display);font-variant-numeric:tabular-nums;color:#fff;text-shadow:0 0 10px rgba(255,215,0,0.6)}
+#sr .chips{display:flex;gap:6px}
+#sr .chip{background:var(--glass-dim);border:1px solid rgba(255,194,51,0.3);border-radius:999px;padding:2px 10px;font:700 14px/1.6 var(--f-body);color:#ffeeb2}
+#sr .chip b{font-family:var(--f-display);font-weight:700;color:#fff}
+#sr #feed{display:grid;gap:3px;margin-top:4px}
+#sr #feed div{font:700 13px/1.4 var(--f-body);color:var(--white);text-shadow:0 1px 0 var(--ink),0 0 6px rgba(0,0,0,0.9);transition:opacity .6s}
+#sr .hud-tc{position:absolute;left:50%;transform:translateX(-50%);top:calc(12px + env(safe-area-inset-top,0px));display:flex;gap:6px;flex-wrap:wrap;justify-content:center;width:max-content;max-width:55vw}
+#sr .pill{background:var(--glass);border:1px solid var(--gold);border-radius:999px;padding:3px 14px;font:700 14px/1.6 var(--f-body);box-shadow:0 3px 10px var(--shade);white-space:nowrap;color:#fff}
+#sr .pill b{font:700 16px/1 var(--f-display);color:var(--gold-bright)}
+#sr .pill.zone{background:var(--coral);color:var(--white);border-color:#ff8599}
+#sr .pill.zone.calm{background:var(--glass);color:#ffeeb2}
+#sr .hud-tr{position:absolute;right:calc(14px + env(safe-area-inset-right,0px));top:calc(12px + env(safe-area-inset-top,0px));background:var(--glass);border:1.5px solid var(--gold);border-radius:16px;padding:8px 14px;box-shadow:0 4px 15px var(--shade);min-width:180px}
+#sr .hud-tr h3{margin:0 0 4px;font:800 12px/1 var(--f-body);letter-spacing:.12em;color:var(--gold-bright);border-bottom:1px solid rgba(255,194,51,0.3);padding-bottom:3px}
+#sr #board{list-style:none;margin:0;padding:0;display:grid;gap:2px}
+#sr #board li{display:grid;grid-template-columns:20px 12px 1fr auto;gap:6px;align-items:center;font:700 13px/1.4 var(--f-body);color:#c9daf8}
+#sr #board li .n{color:#8da9d4;font-variant-numeric:tabular-nums}
+#sr #board li i{width:12px;height:12px;border-radius:50%;box-shadow:0 0 5px rgba(255,255,255,0.4)}
+#sr #board li span{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:110px}
+#sr #board li b{font:700 14px/1 var(--f-display);font-variant-numeric:tabular-nums;color:#fff}
+#sr #board li.me{color:var(--gold-bright);text-shadow:0 0 6px rgba(255,215,0,0.6)}
+#sr #minimap{position:absolute;right:calc(14px + env(safe-area-inset-right,0px));bottom:calc(14px + env(safe-area-inset-bottom,0px));width:140px;height:140px;border-radius:50%;border:2px solid var(--gold);box-shadow:0 4px 15px var(--shade)}
+#sr #boostBtn{display:none}
+#sr.touch #boostBtn{display:grid;place-items:center;align-content:center;gap:0;position:absolute;pointer-events:auto;right:calc(20px + env(safe-area-inset-right,0px));bottom:calc(24px + env(safe-area-inset-bottom,0px));width:92px;height:92px;border-radius:50%;
+  background:radial-gradient(circle, var(--gold) 0%, var(--saffron) 70%, var(--saffron-deep) 100%);color:#1a0800;font:900 13px/1 var(--f-display);box-shadow:0 0 20px rgba(255,122,0,0.6), 0 6px 0 var(--saffron-deep);touch-action:none;transition:opacity .2s;border:2px solid #fff}
+#sr #boostBtn svg{width:28px;height:28px}
+#sr.touch #boostBtn.low{opacity:.45}
+#sr.touch #boostBtn.on{transform:translateY(4px);box-shadow:0 0 35px rgba(255,215,0,0.9), 0 2px 0 var(--saffron-deep)}
+#sr.touch #minimap{width:104px;height:104px;right:auto;left:calc(14px + env(safe-area-inset-left,0px));bottom:calc(14px + env(safe-area-inset-bottom,0px))}
+#sr #joy{position:absolute;width:128px;height:128px;margin:-64px 0 0 -64px;border-radius:50%;border:3px solid rgba(255,194,51,.7);background:rgba(9,24,52,.35);display:none}
+#sr #joy.on{display:block}
+#sr #joyKnob{position:absolute;left:50%;top:50%;width:54px;height:54px;margin:-27px 0 0 -27px;border-radius:50%;background:radial-gradient(circle, #fff 0%, var(--gold) 100%);box-shadow:0 0 15px rgba(255,215,0,0.8)}
+#sr #banner{position:fixed;left:0;right:0;top:15%;text-align:center;pointer-events:none;font:700 clamp(36px,7vw,76px)/1 var(--f-display);color:var(--white);
+  -webkit-text-stroke:2px var(--ink);text-shadow:0 0 30px rgba(255,194,51,0.9), 0 4px 0 #000;opacity:0}
+#sr #banner small{display:block;margin-top:8px;font:700 clamp(14px,2.2vw,20px)/1.2 var(--f-body);-webkit-text-stroke:0;color:var(--gold-bright);text-shadow:0 2px 4px #000}
+#sr #banner.show{animation:pop 2.2s ease forwards}
+@keyframes pop{0%{opacity:0;transform:scale(.6)}12%{opacity:1;transform:scale(1.08)}20%{transform:scale(1)}80%{opacity:1}100%{opacity:0;transform:translateY(-12px)}}
+#sr #toasts{position:fixed;left:0;right:0;top:64%;display:grid;justify-items:center;gap:6px;pointer-events:none}
+#sr .toast{font:700 24px/1 var(--f-display);color:var(--white);-webkit-text-stroke:1.5px var(--ink);text-shadow:0 0 15px rgba(255,194,51,0.8);animation:rise 1.3s ease forwards}
+#sr .toast.good{color:var(--gold-bright)}
+#sr .toast.bad{color:var(--coral)}
+@keyframes rise{0%{opacity:0;transform:translateY(14px) scale(.8)}15%{opacity:1;transform:none}75%{opacity:1}100%{opacity:0;transform:translateY(-26px)}}
+#sr #corner{position:fixed;z-index:5;left:calc(14px + env(safe-area-inset-left,0px));bottom:calc(14px + env(safe-area-inset-bottom,0px));display:flex;gap:8px}
+#sr.touch.playing #corner{bottom:calc(124px + env(safe-area-inset-bottom,0px))}
+#sr:not(.playing) #corner{bottom:auto;left:auto;top:calc(14px + env(safe-area-inset-top,0px));right:calc(14px + env(safe-area-inset-right,0px))}
+#sr:not(.playing) #pauseBtn{display:none}
+#sr.paused #corner{display:none}
+#sr .round{width:44px;height:44px;border:1.5px solid var(--gold)!important;border-radius:50%;background:var(--glass);color:var(--gold-bright);display:grid;place-items:center;box-shadow:0 3px 10px var(--shade);cursor:pointer;padding:0}
+#sr .round:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+#sr .round svg{width:22px;height:22px}
+#sr #muteBtn .x{display:none}
+#sr #muteBtn.muted .x{display:block}
+#sr #muteBtn.muted .w{display:none}
+
+/* ---------- Screens ---------- */
+.screen{position:fixed;inset:0;z-index:4;display:flex;align-items:flex-start;overflow-y:auto;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:24px;
+  background:radial-gradient(circle at 30% 50%, rgba(9, 24, 52, 0.95) 0%, rgba(3, 8, 20, 0.98) 70%, #01040a 100%)}
+#sr .dock>*,#sr .card>*,#sr .field{min-width:0}
+#sr .dock{width:min(460px,100%);min-width:0;margin-left:clamp(0px,6vw,80px);margin-block:auto;display:grid;gap:14px}
+#sr .logo{margin:0;font:900 clamp(42px,min(9vw,10vh),90px)/.92 var(--f-display);color:var(--white);-webkit-text-stroke:3px #000;text-shadow:0 0 25px rgba(255,194,51,0.8), 0 6px 0 #000;letter-spacing:.02em}
+#sr .logo span{display:block;color:var(--gold-bright)}
+#sr .tagline{margin:0;font:700 16px/1.4 var(--f-body);color:#c9daf8;text-shadow:0 1px 3px #000}
+#sr .shloka-banner{background:rgba(4, 12, 28, 0.85);border-left:3px solid var(--gold);border-radius:10px;padding:8px 12px;font:italic 13px/1.5 var(--f-body);color:#ffeeb2}
+#sr .card{background:var(--glass);border:2px solid var(--gold);border-radius:22px;padding:20px;box-shadow:0 8px 30px var(--shade);display:grid;gap:14px}
+#sr .field label,#sr .field .lbl{display:block;font:800 12px/1 var(--f-body);letter-spacing:.12em;color:var(--gold-bright);margin-bottom:6px}
+#sr #nameIn{width:100%;box-sizing:border-box;border:2px solid var(--gold);border-radius:14px;padding:10px 14px;font:700 17px/1.2 var(--f-body);color:#fff;background:rgba(3,10,24,0.85);outline:none}
+#sr #nameIn:focus{border-color:var(--gold-bright);box-shadow:0 0 12px rgba(255,215,0,0.5)}
+#sr #skins{display:flex;flex-wrap:wrap;gap:8px}
+#sr .skin{width:38px;height:38px;border-radius:50%;border:2px solid transparent;padding:0;cursor:pointer;box-shadow:0 2px 8px var(--shade)}
+#sr .skin[aria-checked="true"]{box-shadow:0 0 0 2px var(--white),0 0 0 5px var(--gold);transform:translateY(-2px)}
+#sr .btn{border:0;border-radius:16px;cursor:pointer;font:700 24px/1 var(--f-display);padding:14px 20px;color:#1a0800;background:linear-gradient(135deg, var(--gold) 0%, var(--saffron) 100%);box-shadow:0 6px 20px rgba(255,122,0,0.5), inset 0 2px 4px rgba(255,255,255,0.6);letter-spacing:.02em;transition:transform .15s}
+#sr .btn:active{transform:translateY(3px);box-shadow:0 2px 10px rgba(255,122,0,0.5)}
+#sr .btn.ghost{background:rgba(9,24,52,0.85);color:var(--gold-bright);border:1.5px solid var(--gold)!important;box-shadow:0 4px 10px var(--shade);font-size:18px}
+#sr #how summary{cursor:pointer;font:800 12px/1 var(--f-body);letter-spacing:.12em;color:var(--gold-bright);text-transform:uppercase;padding:4px 0}
+#sr #how[open] summary{margin-bottom:8px}
+#sr .rules{margin:0;padding:0;list-style:none;display:grid;gap:5px;font:600 14px/1.4 var(--f-body);color:#d1e2fc}
+#sr .rules li{display:grid;grid-template-columns:20px 1fr;gap:6px;align-items:start}
+#sr .rules li::before{content:"";width:12px;height:12px;margin-top:4px;border-radius:50%;background:var(--dot,var(--leaf));box-shadow:0 0 6px rgba(255,255,255,0.4)}
+#sr .keys{font:600 13px/1.4 var(--f-body);color:#9ab9e6;margin:0}
+#sr .result{font:900 clamp(44px,8vw,80px)/.95 var(--f-display);margin:0;color:var(--white);text-shadow:0 0 25px rgba(255,215,0,0.8), 0 4px 0 #000}
+#sr .result.win{color:var(--gold-bright)}
+#sr .cause{margin:0;font:700 17px/1.3 var(--f-body);color:#d1e2fc;text-shadow:0 1px 3px #000}
+#sr .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+#sr .stats div{display:grid;gap:2px;background:rgba(3,10,24,0.6);padding:6px;border-radius:10px;border:1px solid rgba(255,194,51,0.25)}
+#sr .stats small{font:800 10px/1 var(--f-body);letter-spacing:.1em;color:var(--gold-bright)}
+#sr .stats b{font:700 24px/1 var(--f-display);font-variant-numeric:tabular-nums;color:#fff}
+#sr .row{display:flex;gap:10px;flex-wrap:wrap}
+#sr .row .btn{flex:1 1 140px}
+#sr #err{position:fixed;inset:0;display:grid;place-items:center;padding:24px;background:#030814;color:var(--white);font:700 18px/1.4 var(--f-body);text-align:center;z-index:9}
+
+@media (max-width:640px){
+  #sr .screen{background:radial-gradient(circle at 50% 30%, rgba(9, 24, 52, 0.98) 0%, #01040a 100%)}
+  #sr .dock{margin-left:0;margin-block:auto 0;gap:10px}
+  #sr .hud-tr{min-width:0;padding:6px 10px}
+  #sr #board li span{max-width:72px}
+  #sr #feed{display:none}
+  #sr .lenbox b{font-size:26px}
+  #sr .hud-tc{left:calc(14px + env(safe-area-inset-left,0px));transform:none;top:calc(104px + env(safe-area-inset-top,0px));flex-direction:column;align-items:flex-start;max-width:none}
+  #sr .pill{font-size:12px;padding:2px 10px}
+  #sr .stats b{font-size:20px}
+  #sr .logo{font-size:clamp(38px,12vw,56px)}
+  #sr .card{padding:14px;gap:10px}
+  #sr .btn{padding:14px 18px}
+}
+
+/*]]>*/</style>
+</b:if>
 </head>
 <body>
 
-<!-- ========================================================
-     VIEW 1: GRAND WEBSITE HOMEPAGE
-     ======================================================== -->
-<div id="website-homepage">
-
-  <!-- TOP NAVIGATION BAR -->
-  <header class="site-navbar">
-    <a class="nav-brand" href="#top">
-      <div class="brand-icon">🦚</div>
-      <div class="brand-title">॥ श्री कृष्ण सुदर्शन चक्र ॥</div>
-    </a>
-
-    <ul class="nav-menu">
-      <li><a class="nav-link" href="#hero">होम</a></li>
-      <li><a class="nav-link" href="#auth">खाता / लॉगिन</a></li>
-      <li><a class="nav-link" href="#weapon">सुदर्शन शस्त्र</a></li>
-      <li><a class="nav-link" href="#asuras">असुर गाथा</a></li>
-    </ul>
-
-    <button class="nav-cta-btn" onclick="launchGameScreen()">
-      <span>⚔️</span> युद्ध खेलें (PLAY)
-    </button>
-  </header>
-
-  <!-- HERO SECTION -->
-  <section id="hero" class="hero-section">
-    <div class="hero-bg-aura"></div>
-
-    <div class="hero-grid">
-      <!-- Left Content -->
-      <div class="hero-content">
-        <div class="sacred-badge">
-          <span>✨</span> महाभारत कुरुक्षेत्र महायुद्ध 3D
-        </div>
-
-        <h1 class="hero-main-title">
-          श्री कृष्ण सुदर्शन चक्र महायुद्ध
-        </h1>
-
-        <div class="hero-shloka-box">
-          <div class="shloka-verse">
-            "यदा यदा हि धर्मस्य ग्लानिर्भवति भारत । अभ्युत्थानमधर्मस्य तदात्मानं सृजाम्यहम् ॥<br/>
-            परित्राणाय साधूनां विनाशाय च दुष्कृताम् । धर्मसंस्थापनार्थाय सम्भवामि युगे युगे ॥"
-          </div>
-          <div class="shloka-meaning">
-            जब-जब धर्म की हानि और अधर्म की वृद्धि होती है, तब-तब मैं सज्जनों के उद्धार और दुष्टों के संहार के लिए प्रकट होता हूँ।
-          </div>
-        </div>
-
-        <p class="hero-desc">
-          भगवान श्री कृष्ण 3D में अपने दिव्य रथ पर विराजमान हैं! 
-          स्क्रीन पर अपनी उंगली या माउस से <b>कालिया नाग और असुरों पर निशाना साधें</b>, 
-          और जैसे ही <b>छोड़ेंगे (Release)</b>, सुदर्शन चक्र की <b>कातिली धारदार ब्लेडें</b> उनका समूल अंत कर देंगी!
-        </p>
-
-        <div class="hero-actions-row">
-          <button class="play-game-big-btn" onclick="launchGameScreen()">
-            <span>⚔️</span> महाभारत युद्ध आरम्भ करें
-          </button>
-          <a class="hero-login-jump-btn" href="#auth">
-            🛡️ योद्धा लॉगिन / साइन अप
-          </a>
-        </div>
-      </div>
-
-      <!-- Right Visual Card -->
-      <div class="hero-visual-card">
-        <div class="krishna-avatar-frame">
-          <div class="halo-ring"></div>
-          <div class="krishna-art-circle">
-            <!-- Stylized Shri Krishna Graphic -->
-            <svg viewBox="0 0 200 200" width="100%" height="100%">
-              <circle cx="100" cy="100" r="95" fill="#0c234a"/>
-              <!-- Crown -->
-              <path d="M68 62 L100 25 L132 62 L120 72 L80 72 Z" fill="#ffd54f" stroke="#ffe082" stroke-width="2"/>
-              <!-- Peacock Feather -->
-              <path d="M100 25 C108 8, 128 5, 126 22 C124 35, 105 32, 100 25 Z" fill="#00e676"/>
-              <circle cx="116" cy="16" r="4" fill="#2979ff"/>
-              <!-- Face -->
-              <ellipse cx="100" cy="98" rx="36" ry="42" fill="#3a7bd5"/>
-              <!-- Tilak -->
-              <path d="M96 68 Q100 64 104 68 L103 86 Q100 90 97 86 Z" fill="#fff9c4"/>
-              <circle cx="100" cy="88" r="2.5" fill="#d50000"/>
-              <!-- Eyes & Smile -->
-              <path d="M78 93 Q86 89 93 94" stroke="#fff" stroke-width="2" fill="none"/>
-              <path d="M107 94 Q114 89 122 93" stroke="#fff" stroke-width="2" fill="none"/>
-              <path d="M92 118 Q100 124 108 118" stroke="#d50000" stroke-width="2.5" stroke-linecap="round" fill="none"/>
-              <!-- Flute -->
-              <rect x="52" y="126" width="98" height="11" rx="5.5" fill="#ffd700" transform="rotate(-8 100 131)"/>
-            </svg>
-
-            <!-- Spinning Sudarshan on Finger -->
-            <svg class="spinning-chakra-preview" viewBox="0 0 100 100">
-              <circle cx="50" cy="50" r="46" fill="rgba(255, 194, 51, 0.25)" stroke="#ffc233" stroke-width="2"/>
-              <g fill="#ffc233" stroke="#ff4500" stroke-width="1.5">
-                <path d="M50 2 L56 16 L44 16 Z"/>
-                <path d="M50 98 L56 84 L44 84 Z"/>
-                <path d="M2 50 L16 56 L16 44 Z"/>
-                <path d="M98 50 L84 56 L84 44 Z"/>
-                <path d="M16 16 L30 22 L22 30 Z"/>
-                <path d="M84 16 L78 30 L70 22 Z"/>
-                <path d="M16 84 L22 70 L30 78 Z"/>
-                <path d="M84 84 L70 78 L78 70 Z"/>
-              </g>
-              <circle cx="50" cy="50" r="18" fill="#ff4500"/>
-              <circle cx="50" cy="50" r="8" fill="#fff"/>
-            </svg>
-          </div>
-        </div>
-
-        <h3 class="krishna-card-title">भगवान श्री कृष्ण</h3>
-        <p class="krishna-card-sub">सारथी रूप • सुदर्शन चक्रधारी</p>
-
-        <div class="features-pill-row">
-          <span class="feature-tag">🎯 निशाना साधें और छोड़ें</span>
-          <span class="feature-tag">⚔️ 108 कातिली ब्लेडें</span>
-          <span class="feature-tag">⏱️ 1 घंटे का महायुद्ध</span>
-          <span class="feature-tag">🛡️ दिव्य रथ रक्षा</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ========================================================
-       HOMEPAGE AUTHENTICATION SECTION (LOGIN & SIGN UP)
-       ======================================================== -->
-  <section id="auth" class="auth-section">
-    <h2 class="section-title">योद्धा द्वार: साइन अप व लॉगिन</h2>
-    <p class="section-desc">
-      कुरुक्षेत्र के महायुद्ध में अपनी योद्धा आईडी दर्ज करें, अपनी प्रगति और स्कोर सुरक्षित रखें।
-    </p>
-
-    <div class="auth-center-container">
-      <!-- Tabs -->
-      <div class="home-auth-tabs">
-        <button class="home-auth-tab active" onclick="switchHomeTab('login')">लॉगिन (Login)</button>
-        <button class="home-auth-tab" onclick="switchHomeTab('signup')">साइन अप (Sign Up)</button>
-        <button class="home-auth-tab" onclick="switchHomeTab('forgot')">पासवर्ड भूल गए?</button>
-      </div>
-
-      <!-- Feedback -->
-      <div id="home-auth-feedback" class="auth-status-msg"></div>
-
-      <!-- Logged In Box -->
-      <div id="logged-in-profile-box">
-        <div class="user-avatar-badge">🏹</div>
-        <div id="logged-user-name" class="welcome-user-title">योद्धा लॉगिन है</div>
-        <p style="color: #a4c4e8; margin-bottom: 18px;">आपकी योद्धा आईडी सुरक्षित है। युद्धभूमि आपकी प्रतीक्षा कर रही है!</p>
-        <div style="display: flex; gap: 12px; justify-content: center;">
-          <button class="auth-submit-btn" style="padding: 10px 28px;" onclick="launchGameScreen()">
-            ⚔️ सीधे युद्ध में प्रवेश करें
-          </button>
-          <button class="hero-login-jump-btn" style="padding: 10px 20px; font-size: 15px;" onclick="logoutUser()">
-            लॉगआउट
-          </button>
-        </div>
-      </div>
-
-      <!-- Form 1: Login -->
-      <form id="home-login-form" class="auth-panel active" onsubmit="handleHomeLogin(event)">
-        <div class="auth-group">
-          <label>योद्धा आईडी या नाम (User ID / Name)</label>
-          <input type="text" id="hl-id" class="auth-input" placeholder="उदा. arjun_warrior" required/>
-        </div>
-        <div class="auth-group">
-          <label>पासवर्ड (Password)</label>
-          <input type="password" id="hl-pwd" class="auth-input" placeholder="••••••••" required/>
-        </div>
-        <button type="submit" class="auth-submit-btn">युद्ध में लॉगिन करें</button>
-        <div style="text-align: center; margin-top: 10px;">
-          <button type="button" style="background: transparent; border: none; color: #ffeb99; cursor: pointer; text-decoration: underline;" onclick="playAsInstantGuest()">
-            🛡️ बिना लॉगिन किए सीधे खेलें (Guest Play)
-          </button>
-        </div>
-      </form>
-
-      <!-- Form 2: Sign Up -->
-      <form id="home-signup-form" class="auth-panel" onsubmit="handleHomeSignup(event)">
-        <div class="auth-group">
-          <label>आपका पूरा नाम (Your Name)</label>
-          <input type="text" id="hs-name" class="auth-input" placeholder="अपना नाम लिखें" required/>
-        </div>
-        <div class="auth-group">
-          <label>योद्धा आईडी (Choose User ID)</label>
-          <input type="text" id="hs-id" class="auth-input" placeholder="उदा. krishna_bhakt_108" required/>
-        </div>
-        <div class="auth-group">
-          <label>पासवर्ड (Create Password)</label>
-          <input type="password" id="hs-pwd" class="auth-input" placeholder="नया पासवर्ड बनाएं" required/>
-        </div>
-        <div class="auth-group">
-          <label>सुरक्षा प्रश्न (आपका प्रिय महाभारत पात्र?)</label>
-          <input type="text" id="hs-sec" class="auth-input" placeholder="उत्तर (उदा. कृष्ण / अर्जुन / कर्ण)" required/>
-        </div>
-        <button type="submit" class="auth-submit-btn">नया खाता बनाएं (SIGN UP)</button>
-      </form>
-
-      <!-- Form 3: Forgot Password -->
-      <form id="home-forgot-form" class="auth-panel" onsubmit="handleHomeForgot(event)">
-        <div class="auth-group">
-          <label>पंजीकृत योद्धा आईडी (User ID)</label>
-          <input type="text" id="hf-id" class="auth-input" placeholder="अपनी आईडी दर्ज करें" required/>
-        </div>
-        <div class="auth-group">
-          <label>सुरक्षा प्रश्न का उत्तर (Security Answer)</label>
-          <input type="text" id="hf-sec" class="auth-input" placeholder="पंजीकृत उत्तर लिखें" required/>
-        </div>
-        <div class="auth-group">
-          <label>नया पासवर्ड (New Password)</label>
-          <input type="password" id="hf-pwd" class="auth-input" placeholder="नया पासवर्ड बनाएं" required/>
-        </div>
-        <button type="submit" class="auth-submit-btn">पासवर्ड रीसेट करें</button>
-      </form>
-    </div>
-  </section>
-
-  <!-- WEAPON SHOWCASE SECTION -->
-  <section id="weapon" class="weapon-section">
-    <h2 class="section-title">अमोघ सुदर्शन चक्र की विशेषताएं</h2>
-    <p class="section-desc">भगवान विष्णु और श्री कृष्ण का सबसे शक्तिशाली अस्त्र जो अधर्मियों का समूल नाश करता है।</p>
-
-    <div class="features-grid">
-      <div class="feature-card">
-        <div class="card-icon">🎯</div>
-        <h3 class="card-title">टारगेट और रिलीज प्रहार</h3>
-        <p class="card-desc">स्क्रीन पर उंगली या माउस से असुर पर अचूक निशाना साधें। जैसे ही छोड़ेंगे, सुदर्शन चक्र सीधा वार करेगा।</p>
-      </div>
-
-      <div class="feature-card">
-        <div class="card-icon">⚔️</div>
-        <h3 class="card-title">108 कातिली धारदार ब्लेडें</h3>
-        <p class="card-desc">चक्र की पैनी कातिली ब्लेडें कालिया नाग और दानवों के शरीर को टुकड़ों में काट (Sever) कर भस्म कर देती हैं।</p>
-      </div>
-
-      <div class="feature-card">
-        <div class="card-icon">⏱️</div>
-        <h3 class="card-title">1 घंटे का महायुद्ध संग्राम</h3>
-        <p class="card-desc">लगातार कठिन होती हुई वेव और भयंकर असुरों का आक्रमण। 1 घंटे तक टिककर कुरुक्षेत्र में विजय प्राप्त करें।</p>
-      </div>
-
-      <div class="feature-card">
-        <div class="card-icon">⚡</div>
-        <h3 class="card-title">ब्रह्मास्त्र महाप्रहार</h3>
-        <p class="card-desc">संकट की स्थिति में ब्रह्मास्त्र की ऊर्जा मुक्त करें और युद्धभूमि के समस्त असुरों को एक ही प्रहार में समाप्त करें।</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- ASURA ENEMY ROSTER -->
-  <section id="asuras" class="asura-section">
-    <h2 class="section-title">असुर व दुष्ट सर्प गाथा</h2>
-    <p class="section-desc">कुरुक्षेत्र में इन भयंकर असुरों का सामना होगा। हर असुर के पास विष और घातक शक्तियां हैं।</p>
-
-    <div class="asura-grid">
-      <div class="asura-card">
-        <div class="asura-header">
-          <span class="asura-name">कालिया नागराज</span>
-          <span class="asura-danger">घातक विषधर</span>
-        </div>
-        <p class="asura-desc">यमुना का विषधर नागराज जो कुरुक्षेत्र की भूमि पर विष उगल रहा है। इसके फनों को काटना होगा।</p>
-      </div>
-
-      <div class="asura-card">
-        <div class="asura-header">
-          <span class="asura-name">अघासुर अजगर</span>
-          <span class="asura-danger">विशालकाय दैत्य</span>
-        </div>
-        <p class="asura-desc">पहाड़ के समान विशाल अजगर रूपी दानव जिसका मुख गुफा की भांति खुलता है और सब कुछ निगल जाता है।</p>
-      </div>
-
-      <div class="asura-card">
-        <div class="asura-header">
-          <span class="asura-name">बकासुर असुर</span>
-          <span class="asura-danger">अति-तीव्र गति</span>
-        </div>
-        <p class="asura-desc">लोहे की चोंच और नुकीले पंजों वाला भयानक असुर जो आकाश मार्ग से रथ पर झपटता है।</p>
-      </div>
-
-      <div class="asura-card">
-        <div class="asura-header">
-          <span class="asura-name">नरकासुर व वृत्रासुर</span>
-          <span class="asura-danger">महाबली सेनापति</span>
-        </div>
-        <p class="asura-desc">अंधकार और मायावी शक्तियों के स्वामी जो विषबाणों की वर्षा करके रथ के रक्षा कवच को भेदने आते हैं।</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- FOOTER -->
-  <footer class="site-footer">
-    <div class="footer-mantra">॥ ॐ नमो भगवते वासुदेवाय ॥</div>
-    <div class="footer-copy">श्री कृष्ण सुदर्शन चक्र 3D गेम • धर्मसंस्थापनार्थाय सम्भवामि युगे युगे • महाभारत महायुद्ध</div>
-  </footer>
-
+<div id='sr-blogger'>
+<b:if cond='data:view.isLayoutMode'>
+<h2>श्री कृष्ण सुदर्शन चक्र - महाभारत महायुद्ध 3D</h2>
+<p>Blogger Theme layout mode</p>
+</b:if>
+<b:section id='main' maxwidgets='1' name='Main Posts' showaddelement='no'>
+  <b:widget id='Blog1' locked='true' title='Blog Posts' type='Blog' version='2' visible='true'>
+    <b:includable id='main'/>
+  </b:widget>
+</b:section>
 </div>
 
-<!-- ========================================================
-     VIEW 2: FULL 3D INTERACTIVE KURUKSHETRA GAME
-     ======================================================== -->
-<div id="game-container-view">
+<b:if cond='data:view.isLayoutMode'>
+<b:else/>
+<div id='sr'>
+<canvas aria-label='Mahabharat 3D Kurukshetra Arena' id='gl' tabindex='0'/>
+<div id='tags'/>
+<div id='vignette'/>
+<div id='hurt'/>
 
-  <!-- Return to Homepage Button -->
-  <button class="exit-to-home-btn" onclick="exitToHomepage()">
-    <span>🏠</span> होमपेज पर जाएं
-  </button>
+<div hidden='hidden' id='hud'>
+  <div class='hud-tl'>
+    <div class='lenbox'><small>सुदर्शन तेज (POWER)</small><b id='hLen'>14</b></div>
+    <div class='chips'><span class='chip'>स्थान <b id='hRank'>#1</b></span><span class='chip'>संहार <b id='hKills'>0</b></span></div>
+    <div id='feed'/>
+  </div>
+  <div class='hud-tc'>
+    <div class='pill'><b id='hAlive'>10</b> दानव व सर्प शेष</div>
+    <div class='pill zone calm' id='hZone'>धर्म चक्र परिधि सक्रिय</div>
+  </div>
+  <div class='hud-tr'><h3>⚔️ कुरुक्षेत्र सूची</h3><ol id='board'/></div>
+  <canvas height='280' id='minimap' width='280'/>
+  <div id='joy'><div id='joyKnob'/></div>
+  <div aria-label='108 कातिली चक्रास्त्र' id='boostBtn' role='button'>
+    <svg aria-hidden='true' viewbox='0 0 24 24'><path d='M12 2l2.4 4.8 5.3.8-3.8 3.7.9 5.3-4.8-2.5-4.8 2.5.9-5.3-3.8-3.7 5.3-.8z' fill='currentColor'/></svg>
+    <span>महा-स्पिन</span>
+  </div>
+</div>
+<div id='banner'/>
+<div id='toasts'/>
 
-  <canvas id="game-canvas"></canvas>
+<div id='corner'>
+<button aria-label='युद्ध विराम' class='round' id='pauseBtn' type='button'><svg aria-hidden='true' viewbox='0 0 24 24'><rect fill='currentColor' height='14' rx='1.2' width='4' x='6' y='5'/><rect fill='currentColor' height='14' rx='1.2' width='4' x='14' y='5'/></svg></button>
+<button aria-label='ध्वनि ऑन/ऑफ' class='round' id='muteBtn' type='button'>
+  <svg fill='none' stroke='currentColor' stroke-linecap='round' stroke-linejoin='round' stroke-width='2.4' viewbox='0 0 24 24'><path d='M4 9h4l5-4v14l-5-4H4z' fill='currentColor'/><path class='w' d='M16.5 8.5a5 5 0 0 1 0 7M19 6a8.5 8.5 0 0 1 0 12'/><path class='x' d='M17 9l5 6M22 9l-5 6'/></svg>
+</button>
+</div>
 
-  <!-- Crosshair Reticle -->
-  <div id="aim-reticle"></div>
-
-  <!-- HUD Overlay -->
-  <div id="hud">
-    <!-- TOP BAR -->
-    <div class="hud-top-bar">
-      <!-- Krishna Ratha Health -->
-      <div class="krishna-status-card">
-        <div class="hp-header">
-          <span>दिव्य रथ व रक्षा कवच (SHIELD)</span>
-          <span id="hp-txt">100%</span>
-        </div>
-        <div class="hp-bar-outer">
-          <div id="hp-bar" class="hp-bar-inner"></div>
-        </div>
-        <div style="display: flex; gap: 8px; margin-top: 4px; font-size: 11px; color: #a4c4e8;">
-          <span>योद्धा: <b id="hud-user-id" style="color: #fff;">गेस्ट</b></span>
-          <span>• अस्त्र: <b>सुदर्शन चक्र</b></span>
-        </div>
-      </div>
-
-      <!-- Center Announcement & Krishna Live Voice -->
-      <div class="center-announcement-cluster">
-        <div class="timer-pill">
-          <span>⏱️ युद्ध समय:</span>
-          <span id="hud-timer">00:00:00</span>
-          <span style="color: #ff9100; font-size: 11px;">/ १ घंटा</span>
-        </div>
-
-        <div class="krishna-speech-bubble">
-          <div class="krishna-voice-title">🦚 <b>भगवान श्री कृष्ण का आदेश:</b></div>
-          <div id="krishna-voice-text" class="krishna-voice-command">
-            "हे पार्थ! उंगली से असुर का संधान करो और सुदर्शन चक्र को छोड़ो!"
-          </div>
-        </div>
-      </div>
-
-      <!-- Right Wave & Score -->
-      <div class="right-stats-card">
-        <div class="wave-badge" id="hud-wave-title">वेव १: कालिया नाग</div>
-        <div class="score-txt" id="hud-score">0</div>
-        <div style="font-size: 12px; color: #a4c4e8;">
-          संहार: <b id="hud-kills" style="color: #fff;">0</b> असुर
-        </div>
-      </div>
+<!-- ==================== MAIN MENU SCREEN ==================== -->
+<section class='screen' id='menu'>
+  <div class='dock'>
+    <h1 class='logo'>सुदर्शन<span>चक्र 3D</span></h1>
+    <p class='tagline'>भगवान श्री कृष्ण का अमोघ सुदर्शन चक्र। कातिली ब्लेडों से कालिया नाग और दानवों का संहार करें।</p>
+    <div class='shloka-banner'>
+      "यदा यदा हि धर्मस्य ग्लानिर्भवति भारत । अभ्युत्थानमधर्मस्य तदात्मानं सृजाम्यहम् ॥"
     </div>
-
-    <!-- Callouts & Toasts -->
-    <div id="combo-callout"></div>
-    <div id="slice-toasts"></div>
-
-    <!-- BOTTOM BAR: Targeting instructions & Brahma-Astra -->
-    <div class="hud-bottom-bar">
-      <div class="target-guide-pill">
-        🎯 <b>निशाना साधें और छोड़ें:</b> स्क्रीन पर दबाकर <b>असुर पर टारगेट करें</b>, फिर <b>छोड़ते ही (Release)</b> सुदर्शन चक्र उसका अंत कर देगा!
-      </div>
-      <button id="brahmaAstraBtn" class="nav-cta-btn" style="background: linear-gradient(135deg, #d90429, #ff6b1a);" onclick="triggerBrahmaAstra()">
-        ⚡ ब्रह्मास्त्र प्रहार
-      </button>
+    <div class='card'>
+      <div class='field'><label for='nameIn'>योद्धा का नाम (YOUR NAME)</label><input autocomplete='off' id='nameIn' maxlength='16' spellcheck='false' value='श्री कृष्ण भक्त'/></div>
+      <div class='field'><span class='lbl' id='skinLbl'>सुदर्शन चक्र रूप (CHAKRA AVATAR)</span><div aria-labelledby='skinLbl' id='skins' role='radiogroup'/></div>
+      <details id='how'><summary>युद्ध के नियम (How to play)</summary>
+      <ul class='rules'>
+        <li style='--dot:#ffc233'>अमृत कण व दिव्य फल ग्रहण करके सुदर्शन चक्र का तेज और कातिली ब्लेडें बढ़ाएं।</li>
+        <li style='--dot:#10b981'>हरे नाम वाले दुर्बल सर्प हैं। चक्र के स्पर्श से उनका तुरंत संहार होगा।</li>
+        <li style='--dot:#e63946'>लाल नाम वाले कालिया नाग और महाबली दानव हैं। उनसे संभलकर वार करें।</li>
+        <li style='--dot:#ff7a00'><b>कातिली ब्लेडें:</b> बूस्ट दबाकर चक्र की 108 ब्लेडों से शत्रुओं को काट डालें।</li>
+        <li style='--dot:#38bdf8'>कुरुक्षेत्र की धर्म परिधि में रहें। अंतिम विजयी बनें।</li>
+      </ul>
+      </details>
+      <button class='btn' id='playBtn' type='button'>⚔️ महाभारत युद्ध आरम्भ करें</button>
+      <p class='keys' id='keysHint'>माउस/उंगली से चक्र चलाएं। क्लिक दबाकर रखें या Space से १०८ कातिली चक्रास्त्र चलाएं।</p>
     </div>
   </div>
+</section>
 
-  <!-- GAME OVER DIALOG -->
-  <div id="game-over-modal" class="hidden">
-    <div class="modal-box">
-      <h2 style="font-family: var(--font-dev); font-size: 32px; color: #ff4d6d; margin-bottom: 6px;">कुरुक्षेत्र में वीरगति!</h2>
-      <p style="color: #a4c4e8; font-size: 14px; margin-bottom: 20px;">असुरों ने रथ के रक्षा कवच को भेद दिया।</p>
-
-      <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin-bottom: 22px;">
-        <div style="background: rgba(3, 10, 24, 0.75); border: 1px solid var(--gold); border-radius: 12px; padding: 10px;">
-          <small style="color: var(--gold-bright); font-weight: 700;">असुर संहार (KILLS)</small>
-          <div id="go-kills" style="font-size: 24px; font-weight: 900; color: #fff;">0</div>
-        </div>
-        <div style="background: rgba(3, 10, 24, 0.75); border: 1px solid var(--gold); border-radius: 12px; padding: 10px;">
-          <small style="color: var(--gold-bright); font-weight: 700;">युद्ध समय</small>
-          <div id="go-time" style="font-size: 24px; font-weight: 900; color: #fff;">00:00</div>
-        </div>
-        <div style="background: rgba(3, 10, 24, 0.75); border: 1px solid var(--gold); border-radius: 12px; padding: 10px;">
-          <small style="color: var(--gold-bright); font-weight: 700;">वेव (WAVE)</small>
-          <div id="go-wave" style="font-size: 24px; font-weight: 900; color: #fff;">1</div>
-        </div>
-        <div style="background: rgba(3, 10, 24, 0.75); border: 1px solid var(--gold); border-radius: 12px; padding: 10px;">
-          <small style="color: var(--gold-bright); font-weight: 700;">कुल अंक</small>
-          <div id="go-score" style="font-size: 24px; font-weight: 900; color: #fff;">0</div>
-        </div>
-      </div>
-
-      <div style="display: flex; gap: 12px; justify-content: center; flex-wrap: wrap;">
-        <button class="nav-cta-btn" style="padding: 12px 32px;" onclick="restartWar()">
-          🔄 फिर से शुरू करें (RESTART)
-        </button>
-        <button class="hero-login-jump-btn" style="padding: 10px 20px; font-size: 15px;" onclick="exitToHomepage()">
-          होमपेज पर जाएं
-        </button>
+<!-- ==================== PAUSED SCREEN ==================== -->
+<section class='screen' hidden='hidden' id='paused'>
+  <div class='dock'>
+    <h2 class='result'>युद्ध विराम</h2>
+    <div class='card'>
+      <div class='row'>
+        <button class='btn' id='resumeBtn' type='button'>पुनः आरम्भ</button>
+        <button class='btn ghost' id='quitBtn' type='button'>मुख्य द्वार</button>
       </div>
     </div>
   </div>
+</section>
 
+<!-- ==================== GAME OVER SCREEN ==================== -->
+<section class='screen' hidden='hidden' id='over'>
+  <div class='dock'>
+    <h2 class='result' id='oTitle'>वीरगति!</h2>
+    <p class='cause' id='oCause'>कालिया नाग द्वारा प्रहार</p>
+    <div class='card'>
+      <div class='stats'>
+        <div><small>स्थान</small><b id='oPlace'>#1</b></div>
+        <div><small>सर्वोच्च तेज</small><b id='oLen'>0</b></div>
+        <div><small>दानव संहार</small><b id='oKills'>0</b></div>
+        <div><small>युद्ध समय</small><b id='oTime'>0:00</b></div>
+      </div>
+      <div class='row'>
+        <button class='btn' id='againBtn' type='button'>पुनः युद्ध करें</button>
+        <button class='btn ghost' id='menuBtn' type='button'>मुख्य द्वार</button>
+      </div>
+    </div>
+  </div>
+</section>
 </div>
 
-<!-- ========================================================
-     SCRIPTS: Three.js 3D Engine & Full Gameplay
-     ======================================================== -->
-<script type="module">
+<script type='module'>//<![CDATA[
 import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.158.0/build/three.module.min.js';
+window.__srBooted = true;
+const root = document.getElementById('sr');
+if (root.parentNode !== document.body) document.body.appendChild(root);
 
-/* ========================================================
-   LOCAL STORAGE AUTHENTICATION
-   ======================================================== */
-const AuthSystem = {
-  getUsers() {
-    try {
-      return JSON.parse(localStorage.getItem('sk_chakra_users') || '{}');
-    } catch (e) {
-      return {};
-    }
-  },
-  saveUsers(users) {
-    localStorage.setItem('sk_chakra_users', JSON.stringify(users));
-  },
-  getCurrentUser() {
-    try {
-      return JSON.parse(localStorage.getItem('sk_chakra_curr_user') || 'null');
-    } catch (e) {
-      return null;
-    }
-  },
-  setCurrentUser(u) {
-    localStorage.setItem('sk_chakra_curr_user', JSON.stringify(u));
-  }
+/* =========================================================
+   Utilities
+   ========================================================= */
+const $ = id => document.getElementById(id);
+const rand = (a, b) => a + Math.random() * (b - a);
+const clamp = (v, a, b) => v < a ? a : v > b ? b : v;
+const lerp = (a, b, t) => a + (b - a) * t;
+const smooth = (a, b, x) => { const t = clamp((x - a) / (b - a), 0, 1); return t * t * (3 - 2 * t); };
+const TAU = Math.PI * 2;
+const wrapA = a => { while (a > Math.PI) a -= TAU; while (a < -Math.PI) a += TAU; return a; };
+const hash3 = (x, y, z) => { const s = Math.sin(x * 12.9898 + y * 78.233 + z * 37.719) * 43758.5453; return s - Math.floor(s); };
+const store = {
+  get(k, d) { try { const v = localStorage.getItem('sk_' + k); return v === null ? d : JSON.parse(v); } catch (e) { return d; } },
+  set(k, v) { try { localStorage.setItem('sk_' + k, JSON.stringify(v)); } catch (e) {} }
+};
+let isTouch = matchMedia('(pointer: coarse)').matches;
+const reduceMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
+function setTouch() { isTouch = true; root.classList.add('touch'); $('keysHint').textContent = 'स्क्रीन पर उंगली से चक्र चलाएं। बूस्ट से १०८ कातिली ब्लेडें घुमाएं!'; }
+if (isTouch) setTouch();
+const LOW = isTouch;
+const Q = { level: Math.min(store.get('quality', LOW ? 1 : 2), LOW ? 1 : 2) };
+const haptic = p => { try { if (navigator.vibrate) navigator.vibrate(p); } catch (e) {} };
+
+/* =========================================================
+   Config & Sacred Avatars
+   ========================================================= */
+const CFG = {
+  aiCount: 9,
+  arenaStart: 72,
+  arenaMin: 14,
+  shrinkDelay: 25,
+  shrinkDuration: 130,
+  startMass: 18,
+  minMass: 6,
+  baseSpeed: 9.0,
+  boostSpeed: 16.0,
+  boostCost: 2.2,
+  turnRate: 3.8,
+  foodTarget: 180,
+  foodRate: 6.5,
+  eatRatio: 1.25,
+  huntGrace: 16,
 };
 
-let currentUser = AuthSystem.getCurrentUser();
+// Sudarshan Chakra Sacred Color Themes
+const SKINS = [
+  { name: 'सूर्य सुदर्शन', c1: '#ffc233', c2: '#ff6b00', pattern: 'flame', isPlayerDefault: true },
+  { name: 'अग्नि चक्र', c1: '#ff3b30', c2: '#ff9500', pattern: 'bands' },
+  { name: 'वज्र चक्र', c1: '#00d2ff', c2: '#0040aa', pattern: 'stripe' },
+  { name: 'काल चक्र', c1: '#8a2be2', c2: '#ffd700', pattern: 'diamond' },
+  { name: 'गरुड़ चक्र', c1: '#ffcc00', c2: '#8b0000', pattern: 'saddle' },
+  { name: 'ब्रह्म चक्र', c1: '#ffffff', c2: '#ffb300', pattern: 'flame' },
+];
 
-window.switchHomeTab = (tab) => {
-  document.querySelectorAll('.home-auth-tab').forEach(t => t.classList.remove('active'));
-  document.querySelectorAll('.auth-panel').forEach(p => p.classList.remove('active'));
-  document.getElementById('home-auth-feedback').textContent = '';
+// Legendary Demonic Serpents & Asura Names
+const AI_NAMES = [
+  'कालिया नाग (Kaliya)',
+  'अघासुर दानव (Aghasura)',
+  'बकासुर (Bakasura)',
+  'तक्षक नाग (Takshaka)',
+  'वृत्रासुर (Vritrasura)',
+  'कंस सेनापति (Kansa)',
+  'शंखासुर (Shankhasura)',
+  'नरकासुर (Narakasura)',
+  'कालनेमि (Kalanemi)',
+  'धूम्राक्ष (Dhumraksha)',
+  'प्रलम्बासुर (Pralamba)'
+];
 
-  if (tab === 'login') {
-    document.querySelectorAll('.home-auth-tab')[0].classList.add('active');
-    document.getElementById('home-login-form').classList.add('active');
-  } else if (tab === 'signup') {
-    document.querySelectorAll('.home-auth-tab')[1].classList.add('active');
-    document.getElementById('home-signup-form').classList.add('active');
-  } else if (tab === 'forgot') {
-    document.querySelectorAll('.home-auth-tab')[2].classList.add('active');
-    document.getElementById('home-forgot-form').classList.add('active');
-  }
-};
+const lenOf = m => 1.1 * Math.pow(m, 0.82);
+const radiusOf = m => 0.48 + 0.11 * Math.sqrt(m);
+const MAXSEG = 180;
 
-window.handleHomeSignup = (e) => {
-  e.preventDefault();
-  const name = document.getElementById('hs-name').value.trim();
-  const id = document.getElementById('hs-id').value.trim().toLowerCase();
-  const pwd = document.getElementById('hs-pwd').value;
-  const sec = document.getElementById('hs-sec').value.trim().toLowerCase();
-  const fb = document.getElementById('home-auth-feedback');
-
-  const users = AuthSystem.getUsers();
-  if (users[id]) {
-    fb.className = 'auth-status-msg error';
-    fb.textContent = 'यह योद्धा आईडी पहले से मौजूद है! कृपया दूसरी आईडी चुनें।';
-    return;
-  }
-
-  users[id] = { name, id, pwd, sec };
-  AuthSystem.saveUsers(users);
-  currentUser = users[id];
-  AuthSystem.setCurrentUser(currentUser);
-
-  fb.className = 'auth-status-msg success';
-  fb.textContent = `अभिनंदन ${name}! खाता बन गया है।`;
-  updateAuthUI();
-};
-
-window.handleHomeLogin = (e) => {
-  e.preventDefault();
-  const id = document.getElementById('hl-id').value.trim().toLowerCase();
-  const pwd = document.getElementById('hl-pwd').value;
-  const fb = document.getElementById('home-auth-feedback');
-
-  const users = AuthSystem.getUsers();
-  if (!users[id] || users[id].pwd !== pwd) {
-    fb.className = 'auth-status-msg error';
-    fb.textContent = 'गलत योद्धा आईडी या पासवर्ड!';
-    return;
-  }
-
-  currentUser = users[id];
-  AuthSystem.setCurrentUser(currentUser);
-  fb.className = 'auth-status-msg success';
-  fb.textContent = `स्वागत है योद्धा ${currentUser.name}!`;
-  updateAuthUI();
-};
-
-window.handleHomeForgot = (e) => {
-  e.preventDefault();
-  const id = document.getElementById('hf-id').value.trim().toLowerCase();
-  const sec = document.getElementById('hf-sec').value.trim().toLowerCase();
-  const newPwd = document.getElementById('hf-pwd').value;
-  const fb = document.getElementById('home-auth-feedback');
-
-  const users = AuthSystem.getUsers();
-  if (!users[id]) {
-    fb.className = 'auth-status-msg error';
-    fb.textContent = 'यह योद्धा आईडी नहीं मिली!';
-    return;
-  }
-
-  if (users[id].sec !== sec) {
-    fb.className = 'auth-status-msg error';
-    fb.textContent = 'सुरक्षा उत्तर गलत है!';
-    return;
-  }
-
-  users[id].pwd = newPwd;
-  AuthSystem.saveUsers(users);
-  fb.className = 'auth-status-msg success';
-  fb.textContent = 'पासवर्ड सफलतापूर्वक बदल गया! अब लॉगिन करें।';
-  setTimeout(() => switchHomeTab('login'), 1200);
-};
-
-window.playAsInstantGuest = () => {
-  currentUser = { id: 'guest_' + Math.floor(Math.random() * 900 + 100), name: 'योद्धा' };
-  launchGameScreen();
-};
-
-window.logoutUser = () => {
-  currentUser = null;
-  AuthSystem.setCurrentUser(null);
-  updateAuthUI();
-};
-
-function updateAuthUI() {
-  const profileBox = document.getElementById('logged-in-profile-box');
-  const forms = [document.getElementById('home-login-form'), document.getElementById('home-signup-form'), document.getElementById('home-forgot-form')];
-  const tabs = document.querySelector('.home-auth-tabs');
-
-  if (currentUser) {
-    profileBox.style.display = 'block';
-    forms.forEach(f => f.style.display = 'none');
-    tabs.style.display = 'none';
-    document.getElementById('logged-user-name').textContent = `योद्धा: ${currentUser.name} (${currentUser.id})`;
-  } else {
-    profileBox.style.display = 'none';
-    tabs.style.display = 'flex';
-    switchHomeTab('login');
-  }
+/* =========================================================
+   Renderer, Scene, Kurukshetra Lighting
+   ========================================================= */
+const canvas = $('gl');
+let renderer;
+try {
+  renderer = new THREE.WebGLRenderer({ canvas, antialias: true, powerPreference: 'high-performance' });
+} catch (e) {
+  const el = document.createElement('div'); el.id = 'err';
+  el.textContent = 'इस गेम के लिए WebGL आवश्यक है। कृपया Chrome या Edge में खोलें।';
+  root.appendChild(el);
+  throw e;
 }
-updateAuthUI();
+renderer.outputColorSpace = THREE.SRGBColorSpace;
+renderer.toneMapping = THREE.ACESFilmicToneMapping;
+renderer.toneMappingExposure = 1.15;
+renderer.shadowMap.enabled = true;
+renderer.shadowMap.type = THREE.PCFSoftShadowMap;
 
-/* ========================================================
-   WEB AUDIO API SOUND ENGINE
-   ======================================================== */
-class DivineSoundSystem {
-  constructor() {
-    this.ctx = null;
-    this.master = null;
-    this.muted = false;
+const scene = new THREE.Scene();
+const HAZE = new THREE.Color('#0a152d');
+scene.background = HAZE;
+scene.fog = new THREE.Fog(HAZE, 55, 170);
+
+const camera = new THREE.PerspectiveCamera(44, 1, 0.5, 450);
+const hemi = new THREE.HemisphereLight('#ffd9a6', '#2b1a10', 0.95);
+scene.add(hemi);
+
+const sun = new THREE.DirectionalLight('#fff2d4', 2.8);
+sun.castShadow = true;
+sun.shadow.mapSize.set(Q.level > 1 ? 2048 : 1024, Q.level > 1 ? 2048 : 1024);
+sun.shadow.camera.near = 5; sun.shadow.camera.far = 160;
+scene.add(sun, sun.target);
+const SUN_OFF = new THREE.Vector3(-28, 62, -22);
+
+function resize() {
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, [1, 1.5, 1.75][Q.level]));
+  renderer.setSize(innerWidth, innerHeight, false);
+  camera.aspect = innerWidth / Math.max(1, innerHeight);
+  camera.updateProjectionMatrix();
+}
+addEventListener('resize', resize); resize();
+
+/* =========================================================
+   Procedural 3D Geometry Helpers
+   ========================================================= */
+const tmpC = new THREE.Color();
+function paint(geo, fn) {
+  if (geo.index) geo = geo.toNonIndexed();
+  if (geo.attributes.uv) geo.deleteAttribute('uv');
+  const p = geo.attributes.position, n = p.count, col = new Float32Array(n * 3);
+  const fixed = typeof fn === 'string' ? new THREE.Color(fn) : fn && fn.isColor ? fn : null;
+  for (let i = 0; i < n; i++) {
+    const c = fixed || (() => { const v = fn(p.getX(i), p.getY(i), p.getZ(i)); return v.isColor ? v : tmpC.set(v); })();
+    col[i * 3] = c.r; col[i * 3 + 1] = c.g; col[i * 3 + 2] = c.b;
+  }
+  geo.setAttribute('color', new THREE.BufferAttribute(col, 3));
+  return geo;
+}
+function merge(parts) {
+  let n = 0; for (const g of parts) n += g.attributes.position.count;
+  const pos = new Float32Array(n * 3), nor = new Float32Array(n * 3), col = new Float32Array(n * 3);
+  let o = 0;
+  for (const g of parts) {
+    pos.set(g.attributes.position.array, o * 3);
+    nor.set(g.attributes.normal.array, o * 3);
+    col.set(g.attributes.color.array, o * 3);
+    o += g.attributes.position.count;
+  }
+  const out = new THREE.BufferGeometry();
+  out.setAttribute('position', new THREE.BufferAttribute(pos, 3));
+  out.setAttribute('normal', new THREE.BufferAttribute(nor, 3));
+  out.setAttribute('color', new THREE.BufferAttribute(col, 3));
+  out.computeBoundingSphere();
+  return out;
+}
+const mix = (a, b, t) => new THREE.Color(a).lerp(new THREE.Color(b), clamp(t, 0, 1));
+function bumpy(geo, amt) {
+  const p = geo.attributes.position;
+  for (let i = 0; i < p.count; i++) {
+    const x = p.getX(i), y = p.getY(i), z = p.getZ(i);
+    const k = 1 + (hash3(Math.round(x * 40), Math.round(y * 40), Math.round(z * 40)) - 0.5) * amt;
+    p.setXYZ(i, x * k, y * k, z * k);
+  }
+  geo.computeVertexNormals();
+  return geo;
+}
+
+/* =========================================================
+   DIVINE 3D SUDARSHAN CHAKRA HEAD MODEL WITH KATILI BLADES
+   ========================================================= */
+function buildSudarshanChakraHead() {
+  const parts = [];
+  // 1. Golden Central Hub
+  const hub = new THREE.CylinderGeometry(0.55, 0.55, 0.22, 20);
+  parts.push(paint(hub, '#ffd700'));
+
+  // 2. Central Om / Vishnu Dome
+  const dome = new THREE.SphereGeometry(0.38, 14, 10).scale(1, 0.45, 1).translate(0, 0.12, 0);
+  parts.push(paint(dome, '#ff7700'));
+
+  // 3. Concentric Sacred Rings
+  const rim = new THREE.TorusGeometry(1.2, 0.09, 10, 32);
+  rim.rotateX(Math.PI / 2);
+  parts.push(paint(rim, '#ffc233'));
+
+  // 4. Razor-Sharp Katili Curved Blades (कातिली धारदार ब्लेडें)
+  const bladeCount = 20;
+  for (let i = 0; i < bladeCount; i++) {
+    const ang = (i / bladeCount) * TAU;
+    const shape = new THREE.Shape();
+    shape.moveTo(0, -0.09);
+    shape.quadraticCurveTo(0.35, 0.04, 0.75, 0.28);
+    shape.quadraticCurveTo(0.2, 0.16, 0, 0.09);
+    shape.closePath();
+
+    const bladeGeo = new THREE.ExtrudeGeometry(shape, { depth: 0.03, bevelEnabled: false });
+    bladeGeo.rotateX(Math.PI / 2);
+    bladeGeo.rotateY(-ang + 0.35);
+    bladeGeo.translate(Math.cos(ang) * 1.15, 0, Math.sin(ang) * 1.15);
+    parts.push(paint(bladeGeo, '#ffffff'));
   }
 
-  init() {
-    if (this.ctx) {
-      if (this.ctx.state === 'suspended') this.ctx.resume();
-      return;
+  const merged = merge(parts);
+  merged.computeVertexNormals();
+  return merged;
+}
+
+const sudarshanGeo = buildSudarshanChakraHead();
+
+// Demonic Horned Asura Head Model
+const demonHeadBase = (() => {
+  const g = new THREE.SphereGeometry(1, 28, 20);
+  const p = g.attributes.position;
+  for (let i = 0; i < p.count; i++) {
+    let x = p.getX(i), y = p.getY(i), z = p.getZ(i);
+    const f = x > 0 ? 1 - 0.28 * x * x : 1 - 0.08 * x * x;
+    y *= 0.75 * f; z *= 1.12 * f; x *= 1.45;
+    if (y < 0) y *= 0.72;
+    p.setXYZ(i, x, y, z);
+  }
+  g.computeVertexNormals();
+  return g;
+})();
+
+/* =========================================================
+   Amrit Kalash, Celestial Orbs & Divine Food
+   ========================================================= */
+function mkAmritOrb(col1, col2) {
+  const g = new THREE.SphereGeometry(1, 16, 12);
+  return paint(g, (x, y, z) => mix(col1, col2, y * 0.5 + 0.5));
+}
+function mkGoldKalash() {
+  const g = new THREE.CylinderGeometry(0.5, 0.8, 1.2, 14);
+  return paint(g, '#ffd700');
+}
+
+const FOODS = [
+  { key: 'amrit', name: 'अमृत कण', value: 0.35, size: 0.32, w: 26, splash: '#ffea00', make: () => mkAmritOrb('#ffd700', '#ff9900') },
+  { key: 'tej', name: 'दिव्य तेज', value: 0.55, size: 0.38, w: 22, splash: '#00d2ff', make: () => mkAmritOrb('#00d2ff', '#ffffff') },
+  { key: 'rudra', name: 'रुद्र मणि', value: 0.9, size: 0.52, w: 12, splash: '#e63946', make: () => mkAmritOrb('#e63946', '#ffba08') },
+  { key: 'soma', name: 'सोम रस', value: 1.2, size: 0.6, w: 9, splash: '#55f094', make: () => mkAmritOrb('#10b981', '#a7f3d0') },
+  { key: 'kalash', name: 'अमृत कलश', value: 2.5, size: 0.72, w: 5, splash: '#ffd700', make: mkGoldKalash, gold: true },
+  { key: 'orb', name: 'दिव्य ऊर्जा', value: 0.3, size: 0.3, w: 0, orb: true }
+];
+const ORB = FOODS.length - 1;
+const FT_TOTAL = FOODS.reduce((a, t) => a + t.w, 0);
+function pickType() { let r = Math.random() * FT_TOTAL; for (let i = 0; i < FOODS.length; i++) { r -= FOODS[i].w; if (r <= 0) return i; } return 0; }
+
+const FOOD_MAX = 260;
+for (const ft of FOODS) {
+  let geo, mat;
+  if (ft.orb) {
+    geo = new THREE.SphereGeometry(1, 16, 12);
+    mat = new THREE.MeshStandardMaterial({ roughness: 0.15, metalness: 0.2, emissive: '#ffaa00', emissiveIntensity: 0.6 });
+  } else {
+    geo = ft.make();
+    mat = new THREE.MeshStandardMaterial({ vertexColors: true, roughness: 0.35, metalness: ft.gold ? 0.85 : 0.2, emissive: ft.gold ? '#4a2c00' : '#000' });
+  }
+  const m = new THREE.InstancedMesh(geo, mat, ft.orb ? 700 : FOOD_MAX);
+  m.instanceMatrix.setUsage(THREE.DynamicDrawUsage);
+  m.castShadow = true; m.frustumCulled = false; m.count = 0;
+  if (ft.orb) m.setColorAt(0, new THREE.Color('#ffc233'));
+  scene.add(m);
+  ft.mesh = m;
+  ft.splashC = ft.splash ? new THREE.Color(ft.splash) : null;
+}
+
+/* =========================================================
+   Kurukshetra Earth & Sacred Mandala Zone
+   ========================================================= */
+const zoneU = { value: CFG.arenaStart }, timeU = { value: 0 };
+(function makeKurukshetraGround() {
+  const g = new THREE.PlaneGeometry(320, 320, 120, 120).rotateX(-Math.PI / 2);
+  const p = g.attributes.position, col = new Float32Array(p.count * 3);
+  const soil = new THREE.Color('#382012'), blood = new THREE.Color('#25130b'), ash = new THREE.Color('#4a311f'), c = new THREE.Color();
+  for (let i = 0; i < p.count; i++) {
+    const x = p.getX(i), z = p.getZ(i);
+    const n = Math.sin(x * 0.08) * Math.cos(z * 0.08) * 0.5 + 0.5;
+    c.copy(soil).lerp(blood, n * 0.5).lerp(ash, hash3(x, 0, z) * 0.25);
+    col[i * 3] = c.r; col[i * 3 + 1] = c.g; col[i * 3 + 2] = c.b;
+  }
+  g.setAttribute('color', new THREE.BufferAttribute(col, 3));
+  const mat = new THREE.MeshStandardMaterial({ vertexColors: true, roughness: 0.9, metalness: 0.1 });
+  mat.onBeforeCompile = sh => {
+    sh.uniforms.uR = zoneU; sh.uniforms.uTime = timeU;
+    sh.vertexShader = sh.vertexShader
+      .replace('#include <common>', '#include <common>\nvarying vec2 vWXZ;')
+      .replace('#include <begin_vertex>', '#include <begin_vertex>\nvWXZ = (modelMatrix * vec4(transformed, 1.0)).xz;');
+    sh.fragmentShader = sh.fragmentShader
+      .replace('#include <common>', '#include <common>\nvarying vec2 vWXZ;\nuniform float uR;\nuniform float uTime;')
+      .replace('#include <dithering_fragment>', `#include <dithering_fragment>
+        float dZ = length(vWXZ);
+        float outside = smoothstep(uR, uR + 1.2, dZ);
+        gl_FragColor.rgb = mix(gl_FragColor.rgb, gl_FragColor.rgb * vec3(0.4, 0.2, 0.2), outside * 0.85);
+        float glow = 1.0 - smoothstep(0.0, 0.65, abs(dZ - uR));
+        float pulse = 0.8 + 0.2 * sin(uTime * 4.5);
+        gl_FragColor.rgb = mix(gl_FragColor.rgb, vec3(1.0, 0.76, 0.2), glow * 0.95 * pulse);`);
+  };
+  const ground = new THREE.Mesh(g, mat);
+  ground.receiveShadow = true;
+  scene.add(ground);
+})();
+
+// Sacred Mandala Energy Barrier
+const wall = (() => {
+  const mat = new THREE.ShaderMaterial({
+    transparent: true, depthWrite: false, side: THREE.DoubleSide, blending: THREE.AdditiveBlending,
+    uniforms: { uTime: timeU, uR: zoneU },
+    vertexShader: `varying vec2 vUv; void main(){ vUv = uv; gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0); }`,
+    fragmentShader: `varying vec2 vUv; uniform float uTime; uniform float uR;
+      void main(){
+        float h = vUv.y;
+        float a = pow(1.0 - h, 2.0) * 0.8;
+        float bands = smoothstep(0.4, 0.5, fract(vUv.x * uR * 1.5 - uTime * 0.8)) * smoothstep(0.6, 0.5, fract(vUv.x * uR * 1.5 - uTime * 0.8));
+        a += bands * 0.4 * (1.0 - h);
+        gl_FragColor = vec4(vec3(1.0, 0.75, 0.2) * a, a);
+      }`,
+  });
+  const m = new THREE.Mesh(new THREE.CylinderGeometry(1, 1, 1, 120, 1, true).translate(0, 0.5, 0), mat);
+  m.scale.set(CFG.arenaStart, 4.0, CFG.arenaStart);
+  m.renderOrder = 5;
+  scene.add(m);
+  return m;
+})();
+
+/* =========================================================
+   Snake & Sudarshan Chakra Visuals
+   ========================================================= */
+const RS = 14;
+const COS = [], SIN = [];
+for (let j = 0; j <= RS; j++) { COS.push(Math.cos(j / RS * TAU)); SIN.push(Math.sin(j / RS * TAU)); }
+const bodyIndex = (() => {
+  const idx = new Uint16Array((MAXSEG - 1) * RS * 6); let o = 0;
+  for (let k = 0; k < MAXSEG - 1; k++) for (let j = 0; j < RS; j++) {
+    const a = k * (RS + 1) + j, b = a + RS + 1;
+    idx[o++] = a; idx[o++] = b; idx[o++] = a + 1; idx[o++] = b; idx[o++] = b + 1; idx[o++] = a + 1;
+  }
+  return new THREE.BufferAttribute(idx, 1);
+})();
+
+const snakeMatBase = new THREE.MeshStandardMaterial({ vertexColors: true, roughness: 0.45, metalness: 0.2 });
+const eyeMat = new THREE.MeshBasicMaterial({ color: '#ff0033' });
+const pupilMat = new THREE.MeshBasicMaterial({ color: '#ffffff' });
+const hornMat = new THREE.MeshStandardMaterial({ color: '#111111', roughness: 0.3 });
+
+function skinColors(sk) {
+  const c1 = new THREE.Color(sk.c1), c2 = new THREE.Color(sk.c2);
+  const belly = c1.clone().lerp(new THREE.Color('#fff2a8'), 0.55);
+  return { c1, c2, belly };
+}
+
+function makeSnakeView(s) {
+  const vcount = MAXSEG * (RS + 1);
+  const g = new THREE.BufferGeometry();
+  const mk = (n) => new THREE.BufferAttribute(new Float32Array(vcount * n), n).setUsage(THREE.DynamicDrawUsage);
+  g.setAttribute('position', mk(3)); g.setAttribute('normal', mk(3)); g.setAttribute('uv', mk(2)); g.setAttribute('color', mk(3));
+  g.setIndex(bodyIndex);
+  const mat = snakeMatBase.clone();
+  const body = new THREE.Mesh(g, mat);
+  body.castShadow = true; body.receiveShadow = true; body.frustumCulled = false;
+
+  const head = new THREE.Group();
+
+  if (s.isPlayer) {
+    // PLAYER WIELDS THE GLORIOUS SUDARSHAN CHAKRA!
+    const chakraMesh = new THREE.Mesh(sudarshanGeo, new THREE.MeshStandardMaterial({
+      color: '#ffc233',
+      metalness: 0.95,
+      roughness: 0.15,
+      emissive: '#ff7700',
+      emissiveIntensity: 0.6
+    }));
+    chakraMesh.castShadow = true;
+    head.add(chakraMesh);
+    s.chakraDisc = chakraMesh;
+
+    // Glowing point light
+    const chakraLight = new THREE.PointLight('#ffbb33', 3.0, 22);
+    head.add(chakraLight);
+  } else {
+    // DEMONIC HORNED ASURA HEAD
+    const hm = new THREE.Mesh(demonHeadBase.clone(), mat);
+    hm.castShadow = true;
+    head.add(hm);
+
+    // Demon horns
+    for (const side of [-1, 1]) {
+      const horn = new THREE.Mesh(new THREE.ConeGeometry(0.28, 1.4, 6), hornMat);
+      horn.rotation.z = -0.4;
+      horn.rotation.x = side * 0.35;
+      horn.position.set(-0.2, 0.9, side * 0.6);
+      head.add(horn);
+
+      // Glowing evil eye
+      const eye = new THREE.Mesh(new THREE.SphereGeometry(0.25, 8, 8), eyeMat);
+      eye.position.set(0.65, 0.3, side * 0.5);
+      head.add(eye);
     }
-    try {
-      const AudioCtx = window.AudioContext || window.webkitAudioContext;
-      this.ctx = new AudioCtx();
-      this.master = this.ctx.createGain();
-      this.master.gain.value = 0.6;
-      this.master.connect(this.ctx.destination);
-    } catch (e) {}
   }
 
-  playShankh() {
+  scene.add(body, head);
+  return { body, geo: g, mat, head, pos: g.attributes.position.array, nor: g.attributes.normal.array, uv: g.attributes.uv.array, col: g.attributes.color.array };
+}
+
+function disposeSnakeView(s) {
+  scene.remove(s.view.body, s.view.head);
+  s.view.geo.dispose();
+  s.view.mat.dispose();
+}
+
+const bodyTaper = (k, n) => { const t = k / (n - 1); return t > 0.55 ? lerp(1, 0.18, Math.pow((t - 0.55) / 0.45, 1.25)) : t < 0.06 ? 0.9 + t * 1.6 : 1; };
+
+function updateSnakeMesh(s) {
+  const v = s.view, n = s.n, P = v.pos, N = v.nor, U = v.uv, Cc = v.col, segs = s.segs;
+  const d = s.dying, e = d ? Math.min(1, d.t / d.dur) : 0;
+  const C = s.cols;
+  let dist = 0, px = segs[0], pz = segs[1];
+  const uScale = 1 / (s.r * 1.25);
+
+  for (let k = 0; k < n; k++) {
+    let x = segs[2 * k], z = segs[2 * k + 1];
+    if (k > 0) dist += Math.hypot(x - px, z - pz);
+    px = x; pz = z;
+    const k0 = Math.max(0, k - 1), k1 = Math.min(n - 1, k + 1);
+    let tx = segs[2 * k0] - segs[2 * k1], tz = segs[2 * k0 + 1] - segs[2 * k1 + 1];
+    let tl = Math.hypot(tx, tz);
+    if (tl < 1e-5) { tx = Math.cos(s.angle); tz = Math.sin(s.angle); tl = 1; }
+    tx /= tl; tz /= tl;
+    let r = s.r * bodyTaper(k, n);
+    if (d) { const ek = clamp(e * 1.6 - (k / n) * 0.6, 0, 1), ee = ek * ek; x = lerp(x, d.px, ee); z = lerp(z, d.pz, ee); r *= 1 - ee; }
+    const cy = r * 0.8, sx = tz, sz = -tx;
+    const base = k * (RS + 1);
+
+    for (let j = 0; j <= RS; j++) {
+      const c = COS[j], sn = SIN[j];
+      const nx = sx * c, nz = sz * c;
+      const o = (base + j) * 3;
+      P[o] = x + nx * r; P[o + 1] = cy + sn * r * 0.8; P[o + 2] = z + nz * r;
+      N[o] = nx; N[o + 1] = sn; N[o + 2] = nz;
+      const u = (base + j) * 2; U[u] = dist * uScale; U[u + 1] = j / RS * 3;
+
+      let cr = k % 2 === 0 ? C.c1.r : C.c2.r;
+      let cg = k % 2 === 0 ? C.c1.g : C.c2.g;
+      let cb = k % 2 === 0 ? C.c1.b : C.c2.b;
+      Cc[o] = cr; Cc[o + 1] = cg; Cc[o + 2] = cb;
+    }
+  }
+
+  const g = v.geo;
+  g.attributes.position.needsUpdate = g.attributes.normal.needsUpdate = g.attributes.uv.needsUpdate = g.attributes.color.needsUpdate = true;
+  g.setDrawRange(0, Math.max(0, n - 1) * RS * 6);
+
+  // Sudarshan spinning & position
+  const hr = s.r * (s.isPlayer ? 1.6 : 1.1) * (d ? Math.max(0, 1 - e * 1.4) : 1);
+  const hx = d ? lerp(s.x, d.px, e * e) : s.x, hz = d ? lerp(s.z, d.pz, e * e) : s.z;
+  v.head.visible = hr > 0.02;
+  v.head.position.set(hx, hr * 0.85, hz);
+
+  if (s.isPlayer && s.chakraDisc) {
+    // Sudarshan spins rapidly! Faster on boost!
+    const spinRate = s.boosting ? 45 : 24;
+    s.chakraDisc.rotation.y += G.dt * spinRate;
+    s.chakraDisc.scale.setScalar(s.boosting ? 1.5 : 1.0);
+  } else {
+    v.head.rotation.set(0, -s.angle, 0);
+  }
+  v.head.scale.setScalar(Math.max(hr, 0.001));
+}
+
+/* ---------- Steering Arrow & Particles ---------- */
+const arrow = (() => {
+  const sh = new THREE.Shape();
+  sh.moveTo(0.9, 0); sh.lineTo(-0.35, 0.62); sh.lineTo(-0.1, 0); sh.lineTo(-0.35, -0.62); sh.lineTo(0.9, 0);
+  const g = new THREE.ShapeGeometry(sh).rotateX(-Math.PI / 2);
+  const m = new THREE.Mesh(g, new THREE.MeshBasicMaterial({ color: '#ffc233', transparent: true, opacity: 0.7 }));
+  m.renderOrder = 4; m.visible = false;
+  scene.add(m);
+  return m;
+})();
+
+const PMAX = 800;
+const partMesh = new THREE.InstancedMesh(new THREE.SphereGeometry(1, 8, 6), new THREE.MeshStandardMaterial({ roughness: 0.2 }), PMAX);
+partMesh.instanceMatrix.setUsage(THREE.DynamicDrawUsage);
+partMesh.setColorAt(0, new THREE.Color('#fff'));
+partMesh.frustumCulled = false; partMesh.count = 0;
+scene.add(partMesh);
+
+/* =========================================================
+   SYNTHESIZED DIVINE AUDIO (Shankh Naad, Flute, Slicing)
+   ========================================================= */
+const Sound = {
+  ctx: null, master: null, muted: store.get('muted', false),
+  init() {
+    if (this.ctx) { if (this.ctx.state === 'suspended') this.ctx.resume(); return; }
+    try {
+      this.ctx = new (window.AudioContext || window.webkitAudioContext)();
+      this.master = this.ctx.createGain(); this.master.gain.value = this.muted ? 0 : 0.6; this.master.connect(this.ctx.destination);
+    } catch (e) { this.ctx = null; }
+  },
+  setMuted(m) { this.muted = m; store.set('muted', m); if (this.master) this.master.gain.value = m ? 0 : 0.6; },
+  tone(f, dur, type, vol, f2, delay) {
+    if (!this.ctx || this.muted) return;
+    const t = this.ctx.currentTime + (delay || 0);
+    const o = this.ctx.createOscillator(), g = this.ctx.createGain();
+    o.type = type; o.frequency.setValueAtTime(f, t); if (f2) o.frequency.exponentialRampToValueAtTime(f2, t + dur);
+    g.gain.setValueAtTime(0.0001, t); g.gain.exponentialRampToValueAtTime(vol, t + 0.012); g.gain.exponentialRampToValueAtTime(0.0001, t + dur);
+    o.connect(g); g.connect(this.master); o.start(t); o.stop(t + dur + 0.02);
+  },
+  noise(dur, vol, freq) {
+    if (!this.ctx || this.muted) return;
+    const t = this.ctx.currentTime, n = Math.floor(this.ctx.sampleRate * dur);
+    const buf = this.ctx.createBuffer(1, n, this.ctx.sampleRate), ch = buf.getChannelData(0);
+    for (let i = 0; i < n; i++) ch[i] = (Math.random() * 2 - 1) * (1 - i / n);
+    const s = this.ctx.createBufferSource(), f = this.ctx.createBiquadFilter(), g = this.ctx.createGain();
+    s.buffer = buf; f.type = 'lowpass'; f.frequency.value = freq; g.gain.value = vol;
+    s.connect(f); f.connect(g); g.connect(this.master); s.start(t);
+  },
+  // Sacred Shankh Naad (Blowing of Krishna's Panchajanya Conch)
+  shankh() {
     if (!this.ctx || this.muted) return;
     const now = this.ctx.currentTime;
     [196, 294, 392, 587].forEach((f, idx) => {
-      const osc = this.ctx.createOscillator();
-      const gain = this.ctx.createGain();
-      osc.type = 'sawtooth';
-      osc.frequency.setValueAtTime(f * 0.9, now);
-      osc.frequency.exponentialRampToValueAtTime(f * 1.04, now + 0.6);
-      osc.frequency.exponentialRampToValueAtTime(f, now + 2.5);
-
-      gain.gain.setValueAtTime(0.001, now);
-      gain.gain.exponentialRampToValueAtTime(0.18 / (idx + 1), now + 0.4);
-      gain.gain.exponentialRampToValueAtTime(0.001, now + 3.2);
-
-      osc.connect(gain);
-      gain.connect(this.master);
-      osc.start(now);
-      osc.stop(now + 3.5);
+      this.tone(f * 0.92, 3.2, 'sawtooth', 0.18 / (idx + 1), f * 1.03);
     });
-  }
-
-  playSlice() {
-    if (!this.ctx || this.muted) return;
-    const now = this.ctx.currentTime;
-    const osc = this.ctx.createOscillator();
-    const g = this.ctx.createGain();
-    osc.type = 'triangle';
-    osc.frequency.setValueAtTime(2600, now);
-    osc.frequency.exponentialRampToValueAtTime(400, now + 0.15);
-
-    g.gain.setValueAtTime(0.001, now);
-    g.gain.exponentialRampToValueAtTime(0.3, now + 0.01);
-    g.gain.exponentialRampToValueAtTime(0.001, now + 0.18);
-
-    osc.connect(g);
-    g.connect(this.master);
-    osc.start(now);
-    osc.stop(now + 0.2);
-  }
-
-  playThrow() {
-    if (!this.ctx || this.muted) return;
-    const now = this.ctx.currentTime;
-    const osc = this.ctx.createOscillator();
-    const g = this.ctx.createGain();
-    osc.type = 'sine';
-    osc.frequency.setValueAtTime(320, now);
-    osc.frequency.exponentialRampToValueAtTime(1400, now + 0.28);
-
-    g.gain.setValueAtTime(0.001, now);
-    g.gain.exponentialRampToValueAtTime(0.35, now + 0.05);
-    g.gain.exponentialRampToValueAtTime(0.001, now + 0.35);
-
-    osc.connect(g);
-    g.connect(this.master);
-    osc.start(now);
-    osc.stop(now + 0.4);
-  }
-
-  playDemonRoar() {
-    if (!this.ctx || this.muted) return;
-    const now = this.ctx.currentTime;
-    const osc = this.ctx.createOscillator();
-    const g = this.ctx.createGain();
-    osc.type = 'sawtooth';
-    osc.frequency.setValueAtTime(120, now);
-    osc.frequency.exponentialRampToValueAtTime(30, now + 0.5);
-
-    g.gain.setValueAtTime(0.35, now);
-    g.gain.exponentialRampToValueAtTime(0.001, now + 0.55);
-
-    osc.connect(g);
-    g.connect(this.master);
-    osc.start(now);
-    osc.stop(now + 0.6);
-  }
-
-  playHit() {
-    if (!this.ctx || this.muted) return;
-    const now = this.ctx.currentTime;
-    const osc = this.ctx.createOscillator();
-    const g = this.ctx.createGain();
-    osc.type = 'sawtooth';
-    osc.frequency.setValueAtTime(80, now);
-    osc.frequency.exponentialRampToValueAtTime(40, now + 0.25);
-
-    g.gain.setValueAtTime(0.35, now);
-    g.gain.exponentialRampToValueAtTime(0.001, now + 0.3);
-
-    osc.connect(g);
-    g.connect(this.master);
-    osc.start(now);
-    osc.stop(now + 0.35);
-  }
-}
-const AudioSys = new DivineSoundSystem();
-
-/* ========================================================
-   VIEW NAVIGATION: HOMEPAGE <-> 3D GAME
-   ======================================================== */
-window.launchGameScreen = () => {
-  AudioSys.init();
-  AudioSys.playShankh();
-
-  if (!currentUser) {
-    currentUser = { id: 'guest_' + Math.floor(Math.random() * 900 + 100), name: 'योद्धा' };
-  }
-  document.getElementById('hud-user-id').textContent = currentUser.id;
-
-  document.getElementById('website-homepage').style.display = 'none';
-  document.getElementById('game-container-view').style.display = 'block';
-
-  onResize();
-  resetAndStartGame();
+  },
+  // Sharp Metallic Blade Slicing Sound ("Kaat Diya!")
+  slice() {
+    this.tone(2400, 0.16, 'triangle', 0.28, 380);
+    this.noise(0.12, 0.22, 3200);
+  },
+  eat(v) {
+    if (!this.ctx) return;
+    this.noise(0.05, 0.1, 2400);
+    this.tone(523 + v * 150, 0.1, 'sine', 0.12, 880 + v * 200);
+  },
+  hit() { this.slice(); this.tone(180, 0.3, 'sawtooth', 0.16, 60); },
+  kill() {
+    this.slice();
+    [523, 659, 784, 1046].forEach((f, i) => this.tone(f, 0.15, 'square', 0.08, null, i * 0.05));
+  },
+  win() { this.shankh(); },
+  lose() { [392, 330, 261, 196].forEach((f, i) => this.tone(f, 0.28, 'triangle', 0.12, null, i * 0.12)); },
+  duel() { this.shankh(); this.tone(147, 0.8, 'sawtooth', 0.1, 294); }
 };
 
-window.exitToHomepage = () => {
-  isGameRunning = false;
-  document.getElementById('game-container-view').style.display = 'none';
-  document.getElementById('website-homepage').style.display = 'block';
-  document.getElementById('game-over-modal').classList.add('hidden');
+/* =========================================================
+   World State
+   ========================================================= */
+const G = {
+  mode: 'menu', time: 0, dt: 0.016, R: CFG.arenaStart, snakes: [], foods: [], parts: [],
+  player: null, duel: false, overAt: 0, overShown: false, attractEnd: 0,
+  result: null, total: 10, leader: null, focus: null, deadAt: 0, spawnAcc: 0,
 };
 
-/* ========================================================
-   3D ENGINE & GAME WORLD SETUP
-   ======================================================== */
-const canvas = document.getElementById('game-canvas');
-let renderer, scene, camera;
-let krishnaGroup, krishnaArm, rathaMesh;
-let sudarshanChakra, chakraBlades = [];
-let enemies = [];
-let enemyProjectiles = [];
-let severedPieces = [];
-let sliceParticles = [];
+function spawnFood(x, z, t, value, col, vx, vz, natural) {
+  const ft = FOODS[t];
+  G.foods.push({ x, z, t, value: value || ft.value, col: col || null, vx: vx || 0, vz: vz || 0,
+    age: natural ? 0 : -0.35, ph: rand(0, TAU), tilt: rand(-0.25, 0.25), natural: !!natural, dead: false });
+}
+function spawnNatural() {
+  const r = Math.sqrt(Math.random()) * (G.R - 2.5), a = rand(0, TAU);
+  spawnFood(Math.cos(a) * r, Math.sin(a) * r, pickType(), 0, null, 0, 0, true);
+}
+function burst(x, y, z, col, n, spd, size) {
+  for (let i = 0; i < n && G.parts.length < PMAX; i++) {
+    const a = rand(0, TAU), s = spd * rand(0.4, 1);
+    G.parts.push({ x, y, z, vx: Math.cos(a) * s, vy: rand(2, 6) * (spd / 6), vz: Math.sin(a) * s, life: rand(0.35, 0.75), max: 0.75, size: size * rand(0.6, 1.2), col });
+  }
+}
 
-let isGameRunning = false;
-let currentWaveIdx = 0;
-let totalKills = 0;
-let score = 0;
-let playerHP = 100;
-let gameSeconds = 0;
-let brahmaCharges = 2;
+/* ---------- Snakes & Sudarshan Chakra ---------- */
+let uid = 0;
+function makeSnake(o) {
+  const s = {
+    id: uid++, name: o.name, isPlayer: !!o.isPlayer, skin: o.skin, hex: o.skin.c1, cols: skinColors(o.skin),
+    x: o.x, z: o.z, angle: o.angle, speed: CFG.baseSpeed,
+    mass: o.mass, dm: o.mass, r: radiusOf(o.mass), n: 0,
+    path: [], segs: new Float32Array(MAXSEG * 2), bb: [0, 0, 0, 0],
+    alive: true, dying: null, invuln: 1.6, hitFlash: 0, boosting: false, boostDrop: 0,
+    kills: 0, maxMass: o.mass, turn: 0,
+    ai: o.isPlayer ? null : { think: rand(0, 0.2), desired: o.angle, aggr: rand(0.8, 1.4), caution: rand(0.8, 1.3), skill: rand(0.6, 0.98),
+      chaseT: 0, chaseCool: 0, wx: 0, wz: 0, wanderT: 0, boost: false },
+  };
+  const back = lenOf(s.mass) + 4;
+  for (let d = back; d > 0; d -= 0.2) s.path.push({ x: s.x - Math.cos(s.angle) * d, z: s.z - Math.sin(s.angle) * d });
+  s.tag = document.createElement('div'); s.tag.className = 'tag' + (s.isPlayer ? ' me' : ''); s.tag.textContent = s.name;
+  $('tags').appendChild(s.tag);
+  s.view = makeSnakeView(s);
+  layoutSnake(s);
+  return s;
+}
+function layoutSnake(s) {
+  s.r = radiusOf(s.dm);
+  const sp = s.r * 0.5;
+  const n = clamp(Math.round(lenOf(s.dm) / sp) + 1, 4, MAXSEG);
+  s.n = n;
+  const out = s.segs, path = s.path;
+  let px = s.x, pz = s.z, k = 1, rem = sp, i = path.length - 1;
+  let x0 = px, x1 = px, z0 = pz, z1 = pz;
+  out[0] = px; out[1] = pz;
+  for (; i >= 0 && k < n; i--) {
+    const q = path[i];
+    let dx = q.x - px, dz = q.z - pz, d = Math.sqrt(dx * dx + dz * dz);
+    while (d >= rem && k < n) {
+      const t = rem / d; px += dx * t; pz += dz * t;
+      out[2 * k] = px; out[2 * k + 1] = pz; k++;
+      if (px < x0) x0 = px; else if (px > x1) x1 = px;
+      if (pz < z0) z0 = pz; else if (pz > z1) z1 = pz;
+      dx = q.x - px; dz = q.z - pz; d -= rem; rem = sp;
+    }
+    rem -= d; px = q.x; pz = q.z;
+  }
+  while (k < n) { out[2 * k] = px; out[2 * k + 1] = pz; k++; }
+  if (i > 60) path.splice(0, i - 30);
+  s.bb[0] = x0; s.bb[1] = x1; s.bb[2] = z0; s.bb[3] = z1;
+}
+const aliveCount = () => { let c = 0; for (const s of G.snakes) if (s.alive && !s.dying) c++; return c; };
+function removeSnake(s) { s.tag.remove(); disposeSnakeView(s); }
 
-const aimState = {
-  isAiming: false,
-  screenX: window.innerWidth / 2,
-  screenY: window.innerHeight / 2,
-  worldTarget: new THREE.Vector3(0, 1.5, -20),
-  chakraState: 'ready', // 'ready', 'flying', 'returning'
-  chakraFlyTime: 0,
-  targetedEnemy: null
+function newMatch(withPlayer) {
+  for (const s of G.snakes) removeSnake(s);
+  G.snakes = []; G.foods = []; G.parts = [];
+  G.time = 0; G.R = CFG.arenaStart; G.duel = false; G.overShown = false; G.overAt = 0; G.result = null; G.attractEnd = 0; G.deadAt = 0; G.spawnAcc = 0;
+  $('feed').innerHTML = '';
+  const total = CFG.aiCount + (withPlayer ? 1 : 0);
+  G.total = total;
+  const names = AI_NAMES.slice().sort(() => Math.random() - 0.5);
+  const skinIdx = clamp(store.get('skin', 0), 0, SKINS.length - 1);
+  const pslot = (Math.random() * total) | 0;
+  const off = rand(0, TAU);
+  G.player = null;
+
+  for (let i = 0; i < total; i++) {
+    const a = off + i / total * TAU, r = CFG.arenaStart * 0.6;
+    const isP = withPlayer && i === pslot;
+    const s = makeSnake({
+      name: isP ? (store.get('name', 'श्री कृष्ण भक्त') || 'श्री कृष्ण भक्त') : names[i % names.length],
+      isPlayer: isP, skin: isP ? SKINS[skinIdx] : { c1: '#2b0c3f', c2: '#800f2f', pattern: 'bands' },
+      x: Math.cos(a) * r, z: Math.sin(a) * r, angle: a + Math.PI + rand(-0.5, 0.5),
+      mass: isP ? CFG.startMass : CFG.startMass * rand(0.9, 1.4),
+    });
+    G.snakes.push(s);
+    if (isP) G.player = s;
+  }
+  for (let i = 0; i < CFG.foodTarget; i++) spawnNatural();
+  G.focus = G.player;
+  if (G.player) { cam.x = G.player.x; cam.z = G.player.z; }
+}
+
+/* ---------- Damage, Cutting & Death ---------- */
+function feed(text) {
+  const el = document.createElement('div'); el.textContent = text;
+  const f = $('feed'); f.prepend(el);
+  while (f.children.length > 4) f.lastChild.remove();
+  setTimeout(() => { el.style.opacity = '0'; setTimeout(() => el.remove(), 700); }, 3800);
+}
+function toast(text, kind) {
+  if (G.mode !== 'play') return;
+  const el = document.createElement('div'); el.className = 'toast ' + (kind || ''); el.textContent = text;
+  const t = $('toasts'); t.appendChild(el);
+  while (t.children.length > 3) t.firstChild.remove();
+  setTimeout(() => el.remove(), 1350);
+}
+function banner(text, sub) {
+  const b = $('banner'); b.classList.remove('show'); void b.offsetWidth;
+  b.innerHTML = ''; b.append(text);
+  if (sub) { const s = document.createElement('small'); s.textContent = sub; b.appendChild(s); }
+  b.classList.add('show');
+}
+function hurtFlash() { const h = $('hurt'); h.classList.add('on'); requestAnimationFrame(() => requestAnimationFrame(() => h.classList.remove('on'))); }
+
+function spill(s, value, fromTail, count) {
+  const n = s.n;
+  count = count || clamp(Math.round(value / 0.7), 2, 18);
+  const per = value / count;
+  for (let i = 0; i < count; i++) {
+    const k = fromTail ? clamp(n - 1 - Math.floor(i / count * n * 0.45), 0, n - 1) : Math.floor(i / count * (n - 1));
+    const a = rand(0, TAU), sp = rand(2, 6);
+    spawnFood(s.segs[2 * k] + rand(-0.5, 0.5), s.segs[2 * k + 1] + rand(-0.5, 0.5), ORB, per, '#ffd700', Math.cos(a) * sp, Math.sin(a) * sp, false);
+  }
+}
+function hurt(a, amount, px, pz, by, isZone) {
+  if (a.invuln > 0 || a.dying || !a.alive) return;
+  if (a.mass - amount < CFG.minMass) {
+    if (by) startEaten(a, by); else killSnake(a, isZone ? 'zone' : 'hit');
+    return;
+  }
+  a.mass -= amount;
+  spill(a, amount * 0.55, true);
+  a.angle = Math.atan2(a.z - pz, a.x - px) + rand(-0.35, 0.35);
+  a.x += Math.cos(a.angle) * 0.6; a.z += Math.sin(a.angle) * 0.6;
+  a.invuln = 1.1; a.hitFlash = 0.35;
+  if (a.ai) { a.ai.desired = a.angle; a.ai.think = 0.25; }
+  burst(a.x, a.r, a.z, a.cols.c1, 14, 7, 0.18);
+  if (a.isPlayer) {
+    Sound.hit(); hurtFlash(); haptic(60); if (!reduceMotion) cam.shake = 0.6;
+    toast('-' + Math.max(1, Math.round(amount)) + (isZone ? ' परिधि प्रहार' : ' तेज हानि'), 'bad');
+  }
+}
+function startEaten(b, a) {
+  if (b.dying || !b.alive) return;
+  b.dying = { by: a, t: 0, dur: 0.6, gain: b.mass * 0.4 + 2, px: a.x, pz: a.z };
+  b.boosting = false;
+  a.kills++;
+  spill(b, b.mass * 0.25, false);
+
+  if (a.isPlayer) {
+    Sound.kill();
+    haptic([25, 45, 25]);
+    feed('सुदर्शन चक्र ने ' + b.name + ' का संहार किया!');
+    toast('⚔️ ' + b.name + ' खंडित!', 'good');
+    if (!reduceMotion) cam.shake = 0.35;
+  } else if (b.isPlayer) {
+    Sound.lose();
+    haptic(220);
+    feed(a.name + ' ने आप पर प्रहार किया!');
+  } else {
+    feed(a.name + ' ने ' + b.name + ' को काटा');
+  }
+}
+function killSnake(s, cause) {
+  if (!s.alive) return;
+  s.alive = false;
+  spill(s, s.mass * 0.6, false, clamp(Math.round(s.n / 2), 4, 40));
+  for (let k = 0; k < s.n; k += 3) burst(s.segs[2 * k], s.r, s.segs[2 * k + 1], '#ffc233', 3, 6, 0.22);
+  feed(s.name + (cause === 'zone' ? ' धर्म परिधि में भस्म हुआ' : ' का अंत हुआ'));
+  if (s.isPlayer) playerDied(null, cause);
+}
+function playerDied(by, cause) {
+  G.deadAt = G.time;
+  G.result = { win: false, place: aliveCount() + 1, by: by ? by.name : null, cause };
+  G.overAt = G.time + 1.5;
+  G.focus = by && by.alive ? by : null;
+  if (!by) Sound.lose();
+}
+
+/* ---------- AI ---------- */
+function probeClear(s, ang, dist) {
+  const px = s.x + Math.cos(ang) * dist, pz = s.z + Math.sin(ang) * dist;
+  if (Math.hypot(px, pz) > G.R - s.r - 1.5) return false;
+  for (const o of G.snakes) {
+    if (o === s || !o.alive || o.dying || s.mass >= o.mass * CFG.eatRatio) continue;
+    const pad = o.r + s.r + 1.2;
+    if (px < o.bb[0] - pad || px > o.bb[1] + pad || pz < o.bb[2] - pad || pz > o.bb[3] + pad) continue;
+    for (let k = 0; k < o.n; k += 2) {
+      const dx = o.segs[2 * k] - px, dz = o.segs[2 * k + 1] - pz;
+      if (dx * dx + dz * dz < pad * pad) return false;
+    }
+  }
+  return true;
+}
+function aiDecide(s, dt) {
+  const ai = s.ai;
+  ai.chaseCool -= dt;
+  let threat = null, threatD = 1e9, tpx = 0, tpz = 0, prey = null, preyScore = 0, ppx = 0, ppz = 0, preyD = 1e9;
+  for (const o of G.snakes) {
+    if (o === s || !o.alive || o.dying) continue;
+    if (Math.abs(o.x - s.x) > 70 && Math.abs(o.z - s.z) > 70 && !G.duel) continue;
+    let nd = 1e9, nx = 0, nz = 0;
+    for (let k = 0; k < o.n; k += 2) {
+      const dx = o.segs[2 * k] - s.x, dz = o.segs[2 * k + 1] - s.z, d = dx * dx + dz * dz;
+      if (d < nd) { nd = d; nx = o.segs[2 * k]; nz = o.segs[2 * k + 1]; }
+    }
+    nd = Math.sqrt(nd);
+    if (s.mass < o.mass * CFG.eatRatio) {
+      let hd = 1e9;
+      for (let k = 0; k < s.n; k += 3) { const dx = s.segs[2 * k] - o.x, dz = s.segs[2 * k + 1] - o.z, d = dx * dx + dz * dz; if (d < hd) hd = d; }
+      hd = Math.sqrt(hd);
+      if (hd < nd) { nd = hd; nx = o.x; nz = o.z; }
+      if (nd < (10 + o.r * 3) * ai.caution && nd < threatD) { threat = o; threatD = nd; tpx = nx; tpz = nz; }
+    } else if (s.mass > o.mass * (CFG.eatRatio + 0.05) && G.time > CFG.huntGrace) {
+      const sc = (o.mass + 5) / (nd + 6) * (o.isPlayer ? 1.1 : 1);
+      if (sc > preyScore) { preyScore = sc; prey = o; ppx = nx; ppz = nz; preyD = nd; }
+    }
+  }
+  const dc = Math.hypot(s.x, s.z), margin = 5 + s.r * 3;
+  let tx, tz; ai.boost = false;
+  if (dc > G.R - margin) {
+    tx = -s.x * 0.4; tz = -s.z * 0.4;
+  } else if (threat) {
+    let dx = s.x - tpx, dz = s.z - tpz; const l = Math.hypot(dx, dz) || 1; dx /= l; dz /= l;
+    tx = s.x + dx * 18; tz = s.z + dz * 18;
+    ai.boost = threatD < 6 && s.mass > 20;
+  } else if (prey && ai.chaseCool <= 0) {
+    tx = ppx + Math.cos(prey.angle) * 4; tz = ppz + Math.sin(prey.angle) * 4;
+    ai.boost = preyD < 8 && s.mass > 24;
+  } else {
+    let best = null, bs = 0;
+    for (const f of G.foods) {
+      if (f.age < 0) continue;
+      const dx = f.x - s.x, dz = f.z - s.z;
+      if (Math.abs(dx) > 26 || Math.abs(dz) > 26) continue;
+      const d = Math.sqrt(dx * dx + dz * dz);
+      const sc = f.value / (d + 3);
+      if (sc > bs) { bs = sc; best = f; }
+    }
+    if (best) { tx = best.x; tz = best.z; }
+    else {
+      ai.wanderT -= dt;
+      if (ai.wanderT <= 0) {
+        const a = rand(0, TAU), r = Math.sqrt(Math.random()) * G.R * 0.6; ai.wx = Math.cos(a) * r; ai.wz = Math.sin(a) * r; ai.wanderT = rand(3, 6);
+      }
+      tx = ai.wx; tz = ai.wz;
+    }
+  }
+  let want = Math.atan2(tz - s.z, tx - s.x);
+  const look = 2.5 + s.r * 3 + s.speed * 0.25;
+  for (const d of [0, 0.45, -0.45, 0.9, -0.9, 1.5, -1.5]) { if (probeClear(s, want + d, look)) { want += d; break; } }
+  ai.desired = want;
+  s.boosting = ai.boost && s.mass > CFG.minMass + 8;
+}
+
+/* ---------- Input ---------- */
+const cam = { x: 0, z: 0, h: 46, shake: 0 };
+const input = { mx: 0, my: 0, hasMouse: false, mouseBoost: false, keyBoost: false, touchBoost: false, keys: {}, joy: null, joyAng: null };
+const ray = new THREE.Raycaster(), ndc = new THREE.Vector2(), groundPlane = new THREE.Plane(new THREE.Vector3(0, 1, 0), 0), hitP = new THREE.Vector3();
+function screenToGround(sx, sy) {
+  ndc.set(sx / innerWidth * 2 - 1, -(sy / innerHeight) * 2 + 1);
+  ray.setFromCamera(ndc, camera);
+  return ray.ray.intersectPlane(groundPlane, hitP) ? [hitP.x, hitP.z] : null;
+}
+canvas.addEventListener('pointermove', e => {
+  if (e.pointerType === 'mouse') { input.mx = e.clientX; input.my = e.clientY; input.hasMouse = true; }
+  else if (input.joy && e.pointerId === input.joy.id) moveJoy(e);
+});
+canvas.addEventListener('pointerdown', e => {
+  canvas.focus({ preventScroll: true });
+  if (e.pointerType === 'mouse') { input.mx = e.clientX; input.my = e.clientY; input.hasMouse = true; if (e.button === 0) input.mouseBoost = true; }
+  else {
+    if (!isTouch) setTouch();
+    if (!input.joy) {
+      input.joy = { id: e.pointerId, ox: e.clientX, oy: e.clientY };
+      const j = $('joy'); j.style.left = e.clientX + 'px'; j.style.top = e.clientY + 'px'; j.classList.add('on');
+      $('joyKnob').style.transform = '';
+    }
+  }
+});
+function moveJoy(e) {
+  const j = input.joy; const dx = e.clientX - j.ox, dy = e.clientY - j.oy;
+  const l = Math.hypot(dx, dy);
+  if (l > 6) input.joyAng = Math.atan2(dy, dx);
+  const k = l ? Math.min(l, 40) / l : 0;
+  $('joyKnob').style.transform = `translate(${dx * k}px,${dy * k}px)`;
+}
+const endPointer = e => {
+  if (e.pointerType === 'mouse') input.mouseBoost = false;
+  else if (input.joy && e.pointerId === input.joy.id) { input.joy = null; $('joy').classList.remove('on'); }
 };
+addEventListener('pointerup', endPointer); addEventListener('pointercancel', endPointer);
+canvas.addEventListener('contextmenu', e => e.preventDefault());
+const boostBtn = $('boostBtn');
+boostBtn.addEventListener('pointerdown', e => { e.preventDefault(); input.touchBoost = true; boostBtn.classList.add('on'); });
+const boostOff = () => { input.touchBoost = false; boostBtn.classList.remove('on'); };
+boostBtn.addEventListener('pointerup', boostOff); boostBtn.addEventListener('pointercancel', boostOff); boostBtn.addEventListener('pointerleave', boostOff);
+addEventListener('keydown', e => {
+  if (e.target && e.target.tagName === 'INPUT') { if (e.key === 'Enter') startGame(); return; }
+  const k = e.key.toLowerCase();
+  input.keys[k] = true;
+  if (k === ' ') { input.keyBoost = true; e.preventDefault(); }
+  if (k.startsWith('arrow')) e.preventDefault();
+  if (k === 'enter' && G.mode !== 'play') startGame();
+});
+addEventListener('keyup', e => { const k = e.key.toLowerCase(); input.keys[k] = false; if (k === ' ') input.keyBoost = false; });
+addEventListener('blur', () => { input.keys = {}; input.keyBoost = input.mouseBoost = input.touchBoost = false; });
 
-const WAVES = [
-  { wave: 1, title: 'वेव १: कालिया नाग का उपद्रव', asuraName: 'कालिया नागराज', count: 4, speed: 7.5, hp: 45, boss: true, quote: 'हे पार्थ! कालिया नाग यमुना से कुरुक्षेत्र आया है, सुदर्शन से इसके फनों को काटो!' },
-  { wave: 2, title: 'वेव २: अघासुर अजगर दैत्य', asuraName: 'अघासुर अजगर', count: 6, speed: 8.5, hp: 60, boss: true, quote: 'अघासुर अपना विशाल मुख फाड़कर आ रहा है! लक्ष्य साधो और चक्र छोड़ो!' },
-  { wave: 3, title: 'वेव ३: बकासुर और असुर सेना', asuraName: 'बकासुर दैत्य', count: 8, speed: 9.5, hp: 75, boss: true, quote: 'बकासुर तीव्र गति से झपट रहा है! सावधान होकर प्रहार करो!' },
-  { wave: 4, title: 'वेव ४: धेनुकासुर व ताड़वन दानव', asuraName: 'धेनुकासुर', count: 10, speed: 10.5, hp: 90, boss: true, quote: 'अधर्म का बल बढ़ रहा है! अपने हाथों से सुदर्शन चक्र का संधान करो!' },
-  { wave: 5, title: 'वेव ५: केशी दैत्य और तक्षक नाग', asuraName: 'केशी व तक्षक', count: 12, speed: 11.5, hp: 110, boss: true, quote: 'तक्षक नाग के विषधर बाणों से दिव्य रथ की रक्षा करो!' },
-  { wave: 6, title: 'वेव ६: वृत्रासुर अंधकार सेना', asuraName: 'वृत्रासुर दानव', count: 14, speed: 12.5, hp: 130, boss: true, quote: 'अंधकार को चीरने के लिए सुदर्शन के तेज को प्रज्वलित करो!' },
-  { wave: 7, title: 'वेव ७: नरकासुर और बाणासुर', asuraName: 'नरकासुर महादैत्य', count: 16, speed: 13.5, hp: 150, boss: true, quote: 'नरकासुर की मायावी सेना आ चुकी है! अचूक निशाना लगाओ!' },
-  { wave: 8, title: 'वेव ८+: महाभारत महाप्रलय', asuraName: 'कंस व जरासंध महासेना', count: 20, speed: 14.5, hp: 180, boss: true, quote: 'यतो धर्मस्ततो जयः! कुरुक्षेत्र में अधर्म का समूल नाश करो!' }
-];
-
-function init3DGame() {
-  renderer = new THREE.WebGLRenderer({ canvas, antialias: true, powerPreference: 'high-performance' });
-  renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
-  renderer.setSize(window.innerWidth, window.innerHeight);
-  renderer.toneMapping = THREE.ACESFilmicToneMapping;
-  renderer.toneMappingExposure = 1.3;
-  renderer.shadowMap.enabled = true;
-
-  scene = new THREE.Scene();
-  scene.background = new THREE.Color('#030817');
-  scene.fog = new THREE.FogExp2('#040b1e', 0.007);
-
-  camera = new THREE.PerspectiveCamera(46, window.innerWidth / window.innerHeight, 1, 400);
-  camera.position.set(0, 9, 16);
-  camera.lookAt(0, 3, -15);
-
-  const ambient = new THREE.AmbientLight('#263d66', 1.4);
-  scene.add(ambient);
-
-  const sun = new THREE.DirectionalLight('#fff0c2', 2.8);
-  sun.position.set(30, 60, 20);
-  sun.castShadow = true;
-  scene.add(sun);
-
-  buildBattlefield();
-  build3DShriKrishna();
-  build3DSudarshanChakra();
-  setupAimInputs();
-
-  window.addEventListener('resize', onResize);
-}
-
-function onResize() {
-  if (!renderer || !camera) return;
-  renderer.setSize(window.innerWidth, window.innerHeight);
-  camera.aspect = window.innerWidth / window.innerHeight;
-  camera.updateProjectionMatrix();
-}
-
-function buildBattlefield() {
-  const groundGeo = new THREE.PlaneGeometry(300, 300, 48, 48);
-  const groundMat = new THREE.MeshStandardMaterial({ color: '#341f11', roughness: 0.9 });
-  const ground = new THREE.Mesh(groundGeo, groundMat);
-  ground.rotation.x = -Math.PI / 2;
-  ground.receiveShadow = true;
-  scene.add(ground);
-
-  // Flags
-  for (let i = 0; i < 16; i++) {
-    const ang = (i / 16) * Math.PI * 2;
-    const r = 90;
-    const pole = new THREE.Mesh(new THREE.CylinderGeometry(0.12, 0.18, 14, 8), new THREE.MeshStandardMaterial({ color: '#5d4037' }));
-    pole.position.set(Math.cos(ang) * r, 7, Math.sin(ang) * r);
-    scene.add(pole);
+function playerWant(s) {
+  const K = input.keys;
+  const kx = (K['d'] || K['arrowright'] ? 1 : 0) - (K['a'] || K['arrowleft'] ? 1 : 0);
+  const kz = (K['s'] || K['arrowdown'] ? 1 : 0) - (K['w'] || K['arrowup'] ? 1 : 0);
+  if (kx || kz) return Math.atan2(kz, kx);
+  if (input.joyAng !== null && isTouch) return input.joyAng;
+  if (input.hasMouse) {
+    const g = screenToGround(input.mx, input.my);
+    if (g) { const dx = g[0] - s.x, dz = g[1] - s.z; if (dx * dx + dz * dz > 0.8) return Math.atan2(dz, dx); }
   }
+  return null;
 }
 
-function build3DShriKrishna() {
-  rathaMesh = new THREE.Group();
-  rathaMesh.position.set(0, 0, 8);
-
-  const baseBox = new THREE.Mesh(new THREE.BoxGeometry(7, 1.2, 8), new THREE.MeshStandardMaterial({ color: '#ffb300', metalness: 0.85 }));
-  baseBox.position.y = 1.4;
-  rathaMesh.add(baseBox);
-  scene.add(rathaMesh);
-
-  krishnaGroup = new THREE.Group();
-  krishnaGroup.position.set(0, 2.0, 7.5);
-
-  const blueSkin = new THREE.MeshStandardMaterial({ color: '#3a7bd5', roughness: 0.35 });
-  const goldSilk = new THREE.MeshStandardMaterial({ color: '#ffd700', metalness: 0.4 });
-
-  // Body
-  const torso = new THREE.Mesh(new THREE.CylinderGeometry(0.7, 0.55, 2.2, 16), goldSilk);
-  torso.position.y = 2.1;
-  krishnaGroup.add(torso);
-
-  // Head
-  const head = new THREE.Mesh(new THREE.SphereGeometry(0.65, 18, 16), blueSkin);
-  head.position.y = 3.65;
-  krishnaGroup.add(head);
-
-  // Mukut & Mor Pankh
-  const mukut = new THREE.Mesh(new THREE.ConeGeometry(0.65, 1.4, 16), new THREE.MeshStandardMaterial({ color: '#ffd700', metalness: 0.95 }));
-  mukut.position.y = 4.6;
-  krishnaGroup.add(mukut);
-
-  const morPankh = new THREE.Mesh(new THREE.BoxGeometry(0.08, 0.9, 0.5), new THREE.MeshStandardMaterial({ color: '#00e676', emissive: '#00b0ff', emissiveIntensity: 0.3 }));
-  morPankh.position.set(0.2, 5.1, 0.2);
-  morPankh.rotation.z = -0.3;
-  krishnaGroup.add(morPankh);
-
-  // Arm
-  krishnaArm = new THREE.Group();
-  krishnaArm.position.set(0.9, 2.6, 0);
-  const arm = new THREE.Mesh(new THREE.CylinderGeometry(0.18, 0.18, 1.8, 8), blueSkin);
-  arm.position.set(0, 0.8, 0.3);
-  arm.rotation.x = -0.8;
-  krishnaArm.add(arm);
-  krishnaGroup.add(krishnaArm);
-
-  scene.add(krishnaGroup);
-}
-
-function build3DSudarshanChakra() {
-  sudarshanChakra = new THREE.Group();
-  const gold = new THREE.MeshStandardMaterial({ color: '#ffc233', metalness: 0.95, roughness: 0.15, emissive: '#ff7700', emissiveIntensity: 0.4 });
-
-  const hub = new THREE.Mesh(new THREE.CylinderGeometry(0.6, 0.6, 0.2, 24), gold);
-  sudarshanChakra.add(hub);
-
-  const rim = new THREE.Mesh(new THREE.TorusGeometry(1.6, 0.1, 12, 36), gold);
-  rim.rotation.x = Math.PI / 2;
-  sudarshanChakra.add(rim);
-
-  // Blades
-  const bladeMat = new THREE.MeshStandardMaterial({ color: '#fff', metalness: 0.95, emissive: '#ffeedd', emissiveIntensity: 0.8 });
-  for (let i = 0; i < 36; i++) {
-    const ang = (i / 36) * Math.PI * 2;
-    const shape = new THREE.Shape();
-    shape.moveTo(0, -0.12);
-    shape.quadraticCurveTo(0.5, 0.04, 0.95, 0.35);
-    shape.quadraticCurveTo(0.25, 0.2, 0, 0.12);
-    shape.closePath();
-    const blade = new THREE.Mesh(new THREE.ExtrudeGeometry(shape, { depth: 0.04, bevelEnabled: false }), bladeMat);
-    blade.position.set(Math.cos(ang) * 1.55, 0, Math.sin(ang) * 1.55);
-    blade.rotation.x = Math.PI / 2;
-    blade.rotation.z = -ang + 0.35;
-    sudarshanChakra.add(blade);
+/* =========================================================
+   Simulation Step
+   ========================================================= */
+function moveSnake(s, dt) {
+  let want = null;
+  if (s.isPlayer) { if (G.mode === 'play' && !G.result) { want = playerWant(s); s.boosting = input.mouseBoost || input.keyBoost || input.touchBoost; } else { s.boosting = false; } s.want = want; }
+  else want = s.ai.desired;
+  const turnRate = CFG.turnRate * (1.12 - Math.min(0.42, (s.r - 0.8) * 0.22)) * (s.boosting ? 0.85 : 1);
+  if (want !== null) {
+    const diff = wrapA(want - s.angle);
+    s.angle = wrapA(s.angle + clamp(diff, -turnRate * dt, turnRate * dt));
+    s.turn = lerp(s.turn, clamp(diff * 1.5, -1, 1), Math.min(1, dt * 8));
   }
-
-  // Plasma
-  const halo = new THREE.Mesh(new THREE.RingGeometry(1.2, 2.6, 32), new THREE.MeshBasicMaterial({ color: '#ff6600', side: THREE.DoubleSide, transparent: true, opacity: 0.7 }));
-  halo.rotation.x = Math.PI / 2;
-  sudarshanChakra.add(halo);
-
-  const light = new THREE.PointLight('#ffbb33', 3.0, 25);
-  sudarshanChakra.add(light);
-
-  scene.add(sudarshanChakra);
+  let target = CFG.baseSpeed * (1.06 - 0.06 * s.r);
+  if (s.boosting && s.mass > CFG.minMass + 4) {
+    target = CFG.boostSpeed;
+    s.mass -= CFG.boostCost * dt;
+    s.boostDrop += dt;
+    if (s.boostDrop > 0.2) {
+      s.boostDrop = 0;
+      const k = s.n - 1;
+      spawnFood(s.segs[2 * k] + rand(-0.3, 0.3), s.segs[2 * k + 1] + rand(-0.3, 0.3), ORB, CFG.boostCost * 0.2 * 0.6, '#ffd700', 0, 0, false);
+    }
+  } else s.boosting = false;
+  s.speed = lerp(s.speed, target, Math.min(1, dt * 6));
+  s.x += Math.cos(s.angle) * s.speed * dt;
+  s.z += Math.sin(s.angle) * s.speed * dt;
+  const last = s.path[s.path.length - 1];
+  if (!last || (s.x - last.x) ** 2 + (s.z - last.z) ** 2 > 0.03) s.path.push({ x: s.x, z: s.z });
 }
 
-/* ========================================================
-   AIMING & RELEASING MECHANICS (निशाना साधकर छोड़ना)
-   ======================================================== */
-const raycaster = new THREE.Raycaster();
-const mouseVec = new THREE.Vector2();
-const groundPlane = new THREE.Plane(new THREE.Vector3(0, 1, 0), 0);
-
-function setupAimInputs() {
-  const reticle = document.getElementById('aim-reticle');
-
-  window.addEventListener('pointerdown', (e) => {
-    if (!isGameRunning || e.target.closest('button')) return;
-    aimState.isAiming = true;
-    updateAim(e.clientX, e.clientY);
-    reticle.style.display = 'block';
-  });
-
-  window.addEventListener('pointermove', (e) => {
-    if (!isGameRunning) return;
-    if (aimState.isAiming) updateAim(e.clientX, e.clientY);
-  });
-
-  window.addEventListener('pointerup', () => {
-    if (!isGameRunning || !aimState.isAiming) return;
-    aimState.isAiming = false;
-    reticle.style.display = 'none';
-    releaseChakra();
-  });
-}
-
-function updateAim(screenX, screenY) {
-  aimState.screenX = screenX;
-  aimState.screenY = screenY;
-
-  const reticle = document.getElementById('aim-reticle');
-  reticle.style.left = screenX + 'px';
-  reticle.style.top = screenY + 'px';
-
-  mouseVec.x = (screenX / window.innerWidth) * 2 - 1;
-  mouseVec.y = -(screenY / window.innerHeight) * 2 + 1;
-
-  raycaster.setFromCamera(mouseVec, camera);
-  const hitPt = new THREE.Vector3();
-  if (raycaster.ray.intersectPlane(groundPlane, hitPt)) {
-    aimState.worldTarget.copy(hitPt);
-  }
-
-  // Find targeted enemy
-  aimState.targetedEnemy = null;
-  for (const enemy of enemies) {
-    if (!enemy.alive) continue;
-    const dist = hitPt.distanceTo(new THREE.Vector3(enemy.x, 1.5, enemy.z));
-    if (dist < 4.5) {
-      aimState.targetedEnemy = enemy;
+function collide() {
+  const S = G.snakes;
+  for (const a of S) {
+    if (!a.alive || a.dying) continue;
+    const dc = Math.hypot(a.x, a.z);
+    if (dc + a.r * 0.5 > G.R) {
+      const lim = G.R - a.r * 0.5 - 0.05;
+      if (dc > lim) { a.x *= lim / dc; a.z *= lim / dc; }
+      const inward = Math.atan2(-a.z, -a.x);
+      if (a.invuln > 0) { a.angle = inward + rand(-0.4, 0.4); }
+      else hurt(a, Math.max(1.5, a.mass * 0.1), a.x * 2, a.z * 2, null, true);
+      continue;
+    }
+    if (a.invuln > 0) continue;
+    for (const b of S) {
+      if (b === a || !b.alive || b.dying || b.invuln > 0) continue;
+      const pad = a.r + b.r;
+      if (a.x < b.bb[0] - pad || a.x > b.bb[1] + pad || a.z < b.bb[2] - pad || a.z > b.bb[3] + pad) continue;
+      const sg = b.segs, n = b.n;
+      let hit = -1;
+      for (let k = 0; k < n; k++) {
+        const dx = sg[2 * k] - a.x, dz = sg[2 * k + 1] - a.z, rr = (a.r + b.r * (1 - (k / (n - 1)) * 0.5)) * 0.85;
+        if (dx * dx + dz * dz < rr * rr) { hit = k; break; }
+      }
+      if (hit < 0) continue;
+      if (a.mass >= b.mass * CFG.eatRatio) startEaten(b, a);
+      else hurt(a, Math.max(2, a.mass * 0.16), sg[2 * hit], sg[2 * hit + 1], b.mass >= a.mass * CFG.eatRatio ? b : null, false);
       break;
     }
   }
+}
 
-  if (krishnaArm) {
-    const dir = new THREE.Vector3().subVectors(aimState.worldTarget, krishnaGroup.position);
-    krishnaArm.rotation.y = Math.atan2(dir.x, dir.z);
+function updateFood(dt) {
+  const F = G.foods;
+  for (const f of F) {
+    f.age += dt;
+    if (f.vx || f.vz) { f.x += f.vx * dt; f.z += f.vz * dt; const k = Math.max(0, 1 - dt * 3.5); f.vx *= k; f.vz *= k; if (Math.abs(f.vx) + Math.abs(f.vz) < 0.05) f.vx = f.vz = 0; }
+    if (f.x * f.x + f.z * f.z > (G.R - 0.4) * (G.R - 0.4)) f.dead = true;
   }
-}
-
-function releaseChakra() {
-  if (aimState.chakraState !== 'ready') return;
-  aimState.chakraState = 'flying';
-  aimState.chakraFlyTime = 0;
-  AudioSys.playThrow();
-  showSliceToast('⚡ सुदर्शन चक्र प्रहार!');
-  setKrishnaVoice('अधर्म का अंत निश्चित है! संहार करो!');
-}
-
-/* ========================================================
-   ENEMIES, SLICING & WAVE PROGRESSION
-   ======================================================== */
-function spawnWave() {
-  enemies.forEach(e => scene.remove(e.group));
-  enemies = [];
-  enemyProjectiles.forEach(p => scene.remove(p.mesh));
-  enemyProjectiles = [];
-
-  const waveCfg = WAVES[Math.min(currentWaveIdx, WAVES.length - 1)];
-  document.getElementById('hud-wave-title').textContent = waveCfg.title;
-  setKrishnaVoice(waveCfg.quote);
-
-  for (let i = 0; i < waveCfg.count; i++) {
-    const angle = (i / waveCfg.count) * Math.PI * 0.85 + (Math.PI * 1.07);
-    const dist = 45 + Math.random() * 35;
-
-    const enemy = {
-      name: waveCfg.asuraName,
-      x: Math.cos(angle) * dist,
-      z: Math.sin(angle) * dist,
-      speed: waveCfg.speed * (0.85 + Math.random() * 0.3),
-      alive: true,
-      shootTimer: 2.0 + Math.random() * 3.0,
-      group: new THREE.Group()
-    };
-
-    // Demon mesh
-    const col = (i === 0 && waveCfg.boss) ? '#800f2f' : '#2d0c3f';
-    const head = new THREE.Mesh(new THREE.SphereGeometry(2.0, 12, 10), new THREE.MeshStandardMaterial({ color: col }));
-    enemy.group.add(head);
-
-    for (const s of [-1, 1]) {
-      const eye = new THREE.Mesh(new THREE.SphereGeometry(0.3, 8, 8), new THREE.MeshBasicMaterial({ color: '#ff0033' }));
-      eye.position.set(1.4, 0.4, s * 0.8);
-      enemy.group.add(eye);
-    }
-
-    enemy.group.position.set(enemy.x, 1.4, enemy.z);
-    scene.add(enemy.group);
-    enemies.push(enemy);
-  }
-}
-
-function onHitEnemy(enemy) {
-  AudioSys.playSlice();
-  AudioSys.playDemonRoar();
-
-  enemy.alive = false;
-  scene.remove(enemy.group);
-
-  totalKills++;
-  score += 150 * (currentWaveIdx + 1);
-
-  showComboText('खल संहार! (SEVERED)');
-  showSliceToast(`⚔️ ${enemy.name} का अंत हुआ! +${150 * (currentWaveIdx + 1)}`);
-
-  document.getElementById('hud-kills').textContent = totalKills;
-  document.getElementById('hud-score').textContent = score;
-
-  const aliveRem = enemies.filter(e => e.alive).length;
-  if (aliveRem === 0) {
-    currentWaveIdx++;
-    AudioSys.playShankh();
-    showComboText('वेव समाप्त! धर्म की जय!');
-    playerHP = Math.min(100, playerHP + 30);
-    updateHP();
-    setTimeout(() => spawnWave(), 2000);
-  }
-}
-
-function damagePlayer(dmg) {
-  playerHP = Math.max(0, playerHP - dmg);
-  AudioSys.playHit();
-  updateHP();
-  if (playerHP <= 0) {
-    isGameRunning = false;
-    AudioSys.playDemonRoar();
-    document.getElementById('go-kills').textContent = totalKills;
-    const m = Math.floor(gameSeconds / 60).toString().padStart(2, '0');
-    const s = Math.floor(gameSeconds % 60).toString().padStart(2, '0');
-    document.getElementById('go-time').textContent = `${m}:${s}`;
-    document.getElementById('go-wave').textContent = (currentWaveIdx + 1);
-    document.getElementById('go-score').textContent = score;
-    document.getElementById('game-over-modal').classList.remove('hidden');
-  }
-}
-
-function updateHP() {
-  const bar = document.getElementById('hp-bar');
-  const txt = document.getElementById('hp-txt');
-  bar.style.width = playerHP + '%';
-  txt.textContent = playerHP + '%';
-  bar.classList.toggle('low', playerHP < 35);
-}
-
-window.restartWar = () => {
-  document.getElementById('game-over-modal').classList.add('hidden');
-  resetAndStartGame();
-};
-
-window.triggerBrahmaAstra = () => {
-  if (brahmaCharges <= 0) {
-    showSliceToast('ब्रह्मास्त्र के प्रहार समाप्त!');
-    return;
-  }
-  brahmaCharges--;
-  AudioSys.playShankh();
-  showComboText('⚡ ब्रह्मास्त्र महाप्रहार!');
-  enemies.forEach(e => { if (e.alive) onHitEnemy(e); });
-  document.getElementById('brahmaAstraBtn').textContent = `⚡ ब्रह्मास्त्र (${brahmaCharges})`;
-};
-
-function resetAndStartGame() {
-  playerHP = 100;
-  score = 0;
-  totalKills = 0;
-  currentWaveIdx = 0;
-  gameSeconds = 0;
-  brahmaCharges = 2;
-  aimState.chakraState = 'ready';
-
-  updateHP();
-  document.getElementById('hud-score').textContent = '0';
-  document.getElementById('hud-kills').textContent = '0';
-  document.getElementById('brahmaAstraBtn').textContent = '⚡ ब्रह्मास्त्र प्रहार';
-
-  spawnWave();
-  isGameRunning = true;
-}
-
-/* ========================================================
-   ANIMATION & GAME LOOP
-   ======================================================== */
-let lastFrameT = performance.now();
-
-function animate(now) {
-  requestAnimationFrame(animate);
-  const dt = Math.min((now - lastFrameT) / 1000, 0.1);
-  lastFrameT = now;
-
-  if (isGameRunning) {
-    gameSeconds += dt;
-    const h = Math.floor(gameSeconds / 3600).toString().padStart(2, '0');
-    const m = Math.floor((gameSeconds % 3600) / 60).toString().padStart(2, '0');
-    const s = Math.floor(gameSeconds % 60).toString().padStart(2, '0');
-    document.getElementById('hud-timer').textContent = `${h}:${m}:${s}`;
-
-    // Chakra motion
-    const fingerPos = new THREE.Vector3(1.2, 4.4, 7.8);
-    if (aimState.chakraState === 'ready') {
-      sudarshanChakra.position.copy(fingerPos);
-    } else if (aimState.chakraState === 'flying') {
-      aimState.chakraFlyTime += dt;
-      const dest = aimState.targetedEnemy && aimState.targetedEnemy.alive
-        ? new THREE.Vector3(aimState.targetedEnemy.x, 1.5, aimState.targetedEnemy.z)
-        : aimState.worldTarget;
-
-      const dir = new THREE.Vector3().subVectors(dest, sudarshanChakra.position);
-      if (dir.length() < 2.5 || aimState.chakraFlyTime > 1.2) {
-        if (aimState.targetedEnemy && aimState.targetedEnemy.alive) {
-          onHitEnemy(aimState.targetedEnemy);
-        } else {
-          for (const e of enemies) {
-            if (e.alive && sudarshanChakra.position.distanceTo(new THREE.Vector3(e.x, 1.5, e.z)) < 4.0) {
-              onHitEnemy(e);
-              break;
-            }
-          }
-        }
-        aimState.chakraState = 'returning';
+  for (const s of G.snakes) {
+    if (!s.alive || s.dying) continue;
+    const mr = s.r * 1.7 + 1.1, mr2 = mr * mr, er = s.r + 0.3;
+    for (const f of F) {
+      if (f.dead || f.age < 0) continue;
+      const dx = s.x - f.x, dz = s.z - f.z;
+      if (dx > mr || dx < -mr || dz > mr || dz < -mr) continue;
+      const d2 = dx * dx + dz * dz;
+      if (d2 > mr2) continue;
+      const d = Math.sqrt(d2), ft = FOODS[f.t];
+      if (d < er + ft.size * 0.5) {
+        f.dead = true; s.mass += f.value;
+        if (s.isPlayer) { Sound.eat(f.value); if (f.value >= 1.2 && f.t !== ORB) toast(ft.name + ' प्राप्त!', 'good'); }
+        burst(f.x, 0.6, f.z, f.col || ft.splashC, f.value >= 1.2 ? 12 : 5, 3.5, 0.09);
       } else {
-        dir.normalize();
-        sudarshanChakra.position.addScaledVector(dir, 46.0 * dt);
-      }
-    } else if (aimState.chakraState === 'returning') {
-      const dir = new THREE.Vector3().subVectors(fingerPos, sudarshanChakra.position);
-      if (dir.length() < 1.0) {
-        aimState.chakraState = 'ready';
-        sudarshanChakra.position.copy(fingerPos);
-      } else {
-        dir.normalize();
-        sudarshanChakra.position.addScaledVector(dir, 38.0 * dt);
+        const step = Math.min(d, (9 + s.speed) * dt);
+        f.x += dx / d * step; f.z += dz / d * step;
       }
     }
+  }
+  G.foods = F.filter(f => !f.dead);
+  const target = Math.max(22, Math.round(CFG.foodTarget * (G.R / CFG.arenaStart) ** 2 * (G.duel ? 0.7 : 1)));
+  let nat = 0; for (const f of G.foods) if (f.natural) nat++;
+  G.spawnAcc = Math.min(5, G.spawnAcc + CFG.foodRate * dt);
+  while (G.spawnAcc >= 1 && nat < target) { G.spawnAcc--; nat++; spawnNatural(); }
+}
 
-    // Enemies movement
-    enemies.forEach(e => {
-      if (!e.alive) return;
-      const target = new THREE.Vector3(0, 1.4, 8);
-      const dir = new THREE.Vector3(target.x - e.x, 0, target.z - e.z);
-      if (dir.length() > 7.0) {
-        dir.normalize();
-        e.x += dir.x * e.speed * dt;
-        e.z += dir.z * e.speed * dt;
-      } else {
-        damagePlayer(15 * dt);
+function updateZone(dt) {
+  if (G.time > CFG.shrinkDelay) {
+    const rate = (CFG.arenaStart - CFG.arenaMin) / CFG.shrinkDuration * (G.duel ? 2.4 : 1);
+    G.R = Math.max(CFG.arenaMin, G.R - rate * dt);
+  }
+}
+
+function step(dt) {
+  G.dt = dt;
+  G.time += dt;
+  updateZone(dt);
+  for (const s of G.snakes) {
+    if (!s.alive || s.dying) continue;
+    s.invuln = Math.max(0, s.invuln - dt); s.hitFlash = Math.max(0, s.hitFlash - dt);
+    if (s.ai) { s.ai.think -= dt; if (s.ai.think <= 0) { const t = 0.1 + Math.random() * 0.12; aiDecide(s, t); s.ai.think = t; } }
+    moveSnake(s, dt);
+  }
+  for (const s of G.snakes) {
+    if (!s.alive) continue;
+    s.dm += (s.mass - s.dm) * Math.min(1, dt * 5);
+    s.maxMass = Math.max(s.maxMass, s.mass);
+    if (!s.dying) layoutSnake(s);
+  }
+  collide();
+  for (const s of G.snakes) {
+    const d = s.dying; if (!d || !s.alive) continue;
+    const p = d.by;
+    if (p.alive && !p.dying) { p.mass += d.gain * dt / d.dur; d.px = p.x; d.pz = p.z; }
+    d.t += dt;
+    if (d.t >= d.dur) {
+      s.alive = false;
+      burst(d.px, 1, d.pz, '#ffd700', 18, 7, 0.22);
+      if (s.isPlayer) playerDied(p, 'eaten');
+    }
+  }
+  updateFood(dt);
+  for (const s of G.snakes) if (!s.alive) removeSnake(s);
+  G.snakes = G.snakes.filter(s => s.alive);
+  for (const p of G.parts) { p.life -= dt; p.vy -= 16 * dt; p.x += p.vx * dt; p.y = Math.max(0.08, p.y + p.vy * dt); p.z += p.vz * dt; }
+  G.parts = G.parts.filter(p => p.life > 0);
+
+  let lead = null; for (const s of G.snakes) if (!s.dying && (!lead || s.mass > lead.mass)) lead = s;
+  G.leader = lead;
+
+  const alive = aliveCount();
+  if (alive === 2 && !G.duel && G.total > 2) {
+    G.duel = true;
+    const pair = G.snakes.filter(s => !s.dying);
+    if (G.mode === 'play' && !G.result) { banner('अंतिम महायुद्ध', pair[0].name + ' बनाम ' + pair[1].name); Sound.duel(); }
+  }
+  if (G.mode === 'play') {
+    const p = G.player;
+    if (p && p.alive && !p.dying && alive === 1 && !G.result) {
+      G.result = { win: true, place: 1, by: null, cause: 'win' };
+      G.overAt = G.time + 1.8;
+      banner('धर्म की विजय!', 'समस्त असुरों का संहार हुआ'); Sound.win();
+    }
+    if (G.result && !G.overShown && G.time >= G.overAt) showOver();
+  } else if (G.mode === 'menu') {
+    if (alive <= 1 && !G.attractEnd) G.attractEnd = G.time + 3;
+    if (G.attractEnd && G.time > G.attractEnd) newMatch(false);
+  }
+}
+
+/* =========================================================
+   Rendering Loop
+   ========================================================= */
+const dummy = new THREE.Object3D();
+function updateVisuals() {
+  const t = G.time;
+  timeU.value = t; zoneU.value = G.R;
+  wall.scale.set(G.R, 3.8, G.R);
+
+  // Amrit Orbs & Food
+  const counts = new Array(FOODS.length).fill(0);
+  const vx0 = cam.x - cam.h * 1.7, vx1 = cam.x + cam.h * 1.7, vz0 = cam.z - cam.h * 1.7, vz1 = cam.z + cam.h * 1.3;
+  for (const f of G.foods) {
+    if (f.x < vx0 || f.x > vx1 || f.z < vz0 || f.z > vz1) continue;
+    const ft = FOODS[f.t], i = counts[f.t];
+    if (i >= ft.mesh.instanceMatrix.count) continue;
+    const grow = f.age < 0 ? 0.6 : Math.min(1, 0.3 + f.age * 3);
+    const sz = ft.size * grow * 1.45;
+    const bob = Math.sin(t * 2.8 + f.ph) * 0.12;
+    dummy.position.set(f.x, sz + 0.14 + bob, f.z);
+    dummy.rotation.set(f.tilt, t * 1.2 + f.ph, 0);
+    dummy.scale.setScalar(sz);
+    dummy.updateMatrix();
+    ft.mesh.setMatrixAt(i, dummy.matrix);
+    counts[f.t]++;
+  }
+  FOODS.forEach((ft, i) => {
+    ft.mesh.count = counts[i];
+    ft.mesh.instanceMatrix.needsUpdate = true;
+  });
+
+  // Snakes & Sudarshan
+  for (const s of G.snakes) updateSnakeMesh(s);
+  const pl = G.player;
+  arrow.visible = !!(pl && pl.alive && !pl.dying && G.mode === 'play' && !G.result && pl.want !== null && pl.want !== undefined);
+  if (arrow.visible) {
+    const d = pl.r * 2.5 + 1.6;
+    arrow.position.set(pl.x + Math.cos(pl.want) * d, 0.08, pl.z + Math.sin(pl.want) * d);
+    arrow.rotation.y = -pl.want;
+    arrow.scale.setScalar(0.7 + pl.r * 0.5);
+  }
+
+  // Particles
+  let n = 0;
+  for (const p of G.parts) {
+    const k = p.life / p.max, sz = p.size * Math.max(0.05, k);
+    dummy.position.set(p.x, p.y, p.z); dummy.rotation.set(0, 0, 0); dummy.scale.setScalar(sz); dummy.updateMatrix();
+    partMesh.setMatrixAt(n, dummy.matrix); partMesh.setColorAt(n, p.col); n++;
+  }
+  partMesh.count = n;
+  partMesh.instanceMatrix.needsUpdate = true;
+  if (partMesh.instanceColor) partMesh.instanceColor.needsUpdate = true;
+}
+
+const tagV = new THREE.Vector3();
+function render(dt) {
+  const f = G.focus && G.focus.alive ? G.focus : (G.mode === 'menu' || !G.player || !G.player.alive ? G.leader : G.player);
+  let tx = 0, tz = 0, r = 1;
+  if (f) { tx = f.x + Math.cos(f.angle) * 2.5; tz = f.z + Math.sin(f.angle) * 2.5; r = f.r; }
+  const narrow = camera.aspect < 1 ? 1 + (1 - camera.aspect) * 0.9 : 1;
+  const hTarget = (G.mode === 'menu' ? 34 : 16.5 + r * 8 + (G.result ? 5 : 0)) * narrow;
+  cam.h = lerp(cam.h, hTarget, Math.min(1, dt * 1.8));
+  cam.x = lerp(cam.x, tx, Math.min(1, dt * 4.5));
+  cam.z = lerp(cam.z, tz, Math.min(1, dt * 4.5));
+  cam.shake = Math.max(0, cam.shake - dt * 2.2);
+  const sh = cam.shake * cam.shake * 1.2;
+  camera.position.set(cam.x + rand(-sh, sh), cam.h, cam.z + cam.h * 0.72 + rand(-sh, sh));
+  camera.lookAt(cam.x, 0, cam.z - 1.5);
+  scene.fog.near = cam.h * 1.45; scene.fog.far = cam.h * 3.6;
+
+  const S = cam.h * 1.15;
+  const sc = sun.shadow.camera;
+  if (Math.abs(sc.right - S) > 1) { sc.left = -S; sc.right = S; sc.top = S; sc.bottom = -S; sc.updateProjectionMatrix(); }
+  sun.target.position.set(cam.x, 0, cam.z - 2);
+  sun.position.copy(sun.target.position).add(SUN_OFF);
+
+  updateVisuals();
+  renderer.render(scene, camera);
+
+  for (const s of G.snakes) {
+    const show = !s.dying && (G.mode === 'play' || G.mode === 'over');
+    let ok = false;
+    if (show) {
+      tagV.set(s.x, s.r * 2.2 + 0.8, s.z).project(camera);
+      const px = (tagV.x * 0.5 + 0.5) * innerWidth, py = (0.5 - tagV.y * 0.5) * innerHeight;
+      if (tagV.z < 1 && px > -80 && px < innerWidth + 80 && py > -40 && py < innerHeight + 40) {
+        ok = true;
+        if (s.tag.style.display === 'none') s.tag.style.display = '';
+        const pl = G.player;
+        const rel = !pl || s === pl || !pl.alive ? '' : pl.mass >= s.mass * CFG.eatRatio ? 'prey' : s.mass >= pl.mass * CFG.eatRatio ? 'danger' : '';
+        if (s.rel !== rel) { s.rel = rel; s.tag.className = 'tag' + (s.isPlayer ? ' me' : '') + (rel ? ' ' + rel : ''); }
+        s.tag.style.transform = `translate(${px}px,${py}px) translate(-50%,-100%)`;
       }
-      e.group.position.set(e.x, 1.4, e.z);
-      e.group.lookAt(target.x, 1.4, target.z);
-    });
-  }
-
-  sudarshanChakra.rotation.y += 35 * dt;
-  if (renderer && scene && camera) {
-    renderer.render(scene, camera);
+    }
+    if (!ok && s.tag.style.display !== 'none') s.tag.style.display = 'none';
   }
 }
 
-function setKrishnaVoice(text) {
-  document.getElementById('krishna-voice-text').textContent = `"${text}"`;
+/* =========================================================
+   HUD & Minimap
+   ========================================================= */
+let hudT = 0;
+const mm = $('minimap'), mctx = mm.getContext('2d');
+function updateHUD(dt) {
+  hudT -= dt;
+  if (hudT > 0) return;
+  hudT = 0.12;
+  const p = G.player;
+  const ranked = G.snakes.filter(s => !s.dying).sort((a, b) => b.mass - a.mass);
+  if (p) {
+    $('hLen').textContent = Math.floor(p.alive ? p.mass : p.maxMass);
+    const idx = ranked.indexOf(p);
+    $('hRank').textContent = idx >= 0 ? '#' + (idx + 1) : '-';
+    $('hKills').textContent = p.kills;
+  }
+  $('hAlive').textContent = ranked.length;
+  const z = $('hZone'), short = innerWidth < 640;
+  if (G.time < CFG.shrinkDelay) { z.textContent = (short ? 'परिधि: ' : 'धर्म परिधि: ') + Math.ceil(CFG.shrinkDelay - G.time) + 's'; z.classList.add('calm'); }
+  else if (G.R > CFG.arenaMin + 0.01) { z.textContent = G.duel ? (short ? 'परिधि संकोच!' : 'महायुद्ध परिधि संकोच') : 'धर्म परिधि संकोच'; z.classList.remove('calm'); }
+  else { z.textContent = 'न्यूनतम परिधि'; z.classList.remove('calm'); }
+
+  boostBtn.classList.toggle('low', !p || !p.alive || p.mass <= CFG.minMass + 4);
+  const rows = ranked.slice(0, 5);
+  let html = '';
+  rows.forEach((s, i) => { html += row(s, i + 1); });
+  if (p && p.alive && !p.dying && !rows.includes(p)) html += row(p, ranked.indexOf(p) + 1);
+  $('board').innerHTML = html;
+
+  const W = mm.width, c = W / 2, scl = (c - 10) / CFG.arenaStart;
+  mctx.clearRect(0, 0, W, W);
+  mctx.fillStyle = 'rgba(7,18,40,.85)'; mctx.beginPath(); mctx.arc(c, c, c, 0, TAU); mctx.fill();
+  mctx.strokeStyle = '#ffc233'; mctx.lineWidth = 2.5; mctx.beginPath(); mctx.arc(c, c, G.R * scl, 0, TAU); mctx.stroke();
+  for (const s of G.snakes) {
+    if (s.dying) continue;
+    const lw = Math.max(4, s.r * scl * 2.4);
+    mctx.beginPath();
+    for (let k = 0; k < s.n; k += 3) { const x = c + s.segs[2 * k] * scl, y = c + s.segs[2 * k + 1] * scl; k ? mctx.lineTo(x, y) : mctx.moveTo(x, y); }
+    mctx.strokeStyle = s.isPlayer ? '#ffea00' : '#e63946';
+    mctx.lineWidth = s.isPlayer ? lw + 3 : lw;
+    mctx.stroke();
+  }
 }
+function esc(t) { return t.replace(/[&<>"]/g, ch => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[ch])); }
+function row(s, i) { return `<li${s.isPlayer ? ' class="me"' : ''}><span class="n">${i}</span><i style="background:${s.hex}"></i><span>${esc(s.name)}</span><b>${Math.floor(s.mass)}</b></li>`; }
 
-function showComboText(txt) {
-  const el = document.getElementById('combo-callout');
-  el.textContent = txt;
-  el.classList.add('show');
-  setTimeout(() => el.classList.remove('show'), 1500);
+/* =========================================================
+   Game Control & Actions
+   ========================================================= */
+const skinsEl = $('skins');
+SKINS.forEach((sk, i) => {
+  const b = document.createElement('button');
+  b.type = 'button'; b.className = 'skin'; b.setAttribute('role', 'radio'); b.setAttribute('aria-label', sk.name);
+  b.style.background = `radial-gradient(circle, ${sk.c1} 0%, ${sk.c2} 100%)`;
+  b.addEventListener('click', () => { store.set('skin', i); markSkin(); });
+  skinsEl.appendChild(b);
+});
+function markSkin() { const cur = store.get('skin', 0); [...skinsEl.children].forEach((b, i) => b.setAttribute('aria-checked', i === cur ? 'true' : 'false')); }
+markSkin();
+const nameIn = $('nameIn');
+nameIn.value = store.get('name', 'श्री कृष्ण भक्त');
+nameIn.addEventListener('input', () => store.set('name', nameIn.value.trim().slice(0, 16)));
+
+function setPaused(on) {
+  if (on && (G.mode !== 'play' || G.result)) return;
+  G.paused = on;
+  $('paused').hidden = !on;
+  root.classList.toggle('paused', on);
+  input.joy = null; input.touchBoost = false; $('joy').classList.remove('on'); boostBtn.classList.remove('on');
+  if (on) { $('resumeBtn').focus({ preventScroll: true }); }
+  else { last = performance.now(); canvas.focus({ preventScroll: true }); }
 }
+$('pauseBtn').addEventListener('click', () => setPaused(true));
+$('resumeBtn').addEventListener('click', () => setPaused(false));
+$('quitBtn').addEventListener('click', () => { setPaused(false); goMenu(); });
+document.addEventListener('visibilitychange', () => { if (document.hidden) setPaused(true); });
+addEventListener('keydown', e => { const k = e.key.toLowerCase(); if ((k === 'p' || k === 'escape') && G.mode === 'play') setPaused(!G.paused); });
 
-function showSliceToast(txt) {
-  const container = document.getElementById('slice-toasts');
-  const toast = document.createElement('div');
-  toast.className = 'slice-toast';
-  toast.textContent = txt;
-  container.appendChild(toast);
-  setTimeout(() => toast.remove(), 1200);
+function startGame() {
+  Sound.init();
+  Sound.shankh();
+  if (isTouch && !document.fullscreenElement && document.documentElement.requestFullscreen) {
+    try { document.documentElement.requestFullscreen({ navigationUI: 'hide' }).catch(() => {}); } catch (e) {}
+  }
+  G.paused = false; $('paused').hidden = true; root.classList.remove('paused');
+  $('menu').hidden = true; $('over').hidden = true; $('hud').hidden = false;
+  root.classList.add('playing');
+  G.mode = 'play';
+  newMatch(true);
+  banner('महाभारत युद्ध आरम्भ!', 'सुदर्शन चक्र से असुरों का संहार करें');
+  canvas.focus({ preventScroll: true });
 }
+function showOver() {
+  G.overShown = true; G.mode = 'over';
+  const r = G.result, p = G.player;
+  const t = $('oTitle');
+  t.textContent = r.win ? 'धर्म की विजय!' : r.cause === 'zone' ? 'परिधि में भस्म!' : 'वीरगति!';
+  t.classList.toggle('win', r.win);
+  $('oCause').textContent = r.win ? 'आपने समस्त असुरों व कालिया नाग का संहार कर दिया।' : r.by ? r.by + ' द्वारा प्रहार।' : r.cause === 'zone' ? 'धर्म चक्र परिधि में तेज समाप्त हुआ।' : 'सुदर्शन तेज समाप्त हुआ।';
+  $('oPlace').textContent = '#' + r.place;
+  $('oLen').textContent = Math.floor(p ? p.maxMass : 0);
+  $('oKills').textContent = p ? p.kills : 0;
+  const secs = Math.floor(r.win ? G.time : G.deadAt);
+  $('oTime').textContent = Math.floor(secs / 60) + ':' + String(secs % 60).padStart(2, '0');
+  $('over').hidden = false; $('hud').hidden = true;
+  root.classList.remove('playing');
+  $('againBtn').focus({ preventScroll: true });
+}
+$('playBtn').addEventListener('click', startGame);
+$('againBtn').addEventListener('click', startGame);
+function goMenu() {
+  $('over').hidden = true; $('hud').hidden = true; $('menu').hidden = false;
+  root.classList.remove('playing');
+  G.mode = 'menu'; newMatch(false);
+}
+$('menuBtn').addEventListener('click', goMenu);
+if (!isTouch) $('how').open = true;
+const muteBtn = $('muteBtn');
+function markMute() { muteBtn.classList.toggle('muted', Sound.muted); muteBtn.setAttribute('aria-label', Sound.muted ? 'Unmute' : 'Mute'); }
+muteBtn.addEventListener('click', () => { Sound.init(); Sound.setMuted(!Sound.muted); markMute(); });
+markMute();
 
-// Initialize 3D Engine
-init3DGame();
-requestAnimationFrame(animate);
-</script>
+/* =========================================================
+   Main Game Loop
+   ========================================================= */
+let last = performance.now();
+function frame(now) {
+  const raw = (now - last) / 1000; last = now;
+  const dt = Math.min(raw, 1 / 20);
+  if (!document.hidden && !G.paused) {
+    const sub = dt > 1 / 45 ? 2 : 1;
+    for (let i = 0; i < sub; i++) step(dt / sub);
+    render(dt);
+    if (G.mode !== 'menu') updateHUD(dt);
+  }
+  requestAnimationFrame(frame);
+}
+newMatch(false);
+requestAnimationFrame(t => { last = t; requestAnimationFrame(frame); });
 
+// Global Hook
+window.__sr = { G, step, newMatch, startGame, CFG, renderer, render, updateVisuals };
+//]]></script>
+</b:if>
 </body>
 </html>
