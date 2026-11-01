@@ -1,0 +1,20 @@
+{
+  "SoundCueName": "SC_Chakra_SpinLoop",
+  "Type": "SoundCue",
+  "IsLooping": true,
+  "BasePitch": 1.0,
+  "BaseVolume": 0.85,
+  "Modulation": {
+    "PitchInputParameter": "RotationSpeedRPM",
+    "PitchMin": 0.6,
+    "PitchMax": 2.4,
+    "VolumeInputParameter": "AirResistance",
+    "VolumeMin": 0.3,
+    "VolumeMax": 1.0
+  },
+  "Harmonics": [
+    { "FreqHz": 440, "Level": 0.7 },
+    { "FreqHz": 880, "Level": 0.5 },
+    { "FreqHz": 1760, "Level": 0.35 }
+  ]
+}
