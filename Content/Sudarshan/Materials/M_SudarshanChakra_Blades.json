@@ -1,0 +1,15 @@
+{
+  "MaterialName": "M_SudarshanChakra_Blades",
+  "MaterialDomain": "Surface",
+  "BlendMode": "Opaque",
+  "ShadingModel": "DefaultLit",
+  "TwoSided": true,
+  "Parameters": {
+    "BaseColor": { "R": 0.95, "G": 0.92, "B": 0.85, "A": 1.0 },
+    "Metallic": 1.0,
+    "Specular": 0.99,
+    "Roughness": 0.08,
+    "Anisotropy": 0.65,
+    "RazorSharpEdgeTint": { "R": 1.0, "G": 0.98, "B": 0.88, "A": 1.0 }
+  }
+}
