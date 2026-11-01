@@ -1,0 +1,57 @@
+{
+  "BlueprintName": "BP_SudarshanChakra",
+  "ParentClass": "ASudarshanChakraActor",
+  "Category": "Weapons",
+  "DefaultComponentHierarchy": {
+    "SceneRoot": {
+      "Type": "USceneComponent"
+    },
+    "ChakraMesh": {
+      "Type": "UStaticMeshComponent",
+      "AttachTo": "SceneRoot",
+      "StaticMesh": "/Game/Sudarshan/Meshes/SM_SudarshanChakra.SM_SudarshanChakra",
+      "Materials": [
+        "/Game/Sudarshan/Materials/M_SudarshanChakra_Gold",
+        "/Game/Sudarshan/Materials/M_SudarshanChakra_Blades",
+        "/Game/Sudarshan/Materials/M_SudarshanChakra_Core"
+      ]
+    },
+    "EnergyAura": {
+      "Type": "UNiagaraComponent",
+      "AttachTo": "ChakraMesh",
+      "Asset": "/Game/Sudarshan/Effects/NS_ChakraDivineAura"
+    },
+    "BladeTrails": {
+      "Type": "UNiagaraComponent",
+      "AttachTo": "ChakraMesh",
+      "Asset": "/Game/Sudarshan/Effects/NS_ChakraBladeTrails"
+    },
+    "DivineLight": {
+      "Type": "UPointLightComponent",
+      "AttachTo": "ChakraMesh",
+      "Intensity": 4000.0,
+      "LightColor": [1.0, 0.8, 0.15],
+      "AttenuationRadius": 800.0
+    },
+    "SpinAudio": {
+      "Type": "UAudioComponent",
+      "AttachTo": "ChakraMesh",
+      "Sound": "/Game/Sudarshan/Audio/SC_Chakra_SpinLoop"
+    },
+    "ActionAudio": {
+      "Type": "UAudioComponent",
+      "AttachTo": "SceneRoot",
+      "Sound": "/Game/Sudarshan/Audio/SC_Chakra_Throw"
+    }
+  },
+  "DefaultVariables": {
+    "TargetRPM": 180.0,
+    "RotationAcceleration": 900.0,
+    "FlightSpeed": 4800.0,
+    "BladeDamage": 250.0,
+    "MaxFlightDistance": 6500.0,
+    "BobbingAmplitude": 4.5,
+    "BobbingFrequency": 2.2,
+    "PrecessionTiltDegrees": 4.0
+  }
+}
