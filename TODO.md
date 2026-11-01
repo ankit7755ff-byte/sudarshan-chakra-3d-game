@@ -15,3 +15,5 @@
 - [x] **Phase 12: Master Polish & Gold Release** (Playable web engine, high-res renders, documentation)
 
 ## Project Status: 100% COMPLETE & DEPLOYED ✅
+
+- [x] **Hotfix & Homepage Modernization:** Fixed `&amp;&amp;` JavaScript syntax error, upgraded Homepage to modern Vedic theme with 1-click battle start, direct realm selector, and verified live on GitHub Pages.
