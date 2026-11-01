@@ -1,0 +1,2176 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"/>
+  <title>॥ श्री कृष्ण सुदर्शन चक्र - महाभारत महायुद्ध 3D ॥</title>
+  <meta name="description" content="भगवान श्री कृष्ण के 3D सुदर्शन चक्र से कालिया नाग और दानवों का संहार करें! आधिकारिक वेबसाइट, लॉगिन, साइन अप और 1 घंटे का 3D गेम!"/>
+  
+  <!-- Sacred Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;900&family=Rozha+One&family=Tiro+Devanagari+Sanskrit:ital@0;1&family=Rajdhani:wght@600;700;800&display=swap" rel="stylesheet"/>
+
+  <style>
+    :root {
+      --gold: #ffc233;
+      --gold-bright: #fff275;
+      --gold-dark: #b8860b;
+      --saffron: #ff6b1a;
+      --saffron-bright: #ff8c42;
+      --krishna-blue: #1c64d2;
+      --deep-navy: #050d1e;
+      --demon-red: #e63946;
+      --demon-purple: #7209b7;
+      --font-dev: 'Rozha One', 'Tiro Devanagari Sanskrit', serif;
+      --font-epic: 'Cinzel', serif;
+      --font-hud: 'Rajdhani', sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      user-select: none;
+      -webkit-user-select: none;
+    }
+
+    html, body {
+      width: 100%;
+      min-height: 100%;
+      background: #020614;
+      color: #fff;
+      font-family: var(--font-hud);
+      overflow-x: hidden;
+    }
+
+    /* Smooth Scrolling */
+    html {
+      scroll-behavior: smooth;
+    }
+
+    /* ========================================================
+       TOP NAVIGATION BAR
+       ======================================================== */
+    .site-navbar {
+      position: sticky;
+      top: 0;
+      width: 100%;
+      background: rgba(5, 14, 32, 0.92);
+      backdrop-filter: blur(15px);
+      border-bottom: 2px solid rgba(255, 194, 51, 0.35);
+      z-index: 100;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 12px 30px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
+    }
+
+    .nav-brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    .brand-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      border: 2px solid var(--gold);
+      background: radial-gradient(circle, #ff6b1a 0%, #0c234a 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 22px;
+      box-shadow: 0 0 15px rgba(255, 194, 51, 0.5);
+    }
+
+    .brand-title {
+      font-family: var(--font-dev);
+      font-size: clamp(18px, 3.2vw, 24px);
+      color: var(--gold-bright);
+      text-shadow: 0 0 10px rgba(255, 215, 0, 0.6);
+      letter-spacing: 1px;
+    }
+
+    .nav-menu {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      list-style: none;
+    }
+
+    .nav-link {
+      color: #d1e2fc;
+      font-size: 16px;
+      font-weight: 700;
+      text-decoration: none;
+      cursor: pointer;
+      transition: color 0.2s, text-shadow 0.2s;
+    }
+
+    .nav-link:hover {
+      color: var(--gold-bright);
+      text-shadow: 0 0 10px rgba(255, 215, 0, 0.8);
+    }
+
+    .nav-cta-btn {
+      font-family: var(--font-dev);
+      font-size: 16px;
+      padding: 8px 24px;
+      border-radius: 25px;
+      border: none;
+      cursor: pointer;
+      background: linear-gradient(135deg, var(--gold) 0%, var(--saffron) 100%);
+      color: #1a0800;
+      font-weight: 800;
+      box-shadow: 0 4px 15px rgba(255, 107, 26, 0.5);
+      transition: transform 0.2s, box-shadow 0.2s;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .nav-cta-btn:hover {
+      transform: translateY(-2px) scale(1.04);
+      box-shadow: 0 6px 25px rgba(255, 180, 0, 0.8);
+    }
+
+    /* ========================================================
+       HERO BANNER & SHRI KRISHNA SHOWCASE
+       ======================================================== */
+    .hero-section {
+      position: relative;
+      min-height: 85vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 50px 30px;
+      background: radial-gradient(circle at 50% 30%, rgba(22, 55, 115, 0.7) 0%, rgba(4, 12, 28, 0.95) 60%, #020614 100%);
+      overflow: hidden;
+    }
+
+    .hero-bg-aura {
+      position: absolute;
+      width: 700px;
+      height: 700px;
+      background: radial-gradient(circle, rgba(255, 194, 51, 0.2) 0%, rgba(255, 107, 26, 0.1) 40%, transparent 70%);
+      filter: blur(50px);
+      border-radius: 50%;
+      pointer-events: none;
+      animation: heroAuraPulse 6s ease-in-out infinite alternate;
+    }
+
+    @keyframes heroAuraPulse {
+      0% { transform: scale(0.9) rotate(0deg); opacity: 0.6; }
+      100% { transform: scale(1.15) rotate(180deg); opacity: 1; }
+    }
+
+    .hero-grid {
+      position: relative;
+      max-width: 1250px;
+      width: 100%;
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      align-items: center;
+      gap: 40px;
+      z-index: 2;
+    }
+
+    .hero-content {
+      text-align: left;
+    }
+
+    .sacred-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255, 194, 51, 0.15);
+      border: 1px solid var(--gold);
+      border-radius: 20px;
+      padding: 5px 16px;
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--gold-bright);
+      margin-bottom: 14px;
+      text-shadow: 0 0 8px rgba(255, 215, 0, 0.6);
+    }
+
+    .hero-main-title {
+      font-family: var(--font-dev);
+      font-size: clamp(34px, 5.5vw, 62px);
+      line-height: 1.15;
+      background: linear-gradient(180deg, #ffffff 0%, #ffe484 45%, #ff9e1b 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 16px;
+      filter: drop-shadow(0 3px 6px rgba(0,0,0,0.8));
+    }
+
+    .hero-shloka-box {
+      background: rgba(4, 15, 36, 0.85);
+      border-left: 4px solid var(--gold);
+      border-radius: 12px;
+      padding: 14px 20px;
+      margin-bottom: 22px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+    }
+
+    .shloka-verse {
+      font-family: 'Tiro Devanagari Sanskrit', serif;
+      font-size: clamp(15px, 2.2vw, 19px);
+      line-height: 1.6;
+      color: #ffeeb2;
+      font-style: italic;
+    }
+
+    .shloka-meaning {
+      font-size: 13px;
+      color: #9ac2ef;
+      margin-top: 6px;
+      font-weight: 500;
+    }
+
+    .hero-desc {
+      font-size: clamp(15px, 2vw, 18px);
+      color: #e2edfc;
+      line-height: 1.6;
+      margin-bottom: 28px;
+    }
+
+    .hero-desc b {
+      color: var(--gold-bright);
+    }
+
+    .hero-actions-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      align-items: center;
+    }
+
+    .play-game-big-btn {
+      font-family: var(--font-dev);
+      font-size: 22px;
+      padding: 14px 38px;
+      border-radius: 35px;
+      border: none;
+      cursor: pointer;
+      background: linear-gradient(135deg, #ffc233 0%, #ff6b1a 60%, #c41800 100%);
+      color: #1a0800;
+      font-weight: 800;
+      box-shadow: 0 6px 25px rgba(255, 107, 26, 0.6), inset 0 2px 6px rgba(255, 255, 255, 0.6);
+      transition: all 0.25s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      letter-spacing: 1px;
+    }
+
+    .play-game-big-btn:hover {
+      transform: translateY(-3px) scale(1.04);
+      box-shadow: 0 10px 35px rgba(255, 180, 0, 0.85);
+    }
+
+    .hero-login-jump-btn {
+      font-family: var(--font-dev);
+      font-size: 18px;
+      padding: 13px 28px;
+      border-radius: 35px;
+      background: rgba(14, 38, 77, 0.8);
+      color: #ffe599;
+      border: 2px solid var(--gold);
+      cursor: pointer;
+      transition: all 0.25s;
+    }
+
+    .hero-login-jump-btn:hover {
+      background: rgba(25, 60, 115, 0.95);
+      transform: translateY(-2px);
+    }
+
+    /* Hero Right: Shri Krishna & Sudarshan Chakra Visual Card */
+    .hero-visual-card {
+      position: relative;
+      background: radial-gradient(circle at center, #102d60 0%, #061530 70%, #030b1c 100%);
+      border: 2.5px solid var(--gold);
+      border-radius: 28px;
+      padding: 30px;
+      text-align: center;
+      box-shadow: 0 0 50px rgba(255, 194, 51, 0.35);
+    }
+
+    .krishna-avatar-frame {
+      position: relative;
+      width: 200px;
+      height: 200px;
+      margin: 0 auto 20px;
+    }
+
+    .halo-ring {
+      position: absolute;
+      inset: -12px;
+      border-radius: 50%;
+      background: conic-gradient(from 0deg, #ffc233, #ff4500, #ffc233, #00d2ff, #ffc233);
+      filter: blur(8px);
+      animation: spin360 8s linear infinite;
+    }
+
+    @keyframes spin360 {
+      to { transform: rotate(360deg); }
+    }
+
+    .krishna-art-circle {
+      position: relative;
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      border: 3px solid var(--gold);
+      background: #0d2854;
+      overflow: hidden;
+      box-shadow: 0 0 25px rgba(255, 215, 0, 0.7);
+    }
+
+    .spinning-chakra-preview {
+      position: absolute;
+      top: -15px;
+      right: -10px;
+      width: 76px;
+      height: 76px;
+      border-radius: 50%;
+      animation: spin360 0.3s linear infinite;
+      filter: drop-shadow(0 0 14px #ffea00);
+    }
+
+    .krishna-card-title {
+      font-family: var(--font-dev);
+      font-size: 26px;
+      color: var(--gold-bright);
+      margin-bottom: 4px;
+    }
+
+    .krishna-card-sub {
+      font-size: 14px;
+      color: #a4c4e8;
+      margin-bottom: 15px;
+    }
+
+    .features-pill-row {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .feature-tag {
+      background: rgba(255, 194, 51, 0.15);
+      border: 1px solid rgba(255, 194, 51, 0.4);
+      border-radius: 15px;
+      padding: 4px 12px;
+      font-size: 13px;
+      font-weight: 700;
+      color: #ffeeb2;
+    }
+
+    /* ========================================================
+       HOMEPAGE AUTHENTICATION SECTION (LOGIN & SIGN UP)
+       ======================================================== */
+    .auth-section {
+      padding: 80px 30px;
+      background: linear-gradient(180deg, #020614 0%, #061633 50%, #020614 100%);
+      border-top: 1px solid rgba(255, 194, 51, 0.2);
+      border-bottom: 1px solid rgba(255, 194, 51, 0.2);
+      text-align: center;
+    }
+
+    .section-title {
+      font-family: var(--font-dev);
+      font-size: clamp(28px, 4.5vw, 42px);
+      color: var(--gold-bright);
+      text-shadow: 0 0 15px rgba(255, 215, 0, 0.6);
+      margin-bottom: 10px;
+    }
+
+    .section-desc {
+      font-size: 16px;
+      color: #a4c4e8;
+      max-width: 650px;
+      margin: 0 auto 35px;
+    }
+
+    .auth-center-container {
+      max-width: 520px;
+      width: 100%;
+      margin: 0 auto;
+      background: radial-gradient(circle at top, #112852 0%, #061530 70%, #030b1c 100%);
+      border: 2px solid var(--gold);
+      border-radius: 24px;
+      padding: 30px 35px;
+      box-shadow: 0 0 45px rgba(255, 194, 51, 0.35);
+    }
+
+    .home-auth-tabs {
+      display: flex;
+      background: rgba(4, 12, 28, 0.85);
+      border-radius: 30px;
+      border: 1px solid rgba(255, 194, 51, 0.35);
+      padding: 4px;
+      margin-bottom: 24px;
+    }
+
+    .home-auth-tab {
+      flex: 1;
+      padding: 10px 14px;
+      font-size: 15px;
+      font-weight: 700;
+      color: #9ab9e6;
+      border-radius: 25px;
+      cursor: pointer;
+      border: none;
+      background: transparent;
+      transition: all 0.25s ease;
+    }
+
+    .home-auth-tab.active {
+      background: linear-gradient(135deg, var(--gold) 0%, var(--saffron) 100%);
+      color: #1a0800;
+      box-shadow: 0 2px 10px rgba(255, 107, 26, 0.5);
+    }
+
+    .auth-panel {
+      display: none;
+      flex-direction: column;
+      gap: 15px;
+      text-align: left;
+    }
+
+    .auth-panel.active {
+      display: flex;
+    }
+
+    .auth-group {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+
+    .auth-group label {
+      font-size: 13px;
+      color: var(--gold-bright);
+      font-weight: 700;
+    }
+
+    .auth-input {
+      background: rgba(3, 10, 24, 0.8);
+      border: 1.5px solid rgba(255, 194, 51, 0.35);
+      border-radius: 12px;
+      padding: 12px 16px;
+      color: #fff;
+      font-size: 15px;
+      outline: none;
+      font-family: inherit;
+    }
+
+    .auth-input:focus {
+      border-color: var(--gold);
+      box-shadow: 0 0 12px rgba(255, 194, 51, 0.4);
+    }
+
+    .auth-submit-btn {
+      font-family: var(--font-dev);
+      font-size: 18px;
+      padding: 12px;
+      border-radius: 30px;
+      border: none;
+      cursor: pointer;
+      margin-top: 8px;
+      background: linear-gradient(135deg, #ffc233 0%, #ff6b1a 60%, #c41800 100%);
+      color: #1a0800;
+      font-weight: 800;
+      box-shadow: 0 4px 15px rgba(255, 107, 26, 0.45);
+      transition: all 0.2s;
+    }
+
+    .auth-submit-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(255, 180, 0, 0.7);
+    }
+
+    .auth-status-msg {
+      font-size: 14px;
+      min-height: 20px;
+      text-align: center;
+      font-weight: bold;
+    }
+    .auth-status-msg.error { color: #ff4d6d; }
+    .auth-status-msg.success { color: #55f094; }
+
+    /* Logged In Warrior Profile Card */
+    #logged-in-profile-box {
+      display: none;
+      text-align: center;
+      padding: 10px;
+    }
+
+    .user-avatar-badge {
+      font-size: 48px;
+      margin-bottom: 8px;
+    }
+
+    .welcome-user-title {
+      font-family: var(--font-dev);
+      font-size: 24px;
+      color: var(--gold-bright);
+      margin-bottom: 6px;
+    }
+
+    /* ========================================================
+       WEAPON & 108 BLADES SHOWCASE SECTION
+       ======================================================== */
+    .weapon-section {
+      padding: 70px 30px;
+      max-width: 1200px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 25px;
+      margin-top: 40px;
+    }
+
+    .feature-card {
+      background: rgba(8, 22, 48, 0.75);
+      border: 1.5px solid rgba(255, 194, 51, 0.35);
+      border-radius: 20px;
+      padding: 25px;
+      text-align: left;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+      transition: transform 0.25s, border-color 0.25s;
+    }
+
+    .feature-card:hover {
+      transform: translateY(-5px);
+      border-color: var(--gold);
+      box-shadow: 0 8px 30px rgba(255, 194, 51, 0.35);
+    }
+
+    .card-icon {
+      font-size: 38px;
+      margin-bottom: 14px;
+    }
+
+    .card-title {
+      font-family: var(--font-dev);
+      font-size: 20px;
+      color: var(--gold-bright);
+      margin-bottom: 8px;
+    }
+
+    .card-desc {
+      font-size: 14px;
+      color: #b5cfee;
+      line-height: 1.5;
+    }
+
+    /* ========================================================
+       ASURA & DEMON SERPENTS ROSTER (असुर गाथा)
+       ======================================================== */
+    .asura-section {
+      padding: 70px 30px;
+      background: radial-gradient(circle at center, #0e1e3b 0%, #030817 100%);
+      border-top: 1px solid rgba(255, 194, 51, 0.2);
+      text-align: center;
+    }
+
+    .asura-grid {
+      max-width: 1200px;
+      margin: 40px auto 0;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 22px;
+    }
+
+    .asura-card {
+      background: rgba(10, 20, 42, 0.85);
+      border: 1.5px solid rgba(230, 57, 70, 0.4);
+      border-radius: 18px;
+      padding: 20px;
+      text-align: left;
+      transition: all 0.25s;
+    }
+
+    .asura-card:hover {
+      border-color: #ff4d6d;
+      transform: translateY(-4px);
+      box-shadow: 0 0 25px rgba(255, 77, 109, 0.4);
+    }
+
+    .asura-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 8px;
+    }
+
+    .asura-name {
+      font-family: var(--font-dev);
+      font-size: 18px;
+      color: #ff4d6d;
+      font-weight: 800;
+    }
+
+    .asura-danger {
+      font-size: 12px;
+      background: rgba(230, 57, 70, 0.2);
+      border: 1px solid #ff4d6d;
+      border-radius: 10px;
+      padding: 2px 8px;
+      color: #ff99aa;
+      font-weight: bold;
+    }
+
+    .asura-desc {
+      font-size: 13px;
+      color: #c0d3ec;
+      line-height: 1.4;
+    }
+
+    /* ========================================================
+       FOOTER
+       ======================================================== */
+    .site-footer {
+      background: #02050f;
+      border-top: 2px solid rgba(255, 194, 51, 0.3);
+      padding: 30px;
+      text-align: center;
+    }
+
+    .footer-mantra {
+      font-family: var(--font-dev);
+      font-size: 18px;
+      color: var(--gold-bright);
+      margin-bottom: 8px;
+    }
+
+    .footer-copy {
+      font-size: 13px;
+      color: #8da4c4;
+    }
+
+    /* ========================================================
+       FULL-SCREEN 3D GAME VIEW (TRANSITION CONTAINER)
+       ======================================================== */
+    #game-container-view {
+      position: fixed;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      display: none;
+      z-index: 500;
+      background: #000;
+    }
+
+    #game-canvas {
+      width: 100%;
+      height: 100%;
+      display: block;
+      cursor: crosshair;
+    }
+
+    /* In-Game Return to Homepage Button */
+    .exit-to-home-btn {
+      position: fixed;
+      top: 15px;
+      left: 15px;
+      z-index: 600;
+      background: rgba(6, 16, 36, 0.85);
+      border: 2px solid var(--gold);
+      border-radius: 20px;
+      padding: 7px 16px;
+      color: var(--gold-bright);
+      font-size: 14px;
+      font-weight: 700;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.6);
+      transition: all 0.2s;
+    }
+
+    .exit-to-home-btn:hover {
+      background: rgba(20, 50, 100, 0.95);
+      transform: scale(1.05);
+    }
+
+    /* Game HUD & Elements */
+    #hud {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 510;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 15px 20px;
+    }
+
+    .hud-top-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 15px;
+      pointer-events: auto;
+      margin-left: 170px; /* Leave space for exit button */
+    }
+
+    .krishna-status-card {
+      background: rgba(6, 16, 36, 0.88);
+      border: 2px solid var(--gold);
+      border-radius: 16px;
+      padding: 8px 16px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.6);
+      min-width: 220px;
+    }
+
+    .hp-header {
+      display: flex;
+      justify-content: space-between;
+      font-size: 12px;
+      font-weight: 800;
+      color: var(--gold-bright);
+      margin-bottom: 4px;
+    }
+
+    .hp-bar-outer {
+      width: 100%;
+      height: 12px;
+      background: #030a17;
+      border-radius: 10px;
+      border: 1px solid rgba(255, 194, 51, 0.4);
+      overflow: hidden;
+    }
+
+    .hp-bar-inner {
+      height: 100%;
+      width: 100%;
+      background: linear-gradient(90deg, #1aa95a, #55f094);
+      border-radius: 10px;
+      transition: width 0.25s ease;
+    }
+
+    .hp-bar-inner.low {
+      background: linear-gradient(90deg, #c41800, #ff4d6d);
+    }
+
+    .center-announcement-cluster {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+      text-align: center;
+    }
+
+    .timer-pill {
+      background: rgba(10, 26, 56, 0.9);
+      border: 1.5px solid var(--gold);
+      border-radius: 20px;
+      padding: 4px 16px;
+      font-size: 14px;
+      font-weight: 800;
+      color: var(--gold-bright);
+      box-shadow: 0 0 15px rgba(255, 194, 51, 0.3);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .krishna-speech-bubble {
+      background: linear-gradient(135deg, rgba(8, 28, 64, 0.95), rgba(4, 14, 34, 0.95));
+      border: 2px solid var(--gold);
+      border-radius: 18px;
+      padding: 8px 20px;
+      box-shadow: 0 0 25px rgba(255, 215, 0, 0.4);
+      max-width: 480px;
+    }
+
+    .krishna-voice-title {
+      font-family: var(--font-dev);
+      font-size: 13px;
+      color: var(--gold-bright);
+      margin-bottom: 2px;
+    }
+
+    .krishna-voice-command {
+      font-size: clamp(13px, 2vw, 16px);
+      font-weight: 700;
+      color: #ffffff;
+    }
+
+    .right-stats-card {
+      background: rgba(6, 16, 36, 0.88);
+      border: 2px solid var(--gold);
+      border-radius: 16px;
+      padding: 8px 16px;
+      text-align: right;
+      min-width: 150px;
+    }
+
+    .wave-badge {
+      font-family: var(--font-dev);
+      font-size: 16px;
+      color: #ff9e1b;
+      font-weight: 800;
+    }
+
+    .score-txt {
+      font-size: 24px;
+      font-weight: 900;
+      color: #fff;
+      text-shadow: 0 0 10px rgba(255, 215, 0, 0.6);
+    }
+
+    /* Reticle */
+    #aim-reticle {
+      position: fixed;
+      width: 54px;
+      height: 54px;
+      border: 2px dashed var(--gold);
+      border-radius: 50%;
+      pointer-events: none;
+      transform: translate(-50%, -50%);
+      display: none;
+      z-index: 520;
+      animation: spinReticle 4s linear infinite;
+      box-shadow: 0 0 15px rgba(255, 194, 51, 0.8);
+    }
+
+    #aim-reticle::after {
+      content: '';
+      position: absolute;
+      inset: 22px;
+      background: #ff4500;
+      border-radius: 50%;
+    }
+
+    @keyframes spinReticle {
+      to { transform: translate(-50%, -50%) rotate(360deg); }
+    }
+
+    .hud-bottom-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: 15px;
+      pointer-events: auto;
+    }
+
+    .target-guide-pill {
+      background: rgba(7, 18, 40, 0.9);
+      border: 1.5px solid var(--gold);
+      border-radius: 25px;
+      padding: 8px 20px;
+      font-size: clamp(12px, 1.8vw, 15px);
+      font-weight: 700;
+      color: #ffeb99;
+    }
+
+    #combo-callout {
+      position: fixed;
+      top: 35%;
+      left: 50%;
+      transform: translateX(-50%) scale(0.6);
+      font-family: var(--font-dev);
+      font-size: clamp(28px, 6vw, 56px);
+      color: #fff;
+      text-align: center;
+      text-shadow: 0 0 25px rgba(255, 215, 0, 0.9), 0 0 45px rgba(255, 69, 0, 0.9);
+      pointer-events: none;
+      opacity: 0;
+      transition: all 0.25s;
+      z-index: 530;
+      white-space: nowrap;
+    }
+
+    #combo-callout.show {
+      transform: translateX(-50%) scale(1.1);
+      opacity: 1;
+    }
+
+    #slice-toasts {
+      position: fixed;
+      top: 60%;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      pointer-events: none;
+      z-index: 530;
+    }
+
+    .slice-toast {
+      background: linear-gradient(90deg, #ff4500, #ffc233);
+      color: #1a0800;
+      font-family: var(--font-dev);
+      font-weight: 900;
+      font-size: 18px;
+      padding: 6px 20px;
+      border-radius: 25px;
+      box-shadow: 0 0 20px rgba(255, 107, 26, 0.8);
+      animation: toastPop 1.2s ease-out forwards;
+    }
+
+    @keyframes toastPop {
+      0% { transform: translateY(20px) scale(0.7); opacity: 0; }
+      20% { transform: translateY(0) scale(1.1); opacity: 1; }
+      75% { transform: translateY(-10px) scale(1); opacity: 1; }
+      100% { transform: translateY(-30px) scale(0.9); opacity: 0; }
+    }
+
+    /* Game Over Modal */
+    #game-over-modal {
+      position: fixed;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(2, 6, 18, 0.92);
+      backdrop-filter: blur(14px);
+      z-index: 1000;
+      padding: 15px;
+    }
+
+    #game-over-modal.hidden {
+      display: none;
+    }
+
+    .modal-box {
+      background: radial-gradient(circle at top, #112852 0%, #061530 65%, #030b1c 100%);
+      border: 2px solid var(--gold);
+      border-radius: 24px;
+      max-width: 540px;
+      width: 100%;
+      padding: 30px;
+      text-align: center;
+      box-shadow: 0 0 50px rgba(255, 194, 51, 0.35);
+    }
+
+    @media (max-width: 768px) {
+      .hero-grid { grid-template-columns: 1fr; }
+      .nav-menu { display: none; }
+      .hud-top-bar { margin-left: 0; flex-direction: column; align-items: stretch; gap: 8px; }
+      .exit-to-home-btn { top: 8px; left: 8px; padding: 5px 12px; font-size: 12px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ========================================================
+     VIEW 1: GRAND WEBSITE HOMEPAGE
+     ======================================================== -->
+<div id="website-homepage">
+
+  <!-- TOP NAVIGATION BAR -->
+  <header class="site-navbar">
+    <a class="nav-brand" href="#top">
+      <div class="brand-icon">🦚</div>
+      <div class="brand-title">॥ श्री कृष्ण सुदर्शन चक्र ॥</div>
+    </a>
+
+    <ul class="nav-menu">
+      <li><a class="nav-link" href="#hero">होम</a></li>
+      <li><a class="nav-link" href="#auth">खाता / लॉगिन</a></li>
+      <li><a class="nav-link" href="#weapon">सुदर्शन शस्त्र</a></li>
+      <li><a class="nav-link" href="#asuras">असुर गाथा</a></li>
+    </ul>
+
+    <button class="nav-cta-btn" onclick="launchGameScreen()">
+      <span>⚔️</span> युद्ध खेलें (PLAY)
+    </button>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section id="hero" class="hero-section">
+    <div class="hero-bg-aura"></div>
+
+    <div class="hero-grid">
+      <!-- Left Content -->
+      <div class="hero-content">
+        <div class="sacred-badge">
+          <span>✨</span> महाभारत कुरुक्षेत्र महायुद्ध 3D
+        </div>
+
+        <h1 class="hero-main-title">
+          श्री कृष्ण सुदर्शन चक्र महायुद्ध
+        </h1>
+
+        <div class="hero-shloka-box">
+          <div class="shloka-verse">
+            "यदा यदा हि धर्मस्य ग्लानिर्भवति भारत । अभ्युत्थानमधर्मस्य तदात्मानं सृजाम्यहम् ॥<br/>
+            परित्राणाय साधूनां विनाशाय च दुष्कृताम् । धर्मसंस्थापनार्थाय सम्भवामि युगे युगे ॥"
+          </div>
+          <div class="shloka-meaning">
+            जब-जब धर्म की हानि और अधर्म की वृद्धि होती है, तब-तब मैं सज्जनों के उद्धार और दुष्टों के संहार के लिए प्रकट होता हूँ।
+          </div>
+        </div>
+
+        <p class="hero-desc">
+          भगवान श्री कृष्ण 3D में अपने दिव्य रथ पर विराजमान हैं! 
+          स्क्रीन पर अपनी उंगली या माउस से <b>कालिया नाग और असुरों पर निशाना साधें</b>, 
+          और जैसे ही <b>छोड़ेंगे (Release)</b>, सुदर्शन चक्र की <b>कातिली धारदार ब्लेडें</b> उनका समूल अंत कर देंगी!
+        </p>
+
+        <div class="hero-actions-row">
+          <button class="play-game-big-btn" onclick="launchGameScreen()">
+            <span>⚔️</span> महाभारत युद्ध आरम्भ करें
+          </button>
+          <a class="hero-login-jump-btn" href="#auth">
+            🛡️ योद्धा लॉगिन / साइन अप
+          </a>
+        </div>
+      </div>
+
+      <!-- Right Visual Card -->
+      <div class="hero-visual-card">
+        <div class="krishna-avatar-frame">
+          <div class="halo-ring"></div>
+          <div class="krishna-art-circle">
+            <!-- Stylized Shri Krishna Graphic -->
+            <svg viewBox="0 0 200 200" width="100%" height="100%">
+              <circle cx="100" cy="100" r="95" fill="#0c234a"/>
+              <!-- Crown -->
+              <path d="M68 62 L100 25 L132 62 L120 72 L80 72 Z" fill="#ffd54f" stroke="#ffe082" stroke-width="2"/>
+              <!-- Peacock Feather -->
+              <path d="M100 25 C108 8, 128 5, 126 22 C124 35, 105 32, 100 25 Z" fill="#00e676"/>
+              <circle cx="116" cy="16" r="4" fill="#2979ff"/>
+              <!-- Face -->
+              <ellipse cx="100" cy="98" rx="36" ry="42" fill="#3a7bd5"/>
+              <!-- Tilak -->
+              <path d="M96 68 Q100 64 104 68 L103 86 Q100 90 97 86 Z" fill="#fff9c4"/>
+              <circle cx="100" cy="88" r="2.5" fill="#d50000"/>
+              <!-- Eyes & Smile -->
+              <path d="M78 93 Q86 89 93 94" stroke="#fff" stroke-width="2" fill="none"/>
+              <path d="M107 94 Q114 89 122 93" stroke="#fff" stroke-width="2" fill="none"/>
+              <path d="M92 118 Q100 124 108 118" stroke="#d50000" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+              <!-- Flute -->
+              <rect x="52" y="126" width="98" height="11" rx="5.5" fill="#ffd700" transform="rotate(-8 100 131)"/>
+            </svg>
+
+            <!-- Spinning Sudarshan on Finger -->
+            <svg class="spinning-chakra-preview" viewBox="0 0 100 100">
+              <circle cx="50" cy="50" r="46" fill="rgba(255, 194, 51, 0.25)" stroke="#ffc233" stroke-width="2"/>
+              <g fill="#ffc233" stroke="#ff4500" stroke-width="1.5">
+                <path d="M50 2 L56 16 L44 16 Z"/>
+                <path d="M50 98 L56 84 L44 84 Z"/>
+                <path d="M2 50 L16 56 L16 44 Z"/>
+                <path d="M98 50 L84 56 L84 44 Z"/>
+                <path d="M16 16 L30 22 L22 30 Z"/>
+                <path d="M84 16 L78 30 L70 22 Z"/>
+                <path d="M16 84 L22 70 L30 78 Z"/>
+                <path d="M84 84 L70 78 L78 70 Z"/>
+              </g>
+              <circle cx="50" cy="50" r="18" fill="#ff4500"/>
+              <circle cx="50" cy="50" r="8" fill="#fff"/>
+            </svg>
+          </div>
+        </div>
+
+        <h3 class="krishna-card-title">भगवान श्री कृष्ण</h3>
+        <p class="krishna-card-sub">सारथी रूप • सुदर्शन चक्रधारी</p>
+
+        <div class="features-pill-row">
+          <span class="feature-tag">🎯 निशाना साधें और छोड़ें</span>
+          <span class="feature-tag">⚔️ 108 कातिली ब्लेडें</span>
+          <span class="feature-tag">⏱️ 1 घंटे का महायुद्ध</span>
+          <span class="feature-tag">🛡️ दिव्य रथ रक्षा</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================
+       HOMEPAGE AUTHENTICATION SECTION (LOGIN & SIGN UP)
+       ======================================================== -->
+  <section id="auth" class="auth-section">
+    <h2 class="section-title">योद्धा द्वार: साइन अप व लॉगिन</h2>
+    <p class="section-desc">
+      कुरुक्षेत्र के महायुद्ध में अपनी योद्धा आईडी दर्ज करें, अपनी प्रगति और स्कोर सुरक्षित रखें।
+    </p>
+
+    <div class="auth-center-container">
+      <!-- Tabs -->
+      <div class="home-auth-tabs">
+        <button class="home-auth-tab active" onclick="switchHomeTab('login')">लॉगिन (Login)</button>
+        <button class="home-auth-tab" onclick="switchHomeTab('signup')">साइन अप (Sign Up)</button>
+        <button class="home-auth-tab" onclick="switchHomeTab('forgot')">पासवर्ड भूल गए?</button>
+      </div>
+
+      <!-- Feedback -->
+      <div id="home-auth-feedback" class="auth-status-msg"></div>
+
+      <!-- Logged In Box -->
+      <div id="logged-in-profile-box">
+        <div class="user-avatar-badge">🏹</div>
+        <div id="logged-user-name" class="welcome-user-title">योद्धा लॉगिन है</div>
+        <p style="color: #a4c4e8; margin-bottom: 18px;">आपकी योद्धा आईडी सुरक्षित है। युद्धभूमि आपकी प्रतीक्षा कर रही है!</p>
+        <div style="display: flex; gap: 12px; justify-content: center;">
+          <button class="auth-submit-btn" style="padding: 10px 28px;" onclick="launchGameScreen()">
+            ⚔️ सीधे युद्ध में प्रवेश करें
+          </button>
+          <button class="hero-login-jump-btn" style="padding: 10px 20px; font-size: 15px;" onclick="logoutUser()">
+            लॉगआउट
+          </button>
+        </div>
+      </div>
+
+      <!-- Form 1: Login -->
+      <form id="home-login-form" class="auth-panel active" onsubmit="handleHomeLogin(event)">
+        <div class="auth-group">
+          <label>योद्धा आईडी या नाम (User ID / Name)</label>
+          <input type="text" id="hl-id" class="auth-input" placeholder="उदा. arjun_warrior" required/>
+        </div>
+        <div class="auth-group">
+          <label>पासवर्ड (Password)</label>
+          <input type="password" id="hl-pwd" class="auth-input" placeholder="••••••••" required/>
+        </div>
+        <button type="submit" class="auth-submit-btn">युद्ध में लॉगिन करें</button>
+        <div style="text-align: center; margin-top: 10px;">
+          <button type="button" style="background: transparent; border: none; color: #ffeb99; cursor: pointer; text-decoration: underline;" onclick="playAsInstantGuest()">
+            🛡️ बिना लॉगिन किए सीधे खेलें (Guest Play)
+          </button>
+        </div>
+      </form>
+
+      <!-- Form 2: Sign Up -->
+      <form id="home-signup-form" class="auth-panel" onsubmit="handleHomeSignup(event)">
+        <div class="auth-group">
+          <label>आपका पूरा नाम (Your Name)</label>
+          <input type="text" id="hs-name" class="auth-input" placeholder="अपना नाम लिखें" required/>
+        </div>
+        <div class="auth-group">
+          <label>योद्धा आईडी (Choose User ID)</label>
+          <input type="text" id="hs-id" class="auth-input" placeholder="उदा. krishna_bhakt_108" required/>
+        </div>
+        <div class="auth-group">
+          <label>पासवर्ड (Create Password)</label>
+          <input type="password" id="hs-pwd" class="auth-input" placeholder="नया पासवर्ड बनाएं" required/>
+        </div>
+        <div class="auth-group">
+          <label>सुरक्षा प्रश्न (आपका प्रिय महाभारत पात्र?)</label>
+          <input type="text" id="hs-sec" class="auth-input" placeholder="उत्तर (उदा. कृष्ण / अर्जुन / कर्ण)" required/>
+        </div>
+        <button type="submit" class="auth-submit-btn">नया खाता बनाएं (SIGN UP)</button>
+      </form>
+
+      <!-- Form 3: Forgot Password -->
+      <form id="home-forgot-form" class="auth-panel" onsubmit="handleHomeForgot(event)">
+        <div class="auth-group">
+          <label>पंजीकृत योद्धा आईडी (User ID)</label>
+          <input type="text" id="hf-id" class="auth-input" placeholder="अपनी आईडी दर्ज करें" required/>
+        </div>
+        <div class="auth-group">
+          <label>सुरक्षा प्रश्न का उत्तर (Security Answer)</label>
+          <input type="text" id="hf-sec" class="auth-input" placeholder="पंजीकृत उत्तर लिखें" required/>
+        </div>
+        <div class="auth-group">
+          <label>नया पासवर्ड (New Password)</label>
+          <input type="password" id="hf-pwd" class="auth-input" placeholder="नया पासवर्ड बनाएं" required/>
+        </div>
+        <button type="submit" class="auth-submit-btn">पासवर्ड रीसेट करें</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- WEAPON SHOWCASE SECTION -->
+  <section id="weapon" class="weapon-section">
+    <h2 class="section-title">अमोघ सुदर्शन चक्र की विशेषताएं</h2>
+    <p class="section-desc">भगवान विष्णु और श्री कृष्ण का सबसे शक्तिशाली अस्त्र जो अधर्मियों का समूल नाश करता है।</p>
+
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="card-icon">🎯</div>
+        <h3 class="card-title">टारगेट और रिलीज प्रहार</h3>
+        <p class="card-desc">स्क्रीन पर उंगली या माउस से असुर पर अचूक निशाना साधें। जैसे ही छोड़ेंगे, सुदर्शन चक्र सीधा वार करेगा।</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="card-icon">⚔️</div>
+        <h3 class="card-title">108 कातिली धारदार ब्लेडें</h3>
+        <p class="card-desc">चक्र की पैनी कातिली ब्लेडें कालिया नाग और दानवों के शरीर को टुकड़ों में काट (Sever) कर भस्म कर देती हैं।</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="card-icon">⏱️</div>
+        <h3 class="card-title">1 घंटे का महायुद्ध संग्राम</h3>
+        <p class="card-desc">लगातार कठिन होती हुई वेव और भयंकर असुरों का आक्रमण। 1 घंटे तक टिककर कुरुक्षेत्र में विजय प्राप्त करें।</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="card-icon">⚡</div>
+        <h3 class="card-title">ब्रह्मास्त्र महाप्रहार</h3>
+        <p class="card-desc">संकट की स्थिति में ब्रह्मास्त्र की ऊर्जा मुक्त करें और युद्धभूमि के समस्त असुरों को एक ही प्रहार में समाप्त करें।</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ASURA ENEMY ROSTER -->
+  <section id="asuras" class="asura-section">
+    <h2 class="section-title">असुर व दुष्ट सर्प गाथा</h2>
+    <p class="section-desc">कुरुक्षेत्र में इन भयंकर असुरों का सामना होगा। हर असुर के पास विष और घातक शक्तियां हैं।</p>
+
+    <div class="asura-grid">
+      <div class="asura-card">
+        <div class="asura-header">
+          <span class="asura-name">कालिया नागराज</span>
+          <span class="asura-danger">घातक विषधर</span>
+        </div>
+        <p class="asura-desc">यमुना का विषधर नागराज जो कुरुक्षेत्र की भूमि पर विष उगल रहा है। इसके फनों को काटना होगा।</p>
+      </div>
+
+      <div class="asura-card">
+        <div class="asura-header">
+          <span class="asura-name">अघासुर अजगर</span>
+          <span class="asura-danger">विशालकाय दैत्य</span>
+        </div>
+        <p class="asura-desc">पहाड़ के समान विशाल अजगर रूपी दानव जिसका मुख गुफा की भांति खुलता है और सब कुछ निगल जाता है।</p>
+      </div>
+
+      <div class="asura-card">
+        <div class="asura-header">
+          <span class="asura-name">बकासुर असुर</span>
+          <span class="asura-danger">अति-तीव्र गति</span>
+        </div>
+        <p class="asura-desc">लोहे की चोंच और नुकीले पंजों वाला भयानक असुर जो आकाश मार्ग से रथ पर झपटता है।</p>
+      </div>
+
+      <div class="asura-card">
+        <div class="asura-header">
+          <span class="asura-name">नरकासुर व वृत्रासुर</span>
+          <span class="asura-danger">महाबली सेनापति</span>
+        </div>
+        <p class="asura-desc">अंधकार और मायावी शक्तियों के स्वामी जो विषबाणों की वर्षा करके रथ के रक्षा कवच को भेदने आते हैं।</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="footer-mantra">॥ ॐ नमो भगवते वासुदेवाय ॥</div>
+    <div class="footer-copy">श्री कृष्ण सुदर्शन चक्र 3D गेम • धर्मसंस्थापनार्थाय सम्भवामि युगे युगे • महाभारत महायुद्ध</div>
+  </footer>
+
+</div>
+
+<!-- ========================================================
+     VIEW 2: FULL 3D INTERACTIVE KURUKSHETRA GAME
+     ======================================================== -->
+<div id="game-container-view">
+
+  <!-- Return to Homepage Button -->
+  <button class="exit-to-home-btn" onclick="exitToHomepage()">
+    <span>🏠</span> होमपेज पर जाएं
+  </button>
+
+  <canvas id="game-canvas"></canvas>
+
+  <!-- Crosshair Reticle -->
+  <div id="aim-reticle"></div>
+
+  <!-- HUD Overlay -->
+  <div id="hud">
+    <!-- TOP BAR -->
+    <div class="hud-top-bar">
+      <!-- Krishna Ratha Health -->
+      <div class="krishna-status-card">
+        <div class="hp-header">
+          <span>दिव्य रथ व रक्षा कवच (SHIELD)</span>
+          <span id="hp-txt">100%</span>
+        </div>
+        <div class="hp-bar-outer">
+          <div id="hp-bar" class="hp-bar-inner"></div>
+        </div>
+        <div style="display: flex; gap: 8px; margin-top: 4px; font-size: 11px; color: #a4c4e8;">
+          <span>योद्धा: <b id="hud-user-id" style="color: #fff;">गेस्ट</b></span>
+          <span>• अस्त्र: <b>सुदर्शन चक्र</b></span>
+        </div>
+      </div>
+
+      <!-- Center Announcement & Krishna Live Voice -->
+      <div class="center-announcement-cluster">
+        <div class="timer-pill">
+          <span>⏱️ युद्ध समय:</span>
+          <span id="hud-timer">00:00:00</span>
+          <span style="color: #ff9100; font-size: 11px;">/ १ घंटा</span>
+        </div>
+
+        <div class="krishna-speech-bubble">
+          <div class="krishna-voice-title">🦚 <b>भगवान श्री कृष्ण का आदेश:</b></div>
+          <div id="krishna-voice-text" class="krishna-voice-command">
+            "हे पार्थ! उंगली से असुर का संधान करो और सुदर्शन चक्र को छोड़ो!"
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Wave & Score -->
+      <div class="right-stats-card">
+        <div class="wave-badge" id="hud-wave-title">वेव १: कालिया नाग</div>
+        <div class="score-txt" id="hud-score">0</div>
+        <div style="font-size: 12px; color: #a4c4e8;">
+          संहार: <b id="hud-kills" style="color: #fff;">0</b> असुर
+        </div>
+      </div>
+    </div>
+
+    <!-- Callouts & Toasts -->
+    <div id="combo-callout"></div>
+    <div id="slice-toasts"></div>
+
+    <!-- BOTTOM BAR: Targeting instructions & Brahma-Astra -->
+    <div class="hud-bottom-bar">
+      <div class="target-guide-pill">
+        🎯 <b>निशाना साधें और छोड़ें:</b> स्क्रीन पर दबाकर <b>असुर पर टारगेट करें</b>, फिर <b>छोड़ते ही (Release)</b> सुदर्शन चक्र उसका अंत कर देगा!
+      </div>
+      <button id="brahmaAstraBtn" class="nav-cta-btn" style="background: linear-gradient(135deg, #d90429, #ff6b1a);" onclick="triggerBrahmaAstra()">
+        ⚡ ब्रह्मास्त्र प्रहार
+      </button>
+    </div>
+  </div>
+
+  <!-- GAME OVER DIALOG -->
+  <div id="game-over-modal" class="hidden">
+    <div class="modal-box">
+      <h2 style="font-family: var(--font-dev); font-size: 32px; color: #ff4d6d; margin-bottom: 6px;">कुरुक्षेत्र में वीरगति!</h2>
+      <p style="color: #a4c4e8; font-size: 14px; margin-bottom: 20px;">असुरों ने रथ के रक्षा कवच को भेद दिया।</p>
+
+      <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin-bottom: 22px;">
+        <div style="background: rgba(3, 10, 24, 0.75); border: 1px solid var(--gold); border-radius: 12px; padding: 10px;">
+          <small style="color: var(--gold-bright); font-weight: 700;">असुर संहार (KILLS)</small>
+          <div id="go-kills" style="font-size: 24px; font-weight: 900; color: #fff;">0</div>
+        </div>
+        <div style="background: rgba(3, 10, 24, 0.75); border: 1px solid var(--gold); border-radius: 12px; padding: 10px;">
+          <small style="color: var(--gold-bright); font-weight: 700;">युद्ध समय</small>
+          <div id="go-time" style="font-size: 24px; font-weight: 900; color: #fff;">00:00</div>
+        </div>
+        <div style="background: rgba(3, 10, 24, 0.75); border: 1px solid var(--gold); border-radius: 12px; padding: 10px;">
+          <small style="color: var(--gold-bright); font-weight: 700;">वेव (WAVE)</small>
+          <div id="go-wave" style="font-size: 24px; font-weight: 900; color: #fff;">1</div>
+        </div>
+        <div style="background: rgba(3, 10, 24, 0.75); border: 1px solid var(--gold); border-radius: 12px; padding: 10px;">
+          <small style="color: var(--gold-bright); font-weight: 700;">कुल अंक</small>
+          <div id="go-score" style="font-size: 24px; font-weight: 900; color: #fff;">0</div>
+        </div>
+      </div>
+
+      <div style="display: flex; gap: 12px; justify-content: center; flex-wrap: wrap;">
+        <button class="nav-cta-btn" style="padding: 12px 32px;" onclick="restartWar()">
+          🔄 फिर से शुरू करें (RESTART)
+        </button>
+        <button class="hero-login-jump-btn" style="padding: 10px 20px; font-size: 15px;" onclick="exitToHomepage()">
+          होमपेज पर जाएं
+        </button>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- ========================================================
+     SCRIPTS: Three.js 3D Engine & Full Gameplay
+     ======================================================== -->
+<script type="module">
+import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.158.0/build/three.module.min.js';
+
+/* ========================================================
+   LOCAL STORAGE AUTHENTICATION
+   ======================================================== */
+const AuthSystem = {
+  getUsers() {
+    try {
+      return JSON.parse(localStorage.getItem('sk_chakra_users') || '{}');
+    } catch (e) {
+      return {};
+    }
+  },
+  saveUsers(users) {
+    localStorage.setItem('sk_chakra_users', JSON.stringify(users));
+  },
+  getCurrentUser() {
+    try {
+      return JSON.parse(localStorage.getItem('sk_chakra_curr_user') || 'null');
+    } catch (e) {
+      return null;
+    }
+  },
+  setCurrentUser(u) {
+    localStorage.setItem('sk_chakra_curr_user', JSON.stringify(u));
+  }
+};
+
+let currentUser = AuthSystem.getCurrentUser();
+
+window.switchHomeTab = (tab) => {
+  document.querySelectorAll('.home-auth-tab').forEach(t => t.classList.remove('active'));
+  document.querySelectorAll('.auth-panel').forEach(p => p.classList.remove('active'));
+  document.getElementById('home-auth-feedback').textContent = '';
+
+  if (tab === 'login') {
+    document.querySelectorAll('.home-auth-tab')[0].classList.add('active');
+    document.getElementById('home-login-form').classList.add('active');
+  } else if (tab === 'signup') {
+    document.querySelectorAll('.home-auth-tab')[1].classList.add('active');
+    document.getElementById('home-signup-form').classList.add('active');
+  } else if (tab === 'forgot') {
+    document.querySelectorAll('.home-auth-tab')[2].classList.add('active');
+    document.getElementById('home-forgot-form').classList.add('active');
+  }
+};
+
+window.handleHomeSignup = (e) => {
+  e.preventDefault();
+  const name = document.getElementById('hs-name').value.trim();
+  const id = document.getElementById('hs-id').value.trim().toLowerCase();
+  const pwd = document.getElementById('hs-pwd').value;
+  const sec = document.getElementById('hs-sec').value.trim().toLowerCase();
+  const fb = document.getElementById('home-auth-feedback');
+
+  const users = AuthSystem.getUsers();
+  if (users[id]) {
+    fb.className = 'auth-status-msg error';
+    fb.textContent = 'यह योद्धा आईडी पहले से मौजूद है! कृपया दूसरी आईडी चुनें।';
+    return;
+  }
+
+  users[id] = { name, id, pwd, sec };
+  AuthSystem.saveUsers(users);
+  currentUser = users[id];
+  AuthSystem.setCurrentUser(currentUser);
+
+  fb.className = 'auth-status-msg success';
+  fb.textContent = `अभिनंदन ${name}! खाता बन गया है।`;
+  updateAuthUI();
+};
+
+window.handleHomeLogin = (e) => {
+  e.preventDefault();
+  const id = document.getElementById('hl-id').value.trim().toLowerCase();
+  const pwd = document.getElementById('hl-pwd').value;
+  const fb = document.getElementById('home-auth-feedback');
+
+  const users = AuthSystem.getUsers();
+  if (!users[id] || users[id].pwd !== pwd) {
+    fb.className = 'auth-status-msg error';
+    fb.textContent = 'गलत योद्धा आईडी या पासवर्ड!';
+    return;
+  }
+
+  currentUser = users[id];
+  AuthSystem.setCurrentUser(currentUser);
+  fb.className = 'auth-status-msg success';
+  fb.textContent = `स्वागत है योद्धा ${currentUser.name}!`;
+  updateAuthUI();
+};
+
+window.handleHomeForgot = (e) => {
+  e.preventDefault();
+  const id = document.getElementById('hf-id').value.trim().toLowerCase();
+  const sec = document.getElementById('hf-sec').value.trim().toLowerCase();
+  const newPwd = document.getElementById('hf-pwd').value;
+  const fb = document.getElementById('home-auth-feedback');
+
+  const users = AuthSystem.getUsers();
+  if (!users[id]) {
+    fb.className = 'auth-status-msg error';
+    fb.textContent = 'यह योद्धा आईडी नहीं मिली!';
+    return;
+  }
+
+  if (users[id].sec !== sec) {
+    fb.className = 'auth-status-msg error';
+    fb.textContent = 'सुरक्षा उत्तर गलत है!';
+    return;
+  }
+
+  users[id].pwd = newPwd;
+  AuthSystem.saveUsers(users);
+  fb.className = 'auth-status-msg success';
+  fb.textContent = 'पासवर्ड सफलतापूर्वक बदल गया! अब लॉगिन करें।';
+  setTimeout(() => switchHomeTab('login'), 1200);
+};
+
+window.playAsInstantGuest = () => {
+  currentUser = { id: 'guest_' + Math.floor(Math.random() * 900 + 100), name: 'योद्धा' };
+  launchGameScreen();
+};
+
+window.logoutUser = () => {
+  currentUser = null;
+  AuthSystem.setCurrentUser(null);
+  updateAuthUI();
+};
+
+function updateAuthUI() {
+  const profileBox = document.getElementById('logged-in-profile-box');
+  const forms = [document.getElementById('home-login-form'), document.getElementById('home-signup-form'), document.getElementById('home-forgot-form')];
+  const tabs = document.querySelector('.home-auth-tabs');
+
+  if (currentUser) {
+    profileBox.style.display = 'block';
+    forms.forEach(f => f.style.display = 'none');
+    tabs.style.display = 'none';
+    document.getElementById('logged-user-name').textContent = `योद्धा: ${currentUser.name} (${currentUser.id})`;
+  } else {
+    profileBox.style.display = 'none';
+    tabs.style.display = 'flex';
+    switchHomeTab('login');
+  }
+}
+updateAuthUI();
+
+/* ========================================================
+   WEB AUDIO API SOUND ENGINE
+   ======================================================== */
+class DivineSoundSystem {
+  constructor() {
+    this.ctx = null;
+    this.master = null;
+    this.muted = false;
+  }
+
+  init() {
+    if (this.ctx) {
+      if (this.ctx.state === 'suspended') this.ctx.resume();
+      return;
+    }
+    try {
+      const AudioCtx = window.AudioContext || window.webkitAudioContext;
+      this.ctx = new AudioCtx();
+      this.master = this.ctx.createGain();
+      this.master.gain.value = 0.6;
+      this.master.connect(this.ctx.destination);
+    } catch (e) {}
+  }
+
+  playShankh() {
+    if (!this.ctx || this.muted) return;
+    const now = this.ctx.currentTime;
+    [196, 294, 392, 587].forEach((f, idx) => {
+      const osc = this.ctx.createOscillator();
+      const gain = this.ctx.createGain();
+      osc.type = 'sawtooth';
+      osc.frequency.setValueAtTime(f * 0.9, now);
+      osc.frequency.exponentialRampToValueAtTime(f * 1.04, now + 0.6);
+      osc.frequency.exponentialRampToValueAtTime(f, now + 2.5);
+
+      gain.gain.setValueAtTime(0.001, now);
+      gain.gain.exponentialRampToValueAtTime(0.18 / (idx + 1), now + 0.4);
+      gain.gain.exponentialRampToValueAtTime(0.001, now + 3.2);
+
+      osc.connect(gain);
+      gain.connect(this.master);
+      osc.start(now);
+      osc.stop(now + 3.5);
+    });
+  }
+
+  playSlice() {
+    if (!this.ctx || this.muted) return;
+    const now = this.ctx.currentTime;
+    const osc = this.ctx.createOscillator();
+    const g = this.ctx.createGain();
+    osc.type = 'triangle';
+    osc.frequency.setValueAtTime(2600, now);
+    osc.frequency.exponentialRampToValueAtTime(400, now + 0.15);
+
+    g.gain.setValueAtTime(0.001, now);
+    g.gain.exponentialRampToValueAtTime(0.3, now + 0.01);
+    g.gain.exponentialRampToValueAtTime(0.001, now + 0.18);
+
+    osc.connect(g);
+    g.connect(this.master);
+    osc.start(now);
+    osc.stop(now + 0.2);
+  }
+
+  playThrow() {
+    if (!this.ctx || this.muted) return;
+    const now = this.ctx.currentTime;
+    const osc = this.ctx.createOscillator();
+    const g = this.ctx.createGain();
+    osc.type = 'sine';
+    osc.frequency.setValueAtTime(320, now);
+    osc.frequency.exponentialRampToValueAtTime(1400, now + 0.28);
+
+    g.gain.setValueAtTime(0.001, now);
+    g.gain.exponentialRampToValueAtTime(0.35, now + 0.05);
+    g.gain.exponentialRampToValueAtTime(0.001, now + 0.35);
+
+    osc.connect(g);
+    g.connect(this.master);
+    osc.start(now);
+    osc.stop(now + 0.4);
+  }
+
+  playDemonRoar() {
+    if (!this.ctx || this.muted) return;
+    const now = this.ctx.currentTime;
+    const osc = this.ctx.createOscillator();
+    const g = this.ctx.createGain();
+    osc.type = 'sawtooth';
+    osc.frequency.setValueAtTime(120, now);
+    osc.frequency.exponentialRampToValueAtTime(30, now + 0.5);
+
+    g.gain.setValueAtTime(0.35, now);
+    g.gain.exponentialRampToValueAtTime(0.001, now + 0.55);
+
+    osc.connect(g);
+    g.connect(this.master);
+    osc.start(now);
+    osc.stop(now + 0.6);
+  }
+
+  playHit() {
+    if (!this.ctx || this.muted) return;
+    const now = this.ctx.currentTime;
+    const osc = this.ctx.createOscillator();
+    const g = this.ctx.createGain();
+    osc.type = 'sawtooth';
+    osc.frequency.setValueAtTime(80, now);
+    osc.frequency.exponentialRampToValueAtTime(40, now + 0.25);
+
+    g.gain.setValueAtTime(0.35, now);
+    g.gain.exponentialRampToValueAtTime(0.001, now + 0.3);
+
+    osc.connect(g);
+    g.connect(this.master);
+    osc.start(now);
+    osc.stop(now + 0.35);
+  }
+}
+const AudioSys = new DivineSoundSystem();
+
+/* ========================================================
+   VIEW NAVIGATION: HOMEPAGE <-> 3D GAME
+   ======================================================== */
+window.launchGameScreen = () => {
+  AudioSys.init();
+  AudioSys.playShankh();
+
+  if (!currentUser) {
+    currentUser = { id: 'guest_' + Math.floor(Math.random() * 900 + 100), name: 'योद्धा' };
+  }
+  document.getElementById('hud-user-id').textContent = currentUser.id;
+
+  document.getElementById('website-homepage').style.display = 'none';
+  document.getElementById('game-container-view').style.display = 'block';
+
+  onResize();
+  resetAndStartGame();
+};
+
+window.exitToHomepage = () => {
+  isGameRunning = false;
+  document.getElementById('game-container-view').style.display = 'none';
+  document.getElementById('website-homepage').style.display = 'block';
+  document.getElementById('game-over-modal').classList.add('hidden');
+};
+
+/* ========================================================
+   3D ENGINE & GAME WORLD SETUP
+   ======================================================== */
+const canvas = document.getElementById('game-canvas');
+let renderer, scene, camera;
+let krishnaGroup, krishnaArm, rathaMesh;
+let sudarshanChakra, chakraBlades = [];
+let enemies = [];
+let enemyProjectiles = [];
+let severedPieces = [];
+let sliceParticles = [];
+
+let isGameRunning = false;
+let currentWaveIdx = 0;
+let totalKills = 0;
+let score = 0;
+let playerHP = 100;
+let gameSeconds = 0;
+let brahmaCharges = 2;
+
+const aimState = {
+  isAiming: false,
+  screenX: window.innerWidth / 2,
+  screenY: window.innerHeight / 2,
+  worldTarget: new THREE.Vector3(0, 1.5, -20),
+  chakraState: 'ready', // 'ready', 'flying', 'returning'
+  chakraFlyTime: 0,
+  targetedEnemy: null
+};
+
+const WAVES = [
+  { wave: 1, title: 'वेव १: कालिया नाग का उपद्रव', asuraName: 'कालिया नागराज', count: 4, speed: 7.5, hp: 45, boss: true, quote: 'हे पार्थ! कालिया नाग यमुना से कुरुक्षेत्र आया है, सुदर्शन से इसके फनों को काटो!' },
+  { wave: 2, title: 'वेव २: अघासुर अजगर दैत्य', asuraName: 'अघासुर अजगर', count: 6, speed: 8.5, hp: 60, boss: true, quote: 'अघासुर अपना विशाल मुख फाड़कर आ रहा है! लक्ष्य साधो और चक्र छोड़ो!' },
+  { wave: 3, title: 'वेव ३: बकासुर और असुर सेना', asuraName: 'बकासुर दैत्य', count: 8, speed: 9.5, hp: 75, boss: true, quote: 'बकासुर तीव्र गति से झपट रहा है! सावधान होकर प्रहार करो!' },
+  { wave: 4, title: 'वेव ४: धेनुकासुर व ताड़वन दानव', asuraName: 'धेनुकासुर', count: 10, speed: 10.5, hp: 90, boss: true, quote: 'अधर्म का बल बढ़ रहा है! अपने हाथों से सुदर्शन चक्र का संधान करो!' },
+  { wave: 5, title: 'वेव ५: केशी दैत्य और तक्षक नाग', asuraName: 'केशी व तक्षक', count: 12, speed: 11.5, hp: 110, boss: true, quote: 'तक्षक नाग के विषधर बाणों से दिव्य रथ की रक्षा करो!' },
+  { wave: 6, title: 'वेव ६: वृत्रासुर अंधकार सेना', asuraName: 'वृत्रासुर दानव', count: 14, speed: 12.5, hp: 130, boss: true, quote: 'अंधकार को चीरने के लिए सुदर्शन के तेज को प्रज्वलित करो!' },
+  { wave: 7, title: 'वेव ७: नरकासुर और बाणासुर', asuraName: 'नरकासुर महादैत्य', count: 16, speed: 13.5, hp: 150, boss: true, quote: 'नरकासुर की मायावी सेना आ चुकी है! अचूक निशाना लगाओ!' },
+  { wave: 8, title: 'वेव ८+: महाभारत महाप्रलय', asuraName: 'कंस व जरासंध महासेना', count: 20, speed: 14.5, hp: 180, boss: true, quote: 'यतो धर्मस्ततो जयः! कुरुक्षेत्र में अधर्म का समूल नाश करो!' }
+];
+
+function init3DGame() {
+  renderer = new THREE.WebGLRenderer({ canvas, antialias: true, powerPreference: 'high-performance' });
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
+  renderer.setSize(window.innerWidth, window.innerHeight);
+  renderer.toneMapping = THREE.ACESFilmicToneMapping;
+  renderer.toneMappingExposure = 1.3;
+  renderer.shadowMap.enabled = true;
+
+  scene = new THREE.Scene();
+  scene.background = new THREE.Color('#030817');
+  scene.fog = new THREE.FogExp2('#040b1e', 0.007);
+
+  camera = new THREE.PerspectiveCamera(46, window.innerWidth / window.innerHeight, 1, 400);
+  camera.position.set(0, 9, 16);
+  camera.lookAt(0, 3, -15);
+
+  const ambient = new THREE.AmbientLight('#263d66', 1.4);
+  scene.add(ambient);
+
+  const sun = new THREE.DirectionalLight('#fff0c2', 2.8);
+  sun.position.set(30, 60, 20);
+  sun.castShadow = true;
+  scene.add(sun);
+
+  buildBattlefield();
+  build3DShriKrishna();
+  build3DSudarshanChakra();
+  setupAimInputs();
+
+  window.addEventListener('resize', onResize);
+}
+
+function onResize() {
+  if (!renderer || !camera) return;
+  renderer.setSize(window.innerWidth, window.innerHeight);
+  camera.aspect = window.innerWidth / window.innerHeight;
+  camera.updateProjectionMatrix();
+}
+
+function buildBattlefield() {
+  const groundGeo = new THREE.PlaneGeometry(300, 300, 48, 48);
+  const groundMat = new THREE.MeshStandardMaterial({ color: '#341f11', roughness: 0.9 });
+  const ground = new THREE.Mesh(groundGeo, groundMat);
+  ground.rotation.x = -Math.PI / 2;
+  ground.receiveShadow = true;
+  scene.add(ground);
+
+  // Flags
+  for (let i = 0; i < 16; i++) {
+    const ang = (i / 16) * Math.PI * 2;
+    const r = 90;
+    const pole = new THREE.Mesh(new THREE.CylinderGeometry(0.12, 0.18, 14, 8), new THREE.MeshStandardMaterial({ color: '#5d4037' }));
+    pole.position.set(Math.cos(ang) * r, 7, Math.sin(ang) * r);
+    scene.add(pole);
+  }
+}
+
+function build3DShriKrishna() {
+  rathaMesh = new THREE.Group();
+  rathaMesh.position.set(0, 0, 8);
+
+  const baseBox = new THREE.Mesh(new THREE.BoxGeometry(7, 1.2, 8), new THREE.MeshStandardMaterial({ color: '#ffb300', metalness: 0.85 }));
+  baseBox.position.y = 1.4;
+  rathaMesh.add(baseBox);
+  scene.add(rathaMesh);
+
+  krishnaGroup = new THREE.Group();
+  krishnaGroup.position.set(0, 2.0, 7.5);
+
+  const blueSkin = new THREE.MeshStandardMaterial({ color: '#3a7bd5', roughness: 0.35 });
+  const goldSilk = new THREE.MeshStandardMaterial({ color: '#ffd700', metalness: 0.4 });
+
+  // Body
+  const torso = new THREE.Mesh(new THREE.CylinderGeometry(0.7, 0.55, 2.2, 16), goldSilk);
+  torso.position.y = 2.1;
+  krishnaGroup.add(torso);
+
+  // Head
+  const head = new THREE.Mesh(new THREE.SphereGeometry(0.65, 18, 16), blueSkin);
+  head.position.y = 3.65;
+  krishnaGroup.add(head);
+
+  // Mukut & Mor Pankh
+  const mukut = new THREE.Mesh(new THREE.ConeGeometry(0.65, 1.4, 16), new THREE.MeshStandardMaterial({ color: '#ffd700', metalness: 0.95 }));
+  mukut.position.y = 4.6;
+  krishnaGroup.add(mukut);
+
+  const morPankh = new THREE.Mesh(new THREE.BoxGeometry(0.08, 0.9, 0.5), new THREE.MeshStandardMaterial({ color: '#00e676', emissive: '#00b0ff', emissiveIntensity: 0.3 }));
+  morPankh.position.set(0.2, 5.1, 0.2);
+  morPankh.rotation.z = -0.3;
+  krishnaGroup.add(morPankh);
+
+  // Arm
+  krishnaArm = new THREE.Group();
+  krishnaArm.position.set(0.9, 2.6, 0);
+  const arm = new THREE.Mesh(new THREE.CylinderGeometry(0.18, 0.18, 1.8, 8), blueSkin);
+  arm.position.set(0, 0.8, 0.3);
+  arm.rotation.x = -0.8;
+  krishnaArm.add(arm);
+  krishnaGroup.add(krishnaArm);
+
+  scene.add(krishnaGroup);
+}
+
+function build3DSudarshanChakra() {
+  sudarshanChakra = new THREE.Group();
+  const gold = new THREE.MeshStandardMaterial({ color: '#ffc233', metalness: 0.95, roughness: 0.15, emissive: '#ff7700', emissiveIntensity: 0.4 });
+
+  const hub = new THREE.Mesh(new THREE.CylinderGeometry(0.6, 0.6, 0.2, 24), gold);
+  sudarshanChakra.add(hub);
+
+  const rim = new THREE.Mesh(new THREE.TorusGeometry(1.6, 0.1, 12, 36), gold);
+  rim.rotation.x = Math.PI / 2;
+  sudarshanChakra.add(rim);
+
+  // Blades
+  const bladeMat = new THREE.MeshStandardMaterial({ color: '#fff', metalness: 0.95, emissive: '#ffeedd', emissiveIntensity: 0.8 });
+  for (let i = 0; i < 36; i++) {
+    const ang = (i / 36) * Math.PI * 2;
+    const shape = new THREE.Shape();
+    shape.moveTo(0, -0.12);
+    shape.quadraticCurveTo(0.5, 0.04, 0.95, 0.35);
+    shape.quadraticCurveTo(0.25, 0.2, 0, 0.12);
+    shape.closePath();
+    const blade = new THREE.Mesh(new THREE.ExtrudeGeometry(shape, { depth: 0.04, bevelEnabled: false }), bladeMat);
+    blade.position.set(Math.cos(ang) * 1.55, 0, Math.sin(ang) * 1.55);
+    blade.rotation.x = Math.PI / 2;
+    blade.rotation.z = -ang + 0.35;
+    sudarshanChakra.add(blade);
+  }
+
+  // Plasma
+  const halo = new THREE.Mesh(new THREE.RingGeometry(1.2, 2.6, 32), new THREE.MeshBasicMaterial({ color: '#ff6600', side: THREE.DoubleSide, transparent: true, opacity: 0.7 }));
+  halo.rotation.x = Math.PI / 2;
+  sudarshanChakra.add(halo);
+
+  const light = new THREE.PointLight('#ffbb33', 3.0, 25);
+  sudarshanChakra.add(light);
+
+  scene.add(sudarshanChakra);
+}
+
+/* ========================================================
+   AIMING & RELEASING MECHANICS (निशाना साधकर छोड़ना)
+   ======================================================== */
+const raycaster = new THREE.Raycaster();
+const mouseVec = new THREE.Vector2();
+const groundPlane = new THREE.Plane(new THREE.Vector3(0, 1, 0), 0);
+
+function setupAimInputs() {
+  const reticle = document.getElementById('aim-reticle');
+
+  window.addEventListener('pointerdown', (e) => {
+    if (!isGameRunning || e.target.closest('button')) return;
+    aimState.isAiming = true;
+    updateAim(e.clientX, e.clientY);
+    reticle.style.display = 'block';
+  });
+
+  window.addEventListener('pointermove', (e) => {
+    if (!isGameRunning) return;
+    if (aimState.isAiming) updateAim(e.clientX, e.clientY);
+  });
+
+  window.addEventListener('pointerup', () => {
+    if (!isGameRunning || !aimState.isAiming) return;
+    aimState.isAiming = false;
+    reticle.style.display = 'none';
+    releaseChakra();
+  });
+}
+
+function updateAim(screenX, screenY) {
+  aimState.screenX = screenX;
+  aimState.screenY = screenY;
+
+  const reticle = document.getElementById('aim-reticle');
+  reticle.style.left = screenX + 'px';
+  reticle.style.top = screenY + 'px';
+
+  mouseVec.x = (screenX / window.innerWidth) * 2 - 1;
+  mouseVec.y = -(screenY / window.innerHeight) * 2 + 1;
+
+  raycaster.setFromCamera(mouseVec, camera);
+  const hitPt = new THREE.Vector3();
+  if (raycaster.ray.intersectPlane(groundPlane, hitPt)) {
+    aimState.worldTarget.copy(hitPt);
+  }
+
+  // Find targeted enemy
+  aimState.targetedEnemy = null;
+  for (const enemy of enemies) {
+    if (!enemy.alive) continue;
+    const dist = hitPt.distanceTo(new THREE.Vector3(enemy.x, 1.5, enemy.z));
+    if (dist < 4.5) {
+      aimState.targetedEnemy = enemy;
+      break;
+    }
+  }
+
+  if (krishnaArm) {
+    const dir = new THREE.Vector3().subVectors(aimState.worldTarget, krishnaGroup.position);
+    krishnaArm.rotation.y = Math.atan2(dir.x, dir.z);
+  }
+}
+
+function releaseChakra() {
+  if (aimState.chakraState !== 'ready') return;
+  aimState.chakraState = 'flying';
+  aimState.chakraFlyTime = 0;
+  AudioSys.playThrow();
+  showSliceToast('⚡ सुदर्शन चक्र प्रहार!');
+  setKrishnaVoice('अधर्म का अंत निश्चित है! संहार करो!');
+}
+
+/* ========================================================
+   ENEMIES, SLICING & WAVE PROGRESSION
+   ======================================================== */
+function spawnWave() {
+  enemies.forEach(e => scene.remove(e.group));
+  enemies = [];
+  enemyProjectiles.forEach(p => scene.remove(p.mesh));
+  enemyProjectiles = [];
+
+  const waveCfg = WAVES[Math.min(currentWaveIdx, WAVES.length - 1)];
+  document.getElementById('hud-wave-title').textContent = waveCfg.title;
+  setKrishnaVoice(waveCfg.quote);
+
+  for (let i = 0; i < waveCfg.count; i++) {
+    const angle = (i / waveCfg.count) * Math.PI * 0.85 + (Math.PI * 1.07);
+    const dist = 45 + Math.random() * 35;
+
+    const enemy = {
+      name: waveCfg.asuraName,
+      x: Math.cos(angle) * dist,
+      z: Math.sin(angle) * dist,
+      speed: waveCfg.speed * (0.85 + Math.random() * 0.3),
+      alive: true,
+      shootTimer: 2.0 + Math.random() * 3.0,
+      group: new THREE.Group()
+    };
+
+    // Demon mesh
+    const col = (i === 0 && waveCfg.boss) ? '#800f2f' : '#2d0c3f';
+    const head = new THREE.Mesh(new THREE.SphereGeometry(2.0, 12, 10), new THREE.MeshStandardMaterial({ color: col }));
+    enemy.group.add(head);
+
+    for (const s of [-1, 1]) {
+      const eye = new THREE.Mesh(new THREE.SphereGeometry(0.3, 8, 8), new THREE.MeshBasicMaterial({ color: '#ff0033' }));
+      eye.position.set(1.4, 0.4, s * 0.8);
+      enemy.group.add(eye);
+    }
+
+    enemy.group.position.set(enemy.x, 1.4, enemy.z);
+    scene.add(enemy.group);
+    enemies.push(enemy);
+  }
+}
+
+function onHitEnemy(enemy) {
+  AudioSys.playSlice();
+  AudioSys.playDemonRoar();
+
+  enemy.alive = false;
+  scene.remove(enemy.group);
+
+  totalKills++;
+  score += 150 * (currentWaveIdx + 1);
+
+  showComboText('खल संहार! (SEVERED)');
+  showSliceToast(`⚔️ ${enemy.name} का अंत हुआ! +${150 * (currentWaveIdx + 1)}`);
+
+  document.getElementById('hud-kills').textContent = totalKills;
+  document.getElementById('hud-score').textContent = score;
+
+  const aliveRem = enemies.filter(e => e.alive).length;
+  if (aliveRem === 0) {
+    currentWaveIdx++;
+    AudioSys.playShankh();
+    showComboText('वेव समाप्त! धर्म की जय!');
+    playerHP = Math.min(100, playerHP + 30);
+    updateHP();
+    setTimeout(() => spawnWave(), 2000);
+  }
+}
+
+function damagePlayer(dmg) {
+  playerHP = Math.max(0, playerHP - dmg);
+  AudioSys.playHit();
+  updateHP();
+  if (playerHP <= 0) {
+    isGameRunning = false;
+    AudioSys.playDemonRoar();
+    document.getElementById('go-kills').textContent = totalKills;
+    const m = Math.floor(gameSeconds / 60).toString().padStart(2, '0');
+    const s = Math.floor(gameSeconds % 60).toString().padStart(2, '0');
+    document.getElementById('go-time').textContent = `${m}:${s}`;
+    document.getElementById('go-wave').textContent = (currentWaveIdx + 1);
+    document.getElementById('go-score').textContent = score;
+    document.getElementById('game-over-modal').classList.remove('hidden');
+  }
+}
+
+function updateHP() {
+  const bar = document.getElementById('hp-bar');
+  const txt = document.getElementById('hp-txt');
+  bar.style.width = playerHP + '%';
+  txt.textContent = playerHP + '%';
+  bar.classList.toggle('low', playerHP < 35);
+}
+
+window.restartWar = () => {
+  document.getElementById('game-over-modal').classList.add('hidden');
+  resetAndStartGame();
+};
+
+window.triggerBrahmaAstra = () => {
+  if (brahmaCharges <= 0) {
+    showSliceToast('ब्रह्मास्त्र के प्रहार समाप्त!');
+    return;
+  }
+  brahmaCharges--;
+  AudioSys.playShankh();
+  showComboText('⚡ ब्रह्मास्त्र महाप्रहार!');
+  enemies.forEach(e => { if (e.alive) onHitEnemy(e); });
+  document.getElementById('brahmaAstraBtn').textContent = `⚡ ब्रह्मास्त्र (${brahmaCharges})`;
+};
+
+function resetAndStartGame() {
+  playerHP = 100;
+  score = 0;
+  totalKills = 0;
+  currentWaveIdx = 0;
+  gameSeconds = 0;
+  brahmaCharges = 2;
+  aimState.chakraState = 'ready';
+
+  updateHP();
+  document.getElementById('hud-score').textContent = '0';
+  document.getElementById('hud-kills').textContent = '0';
+  document.getElementById('brahmaAstraBtn').textContent = '⚡ ब्रह्मास्त्र प्रहार';
+
+  spawnWave();
+  isGameRunning = true;
+}
+
+/* ========================================================
+   ANIMATION & GAME LOOP
+   ======================================================== */
+let lastFrameT = performance.now();
+
+function animate(now) {
+  requestAnimationFrame(animate);
+  const dt = Math.min((now - lastFrameT) / 1000, 0.1);
+  lastFrameT = now;
+
+  if (isGameRunning) {
+    gameSeconds += dt;
+    const h = Math.floor(gameSeconds / 3600).toString().padStart(2, '0');
+    const m = Math.floor((gameSeconds % 3600) / 60).toString().padStart(2, '0');
+    const s = Math.floor(gameSeconds % 60).toString().padStart(2, '0');
+    document.getElementById('hud-timer').textContent = `${h}:${m}:${s}`;
+
+    // Chakra motion
+    const fingerPos = new THREE.Vector3(1.2, 4.4, 7.8);
+    if (aimState.chakraState === 'ready') {
+      sudarshanChakra.position.copy(fingerPos);
+    } else if (aimState.chakraState === 'flying') {
+      aimState.chakraFlyTime += dt;
+      const dest = aimState.targetedEnemy && aimState.targetedEnemy.alive
+        ? new THREE.Vector3(aimState.targetedEnemy.x, 1.5, aimState.targetedEnemy.z)
+        : aimState.worldTarget;
+
+      const dir = new THREE.Vector3().subVectors(dest, sudarshanChakra.position);
+      if (dir.length() < 2.5 || aimState.chakraFlyTime > 1.2) {
+        if (aimState.targetedEnemy && aimState.targetedEnemy.alive) {
+          onHitEnemy(aimState.targetedEnemy);
+        } else {
+          for (const e of enemies) {
+            if (e.alive && sudarshanChakra.position.distanceTo(new THREE.Vector3(e.x, 1.5, e.z)) < 4.0) {
+              onHitEnemy(e);
+              break;
+            }
+          }
+        }
+        aimState.chakraState = 'returning';
+      } else {
+        dir.normalize();
+        sudarshanChakra.position.addScaledVector(dir, 46.0 * dt);
+      }
+    } else if (aimState.chakraState === 'returning') {
+      const dir = new THREE.Vector3().subVectors(fingerPos, sudarshanChakra.position);
+      if (dir.length() < 1.0) {
+        aimState.chakraState = 'ready';
+        sudarshanChakra.position.copy(fingerPos);
+      } else {
+        dir.normalize();
+        sudarshanChakra.position.addScaledVector(dir, 38.0 * dt);
+      }
+    }
+
+    // Enemies movement
+    enemies.forEach(e => {
+      if (!e.alive) return;
+      const target = new THREE.Vector3(0, 1.4, 8);
+      const dir = new THREE.Vector3(target.x - e.x, 0, target.z - e.z);
+      if (dir.length() > 7.0) {
+        dir.normalize();
+        e.x += dir.x * e.speed * dt;
+        e.z += dir.z * e.speed * dt;
+      } else {
+        damagePlayer(15 * dt);
+      }
+      e.group.position.set(e.x, 1.4, e.z);
+      e.group.lookAt(target.x, 1.4, target.z);
+    });
+  }
+
+  sudarshanChakra.rotation.y += 35 * dt;
+  if (renderer && scene && camera) {
+    renderer.render(scene, camera);
+  }
+}
+
+function setKrishnaVoice(text) {
+  document.getElementById('krishna-voice-text').textContent = `"${text}"`;
+}
+
+function showComboText(txt) {
+  const el = document.getElementById('combo-callout');
+  el.textContent = txt;
+  el.classList.add('show');
+  setTimeout(() => el.classList.remove('show'), 1500);
+}
+
+function showSliceToast(txt) {
+  const container = document.getElementById('slice-toasts');
+  const toast = document.createElement('div');
+  toast.className = 'slice-toast';
+  toast.textContent = txt;
+  container.appendChild(toast);
+  setTimeout(() => toast.remove(), 1200);
+}
+
+// Initialize 3D Engine
+init3DGame();
+requestAnimationFrame(animate);
+</script>
+
+</body>
+</html>
